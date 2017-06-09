@@ -1,5 +1,5 @@
 ﻿
-# The Templates
+# Corporate Templates
 
 The corporate site has 2 primary templates in Teamsite: Page and Article.  The page article supports both 1- and 2-column layouts and the article template supports only a 2-column layout.
 
@@ -89,7 +89,7 @@ accordion	(styles are different, see <a href="#accordions">accordions</a> and <a
 callout	(styles are different, see <a href="#callouts">callouts</a>)<br>
 grid (the outermost row/column is inserted by <a href="#the-templates">the template</a>)	<br>
 media-object	(styles are different, see <a href="#media-objects">media objects</a>)<br>
-orbit	(buttons and slide nav is automated for you, see <a href="#carousels">carousels</a>) <br>
+orbit	(buttons and slide nav is automated for you, see <a href="styleguide_orbit.html">carousels</a>) <br>
 reveal (buttons are automated for you, see <a href="#modals">modals</a>)<br>
 tabs (styles are different, see <a href="#tabs">tabs</a>)<br>
 table	(styles are different, see <a href="#data-tables">data tables</a>)
@@ -132,73 +132,106 @@ thumbnail
 
 ---
 
-<h2>Bolds</h2>
-<div class="row up-1 medium-up-3 large-up-4">
+<h2>Backgrounds</h2>
+<div class="row up-1 medium-up-2 large-up-3 xlarge-up-4">
   <div class="column">
     <div class="color-block">
-      <span style="background: #ff6c00"></span>
+      <span class="background-orange"> `.background-orange` </span>
       $fm-orange<br>
       $secondary-color
     </div>
   </div>
   <div class="column">
     <div class="color-block">
-      <span style="background: #88BD45"></span>
+      <span class="background-green"> `.background-green` </span>
       $fm-green<br>
       $success-color
     </div>
   </div>
   <div class="column">
     <div class="color-block">
-      <span style="background: #ffb718"></span>
+      <span class="background-yellow"> `.background-yellow` </span>
       $fm-yellow<br>
       $warning-color
     </div>
   </div>
   <div class="column">
     <div class="color-block">
-      <span style="background: #cf0a2c"></span>
+      <span class="background-red"> `.background-red` </span>
       $fm-red<br>
       $alert-color
     </div>
   </div>
-</div>
-<br>
-<div class="row up-1 medium-up-3 large-up-4">
   <div class="column">
     <div class="color-block">
-      <span style="background: #00a6e2"></span> 
+      <span class="background-primary"> `.background-primary` </span> 
       $primary-color
     </div>
   </div>
   <div class="column">
     <div class="color-block">
-      <span style="background: #457bbe"></span>
+      <span class="background-blue"> `.background-blue`</span>
       $fm-blue
     </div>
   </div>
   <div class="column">
     <div class="color-block">
-      <span style="background: #00a19a"></span>
+      <span class="background-teal"> `.background-teal` </span>
       $fm-teal
     </div>
   </div>
   <div class="column">
     <div class="color-block">
-      <span style="background: #725090"></span>
+      <span class="background-purple"> `.background-purple` </span>
       $fm-purple
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-gray"> `.background-gray`</span>
+      $fm-gray
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-concrete"> `.background-concrete` </span>
+      $light-gray
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-offwhite">`.background-offwhite`</span>
+      $offwhite
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-white"> `.background-white` </span>
+      $white
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-black"> `.background-black` </span>
+      $black
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-pear"> `.background-pear` </span>
+      $pear
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-celery"> `.background-celery` </span>
+      $celery
     </div>
   </div>
 </div>
 <br>
-<h2>Neutrals</h2>
-<div class="row up-1 medium-up-3 large-up-4">
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #000000"></span>
-      $black
-    </div>
-  </div>
+<h2>Other Defined Colors</h2>
+<div class="row up-1 medium-up-2 large-up-3 xlarge-up-4">
   <div class="column">
     <div class="color-block">
       <span style="background: #333333"></span>
@@ -209,49 +242,6 @@ thumbnail
     <div class="color-block">
       <span style="background: #464645"></span>
       $medium-gray
-    </div>
-  </div>
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #777874"></span>
-      $fm-gray
-    </div>
-  </div>
-</div>
-<br>
-<div class="row up-1 medium-up-3 large-up-4">
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #f4f4f4"></span>
-      $light-gray
-    </div>
-  </div>
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #f9f9f9"></span>
-      $offwhite
-    </div>
-  </div>
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #ffffff"></span>
-      $white
-    </div>
-  </div>
-</div>
-<br>
-<h2>Mosiacs and Card Edges</h2>
-<div class="row up-1 medium-up-3 large-up-4">
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #c7d939"></span>
-      $pear
-    </div>
-  </div>
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #a4c745"></span>
-      $celery
     </div>
   </div>
   <div class="column">
@@ -865,21 +855,13 @@ The default text alignment for most containers is left.
 
 
 
-# Embedded Objects
-
-Embedded objects (iframes, videos, Tableau visuals) were <a href="styleguide_embeds.html">moved to their own page</a> to speed up the load of the initial styleguide. 
-
-<a href="styleguide_embeds.html" class="button tertiary large">Learn about embeds</a>
-
-
-
 # Callouts
 
 <p class="lead">A callout is just a container with a `.callout` class applied. You can put any kind of content inside.</p>
 
 - To create a white callout with a border, add either class `.hollow` or `.hollow-thin` to the `.callout` container.
-- To select a callout with a specific background color, include `.background-xxx` class (where xxx is green, orange, primary, blue, teal, gray, yellow, red, purple, concrete, white) on the `.callout` container.
-- There are callouts for use within the content area.  Refer to <a href="#prefooter-promo-band">prefooter promo</a> for full width promo containers. 
+- To select a callout with a specific background color, include a [background color class](#colors) on the `.callout` container.
+- There are callouts for use within the content area.  Refer to [prefooter promo](#prefooter-promo-band) for full width promo containers. 
 
 ```html_example
 <div class="row">
@@ -1293,7 +1275,7 @@ Use class `.tertiary` for buttons for logins.  See below section on buttons with
 
 ## Hollow Buttons
 
-Use class `.hollow` for buttons that aren't a call-to-action which are on a dark background, such as in carousels or modals. 
+Use class `.hollow` for non-call-to-action buttons used on a dark background. 
 
 ```html_example
 <div class="callout background-purple">
@@ -1340,9 +1322,9 @@ If you use a one-color svg icon without a fill color, css will allow it to inher
 
 ## Close Button <span id="close-button"></span>
 
-A close button is a `<button>` element with the class `.close-button`. We use the multiplication symbol (`&times;`) as the X icon. This icon is wrapped in a `<span>` with the attribute `aria-hidden="true"`, so screen readers don't read the X icon.
-
-The button is also labeled with `aria-label` to clarify what the button's purpose is.
+A close button is a `<button>` element with the class `.close-button`.  The button is also labeled with `aria-label` to clarify what the button's purpose is.
+- For simple close buttons, we use the multiplication symbol (`&times;`) as the X icon. This icon is wrapped in a `<span>` with the attribute `aria-hidden="true"`, so screen readers don't read the X icon.
+- Some elements, such as [modals](#modals), have predefined close button styles.
 
 ```html_example
 <div class="callout background-yellow">
@@ -1586,9 +1568,7 @@ Make sure you wrap your content in a `.card-section` element in order to achieve
 
 <p>This style of card is used for Perspectives articles. </p>
 
-- If the cards have the same background as the content contaienr they are in, add no extra color class.
-- If the cards should have a white background (when displayed on a darker color) add class `.background-white` to each card.
-- If the cards should have a gray background (when displayed on a white background) add class `.background-gray` to each card.
+- If the cards should have a different background than the container they are in, add a [background color class](#colors).
 
 ```html_example
 <div class="row medium-up-2 large-up-3 xlarge-up-4 perspectives" data-equalizer data-equalize-by-row="true">
@@ -1667,9 +1647,9 @@ Make sure you wrap your content in a `.card-section` element in order to achieve
 
 ## Blog Cards
 
-- If the cards have the same background as the content contaienr they are in, add no extra color class.
-- If the cards should have a white background (when displayed on a darker color) add class `.background-white` to each card.
-- If the cards should have a gray background (when displayed on a white background) add class `.background-gray` to each card.
+<p>This style of card is used for Blog articles. </p>
+
+- If the cards should have a different background than the container they are in, add a [background color class](#colors).
 
 ```html_example
 <div class="row small-up-2 medium-up-3 large-up-4" data-equalizer data-equalize-by-row="true">
@@ -1732,9 +1712,7 @@ Make sure you wrap your content in a `.card-section` element in order to achieve
 
 ## Video Cards
 
-- If the cards have the same background as the content contaienr they are in, add no extra color class.
-- If the cards should have a white background (when displayed on a darker color) add class `.background-white` to each card.
-- If the cards should have a gray background (when displayed on a white background) add class `.background-gray` to each card.
+- If the cards should have a different background than the container they are in, add a [background color class](#colors).
 - You will need to view each video on Youtube to get the accurate length of the video to put in the `.video-length` span.
 
 ```html_example
@@ -1771,9 +1749,7 @@ Make sure you wrap your content in a `.card-section` element in order to achieve
 
 ## People Cards
 
-- If the cards have the same background as the content container they are in, add no extra color class.
-- If the cards should have a white background (when displayed on a darker color) add class `.background-white` to each card.
-- If the cards should have a gray background (when displayed on a white background) add class `.background-gray` to each card.
+- If the cards should have a different background than the container they are in, add a [background color class](#colors).
 
 ```html_example
 <div class="row small-up-1 medium-up-2 large-up-4" data-equalizer data-equalize-by-row="true">
@@ -1946,17 +1922,15 @@ All items in the tertiary nav (including the heading) should be linked.  Add cla
 
 <p class="lead">There are a variety of modules available for use in a side bar, when you are using the Two Column Layout.</p>
 
-Links inside most sidebar modules inherit the existing text color (typically white) to blend in better.
-
-To select a specific background, include `.background-xxx` class (where xxx is green, orange, primary, blue, teal, gray, yellow, red, purple, concrete) on the `.sidebar` container.
-
-Avoid using the same background color for  the last sidebar box that you use in the prefooter -- in mobile they will appear to run together when that occurs.
+- Use a [background color class](#colors) on the `.sidebar` container to change the background.
+- Links inside most sidebar modules inherit the existing text color (typically white) to blend in better.
+- Avoid using the same background color for  the last sidebar box that you use in the prefooter -- in mobile they will appear to run together when that occurs.
 
 ---
 
 ## Sidebar Popular List Items
 
-For divided list items, include these classes on the `ul` tag: `.no-bullet` (to suppress list bullets), `.lead` (to increase the font size), and `.list-divided-white` (to add white dividers between items -- if background is concrete, use `.list-divided` instead).
+For divided list items, include these classes on the `ul` tag: `.no-bullet` (to suppress list bullets), `.lead` (to increase the font size), and `.list-divided-white` (to add white dividers between items on a dark background or use `.list-divided` for light backgrounds).
 
 ```html_example
 <!-- the template will provide the outer containers, to create these in a templated page, begin with the <section> tag. -->
@@ -2051,7 +2025,7 @@ For divided list items, include these classes on the `ul` tags: `.no-bullet`, `.
 
 ## Sidebar Featured Article
 
-<p>To select the background color, include `.background-xxx` class (where xxx is green, orange, primary, blue, teal, gray, yellow, red, or purple) on the `.sidebar-feature` container and include a background image in the `.feature-background` container.</p>
+Use a [background color class](#colors) to set the background on the `.sidebar-feature` container and include a background image in the `.feature-background` container.
 
 ```html_example
 <!-- the template will provide the outer containers, to create these in a templated page, begin with the <section> tag. -->
@@ -2147,6 +2121,14 @@ Refer to the Media Object section for more details about this markup.
   </div>
 </div>
 ```
+
+
+
+# Embedded Objects
+
+Embedded objects (iframes, videos, Tableau visuals) were <a href="styleguide_embeds.html">moved to their own page</a> to speed up the load of the initial styleguide. 
+
+<a href="styleguide_embeds.html" class="button tertiary large">Learn about embeds</a>
 
 
 
@@ -2440,7 +2422,7 @@ If a form has only a single field, you can combine the label, field, and submit 
 
 ### Example on different background colors
 
-When the form appears on a darker background, add the class `.outline` to invert the borders to white. Avoid putting forms inside a container that is red, green or orange to avoid conflicting with error/success messages and primary buttons.
+When the form appears on a darker [background color](#colors), add the class `.outline` to the form to invert the borders to white. Avoid putting forms inside containers that are red, green or orange to avoid conflicting with error/success messages and primary buttons.
 
 ```html
 <form action="#" class="form outline">
@@ -3087,6 +3069,15 @@ Egypt.">scarabaeus</span> hung clear of any branches, and, if allowed to fall, w
 
 
 
+# Carousels
+
+<p class="lead">There are numerous options for carousels -- so many that they have their own page.</p>
+
+<a class="button tertiary large" href="styleguide_orbit.html">Learn More About Carousels</a>
+
+
+
+
 # Modals
 
 A standard modal dialog is just an empty container, so you can put any kind of content inside it, from text to forms to images to an entire grid.  To create a modal,
@@ -3107,115 +3098,92 @@ A standard modal dialog is just an empty container, so you can put any kind of c
 
 ## Standard Content Modals
 
-- All standard content modals should include 3 extra classes on the `.reveal` element: `.full` to enforce that the modal should always cover the full screen, and `.background-xxx` (where xxx is green, orange, primary, blue, teal, gray, yellow, red, purple).
+- All standard content modals should include 3 extra classes on the `.reveal` element: `.full` to enforce that the modal should always cover the full screen, and a dark [background color class](#colors).
 - The close button is automatically attached to the `.modal-header`, so for this style of modal, it is required.
 - Modals by default are accessible through the use of various ARIA attributes.  To make a modal even more accessible, designate a label to the modal by adding an `id` attribute on the elment you want to designate as the label (such as a heading inside the modal) and then adding the same value into an `aria-labelledby` attribute on the modal container.
 
-<ol>
-  <li><a data-open="fullModal1" aria-controls="fullModal1">View a modal on green</a>.
-    <div class="reveal full background-green" id="fullModal1" data-reveal aria-labelledby="Modal1-label">
-      <div class="modal-content">
-        <div class="row">
-          <div class="column xlarge-offset-1 xlarge-10 end">
-            <div class="modal-header">
-              <h2 id="Modal1-label">Modal Label</h2>
-            </div>
-              <p>I can contain a callout with a white background to great a framed area.</p>
-              <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-              <img src="files/kitten160.jpg" alt="kitty">
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li><a data-open="fullModal2" aria-controls="fullModal2">View a modal on orange</a>.
-    <div class="reveal full background-orange" id="fullModal2" data-reveal aria-labelledby="Modal2-label">
-      <div class="modal-content">
-        <div class="row">
-          <div class="column xlarge-offset-1 xlarge-10 end">
-            <div class="modal-header">
-              <h2 id="Modal2-label">Modal Label</h2>
-            </div>
-            <div class="callout xlarge background-white">
-              <p>I can contain a callout with a white background to great a framed area.</p>
-              <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-              <img src="files/kitten160.jpg" alt="kitty">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li><a data-open="fullModal3">View a modal on blue</a>.
-    <div class="reveal full background-blue" id="fullModal3" data-reveal>
-      <div class="modal-content">
-        <div class="row">
-          <div class="column xlarge-offset-1 xlarge-10 end">
-            <div class="modal-header">
-              <h2 id="Modal3-label">Modal Label</h2>
-            </div>
-            <div class="modal-page-header">
-              <h1>Modal Header</h1>
-              <p class="page-subtitle">I can even have a header above the callout</p>
-            </div>
-            <div class="callout xlarge background-white">
-              <p>I can contain a callout with a white background to great a framed area.</p>
-              <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-              <img src="files/kitten160.jpg" alt="kitty">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li><a data-open="fullModal4">View a modal on teal</a>.
-    <div class="reveal full background-teal" id="fullModal4" data-reveal>
-      <div class="modal-content">
-        <div class="row">
-          <div class="column xlarge-offset-1 xlarge-10 end">
-            <div class="modal-header">
-              <h2 id="Modal4-label">Modal Label</h2>
-            </div>
-            <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-            <img src="files/kitten160.jpg" alt="kitty">
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li><a data-open="fullModal5">View a modal on gray</a>.
-    <div class="reveal full background-gray" id="fullModal5" data-reveal>
-      <div class="modal-content">
+```html_example
+<p class="gutter-bottom">View a modal <a data-open="fullModal1" aria-controls="fullModal1">on green</a>.</p>
+
+<div class="reveal full background-green" id="fullModal1" data-reveal aria-labelledby="Modal1-label">
+  <div class="modal-content">
+    <div class="row">
+      <div class="column xlarge-offset-1 xlarge-10 end">
         <div class="modal-header">
-          <h2 id="Modal5-label">Modal Label</h2>
+          <h2 id="Modal1-label">Modal Label</h2>
+        </div>
+          <p>I can contain a callout with a white background to great a framed area.</p>
+          <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
+          <img src="files/kitten160.jpg" alt="kitty">
+      </div>
+    </div>
+  </div>
+</div>
+```
+  
+```html_example
+<p class="gutter-bottom">View a modal <a data-open="fullModal2" aria-controls="fullModal2">on orange</a>.</p>
+
+<div class="reveal full background-orange" id="fullModal2" data-reveal aria-labelledby="Modal2-label">
+  <div class="modal-content">
+    <div class="row">
+      <div class="column xlarge-offset-1 xlarge-10 end">
+        <div class="modal-header">
+          <h2 id="Modal4-label">Modal Label</h2>
         </div>
         <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
         <img src="files/kitten160.jpg" alt="kitty">
       </div>
     </div>
-  </li>
-  <li><a data-open="fullModal6">View a modal on yellow</a>.
-    <div class="reveal full background-yellow" id="fullModal6" data-reveal>
-      <div class="modal-content">
+  </div>
+</div>
+```
+  
+```html_example
+<p class="gutter-bottom">View a modal <a data-open="fullModal3">in a white frame on blue</a> with additional header.<p>
+
+<div class="reveal full background-blue" id="fullModal3" data-reveal>
+  <div class="modal-content">
+    <div class="row">
+      <div class="column xlarge-offset-1 xlarge-10 end">
         <div class="modal-header">
-          <h2 id="Modal6-label">Modal Label</h2>
+          <h2 id="Modal3-label">Modal Label</h2>
         </div>
-        <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-        <img src="files/kitten160.jpg" alt="kitty">
+        <div class="modal-page-header">
+          <h1>Modal Header</h1>
+          <p class="page-subtitle">I can even have a header above the callout</p>
+        </div>
+        <div class="callout xlarge background-white">
+          <p>I can contain a callout with a white background to great a framed area.</p>
+          <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
+          <img src="files/kitten160.jpg" alt="kitty">
+        </div>
       </div>
     </div>
-  </li>
-  <li><a data-open="fullModal7">View a modal on purple</a>
-    <div class="reveal full background-purple" id="fullModal7" data-reveal>
-      <div class="modal-content">
+  </div>
+</div>
+```
+  
+```html_example
+<p class="gutter-bottom">View a modal <a data-open="fullModal4">in a white frame on teal</a>.</p>
+
+<div class="reveal full background-teal" id="fullModal4" data-reveal>
+  <div class="modal-content">
+    <div class="row">
+      <div class="column xlarge-offset-1 xlarge-10 end">
         <div class="modal-header">
-          <h2 id="Modal7-label">Modal Label</h2>
+          <h2 id="Modal2-label">Modal Label</h2>
         </div>
-        <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-        <img src="files/kitten160.jpg" alt="kitty">
+        <div class="callout xlarge background-white">
+          <p>I can contain a callout with a white background to great a framed area.</p>
+          <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
+          <img src="files/kitten160.jpg" alt="kitty">
+        </div>
       </div>
-  </li>
-</ol>
+    </div>
+  </div>
+</div>
+```
 
 ---
 
@@ -3292,10 +3260,10 @@ It's possible for modals to open other modals. Create a second modal with a uniq
 Image modals are intended to contain ONLY an image and a optional caption -- if you require anything more, you should use a standard content modal. If the images contain content like charts or graphs that <strong>must</strong> be viewed with the content, consider using a carousel instead of a modal.  Below are examples of an image modal being launched from a text link and from a link with an image.
 
 - To create an image modal, add class `.overlay-image` to the .`reveal` container. Then inside the `.modal-content` container, include a `figure` element that contains an `img` and optional `figcaption`.
-- If the modal is being launched from a link on an image, add the class `.modal-launch` to add the image-expand icon and blue hover-overlay to the image.
-- If the image is <strong>not</strong> a thumbnail, and should <strong>always</strong> stretch to fill the width of its container, also add class <code>.block</code>. 
+- If the modal is being launched from a link on an image, add the class `.modal-launch` to the anchor tag to add the image-expand icon and blue hover-overlay to the image.
+- If the image is <strong>not</strong> a thumbnail, and should <strong>always</strong> stretch to fill the width of its container, add class <code>.block</code> to the anchor tag. 
 - For image modals, the close button is automatically attached to first image.
-- Images will only launch in modals if the user,s screenwidth is over 470px.  You <strong>must</strong> include the url of the image in the `href` attribute, so that small-screen users can still get to the image. Including the url also preserves all right-click mouse options for the link (such as opening the link in a new window/tab on desktop, bookmarking the link, copying the link).
+- Images will only launch in modals if the user's screenwidth is over 470px.  You <strong>must</strong> include the url of the image in the `href` attribute, so that small-screen users can still get to the image. Including the url also preserves all right-click mouse options for the link (such as opening the link in a new window/tab on desktop, bookmarking the link, copying the link).
 
 
 ```html_example
@@ -3306,7 +3274,7 @@ Image modals are intended to contain ONLY an image and a optional caption -- if 
 <div class="reveal overlay-image" id="exampleModalE" data-reveal>
   <div class="modal-content">
     <figure>
-      <img src="files/bigkitty.jpg" alt="kitty">
+      <img class="no-border" src="files/bigkitty.jpg" alt="kitty">
       <figcaption>What a pretty kitty!</figcaption>
     </figure>
   </div>
@@ -3320,7 +3288,7 @@ Image modals are intended to contain ONLY an image and a optional caption -- if 
 <div class="reveal overlay-image" id="exampleModalF" data-reveal>
   <div class="modal-content">
     <figure>
-      <img src="files/kitty1600.jpg" alt="kitty">
+      <img class="no-border" src="files/kitty1600.jpg" alt="kitty">
       <figcaption>Who Doesn't Love Kitties?</figcaption>
     </figure>
   </div>
@@ -3352,7 +3320,7 @@ Combine the concept of the nested modal with the image modal to achieve an image
 <div class="reveal overlay-gallery" rel="gallery1" id="galleryModalA" data-reveal>
   <div class="modal-content">
     <figure>
-      <img src="files/plant1.jpg" alt="plant 1">
+      <img class="no-border" src="files/plant1.jpg" alt="plant 1">
       <figcaption>Default - center aligned caption.</figcaption>
     </figure>
   </div>
@@ -3362,7 +3330,7 @@ Combine the concept of the nested modal with the image modal to achieve an image
 <div class="reveal overlay-gallery" rel="gallery1" id="galleryModalB" data-reveal>
   <div class="modal-content">
     <figure>
-      <img src="files/plant2.jpg" alt="plant 2">
+      <img class="no-border" src="files/plant2.jpg" alt="plant 2">
       <figcaption><p class="text-left">Left-aligned caption.</p><p class="text-left">With more than one paragraph.</p></figcaption>
     </figure>
   </div>
@@ -3372,7 +3340,7 @@ Combine the concept of the nested modal with the image modal to achieve an image
 <div class="reveal overlay-gallery" rel="gallery1" id="galleryModalC" data-reveal>
   <div class="modal-content">
     <figure>
-      <img src="files/plant3.jpg" alt="plant 3">
+      <img class="no-border" src="files/plant3.jpg" alt="plant 3">
       <figcaption>
         <p class="text-left show-for-medium">The lights burn blue. It is now dead midnight.</p>
       </figcaption>
@@ -3384,7 +3352,7 @@ Combine the concept of the nested modal with the image modal to achieve an image
 <div class="reveal overlay-gallery" rel="gallery1" id="galleryModalD" data-reveal>
   <div class="modal-content">
     <figure>
-      <img src="files/plant4.jpg" alt="plant 4">
+      <img class="no-border" src="files/plant4.jpg" alt="plant 4">
       <figcaption>This caption is longer than the others to show how things look when the caption is very long, and it contains a <a href="#">hyperlink</a> and formatting such as  <em>emphasis</em> and <strong>strong</strong>, so we can see how they look in a caption.
       </figcaption>
     </figure>
@@ -3411,210 +3379,6 @@ Embedded videos **won't** maintain their aspect ratio as the width of the screen
   <li><a class="video-modal widescreen-video" href="https://www.youtube.com/watch?v=tCg9285bJnY"  data-src="//www.youtube-nocookie.com/embed/tCg9285bJnY?rel=0&amp;wmode=transparent">View a modal with a widescreen (16:9 ratio) video</a>.</li>
 </ul>
 ```
-
-
-
-# Carousels
-
-<p class="lead">Each carousel is made up of multiple slides.</p>
-
-- The default animation for the carousel is slide out the existing slide while sliding in the replacement slide (direction based on whether you are moving forward or backward through the slides).  See below for [other animation options](#slide_animation).
-- The wrapper for the carousel should use the `.orbit` class and contain a `data-orbit` attribute and a `role="region"` attribute.  For assistive technology, provide an `aria-label` attribute that describes the carousel contents.  The wrapper groups the slides and the slide navigation together.
-- The container for the slides is a `ul` with the class `.orbit-container`.
-- Each slide is an `li` with the class `.orbit-slide`.
-- By default, slides transition every 5 seconds.  That is typically sufficient for images, but if the slides contain very much text, you will likely want to stop the auto-play functionality by adding the attribute `data-auto-play="false"`.
-- To shift the dot navigation so that it appears inside the panel, add class `.bullets-overlay` to the `.orbit` element.
-
-To select a specific background, include `.background-xxx` class (where xxx is green, orange, primary, blue, teal, gray, yellow, red, purple) on the <code>.orbit-slide</code> container.
-
-
-```html_example
-<div class="orbit bullets-overlay" role="region" aria-label="Favorite Text Ever" data-orbit data-auto-play="false">
-  <ul class="orbit-container">
-    <li class="orbit-slide background-yellow">
-      <div>
-        <h3>Slide One</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="text-right"><a class="button hollow">Button Link</a></p>
-      </div>
-    </li>
-    <li class="orbit-slide background-green">
-      <div>
-        <h3>Slide Two</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="text-center"><a class="button hollow">Button Link</a></p>
-      </div>
-    </li>
-    <li class="orbit-slide background-orange">
-      <div>
-        <h3>Slide Three</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="text-right"><a class="button hollow large">Button Link</a></p>
-      </div>
-    </li>
-    <li class="orbit-slide background-red">
-      <div>
-        <h3>Slide Four</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <ul>
-        <li>Duis aute irure dolor in reprehenderit in voluptate.</li>
-        <li>Velit esse cillum dolore eu fugiat nulla pariatur.</li>
-        </ul>
-        <p><a class="button hollow">Button Link</a></p>
-      </div>
-    </li>
-    <li class="orbit-slide background-purple">
-      <div>
-        <h3>Slide Five</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="text-right"><a class="button hollow">Button Link</a></p>
-      </div>
-    </li>
-    <li class="orbit-slide background-blue">
-      <div>
-        <h3>Slide Six - Example Without a Button</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </li>
-    <li class="orbit-slide background-teal">
-      <div>
-        <h3>Slide Seven</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <p class="text-right"><a class="button hollow">Button Link</a></p>
-      </div>
-    </li>
-    <li class="orbit-slide background-gray">
-      <div>
-        <h3>Slide Nine</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p class="text-right"><a class="button hollow">Button Link</a></p>
-      </div>
-    </li>
-  </ul>
-</div>
-```
-
----
-
-## Image Carousel
-
-For an image carousel, each `orbit-slide` contains a `figure`, with an `img` and optional `figcaption`.
-
-- Try to make sure your images are all similar in size and proportion.
-- Each image should still have an `alt` attribute, even if it has an associated caption.
-- Captions can contain additional markup -- from blockquotes to paragraphs to text formatting.
-- Image carousels **cannot** be used inside a modal window -- instead refer to [Image Gallery Modal](#igallery).
-
-```html_example
-<div class="row">
-  <div class="medium-8 column">
-    <div class="orbit" role="region" aria-label="Favorite Flower Pictures" data-orbit>
-      <ul class="orbit-container">
-        <li class="orbit-slide">
-          <figure>
-            <img class="full" src="files/plant1.jpg" alt="plant 1">
-            <figcaption>Default - center aligned caption.</figcaption>
-          </figure>
-        </li>
-        <li class="orbit-slide">
-          <figure>
-            <img class="full" src="files/plant2.jpg" alt="plant 2">
-            <figcaption><p class="text-left">Left-aligned caption.</p><p class="text-left">With more than one paragraph.</p></figcaption>
-          </figure>
-        </li>
-        <li class="orbit-slide">
-          <figure>
-            <img class="full" src="files/plant3.jpg" alt="plant 3">
-            <figcaption>
-              <p class="text-left show-for-medium">(example below is how a blockquote would appear - borrowed the idea from My Home.) </p>
-              <blockquote>
-                <p>"The lights burn blue. It is now dead midnight."</p>
-                <footer><cite>William Shakespeare</cite> in <cite>King Henry the Sixth</cite></footer>
-              </blockquote>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="orbit-slide">
-          <figure>
-            <img class="full" src="files/plant4.jpg" alt="plant 4">
-            <figcaption>This caption is longer than the others to show how things look when the caption is very long, and it contains a <a href="#">hyperlink</a> and formatting such as  <em>emphasis</em> and <strong>strong</strong>, so we can see how they look in a caption. </figcaption>
-          </figure>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-```
-
----
-
-## Changing the Slide Animation <span id="slide_animation"></span>
-
-Orbit uses [Motion UI](http://foundation.zurb.com/sites/docs/motion-ui.html) CSS classes to animate slides around.  There are four plugin options you can set to change the default effects:
-
-- `data-anim-in-from-left`: transition to play when a slide comes *in from the left*.
-- `data-anim-in-from-right`: transition to play when a slide comes *in from the right*.
-- `data-anim-out-from-left`: transition to play when a slide comes *out from the left*.
-- `data-anim-out-from-right`: transition to play when a slide comes *out from the right*.
-
-Since those option names are pretty *long*, you can also set them all in one HTML attribute, using `data-options`:
-
-```html
-<div class="orbit" role="region" aria-label="Favorite Flower Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-```
-
-Below is an example of the same image carousel shown above, but with a fade-in/fade-out animation.
-
-<div class="row">
-  <div class="medium-8 column">
-    <div class="orbit" role="region" aria-label="Favorite Flower Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-      <ul class="orbit-container">
-        <li class="orbit-slide">
-          <figure>
-            <img class="full" src="files/plant1.jpg" alt="plant 1">
-            <figcaption>Default - center aligned caption.</figcaption>
-          </figure>
-        </li>
-        <li class="orbit-slide">
-          <figure>
-            <img class="full" src="files/plant2.jpg" alt="plant 2">
-            <figcaption><p class="text-left">Left-aligned caption.</p><p class="text-left">With more than one paragraph.</p></figcaption>
-          </figure>
-        </li>
-        <li class="orbit-slide">
-          <figure>
-            <img class="full" src="files/plant3.jpg" alt="plant 3">
-            <figcaption>
-              <p class="text-left show-for-medium">(example below is how a blockquote would appear - borrowed the idea from My Home.) </p>
-              <blockquote>
-                <p>&quot;The lights burn blue. It is now dead midnight.&quot;</p>
-                <footer><cite>William Shakespeare</cite> in <cite>King Henry the Sixth</cite></footer>
-              </blockquote>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="orbit-slide">
-          <figure>
-            <img class="full" src="files/plant4.jpg" alt="plant 4">
-            <figcaption>This caption is longer than the others to show how things look when the caption is very long, and it contains a <a href="#">hyperlink</a> and formatting such as  <em>emphasis</em> and <strong>strong</strong>, so we can see how they look in a caption. </figcaption>
-          </figure>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
----
-
-### Disabling Transition Animation
-
-To disable the animation, set the `data-use-m-u-i` attribute to `false`.  To stop the auto-play functionality, add the attribute `data-auto-play="false"`.
-
-```html
-<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-use-m-u-i="false" data-auto-play="false">
-</div>
-```
-
 
 
 
@@ -3715,9 +3479,8 @@ These are often used inside a sidebar list to contain its width, where each medi
 
 A Prefooter Promo is a full width band of content.  On most interior pages, it is inserted after all content and immediately above the footer.  Never include more than one prefooter band per page, and limit the content of the prefooter band to a single concept and one link.  The first `div` should contain the supporting text, and the second `div` should contain the call to action.
 
-To select a specific background, include `.background-xxx` class (where xxx is green, orange, primary, blue, teal, gray, yellow, red, purple) on the `.footer-promo` container.
-
-Avoid using the same background color for the prefooter as you do for the last sidebar module -- in mobile they will appear to run together when that occurs.
+- Use a [background color class](#colors) to set the background on the `.footer-promo` container.
+- Avoid using the same background color for the prefooter as you do for the last sidebar module -- in mobile they will appear to run together when that occurs.
 
 ```html_example
 <div class="background-primary footer-promo">

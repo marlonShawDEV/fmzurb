@@ -97,6 +97,12 @@ function styleGuideEmbeds(done) {
   return sherpa('src/styleguide/embeds.md', {
     output: PATHS.dist + '/styleguide/styleguide_embeds.html',
     template: 'src/styleguide/template_grid.html'
+  }, styleGuideOrbit(done)); 
+}
+function styleGuideOrbit(done) {
+  return sherpa('src/styleguide/orbit.md', {
+    output: PATHS.dist + '/styleguide/styleguide_orbit.html',
+    template: 'src/styleguide/template_foundation.html'
   }, done); 
 }
 function styleGuideSF(done) {
@@ -250,7 +256,7 @@ function javascriptMFSBL(done) {
   done();
 }
 function javascriptNHM(done) {
-  return gulp.src(PATHS.javascriptmf)
+  return gulp.src(PATHS.javascriptNhm)
     .pipe($.sourcemaps.init())
     .pipe($.babel({ignore: ['what-input.js']}))
     .pipe($.concat('app_nhm.js'))

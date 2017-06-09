@@ -77,6 +77,7 @@ s_somni.busUnit={
   investors:"corporate",
   terms:"corporate",
   homepage:"corporate",
+  innovate: "multifamily",
   multifamily:"multifamily",
   'small-loans':"multifamily",
   'capital-markets':"capital-markets",

@@ -46,15 +46,13 @@ function preRevealGallery() {
       nextID = $("[rel=" + $r + "]").eq(nextItem).attr('id'),
       btnPrev = $("<button />",{
         "class": "orbit-previous",
-        "aria-hidden": true,
         "data-open": prevID,
-        "html": '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewbox="0 0 24 24"><path d="M14 1h6L10 12l10 11h-6L4 12z" fill="#ffffff"/></svg>'
+        "html": '<span class="show-for-sr">previous slide</span><svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M27.3 34.7L17.6 25l9.7-9.7 1.4 1.4-8.3 8.3 8.3 8.3z"/></svg>'
       }),
       btnNext = $("<button />",{
         "class": "orbit-next",
-        "aria-hidden": true,
         "data-open": nextID,
-        "html": '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewbox="0 0 24 24"><path d="M4 1h6l10 11-10 11H4l10-11z" fill="#ffffff"/></svg>'
+        "html": '<span class="show-for-sr">next slide</span><svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M22.7 34.7l-1.4-1.4 8.3-8.3-8.3-8.3 1.4-1.4 9.7 9.7z"/></svg>'
       });
       obj.find('figure').append(btnNext, btnPrev);
       obj.attr('data-animation-in', "fade-in").attr('data-animation-out', "fade-out").addClass('fast');

@@ -7,27 +7,44 @@
     border-bottom: $width solid rgba($color, 0.65);
   }
 }
+/// Adds styles for an orbit slide caption. 
+@mixin orbit-caption-custom($edge: bottom, $background: $orbit-caption-background, $padding: $orbit-caption-padding) {  
+  position: absolute;
+  @if($edge == bottom) {
+    top: auto;
+    bottom: 0;
+  }
+  @if($edge == top) {
+    bottom: auto;
+    top: 0;
+  }
+  width: 100%;
+  margin: 0;
+  padding: $padding;
+  background-color: $background;
+  color: color-pick-contrast($background);
+}
 
 // desktop hover states for parent of dropdowns
-@mixin nav-submenu-parent-hover(){
-  color: $fm-orange;
-  background: $white;
-  border-bottom-color: $white;
+@mixin nav-submenu-parent-hover($color: $fm-orange, $background: $white, $border-color: $white){
+  color: $color;
+  background: $background;
+  border-bottom-color: $border-color;
   transition: color 0.2s ease 0s;
 }
 
 // link style for primary and secondary nav but not ribbon
-@mixin nav-desktop-link(){  
-  color: $fm-gray;
+@mixin nav-desktop-link($color: $fm-gray, $activecolor: $fm-green){  
+  color: $color;
   transition: color 0.2s ease 0s, border-bottom-color 0.2s ease 0s;   
   &.active {
-    color: $fm-green;
+    color: $activecolor;
     border-bottom-color: darken(saturate(adjust-hue($pear,-1.73485), 12.69119), 1.96078);  
   }
   &:focus,
   &:hover {
-    color: $fm-green;
-    border-bottom-color: $fm-green;            
+    color: $activecolor;
+    border-bottom-color: $activecolor;            
   }
 }
 @mixin list-divided($color: darken($light-gray, 5%), $padding-base: $global-padding, $last-border: false){      

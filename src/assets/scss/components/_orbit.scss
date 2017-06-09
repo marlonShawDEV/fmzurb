@@ -1,7 +1,58 @@
-.orbit {
-  color: $white;
+.orbit-container-insert,
+.orbit-controls-outside {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  .orbit-previous, 
+  .orbit-next {
+    background: none;
+    padding: 0;
+    font-size: 1.5rem;
+    @include breakpoint(medium){
+      font-size: 2rem;
+    }    
+    @include breakpoint(large){
+      font-size: 3rem;
+    }    
+    svg { 
+      fill: $fm-gray; 
+      stroke-width: 1px;
+    }  
+  }
+  .orbit-previous {
+    left: -1.25em;
+  } 
+  .orbit-next {
+    right: -1.25em;
+  }
 }
-
+.orbit-bullets {
+  line-height: 1;
+  font-size: 1.125rem;
+  padding-bottom: rem-calc(12);
+  button {
+    vertical-align: middle;
+  }
+} 
+.orbit-previous, 
+.orbit-next {
+  font-size: 1.25rem;
+  background: rgba($black, 0.2);
+  svg { 
+    fill: $white; 
+    stroke: $white;
+    stroke-width: 2px;
+    vertical-align: top;
+  }  
+  @include breakpoint(large) {
+    font-size: 1.5rem;
+    svg {
+      stroke-width: 1px;
+    }
+  }
+}  
+.orbit-image { 
+  border-width: 0;
+}
 .orbit-slide {
   min-height: 100%;
   font-size: rem-calc(15); 
@@ -9,80 +60,80 @@
   @include breakpoint(xxlarge) {
     font-size: rem-calc(19); 
   } 
-  a {
-    @include anchor-on-dark;
-  } 
-  > div:not([class])  {
-    padding: $gutter * 1.5;  
+  >.callout.large {
+    padding-left: $gutter * 2;
+    padding-right: $gutter * 2;  
+    padding-bottom: $gutter * 2; 
   }
-  > figure {
-    margin: 0;
+  > * {
     position: relative;
-    height: 100%;
-    width: 100%;
-    img {
-      @include orbit-image;
-    }    
   }
   figcaption { 
-    @extend .orbit-caption;
-    text-align: center;
-    font-weight: $global-weight-medium;
-    font-size: inherit;
-    @include breakpoint(small only) {
-      padding: $orbit-caption-padding * .75;
-    }
-    > * { 
-      font-size: inherit;
-    }
     blockquote {
       padding: rem-calc(1 15 1 10);
     }
     :last-child { margin-bottom: 0;}
-  } 
-}
-
-.orbit-bullets {
-  line-height: 1;
-  font-size: 1.125rem;
-  button {
-    vertical-align: middle;
   }
-} 
-.orbit-previous, 
-.orbit-next {
-  background: rgba($black, 0.2);
-}    
+  .orbit-title {
+    @include orbit-caption-custom(top, rgba($white, 0.5), 0.5rem);
+    text-shadow: 0px 0px 1px $white;
+    font-weight: $global-weight-medium;
+    text-align: center;
+  
+  }
+  .orbit-caption { 
+    font-size: inherit;
+    text-align: center;
+    font-weight: $global-weight-normal;
+    text-shadow: 0px 0px 1px $black;
+    @include breakpoint(small only) {
+      padding: $orbit-caption-padding * .75;
+    }
+  }
+
+
+}
+  
 .bullets-overlay {
   .orbit-slide {
     padding-bottom: $global-padding * 3;
   }
-  .orbit-bullets {
-    top: $global-padding * -2.5;
-    margin: 0;
-    color: rgba($white, 0.7);
+  .orbit-controls {
+    line-height: 1;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;     
+    .orbit-bullets {
+      display: inline-block;   
+      margin: $orbit-bullet-margin / 2;     
+      button {
+        background: $white;
+      }    
+    }
     button {
+      display: inline-block;
       color: $white;
-      background-color: $white;
       opacity: 0.7;
-      &:hover,
-      &:focus {
-        opacity: 0.9;
-      }
-      &.is-active {
-        opacity: 1;
-      }
+        &:hover,
+        &:focus {
+          opacity: 0.9;
+        }
+        &.is-active {
+          opacity: 1;
+        }      
     }
     .orbit-previous, 
     .orbit-next {
       background: none;
-      display: inline-block;
       position: static;
       padding: 0;
+      vertical-align: middle;
       transform: none;
+      font-size: 1.125rem;
       svg {
-        vertical-align: top;
+        stroke-width: 2px;
       }
-    }
+    } 
   }
 }

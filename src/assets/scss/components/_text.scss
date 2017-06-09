@@ -53,6 +53,45 @@ strong {
 b {
   font-weight: $global-weight-bold;
 }
+blockquote {
+  font-size: rem-calc(17); 
+  font-weight: $global-weight-normal;
+  font-size: calc(17px +  3 * (100vw - 320px)/1180);
+  @include breakpoint(xxlarge) {
+    font-size: rem-calc(20);
+  }
+  footer { 
+    font-weight: $global-weight-light;
+    font-style: italic;
+    font-size: 90%;
+    padding: 0;
+    @include breakpoint(large) {
+      font-size: 80%;
+    }
+    &::before {
+    content: "\2014 \0020";
+    }    
+  }    
+}
+figcaption {
+  &.reduce {
+    font-size: rem-calc(12);
+    @include breakpoint(medium) {
+      font-size: rem-calc(14);
+    }
+  }
+  > * { 
+    font-size: inherit;
+  }
+  blockquote {
+    padding: rem-calc(1 15 1 10);
+  }
+  :last-child { margin-bottom: 0;}
+}
+
+sup, sub {
+  font-size: 65%;
+}
 .call-to-action {
   font-size: rem-calc(28);
   color: inherit;

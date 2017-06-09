@@ -1,11 +1,11 @@
 ﻿{ "page": [
    {  
-      "name":"Corporate Site",
+      "name":"Corporate Homepage w/Careers Promo",
       "url":"/corporate/"
    },
    {  
-      "name":"Alternate Corporate Homepage w/Careers Promo",
-      "url":"/corporate/index-careers.html"
+      "name":"Corporate Homepage w/WHMTM Promo",
+      "url":"/corporate/index-whmtm.html"
    },
    {  
       "name":"Loan LookUp Form",

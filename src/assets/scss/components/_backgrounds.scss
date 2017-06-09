@@ -4,6 +4,7 @@
       color: $white;    
       background-color: $color; 
       .accent-orange { color: $white; } 
+      hr { border-color: $white; }
     }    
   } 
   .background-concrete {
@@ -17,5 +18,11 @@
   .background-offwhite {
     background: $offwhite;   // is this needed?
     color: $body-font-color; 
+  }
+  .background-pear {
+    background: $pear;
+  }
+  .background-celery {
+    background: $celery;  
   }
 }

@@ -8,6 +8,10 @@
       "url":"styleguide_grid.html"
    },
    {
+       "name":"Foundation Orbit (Responsive Carousels)",
+       "url":"styleguide_orbit.html"
+   },
+   {
        "name":"Foundation Abide (Form Validation for Responsive)",
        "url":"styleguide_abide.html"
    },

@@ -86,6 +86,7 @@ $orbit-palette: (
   teal: $fm-teal,
   gray: $fm-gray,
   primary: $primary-color,
+  black: $black, 
 );
 
 $body-background: $white;
@@ -478,14 +479,14 @@ $maincontent-class: 'off-canvas-content';
 
 $orbit-bullet-background-active: rgba($dark-gray, 0.8);
 $orbit-bullet-background: rgba($dark-gray, 0.5);
-$orbit-bullet-diameter: 1em;
-$orbit-bullet-margin: 0 0.2rem;
-$orbit-bullet-margin-top: 1rem;
-$orbit-bullet-margin-bottom: 1rem;
+$orbit-bullet-diameter: rem-calc(18);
+$orbit-bullet-margin: 0 0.25rem;
+$orbit-bullet-margin-top: rem-calc(8);
+$orbit-bullet-margin-bottom: rem-calc(8);
 $orbit-caption-background: rgba($black, 0.5);
 $orbit-caption-padding: 1rem;
 $orbit-control-background-hover: rgba($black, 0.75);
-$orbit-control-padding: 1rem;
+$orbit-control-padding: 0.5rem 0.25rem;
 $orbit-control-zindex: 10;
 
 // 26. Pagination
