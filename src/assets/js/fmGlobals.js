@@ -1,5 +1,4 @@
-var fmTimer=0,QueryParam={};var test;
-if(!FM)var FM={};
+var FM=FM || {},QueryParam={};
 FM.form = {  						
   domain : 'http://www.freddiemac.com',	
   protocol : location.protocol, 			// returns http:
@@ -10,6 +9,7 @@ FM.form = {
   href : location.href, 					// returns http://www.fm.com/test.htm#part2
   querystr : location.search, 			// returns ?f=try&g=it if URL is: http://fm.com/js/aa.cgi?f=try&g=it
   referrer:  document.referrer,          // returns referring page, if available
+  fmTimer:0,
   QueryPairs : location.search.replace(/^\?/,'').split(/\&/),
   setCookie: function (a,b,c,d){b||(b="");if(!c||isNaN(c))c=.5;d||(d="/");var e=new Date;e.setTime(e.getTime()+c*24*60*60*1e3),e=e.toGMTString(),a&&(document.cookie=a+"="+b+";expires="+e+";path="+d)},
   getCookie:	function (a){var b=new RegExp(a+"=[^;]+","i");return a&&document.cookie.match(b)?document.cookie.match(b)[0].split("=")[1]:""},
@@ -19,7 +19,7 @@ FM.form = {
   forceGlobalLinks :  function (a){var b=(FM.form.domain+a).replace(/(\/slearnctr|\/loanlookup)(uat)?/,"");return b},
   useOmni:function(){if(typeof somniTL === "function" && !FM.form.hostname.match(/localhost/) && !FM.form.pathElements[0].match(/^iw/)){return true} else{return false}},
   toggleClick:function(){var f=arguments;return this.each(function(){var it=0;$(this).on("click",function(){f[it].apply(this, arguments);it=(it+1) % f.length;});})},
-  setTimer: function(routine,delay) { if(routine && delay>0){ clearTimeout(fmTimer); fmTimer = setTimeout(routine, delay);}},
+  setTimer: function(routine,delay) { if(routine && delay>0){ clearTimeout(FM.form.fmTimer); FM.form.fmTimer = setTimeout(routine, delay);}},
   resetReveal: function(){if ($('.reveal:visible').length === 0) {$('.is-reveal-open').removeClass('is-reveal-open');}},
   offsetReveal: function(){var rev = $(".reveal[aria-hidden='false']").filter('.full');  if(rev.length){ rev.css('top', 0); console.log('reset top');}},
   omniNavLink:function(event){var $tg=$(event.target),$lk=$tg.closest('a,area'),trig='link',desc='',ltype='o',txt='',dir=FM.form.pathElements[0].length?FM.form.pathElements[0]:'homepage',locale=''; 
@@ -79,10 +79,10 @@ FM.form = {
     }
   }
 };
-
 for (var x in FM.form.QueryPairs) {
   QueryParam[decodeURIComponent(FM.form.QueryPairs[x].split('=')[0] || "")] = decodeURIComponent(FM.form.QueryPairs[x].split('=')[1] || "");
 };
+
 $("input[type='text'],input[type='search']").on('change',function(){var v = $(this).val();$(this).val(FM.form.trimWhiteSpace(v));});
 // process offsite
 $('[href]').filter('.offsite, [rel="external"]').each(function(){

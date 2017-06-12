@@ -1,7 +1,5 @@
 
-# Abide Form Validation
-
-## The Basics ##
+# Form Validation Basics
 
 To have a form validate with abide, simple add the attribute `data-abide` to the `form` tag.  You should also use the `novalidate` attribute to disable any browser validation that could conflict with Abide.
 
@@ -16,7 +14,7 @@ Then build your form fields:
 There are additional details below on requiring different field types, validating against specific patterns, omitting some fields from validation, and customizing error messages.
 
 ```html_example
-<form data-abide novalidate>
+<form id="form1" data-abide novalidate>
   <label class="icon-required" for="Name">Full Name</label> 
   <input id="Name" name="Name" required type="text" />
 
@@ -104,9 +102,9 @@ There are additional details below on requiring different field types, validatin
 </form>
 ```
 
----
 
-## Required Fields ##
+
+# Required Fields
 
 To visually alert the user that a field is required, add class `.icon-required` to the field's label or to the fieldset's legend.
 
@@ -118,7 +116,7 @@ Then, for most fields, all you need to do is to add the attribute `required` to 
 
 
 ```html_example
-<form data-abide novalidate>
+<form id="form2" data-abide novalidate>
   <label class="icon-required" for="req1">Example of a <strong>required</strong> text field</label> 
   <input id="req1" name="field" type="text" required  aria-describedby="reqHelp1" />
   <p class="help-text" id="reqHelp1">This mothod works for inputs with any text-based type: text, email, url, password, tel, etc.</p>
@@ -135,30 +133,30 @@ Then, for most fields, all you need to do is to add the attribute `required` to 
       
   <fieldset>
     <legend class="icon-required">Example of a single <strong>required</strong> checkbox</legend>
-    <input id="checkbox3" type="checkbox" value="I agree" required><label for="checkbox3">Checkbox 3</label>
+    <input id="checkbox3" name="checkbox3" type="checkbox" value="I agree" required><label for="checkbox3">Checkbox 3</label>
   </fieldset>
   
   <fieldset class="checked-group">
     <legend class="icon-required">Example of a group of checkboxes, where one (or more) is <strong>required</strong></legend>
-    <input id="checkbox1req" type="checkbox" data-validator="checked_required"><label for="checkbox1req">Checkbox 1</label>
-    <input id="checkbox2req" type="checkbox" data-validator="checked_required"><label for="checkbox2req">Checkbox 2</label>
-    <input id="checkbox3req" type="checkbox" data-validator="checked_required"><label for="checkbox3req">Checkbox 3</label>        
+    <input id="checkbox1req" name="checkbox1req" type="checkbox" data-validator="checked_required"><label for="checkbox1req">Checkbox 1</label>
+    <input id="checkbox2req" name="checkbox2req" type="checkbox" data-validator="checked_required"><label for="checkbox2req">Checkbox 2</label>
+    <input id="checkbox3req" name="checkbox3req" type="checkbox" data-validator="checked_required"><label for="checkbox3req">Checkbox 3</label>        
   </fieldset> 
 
   <fieldset class="checked-group" data-validator-abide-min="2" data-validator-abide-max="4">
-    <legend class="icon-required">Example of a group of checkboxes, where two-four are <strong>required</strong></legend>
+    <legend class="icon-required">Example of a group of checkboxes, where 2-4 are <strong>required</strong></legend>
     <div class="row medium-up-2 large-up-3 xlarge-up-6">
-      <div class="column"><input id="checkbox4" type="checkbox" value="4" data-validator="checked_required"><label for="checkbox4">Checkbox 4</label></div>
-      <div class="column"><input id="checkbox5" type="checkbox" value="5" data-validator="checked_required"><label for="checkbox5">Checkbox 5</label></div>
-      <div class="column"><input id="checkbox6" type="checkbox" value="6" data-validator="checked_required"><label for="checkbox6">Checkbox 6</label></div>
-      <div class="column"><input id="checkbox7" type="checkbox" value="7" data-validator="checked_required"><label for="checkbox7">Checkbox 7</label></div> 
-      <div class="column"><input id="checkbox8" type="checkbox" value="8" data-validator="checked_required"><label for="checkbox8">Checkbox 8</label></div>
-      <div class="column"><input id="checkbox9" type="checkbox" value="9" data-validator="checked_required"><label for="checkbox9">Checkbox 9</label></div>
+      <div class="column"><input name="checkbox4" id="checkbox4" type="checkbox" value="4" data-validator="checked_required"><label for="checkbox4">Checkbox 4</label></div>
+      <div class="column"><input name="checkbox5" id="checkbox5" type="checkbox" value="5" data-validator="checked_required"><label for="checkbox5">Checkbox 5</label></div>
+      <div class="column"><input name="checkbox6" id="checkbox6" type="checkbox" value="6" data-validator="checked_required"><label for="checkbox6">Checkbox 6</label></div>
+      <div class="column"><input name="checkbox7" id="checkbox7" type="checkbox" value="7" data-validator="checked_required"><label for="checkbox7">Checkbox 7</label></div> 
+      <div class="column"><input name="checkbox8" id="checkbox8" type="checkbox" value="8" data-validator="checked_required"><label for="checkbox8">Checkbox 8</label></div>
+      <div class="column"><input name="checkbox9" id="checkbox9" type="checkbox" value="9" data-validator="checked_required"><label for="checkbox9">Checkbox 9</label></div>
     </div>
   </fieldset>
   
   <label class="icon-required" for="reqSelect">Example of a <strong>required</strong> single-select list</label>
-  <select id="reqSelect" required>
+  <select id="reqSelect" name="reqSelect" required>
     <option value="" selected>Select One</option>
     <option value="showboat">Showboat</option>
     <option value="redwing">Redwing</option>
@@ -167,7 +165,7 @@ Then, for most fields, all you need to do is to add the attribute `required` to 
   </select>
 
   <label class="icon-required" for="car_select">Example of a <strong>required</strong> multi-select list</label>
-  <select multiple id="car_select" required size="7">
+  <select multiple id="car_select" name="car_select" required size="7">
     <option value="aston">Aston Martin</option>
     <option value="audi">Audi</option>
     <option value="bmw">BMW</option>
@@ -180,6 +178,7 @@ Then, for most fields, all you need to do is to add the attribute `required` to 
   <div class="row">
     <div class="medium-3 column">
       <button class="button primary" type="submit">Submit</button>
+      <button class="button" type="reset">Reset</button>
     </div>
     <div class="medium-9 column">
       <div class="callout small background-red" style="display: none;" data-abide-error data-closable>
@@ -191,60 +190,9 @@ Then, for most fields, all you need to do is to add the attribute `required` to 
 </form>
 ```
 
----
 
-## Equal Fields ##
 
-Sometimes you need to make a user enter data twice to validate that it is accurate.  In such cases, use the `data-equalto` attribute and give it a value of the matching fields ID.
-
-```html_example
-<p>Test the form to see how the validation works for equal fields, and how to provide custom error messages.</p>
-<form data-abide novalidate>
-  <div class="row">
-    <div class="medium-6 column">
-      <label class="icon-required" for="password">Create a New Password</label>
-      <input type="password" id="password" name="new_password" required >
-    </div>
-    <div class="medium-6 column">
-      <label class="icon-required" for="password_confirmation">Re-enter Password</label>
-      <input type="password" id="password_confirmation" required data-equalto="password">
-      <span class="form-error">
-        Your passwords do not match.
-      </span>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="medium-6 large-12 xlarge-6 column">
-      <label class="icon-required" for="Email">Email Address</label> 
-      <input id="Email" name="user-email" required type="email" />
-    </div>
-    <div class="medium-6 large-12 xlarge-6 column">
-      <label class="icon-required" for="email_confirmation">Confirm Email Address</label> 
-      <input id="email_confirmation" required data-equalto="Email" type="email" />      
-      <span class="form-error">
-        Your email addresses do not match.
-      </span>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="medium-3 column">
-      <button class="button primary" type="submit">Submit</button>
-    </div>
-    <div class="medium-9 column">
-      <div class="callout small background-red" style="display: none;" data-abide-error data-closable>
-        <button class="close-button" data-close="" aria-label="Dismiss alert"><span aria-hidden="true">&times;</span></button>
-        <p class="enlarge">Please review your form for errors.</p>
-      </div>
-    </div>    
-  </div>
-</form>
-```
-
----
-
-## Validation and Patterns
+# Validation and Patterns
 
 Input fields with the following types will validate agaisnt their type's pattern.
 
@@ -304,7 +252,7 @@ For complex forms, make the error message closable.
 Abide will not validate form fields that are disabled, hidden, or that contain the attribute `data-abide-ignore`.
 
 ```html
-<form data-abide novalidate>
+<form id="form3" data-abide novalidate>
   <label for="disabledExample">Disabled Field</label>
   <input type="text" placeholder="Disabled fields are not validated" disabled id="disabledExample">
 
@@ -317,34 +265,109 @@ Abide will not validate form fields that are disabled, hidden, or that contain t
 
 ---
 
-## Event Listener
+## Equal Fields
 
-Most forms require **no additional javascript** to validate and submit.  Refer to the following if you need to run additional code as part of the validation.
+Sometimes you need to make a user enter data twice to validate that it is accurate.  In such cases, use the `data-equalto` attribute and give it a value of the matching fields ID.
+
+```html_example
+<p>Test the form to see how the validation works for equal fields, and how to provide custom error messages.</p>
+<form id="form4" data-abide novalidate>
+  <div class="row">
+    <div class="medium-6 column">
+      <label class="icon-required" for="password">Create a New Password</label>
+      <input type="password" id="password" name="new_password" required >
+    </div>
+    <div class="medium-6 column">
+      <label class="icon-required" for="password_confirmation">Re-enter Password</label>
+      <input type="password" id="password_confirmation" required data-equalto="password">
+      <span class="form-error">
+        Your passwords do not match.
+      </span>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="medium-6 large-12 xlarge-6 column">
+      <label class="icon-required" for="Email">Email Address</label> 
+      <input id="Email" name="user-email" required type="email" />
+    </div>
+    <div class="medium-6 large-12 xlarge-6 column">
+      <label class="icon-required" for="email_confirmation">Confirm Email Address</label> 
+      <input id="email_confirmation" required data-equalto="Email" type="email" />      
+      <span class="form-error">
+        Your email addresses do not match.
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-3 column">
+      <button class="button primary" type="submit">Submit</button>
+    </div>
+    <div class="medium-9 column">
+      <div class="callout small background-red" style="display: none;" data-abide-error data-closable>
+        <button class="close-button" data-close="" aria-label="Dismiss alert"><span aria-hidden="true">&times;</span></button>
+        <p class="enlarge">Please review your form for errors.</p>
+      </div>
+    </div>    
+  </div>
+</form>
+```
+
+
+
+# Event Listener
+
+<p class="lead">Most forms require **no additional javascript** to validate and submit.</p>
+
+The following is provided if you need to run additional code as part of the validation.
 
 Setup event listener after foundation is initialized (especially for formvalid/forminvalid). Easier to chain via document selector.
-* valid.zf.abide and invalid.zf.abide are field level events, triggered in validateInput function 
+- `valid.zf.abide` and `invalid.zf.abide` are field level events, triggered in validateInput function 
   *   ev.target is the DOM field element, 
   *   elem is jQuery selector for field element
-* formvalid.zf.abide and forminvalid.zf.abide are form events, triggered in validateForm function
+- `formvalid.zf.abide` and `forminvalid.zf.abide` are form events, triggered in validateForm function
+  *   ev.target is the DOM form element, 
+  *   frm is jQuery selector for form element
+- `formreset.zf.abide` is a form event, triggered when the form has been reset
+  *   ev.target is the DOM form element, 
+  *   frm is jQuery selector for form element
+- `submit` is a form event, triggered when the form has been reset
   *   ev.target is the DOM form element, 
   *   frm is jQuery selector for form element
 
+
 ```javascript
 $(document)
-.on("forminvalid.zf.abide", function(ev,frm) {  
-  // custom code for when form fails validation
-})
-.on("formvalid.zf.abide", function(ev,frm) {    // form validation passed, form will submit if submit event not returned false
-  // custom code for when form passes validation, ajax calls should go here
-})
-.on("submit", function(ev) {   // submit happens afer successful validation
-  // custom code for when form submits 
-  //  to prevent submit use  ev.preventDefault();
-});
-  
-// You can also bind field or form event selectively
-$("#foo").on("invalid.zf.abide", function(ev,el) {
-  alert("Input field foo is invalid");
+  // field element is invalid
+  .on("invalid.zf.abide", function(ev,elem) {
+    console.log("Field id "+ev.target.id+" is invalid");
+  })
+  // field element is valid
+  .on("valid.zf.abide", function(ev,elem) {
+    console.log("Field name "+elem.attr('name')+" is valid");
+  })
+  // form validation failed
+  .on("forminvalid.zf.abide", function(ev,frm) {
+    console.log("Form id "+ev.target.id+" is invalid");
+  })
+  // form validation passed, form will submit if submit event not returned false
+  .on("formvalid.zf.abide", function(ev,frm) {
+    console.log("Form id "+frm.attr('id')+" is valid");
+    // ajax post form 
+  })
+  // to prevent form from submitting upon successful validation
+  .on("submit", function(ev, frm) {
+    ev.preventDefault();
+    console.log("Submit for form id "+ev.target.id+" intercepted");
+  })
+  // form was reset
+  .on("formreset.zf.abide", function(ev, frm) {
+    console.log("Form id "+frm.attr('id')+" was reset");
+  });
+// You can bind field or form event selectively
+$("#foo").on("invalid.zf.abide", function(ev,elem) {
+  alert("Input field #"+elem.attr('id')+" is invalid");
 });
 $("#bar").on("formvalid.zf.abide", function(ev,frm) {
   alert("Form is valid, finally!");
@@ -353,7 +376,3 @@ $("#bar").on("formvalid.zf.abide", function(ev,frm) {
 ```
 
 ---
-
-<script>
-window.onload = codeCollapse;
-</script>

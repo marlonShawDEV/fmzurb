@@ -22,15 +22,17 @@
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="stylesheet" href="/ss/app_corp.css">
     <link rel="stylesheet" href="/ss/homepage.css" />
-
     <!-- Style guide-specific CSS goes here. -->
     <style>
     #top {
       width:100%;
       position:fixed;
       top: 0;   
-      padding: 0.5rem 0; 
+      padding: 0.5rem 0 0; 
       z-index: 1001;      
+    }
+    form.form {
+      margin-bottom: 0;
     }
     /* This styles individual sections of the style guide */
     .ss-section:not(:last-child) {
@@ -124,17 +126,19 @@
       <div class="row column">
         <form class="form float-right">
           <select id="ssnav">
+            <option value="">Select Component</option>
             {{#each pages}}
               <option value="#{{ anchor }}">{{ title }}</option>
             {{/each}}
           </select>
         </form>
-        <h1>Corporate Style Guide</h1>
+        <h1 class="subtitle">Corporate Style Guide</h1>
       </div>
     </div>
     
-    <div class="content-band">    
+    <div class="content-band">
       <div class="row column" id="code-content">
+      <p></p>
           {{#each pages}}
           <div class="ss-section" id="{{ anchor }}">
             <div class="row">
@@ -166,9 +170,12 @@
       });
     }
     $("#ssnav").change(function() { 
-      var x = $(this).val(); 
+      var x = $(this).val() || ''; 
+      if(x!==''){
       location.hash = '';
       location.hash = x;
+      }
+      $("#ssnav")[0].selectedIndex = 0;
     }); 
     </script>
     

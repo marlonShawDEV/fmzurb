@@ -8,8 +8,8 @@
     <title>Style Guide</title>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@FreddieMac" />
-    <meta property="og:title" content="Style Guide: Freddie Mac Corporate" />
-    <meta name="twitter:title" content="Style Guide: Freddie Mac Corporate"/>
+    <meta property="og:title" content="Style Guide: Freddie Mac" />
+    <meta name="twitter:title" content="Style Guide: Freddie Mac" />
     <meta name="Description" content="The styleguide is based on the Foundation framework." />
     <meta property="og:description" content="The styleguide is based on the Foundation framework." />
     <meta name="twitter:description" content="The styleguide is based on the Foundation framework." />
@@ -28,8 +28,11 @@
       width:100%;
       position:fixed;
       top: 0;   
-      padding: 0.5rem 0; 
+      padding: 0.5rem 0 0; 
       z-index: 1001;      
+    }
+    form.form {
+      margin-bottom: 0;
     }
     /* This styles individual sections of the style guide */
     .ss-section:not(:last-child) {
@@ -64,11 +67,15 @@
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
     }
+      .color-block code {
+        text-transform: none;
+      }
       .color-block span {
         display: block;
         width: 100%;
         height: 100px;
         margin-bottom: 0.42857rem;
+        padding: 1rem;
       }
     
     /* This styles code blocks used for examples. */
@@ -106,7 +113,38 @@
     @media screen and (max-width: 35em) {
       #top h1 { float: left; font-size: 20px; }
       #top select { font-size: 14px; }
-    }
+    }    
+    .callout.secondary {
+        background-color: #eaeaea;
+        color: #0a0a0a;
+        border: 1px solid rgba(10, 10, 10, 0.25);
+    }    
+    .row.display {
+      background: #eee;
+      font-size: 11px;
+      margin-bottom: 10px;
+      line-height: 2rem;
+      border: solid 1px #c6c6c6;
+      margin-left: 0 !important;
+      margin-right: 0 !important; }
+      .row.display .column:nth-child(2), .row.display .column.small-centered, .row.display .column.large-centered {
+        background: #e1e1e1; }
+      .row.display .column.color-end {
+        background: #d5d5d5; }
+
+    .row.display-end {
+      background: #fff;
+      font-size: 11px;
+      margin-bottom: 10px;
+      line-height: 2rem;
+      border: solid 1px #c6c6c6;
+      margin-left: 0 !important;
+      margin-right: 0 !important; }
+      .row.display-end .column {
+        background: #e1e1e1;
+        border-left: 1px solid #c6c6c6; }
+        .row.display-end .column.color-end {
+          background: #d5d5d5; }
 
      /* from href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css" */
     .hljs{display:block;overflow-x:auto;padding:0.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.hljs-comment,.diff .hljs-header{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#008080}.hljs-string,.hljs-tag .hljs-value,.hljs-doctag,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.scss .hljs-preprocessor{color:#900;font-weight:bold}.hljs-list .hljs-keyword,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rule .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body,.hljs-name{color:#008080}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.clojure .hljs-keyword,.scheme .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}
@@ -119,17 +157,19 @@
       <div class="row column">
         <form class="form float-right">
           <select id="ssnav">
+            <option value="">Select Component</option>
             {{#each pages}}
               <option value="#{{ anchor }}">{{ title }}</option>
             {{/each}}
           </select>
         </form>
-        <h1>Style Guide</h1>
+        <h1 class="subtitle">Style Guide</h1>
       </div>
     </div>
     
-    <div class="content-band">    
+     <div class="content-band">
       <div class="row column" id="code-content">
+      <p></p>
           {{#each pages}}
           <div class="ss-section" id="{{ anchor }}">
             <div class="row">
@@ -139,7 +179,8 @@
             </div>
           </div>
           {{/each}}
-       
+        
+        <p class="text-center"><a class="button small" href="index.html">Back to Style Guides</a></p>
       </div>
     </div> 
     
@@ -160,14 +201,21 @@
         $code.hide(0);
       });
     }
-    $("#ssnav").change(function() { 
-      var x = $(this).val(); 
-      location.hash = '';
-      location.hash = x;
-    }); 
+    
+    if($("#ssnav").children('option').length<3) {
+      $("#ssnav").hide();
+    }   
+    else {
+      $("#ssnav").change(function() { 
+        var x = $(this).val() || ''; 
+        if(x!==''){
+        location.hash = '';
+        location.hash = x;
+        }
+        $("#ssnav")[0].selectedIndex = 0;
+      });
+    }
     </script>
-    
-    
 
   </body>
 </html>

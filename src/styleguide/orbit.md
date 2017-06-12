@@ -1,6 +1,6 @@
 
+# Carousel Basics
 
-<h1>Carousels</h1>
 <p class="lead">Each carousel is made up of a wrapper, a slide container, slides, and slide navigation including bullets and prev/next buttons.</p>
 
 **Slide wrapper**

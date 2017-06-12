@@ -24,15 +24,19 @@ function loadConfig() {
 }
 
 // Build the "dist" folder by running all of the below tasks
-// add in javascriptMFSBL, sassMfSbl, styleGuideMFSBL, if building for SBL
+// add in javascriptMFSBL, sassMfSbl, styleGuideMFSBL, sassMfInnovate, if building for SBL
 // add in javascriptNHM, sassNHM, styleGuideNHM, if building for NHM
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, javascript, javascriptMFSBL, javascriptNHM, sassNHM, sassMfSbl, sass, sassHomepage, images, copy), styleGuideMFSBL, styleGuideNHM, styleGuide));
+ gulp.series(clean, gulp.parallel(pages, javascript, javascriptMFSBL, javascriptNHM, sassNHM, sassMfInnovate, sassMfSbl, sass, sassHomepage, images, copy, copyStyleFiles), styleGuideMFSBL, styleGuideNHM, styleGuide));
+
+gulp.task('guide',
+ gulp.series(clean, stylePages, copyStyleFiles, styleGuide));
 
 // Build the site, run the server, and watch for file changes
+
 gulp.task('default',
   gulp.series('build', server, watch));
-
+  
 gulp.task('clean', 
   gulp.series(clean));
 
@@ -48,8 +52,11 @@ function clean(done) {
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
-  gulp.src(PATHS.assets) 
+  return gulp.src(PATHS.assets) 
     .pipe(gulp.dest(PATHS.dist));  
+}
+// Copy styleguide files
+function copyStyleFiles() {  
   return gulp.src('src/styleguide/files/**/*')
     .pipe(gulp.dest(PATHS.dist + '/styleguide/files'));
 }
@@ -67,6 +74,19 @@ function pages() {
     .pipe(gulp.dest(PATHS.dist));
 }
 
+// Copy page templates into finished HTML files
+function stylePages() {
+  return gulp.src('src/pages/styleguide/*.{html,hbs,handlebars}')
+    .pipe(panini({
+      root: 'src/pages/',
+      layouts: 'src/layouts/',
+      partials: 'src/partials/',
+      data: 'src/data/',
+      helpers: 'src/helpers/'
+    }))
+    .pipe(gulp.dest(PATHS.dist + '/styleguide'));
+}
+
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
   panini.refresh();
@@ -79,24 +99,36 @@ function styleGuide(done) {
   sherpa('src/styleguide/index_corp.md', {
     output: PATHS.dist + '/styleguide/styleguide_corp.html',
     template: 'src/styleguide/template_corp.html'
-  }, styleGuideGrid(done) ); 
+  }, styleGuideScripts(done) ); 
+}
+function styleGuideScripts(done) {
+  return sherpa('src/styleguide/scripts_corp.md', {
+    output: PATHS.dist + '/styleguide/styleguide_scripts_corp.html',
+    template: 'src/styleguide/template_corp.html'
+  }, styleGuideGrid(done)); 
 }
 function styleGuideGrid(done) {
-  return sherpa('src/styleguide/index_grid.md', {
+  return sherpa('src/styleguide/grid.md', {
     output: PATHS.dist + '/styleguide/styleguide_grid.html',
-    template: 'src/styleguide/template_grid.html'
+    template: 'src/styleguide/template_foundation.html'
+  }, styleGuideFluid(done)); 
+}
+function styleGuideFluid(done) {
+  return sherpa('src/styleguide/fluidtype.md', {
+    output: PATHS.dist + '/styleguide/styleguide_fluid.html',
+    template: 'src/styleguide/template_foundation.html'
   }, styleGuideAbide(done)); 
 }
 function styleGuideAbide(done) {
   return sherpa('src/styleguide/abide.md', {
     output: PATHS.dist + '/styleguide/styleguide_abide.html',
-    template: 'src/styleguide/template_grid.html'
+    template: 'src/styleguide/template_foundation.html'
   }, styleGuideEmbeds(done)); 
 }
 function styleGuideEmbeds(done) {
   return sherpa('src/styleguide/embeds.md', {
     output: PATHS.dist + '/styleguide/styleguide_embeds.html',
-    template: 'src/styleguide/template_grid.html'
+    template: 'src/styleguide/template_foundation.html'
   }, styleGuideOrbit(done)); 
 }
 function styleGuideOrbit(done) {
@@ -171,6 +203,22 @@ function sassMfSbl() {
     .pipe(browser.reload({ stream: true }));
 }
 // Compile Sass into CSS
+function sassMfInnovate() {
+  return gulp.src('src/assets/scss/app_mf_innovate.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    .pipe($.if(PRODUCTION, $.cssnano({safe: true, minifyGradients: false, calc:false, zindex:false, colormin:false, reduceInitial:false})))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/multifamily/new_standard/innovate/'))
+    .pipe(browser.reload({ stream: true }));
+}
+// Compile Sass into CSS
 // In production, the CSS is compressed
 function sassHomepage() {
   return gulp.src('src/assets/scss/home*.scss')
@@ -194,7 +242,7 @@ function sassNHM() {
     .pipe($.sass({
       includePaths: PATHS.sass
     })
-      .on('error', $.sass.logError))
+    .on('error', $.sass.logError))
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
@@ -306,14 +354,15 @@ function reload(done) {
 }
 
 // Watch for changes to static assets, pages, Sass, and JavaScript
-// If running for SBL, add in sassMfSbl, styleGuideMFSBL, javascriptMFSBL, into appropriate processes
+// If running for SBL, add in sassMfSbl, styleGuideMFSBL, javascriptMFSBL, sassMfInnovate into appropriate processes
 // If running for NHM, add in sassNHM, styleGuideNHM, javascriptNHM, into appropriate processes
 function watch() {
   gulp.watch(PATHS.assets, copy);
+  gulp.watch('src/styleguide/files/**/*').on('change', gulp.series(copyStyleFiles, browser.reload));
   gulp.watch('src/pages/**/*.html').on('change', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('change', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassMfSbl, browser.reload));
+  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassMfSbl, sassMfInnovate, browser.reload));
   gulp.watch('src/assets/js/**/*.js').on('change', gulp.series(javascript, javascriptNHM, javascriptMFSBL, browser.reload));
   gulp.watch('src/assets/img/**/*').on('change', gulp.series(images, browser.reload));
-  gulp.watch('src/styleguide/**').on('change', gulp.series(styleGuide, styleGuideNHM, styleGuideMFSBL, browser.reload));
+  gulp.watch('src/styleguide/*').on('change', gulp.series(styleGuide, styleGuideNHM, styleGuideMFSBL, browser.reload));
 }

@@ -22,7 +22,6 @@ PATHS:
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
     # "src/assets/**/**/*"
-    - "src/assets/docs/**/*"
     - "src/assets/**/vendor/*"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
@@ -121,7 +120,7 @@ PATHS:
     # Paths to your own project code are here   
     - "src/assets/js/fmGlobals.js"
     - "src/assets/js/prepModals.js"
-    # "src/assets/js/prepRotators.js"   
+    - "src/assets/js/prepRotators.js"   
     - "src/assets/js/appMf-sbl.js"
     # Individual Foundation components
   javascriptNhm:
@@ -156,7 +155,7 @@ PATHS:
     # Paths to your own project code are here   
     - "src/assets/js/fmGlobals.js"
     - "src/assets/js/prepModals.js"
-    # "src/assets/js/prepRotators.js" 
+    - "src/assets/js/prepRotators.js" 
     - "src/assets/js/shareWidget.js"  
     - "src/assets/js/appNhm.js"
     # Individual Foundation components

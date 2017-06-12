@@ -63,6 +63,14 @@ s_somni.split=new Function("l","d",""
 +"++]=l.substring(0,i);l=l.substring(i+d.length);}return a");
 
 s_somni.busUnit={
+  bios:"corporate",
+  homeownership:"corporate",
+  mortgage_help:"corporate",
+  avoidforeclosure:"corporate",  
+  smm:"corporate",
+  calculadoras:"corporate",
+  news:"corporate",
+  speeches:"corporate",  
   blog:"corporate",
   corporate:"corporate",
   perspectives:"corporate",
