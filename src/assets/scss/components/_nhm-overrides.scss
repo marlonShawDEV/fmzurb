@@ -334,33 +334,7 @@ h1 {
 }
 
 .no-border { border-width: 0 !important; }
-.orbit-container { padding: 0 2rem;}
-.orbit {
-  color: #464645;
-}
-.orbit-previous, 
-.orbit-next { 
-  width: 3rem; 
-  height: 3rem;
-  background: none;
-  top: 32%;
-  svg {
-    fill: #ccc;
-    stroke: none;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    svg {
-      fill: #aaa;
-    }
-  }
-}
 
-@include breakpoint(large){
-  .orbit-previous { left: -1rem; } 
-  .orbit-next { right: -1rem; }
-}
 
 .lender-block {
   padding-right: $gutter * 2.5;

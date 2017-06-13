@@ -40,7 +40,6 @@ if(flavor !== '') {
 
 ## FM Usage
 
-
 All global variables and functions are defined as properties of [FM.form](#fm-form). 
 
 If you are writing other JavaScript plugins, you can utilize additional namespacing parallel to FM.form.  For example:
@@ -109,7 +108,6 @@ FM.form's properties store numerous variables and functions.
 | FM.form.omniNavLink | function       | routine that tracks and names navigation clicks. no return value. |
 
 ---
-
 
 ## FM.form.setCookie
 
