@@ -216,38 +216,61 @@ thumbnail
       $black
     </div>
   </div>
+</div>
+<br>
+<h2>Text Colors</h2>
+<div class="row up-1 medium-up-2 large-up-3 xlarge-up-4"  data-equalizer data-equalize-by-row="true">
   <div class="column">
-    <div class="color-block">
-      <span class="background-pear"> `.background-pear` </span>
-      $pear
+    <div class="color-block" data-equalizer-watch>
+      <span style="background: #333333"></span>
+      $dark-gray<br>
+      <div style="text-transform: none;">Used for accordions & class `.subheader`</div>
     </div>
   </div>
   <div class="column">
-    <div class="color-block">
-      <span class="background-celery"> `.background-celery` </span>
-      $celery
+    <div class="color-block" data-equalizer-watch>
+      <span style="background: #464645"></span>
+      $medium-gray<br>
+      $body-font-color<br>
+      <div style="text-transform: none;">default text color on light backgrounds</div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block" data-equalizer-watch>
+      <span class="background-gray"></span>
+      $fm-gray<br>
+      <div style="text-transform: none;">text color used in hollow callouts, card avatars, navigation, page-title, page-subtitle, card-subtitle</div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block" data-equalizer-watch>
+      <span class="background-white"></span>
+      $white
+      <div style="text-transform: none;">default text color on dark backgrounds</div>
     </div>
   </div>
 </div>
-<br>
-<h2>Other Defined Colors</h2>
+
+<h2>Mosaic Colors</h2>
+<p>The mosaic colors are not intended to stand alone. Instead they should be applied only when there is 3 or more items to shade.</p>
+
 <div class="row up-1 medium-up-2 large-up-3 xlarge-up-4">
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #333333"></span>
-      $dark-gray
-    </div>
-  </div>
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #464645"></span>
-      $medium-gray
-    </div>
-  </div>
   <div class="column">
     <div class="color-block">
       <span style="background: #88BD45"></span>
       $mosaic-start
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-celery"></span>
+      $celery
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-pear"></span>
+      $pear
     </div>
   </div>
   <div class="column">
@@ -258,6 +281,82 @@ thumbnail
   </div>
 </div>
 
+
+<h4 class="gutter-top">Example of a mosaic edge design</h4>
+
+```html_example
+<div class="hero-edge">
+</div>
+```
+
+<h4 class="gutter-top">Example of mosaic bottom borders (used on cards)</h4>
+
+```html_example
+<div class="row medium-up-2 large-up-4">
+  <div class="column">
+    <div class="card">
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+    </div>
+  </div>
+</div>
+<br>
+<div class="row medium-up-3">
+  <div class="column">
+    <div class="card">
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+    </div>
+  </div>
+</div>
+```
+
+<h4 class="gutter-top">Examples of mosaic backgrounds</h4>
+
+```html_example
+<div class="row collapse medium-up-3 mosaic-3">
+  <div class="column">
+    <div>col 1</div>
+  </div>
+  <div class="column">
+    <div>col 2</div>
+  </div>
+  <div class="column">
+    <div>col 3</div>
+  </div>
+</div>
+<br>
+<div class="row collapse medium-up-2 large-up-4 mosaic-4">
+  <div class="column">
+    <div>col 1</div>
+  </div>
+  <div class="column">
+    <div>col 2</div>
+  </div>
+  <div class="column">
+    <div>col 3</div>
+  </div>
+  <div class="column">
+    <div>col 4</div>
+  </div>
+</div>
+```
 
 
 
