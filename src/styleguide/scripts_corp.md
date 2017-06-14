@@ -9,11 +9,12 @@ This page provides details on existing JavaScript functions and variables that a
 
 There are two globally-scoped variables that are set in fmGlobals.js and one globally scoped function set in appCorp.js.
 
-| Variable Name | Value or Description |
-|---------------|----------------------|
-| QueryParam    | a JavaScript object consisting of all key=value pairs from the current page's query string |
-| FM            | a JavaScript object designed to avoid collisions with other objects or variables in the global namespace |
-| getWidth()    | function that returns the current width of the viewport  |
+| Name        | Type     | Value or Description |
+|-------------|----------|----------------------|
+| QueryParam  | variable | a JavaScript object consisting of all key=value pairs from the current page's query string |
+| getWidth()  | function | function that returns the current width of the viewport  |
+| Foundation  | variable | a JavaScript object used by the Foundation plugin and all of the Foundation scripts |
+| FM          | variable | a JavaScript object used to store all Freddie Mac custom variables and functions, named **FM** to avoid collisions with other plugins |
 
 ## QueryParam Usage
 
@@ -38,23 +39,6 @@ if(flavor !== '') {
 
 ---
 
-## FM Usage
-
-All global variables and functions are defined as properties of [FM.form](#fm-form). 
-
-If you are writing other JavaScript plugins, you can utilize additional namespacing parallel to FM.form.  For example:
-
-```javascript
-FM.newThing = {  	 
-  property1 : true,
-  property2 : 0,
-  property3 : function(){ alert("Hello World"); },
-  property4 : "Chocolate"
-}
-```
-
----
-
 ## getWidth() Usage
 
 Use to first test the page's curent width before executing some other code, for use when you need to execute code at a screen width that is not one of our breakpoints.
@@ -73,6 +57,47 @@ Example:
 ```javascript
 if (getWidth() > 500) { 
   // then execute additional code
+}
+```
+
+---
+
+## Foundation Usage
+
+Refer to [Foundation JavaScript](http://foundation.zurb.com/sites/docs/javascript.html) for details on the Foundation plugin.
+
+For the corporate template, the plugin is initialized with these settings.
+
+| Name                                        | Applies to     | Value |
+|---------------------------------------------|----------------|-------|
+| Foundation.Accordion.defaults.multiExpand   | accordions     | true  |
+| Foundation.Accordion.defaults.allowAllClosed| accordions     | true  |
+| Foundation.Reveal.deepLink                  | carousels      | true  |
+| Foundation.Reveal.fullScreen                | carousels      | true  |
+| Foundation.Reveal.resetOnClose              | carousels      | true  |
+| Foundation.Reveal.vOffset                   | carousels      | 0     |
+| Foundation.Tabs.defaults.deepLink           | tabs           | true  |
+| Foundation.Tabs.defaults.updateHistory      | tabs           | true  |
+| Foundation.Tabs.defaults.deepLinkSmudge     | tabs           | true  |
+| Foundation.Tabs.matchHeight                 | tabs           | true only if (getWidth() > 580) |
+| Foundation.Abide.defaults.patterns          | form validation| ['digits_dashes'] = /^[0-9-]*$/ |
+| Foundation.Abide.defaults.patterns          | form validation| ['tel'] = /^\(?\d{3}\)?[\s+|-]?\d{3}[\s+|-]?\d{4}/ |
+| Foundation.Abide.defaults                   | form validation| function to validatate form inputs with `checked_required` attribute |
+
+--
+
+## FM Usage
+
+All global variables and functions are defined as properties of [FM.form](#fm-form). 
+
+If you are writing other JavaScript plugins, you can utilize additional namespacing parallel to FM.form.  For example:
+
+```javascript
+FM.newThing = {  	 
+  property1 : true,
+  property2 : 0,
+  property3 : function(){ alert("Hello World"); },
+  property4 : "Chocolate"
 }
 ```
 

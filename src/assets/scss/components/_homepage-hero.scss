@@ -11,7 +11,7 @@
   .hero {  // default hero style, family with arms held up to make house outline
     position: relative;
     padding: rem-calc(20 0 15);
-    background: transparent url('/images/hero/homepage_hero2_mobile.jpg') no-repeat bottom left;
+    background: $fm-gray url('/images/hero/homepage_hero2_mobile.jpg') no-repeat bottom left;
     color: $white;    
     background-size: cover;
     @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) - 120px)) {
@@ -53,6 +53,7 @@
     position: relative;   
     color: $white;    
     background-size: cover;    
+    background-color: $fm-gray;
     background-repeat: no-repeat;
     background-position: top center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero/homepage_hero_nhm_mobile.jpg");

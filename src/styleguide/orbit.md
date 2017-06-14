@@ -31,6 +31,10 @@
 - The default animation for the carousel is slide out the existing slide while sliding in the replacement slide (direction based on whether you are moving forward or backward through the slides).  
 - You have the option of disabling or changing the [slide animation](#slide_animation).
 
+<div class="callout background-blue">
+  <p class="flex-up">If you are going to use the built in controls for Orbit, avoid applying padding or margin (or gutter classes) to the orbit container, the slide container, or the slide elements. If you need additional white-space around a rotator, wrap it in a div and apply the extra padding or margins to that element.</p>
+</div>
+
 
 
 # Content Carousels
@@ -103,56 +107,6 @@ Example with `data-auto-play="false"` and `data-nav-buttons="false"`, and each s
 </div>
 ```
 
-## Carousel with Columns Inside Slides 
-
-Notice that the number of slides does not change between large and small widths -- the contents merely stack and unstack within each slide.
-This example also defines `data-nav-parent-class` to vertically align the buttons to the slide height instead of the full orbit height.
-
-```html_example
-<div class="orbit" role="region" aria-label="This is my slideshow" data-orbit data-nav-parent-class="orbit-container">
-  <ul class="orbit-container">
-    <li class="orbit-slide background-concrete">
-      <div class="callout large">
-        <h3 class="text-center">Slide One With Columns</h3>
-        <div class="row">
-          <div class="column medium-4">
-            <p class="text-center"><img src="files/orbit/01.jpg" /></p>
-          </div>
-          <div class="column medium-4">
-            <div class="callout small">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit labore.</p>
-            </div>
-          </div>
-          <div class="column medium-4">
-            <p class="text-center"><img src="files/orbit/02.jpg" /></p>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="orbit-slide background-concrete">
-      <div class="callout large">
-        <h3 class="text-center">Slide Two With Columns</h3>
-        <div class="row">
-          <div class="column medium-4">
-            <p class="text-center"><img src="files/orbit/03.jpg" /></p>
-          </div>
-          <div class="column medium-4">
-            <div class="callout small">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit labore.</p>
-            </div>
-          </div>
-          <div class="column medium-4">
-            <p class="text-center"><img src="files/orbit/04.jpg" /></p>
-          </div>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
-```
-
----
-
 ## White Overlay Navigation with Buttons and Bullets
 
 Example with `.bullets-overlay` class, `data-auto-play="false"`, and slides using background colors.
@@ -201,6 +155,56 @@ Example with `.bullets-overlay` class, `data-auto-play="false"`, and slides usin
         <h3>Slide Nine</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href="#">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <p><a class="button hollow">Button Link</a></p>
+      </div>
+    </li>
+  </ul>
+</div>
+```
+
+---
+
+## Carousel with Columns Inside Slides 
+
+Notice that the number of slides does not change between large and small widths -- the contents merely stack and unstack within each slide.
+This example also defines `data-nav-parent-class` to vertically align the buttons to the slide height instead of the full orbit height.
+
+```html_example
+<div class="orbit" role="region" aria-label="This is my slideshow" data-orbit data-nav-parent-class="orbit-container">
+  <ul class="orbit-container">
+    <li class="orbit-slide background-concrete">
+      <div class="callout large">
+        <h3 class="text-center">Slide One With Columns</h3>
+        <div class="row">
+          <div class="column medium-4">
+            <p class="text-center"><img src="files/orbit/01.jpg" /></p>
+          </div>
+          <div class="column medium-4">
+            <div class="callout small">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit labore.</p>
+            </div>
+          </div>
+          <div class="column medium-4">
+            <p class="text-center"><img src="files/orbit/02.jpg" /></p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="orbit-slide background-concrete">
+      <div class="callout large">
+        <h3 class="text-center">Slide Two With Columns</h3>
+        <div class="row">
+          <div class="column medium-4">
+            <p class="text-center"><img src="files/orbit/03.jpg" /></p>
+          </div>
+          <div class="column medium-4">
+            <div class="callout small">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit labore.</p>
+            </div>
+          </div>
+          <div class="column medium-4">
+            <p class="text-center"><img src="files/orbit/04.jpg" /></p>
+          </div>
+        </div>
       </div>
     </li>
   </ul>
@@ -472,7 +476,7 @@ The combination controls and bullets option used for carousels with `.bullets-ov
 
 ## Omit Controls <span id="omit-controls"></span>
 
-Set attribute `data-nav-buttons` to "false" to omit the prev/next buttons. 
+Set attribute `data-nav-buttons` to "false" to omit the prev/next buttons and their event handlers.  
 
 ```html_example
 <div class="row">
@@ -514,6 +518,7 @@ Set attribute `data-nav-buttons` to "false" to omit the prev/next buttons.
 ## Shift Controls Outside of Slide Container
 
 In this example, the wrapper has an extra class of `.orbit-controls-outside` to shift the position of the controls outside of the orbit container and make them larger.
+- Do not combine this option with `data-nav-parent-class="orbit-container"` which shifts controls inward.
 
 ```html_example
 <div class="row">
@@ -611,7 +616,7 @@ Step One: Define your new bullets container style using custom css classes, and 
 }
 </style>
 
-Step Two: On the wrapper, set attribute `data-box-of-bullets` to the custom class you created:
+Step Two: On the wrapper, set attribute `data-box-of-bullets` to the custom class you created. (This example also sets `data-nav-buttons` to false to disable the prev/next buttons):
 
 ```html_example
 <div class="orbit" role="region" aria-label="My slides" data-orbit  data-nav-buttons="false" data-box-of-bullets="bullets-box-custom">
@@ -744,43 +749,47 @@ Step Two, create your custom HTML.
 - Be sure your custom navigation includes accessibility hooks, such as screen reader-only text (wrapped in the class `.show-for-sr`), that explain what the controls do.
 
 ```html_example
-<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-automate-nav="false" data-box-of-bullets="orbit-thumbnails" data-auto-play="false">
-  <nav class="orbit-thumbnails">
-    <button data-slide="0" style="background-image: url(files/orbit/thumb01.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 1</span></button>
-    <button data-slide="1" style="background-image: url(files/orbit/thumb02.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 2</span></button>
-    <button data-slide="2" style="background-image: url(files/orbit/thumb03.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 3</span></button>
-    <button data-slide="3" style="background-image: url(files/orbit/thumb04.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 3</span></button>
-  </nav>
-  <ul class="orbit-container">
-    <div class="orbit-controls">
-      <button class="orbit-previous nav-thumbnail"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-      <button class="orbit-next nav-thumbnail"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+<div class="row">
+  <div class="large-10 xlarge-9 column large-centered">
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-automate-nav="false" data-box-of-bullets="orbit-thumbnails" data-auto-play="false">
+      <nav class="orbit-thumbnails">
+        <button data-slide="0" style="background-image: url(files/orbit/thumb01.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 1</span></button>
+        <button data-slide="1" style="background-image: url(files/orbit/thumb02.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 2</span></button>
+        <button data-slide="2" style="background-image: url(files/orbit/thumb03.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 3</span></button>
+        <button data-slide="3" style="background-image: url(files/orbit/thumb04.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 3</span></button>
+      </nav>
+      <div class="orbit-controls">
+        <button class="orbit-previous nav-thumbnail"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+        <button class="orbit-next nav-thumbnail"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+      </div>
+      <ul class="orbit-container">
+        <li class="is-active orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/01.jpg" alt="Space 1">
+            <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/02.jpg" alt="Space 2">
+            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/03.jpg" alt="Space 3">
+            <figcaption class="orbit-caption">Encapsulating</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/04.jpg" alt="Space 4">
+            <figcaption class="orbit-caption">Outta This World</figcaption>
+          </figure>
+        </li>
+      </ul>
     </div>
-    <li class="is-active orbit-slide">
-      <figure class="orbit-figure">
-        <img class="orbit-image" src="files/orbit/01.jpg" alt="Space 1">
-        <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-      </figure>
-    </li>
-    <li class="orbit-slide">
-      <figure class="orbit-figure">
-        <img class="orbit-image" src="files/orbit/02.jpg" alt="Space 2">
-        <figcaption class="orbit-caption">Lets Rocket!</figcaption>
-      </figure>
-    </li>
-    <li class="orbit-slide">
-      <figure class="orbit-figure">
-        <img class="orbit-image" src="files/orbit/03.jpg" alt="Space 3">
-        <figcaption class="orbit-caption">Encapsulating</figcaption>
-      </figure>
-    </li>
-    <li class="orbit-slide">
-      <figure class="orbit-figure">
-        <img class="orbit-image" src="files/orbit/04.jpg" alt="Space 4">
-        <figcaption class="orbit-caption">Outta This World</figcaption>
-      </figure>
-    </li>
-  </ul>
+  </div>
 </div>
 ```
 
@@ -798,36 +807,82 @@ There are four plugin options you can set to change the default effects:
 
 Since those option names are pretty *long*, you can also set them all in one HTML attribute, using `data-options`.
 
-Below is an example of the same image carousel shown above, but with a fade-in/fade-out animation.
+By default, slides transition every 5 seconds (5000 milliseconds). 
+- You can customize the timing of the delay by defining it on the wrapper using the `data-timer-delay` attribute and providing a value that is the number of milliseconds to dalay.
+
+---
+
+Below is an example of the same image carousel shown above, but with a **fade-in/fade-out** animation.
 
 ```html_example
-<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-  <ul class="orbit-container">
-    <li class="is-active orbit-slide">
-      <figure class="orbit-figure">
-        <img class="orbit-image" src="files/orbit/01.jpg" alt="Space">
-        <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-      </figure>
-    </li>
-    <li class="orbit-slide">
-      <figure class="orbit-figure">
-        <img class="orbit-image" src="files/orbit/02.jpg" alt="Space">
-        <figcaption class="orbit-caption">Lets Rocket!</figcaption>
-      </figure>
-    </li>
-    <li class="orbit-slide">
-      <figure class="orbit-figure">
-        <img class="orbit-image" src="files/orbit/03.jpg" alt="Space">
-        <figcaption class="orbit-caption">Encapsulating</figcaption>
-      </figure>
-    </li>
-    <li class="orbit-slide">
-      <figure class="orbit-figure">
-        <img class="orbit-image" src="files/orbit/04.jpg" alt="Space">
-        <figcaption class="orbit-caption">Outta This World</figcaption>
-      </figure>
-    </li>
-  </ul>
+<div class="row">
+  <div class="medium-9 large-8 xlarge-7 column medium-centered">
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+      <ul class="orbit-container">
+        <li class="is-active orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/01.jpg" alt="Space">
+            <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/02.jpg" alt="Space">
+            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/03.jpg" alt="Space">
+            <figcaption class="orbit-caption">Encapsulating</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/04.jpg" alt="Space">
+            <figcaption class="orbit-caption">Outta This World</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </div>    
+</div>
+```
+
+Below is an example of the same image carousel shown above, but with a **hinge-in/hinge-out** animation, and `data-timer-delay` set to 7500 milliseconds.
+
+```html_example
+<div class="row">
+  <div class="medium-9 large-8 xlarge-7 column medium-centered">
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-timer-delay="7500" data-options="animInFromLeft:hinge-in-from-left; animInFromRight:hinge-in-from-right; animOutToLeft:hinge-out-from-left; animOutToRight:hinge-out-from-right;">
+      <ul class="orbit-container">
+        <li class="is-active orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/01.jpg" alt="Space">
+            <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/02.jpg" alt="Space">
+            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/03.jpg" alt="Space">
+            <figcaption class="orbit-caption">Encapsulating</figcaption>
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="files/orbit/04.jpg" alt="Space">
+            <figcaption class="orbit-caption">Outta This World</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 ```
 
@@ -835,7 +890,7 @@ Below is an example of the same image carousel shown above, but with a fade-in/f
 
 ### Disabling Transition Animation
 
-To disable the animation, set the `data-use-m-u-i` attribute to "false".  To stop the auto-play functionality, set the `data-auto-play` attribute to "false".
+To disable the animation (slide, fade, etc), set the `data-use-m-u-i` attribute to "false".  To stop the auto-play functionality, set the `data-auto-play` attribute to "false".
 
 ```html
 <div class="orbit" role="region" aria-label="Example with animation disabled" data-orbit data-auto-play="false" data-use-m-u-i="false">
