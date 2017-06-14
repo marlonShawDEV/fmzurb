@@ -650,7 +650,7 @@ Step Two: On the wrapper, set attribute `data-box-of-bullets` to the custom clas
 
 ## Design Your Own Navigation by Replacing the Controls and Bullets
 
-<p class="lead">You can choose to omit the deefault navigation and completely design your own custom controls and bullets.</p> 
+<p class="lead">You can choose to omit the default navigation and completely design your own custom controls and bullets.</p> 
 
 Step One, define the custom css for the elements you want to create.
  
@@ -747,11 +747,12 @@ Step Two, create your custom HTML.
 
 - Simple add an attribute of `data-automate-nav="false"` to the wrapper to omit the default buttons and bullets, and then create your own 
 - Be sure your custom navigation includes accessibility hooks, such as screen reader-only text (wrapped in the class `.show-for-sr`), that explain what the controls do.
+- You can even customize the [slide animation](#slide_animation).
 
 ```html_example
 <div class="row">
   <div class="large-10 xlarge-9 column large-centered">
-    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-automate-nav="false" data-box-of-bullets="orbit-thumbnails" data-auto-play="false">
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-automate-nav="false" data-box-of-bullets="orbit-thumbnails"  data-options="animInFromLeft:hinge-in-from-bottom; animInFromRight:hinge-in-from-top; animOutToLeft:hinge-out-from-bottom; animOutToRight:hinge-out-from-top;">
       <nav class="orbit-thumbnails">
         <button data-slide="0" style="background-image: url(files/orbit/thumb01.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 1</span></button>
         <button data-slide="1" style="background-image: url(files/orbit/thumb02.jpg)" class="button-thumbnail"><span class="show-for-sr">slide 2</span></button>
@@ -762,7 +763,7 @@ Step Two, create your custom HTML.
         <button class="orbit-previous nav-thumbnail"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
         <button class="orbit-next nav-thumbnail"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
       </div>
-      <ul class="orbit-container">
+      <ul class="orbit-container background-black">
         <li class="is-active orbit-slide">
           <figure class="orbit-figure">
             <img class="orbit-image" src="files/orbit/01.jpg" alt="Space 1">
@@ -855,7 +856,7 @@ Below is an example of the same image carousel shown above, but with a **hinge-i
 <div class="row">
   <div class="medium-9 large-8 xlarge-7 column medium-centered">
     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-timer-delay="7500" data-options="animInFromLeft:hinge-in-from-left; animInFromRight:hinge-in-from-right; animOutToLeft:hinge-out-from-left; animOutToRight:hinge-out-from-right;">
-      <ul class="orbit-container">
+      <ul class="orbit-container background-black">
         <li class="is-active orbit-slide">
           <figure class="orbit-figure">
             <img class="orbit-image" src="files/orbit/01.jpg" alt="Space">

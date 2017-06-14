@@ -2737,6 +2737,115 @@ Once you put it all together, here's what you get for equal width tabs!
 
 ---
 
+### Custom Tab Design
+
+<p class="lead">You can choose to override the default style of tabs within a single page by applying an additional class on tab-wrapper and defining css for tab compenents in that element.</p> 
+
+Step One, define the custom css for the elements you want to create.
+
+```css
+.tab-primary .tabs { 
+  background: #fff;
+  border-width: 0;  
+}
+.tab-primary .tabs-title {
+  border-bottom: 0px;
+  border-left: 2px solid #FFF;
+}
+.tab-primary .tabs-title > a {
+  background: #0096d2;
+  color: #FFF;
+  opacity: 0.7;
+  padding: 1.2em 1em 1em;
+  border-top: 6px solid #FFF;
+  border-bottom: 4px solid #0096d2;
+}
+.tab-primary .tabs-title > a:hover, 
+.tab-primary .tabs-title > a:focus {
+  opacity: 1;
+}
+.tab-primary .tabs-title > a[aria-selected='true'] {
+  opacity: 1;
+  border-bottom: 6px solid #ff6c00;
+  border-top: 6px solid #0096d2;
+  font-size: 115%;
+  padding-top: 0.7em;
+  font-weight: 400;
+} 
+.tab-primary .tabs-content {
+  background-color: #f4f9ff;
+  padding: 1rem 1rem 0;
+  border-bottom: 3px solid #0096d2;
+}
+```
+
+<style>
+.tab-primary .tabs { 
+  background: #fff;
+  border-width: 0;  
+}
+.tab-primary .tabs-title {
+  border-bottom: 0px;
+  border-left: 2px solid #FFF;
+}
+.tab-primary .tabs-title > a {
+  background: #0096d2;
+  color: #FFF;
+  opacity: 0.7;
+  padding: 1.2em 1em 1em;
+  border-top: 6px solid #FFF;
+  border-bottom: 4px solid #0096d2;
+}
+.tab-primary .tabs-title > a:hover, 
+.tab-primary .tabs-title > a:focus {
+  opacity: 1;
+}
+.tab-primary .tabs-title > a[aria-selected='true'] {
+  opacity: 1;
+  border-bottom: 6px solid #ff6c00;
+  border-top: 6px solid #0096d2;
+  font-size: 115%;
+  padding-top: 0.7em;
+  font-weight: 400;
+} 
+.tab-primary .tabs-content {
+  background-color: #f4f9ff;
+  padding: 1rem 1rem 0;
+  border-bottom: 3px solid #0096d2;
+}
+</style>
+
+Step Two, create your tab HTML and add in the custom class name to the `tab-wrapper`.
+
+```html_example
+<div class="tab-wrapper tab-primary" data-equalizer data-equalize-on="small">
+  <ul class="tabs small-up-3 horizontal" data-tabs id="custom-tabsB">
+    <li class="tabs-title is-active"><a data-equalizer-watch href="#customtab1" aria-selected="true">Tab one</a></li>
+    <li class="tabs-title"><a data-equalizer-watch href="#customtab2">Tab two Longer</a></li>
+    <li class="tabs-title"><a data-equalizer-watch href="#customtab3">Tab three</a></li>
+  </ul>
+  <div class="tabs-content" data-tabs-content="custom-tabsB">
+    <div class="tabs-panel is-active" id="customtab1">
+      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+    </div>
+    <div class="tabs-panel" id="customtab2">
+      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+
+      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+
+      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+    </div>
+    <div class="tabs-panel" id="customtab3">
+      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+
+      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+    </div>
+  </div>
+</div>
+```
+
+---
+
 ### Vertical Tabs
 
 For vertical tabs:
