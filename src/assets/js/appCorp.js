@@ -38,4 +38,3 @@ Foundation.Abide.defaults['validators']['checked_required'] =
   };
 
 $(document).foundation(); 
-
