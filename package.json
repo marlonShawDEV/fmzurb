@@ -48,5 +48,8 @@
       "es2015"
     ]
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "gulp-git": "^2.4.0"
+  }
 }

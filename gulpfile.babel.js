@@ -135,6 +135,12 @@ function styleGuideOrbit(done) {
   return sherpa('src/styleguide/orbit.md', {
     output: PATHS.dist + '/styleguide/styleguide_orbit.html',
     template: 'src/styleguide/template_foundation.html'
+  }, styleGuideTabs(done)); 
+}
+function styleGuideTabs(done) {
+  return sherpa('src/styleguide/tabs.md', {
+    output: PATHS.dist + '/styleguide/styleguide_tabs.html',
+    template: 'src/styleguide/template_foundation.html'
   }, done); 
 }
 function styleGuideSF(done) {

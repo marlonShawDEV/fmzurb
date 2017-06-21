@@ -595,22 +595,19 @@ $show-header-for-stacked: false;
 // --------
 
 $tab-margin: 0;
-$tab-background: $light-gray;
-$tab-color: $primary-color;
+$tab-background: $light-gray; 
+$tab-color: $medium-gray;   // hover or focus text color
 $tab-background-active: $light-gray;
-$tab-active-color: $primary-color;
-$tab-item-font-size: rem-calc(16);
-$tab-item-background-hover: $white;
-$tab-item-padding: 1.25em 1.5em;
+$tab-active-color: $primary-color;  // color of active tab text
+$tab-item-font-size: rem-calc(16);  // font-size at xxlarge
+$tab-item-background-hover: scale-color($tab-background, $lightness: -5%);
+$tab-item-padding: 1.25em;
 $tab-expand-max: 6;
-$tab-content-background: $white;
-$tab-content-border: $light-gray;
-$tab-content-color: foreground($tab-background, $primary-color);
-$tab-content-padding: $gutter 0;
-// these are my custom variables //
-$tab-item-color: scale-color($medium-gray, $lightness: 26%);
-$tab-item-hover-color: $medium-gray;
-$tab-item-active-color: $primary-color;
+$tab-content-background: none;  // set to none if no background used
+$tab-content-border: none; // set to none if no border used
+$tab-content-color: inherit;
+$tab-content-padding: none;  // set to none if no padding used
+
 
 // 34. Thumbnail
 // -------------

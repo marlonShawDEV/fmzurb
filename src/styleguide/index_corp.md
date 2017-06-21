@@ -1202,6 +1202,27 @@ Use the class `.show-on-focus` to hide an element, except when it has focus. Add
 
 
 
+# Padding Classes
+
+<p class="lead">Sometimes you need to add padding to the top, right, bottom, or left side of an item to match the standard gap between columns or cards.</p>
+
+You can add padding to an element by adding `.gutter-top`, `.gutter-right`, `.gutter-bottom`, or `gutter-left` classes to an element. There's also a shortcut class of `gutter-all` that will add a gutter on all 4 sides.
+- Do not apply the gutter classes to rows or columns, as they already have their own padding defined.
+- To set gutters so that they apply starting at a specific breakpoint (medium-xlarge), add `-breakpoint` to the class, such as `gutter-top-medium`. (no `-small` option since it would be identical to regular `.gutter-xx` classes)
+- To limit gutters so that they apply only at a single breakpoint (small-xlarge), add -breakpoint-only to the class, such as `gutter-top-small-only`.
+
+```html_example
+<div class="callout hollow">
+<p>Examples have been given a blue background to make the padding variations easier to see.</p>
+  <p class="background-blue gutter-top">I have a top gutter at all breakpoints</p>
+  <p class="background-blue gutter-bottom-medium-only">I have a bottom gutter at medium breakpoint only</p>
+  <p class="background-blue gutter-bottom-medium">I have a bottom gutter at medium breakpoint and higher</p>
+  <p class="background-blue gutter-all-xlarge">I have a gutter on all sides at xlarge breakpoint and higher</p>
+</div>
+```
+
+
+
 # Float Classes
 
 <p class="lead">Foundation includes a handful of helpful float classes to add common positioning behaviors to elements.</p>
@@ -1211,9 +1232,7 @@ Use the class `.show-on-focus` to hide an element, except when it has focus. Add
 ## Float Left/Right
 
 You can change the float behavior of an element by adding the `.float-left` or `.float-right` classes to an element. To clear floats, add the class `.clearfix` to the parent element.
-
-If the container you are floating may wind up touching other content, add `.gutter-left` or `gutter-right` to create the same gap as typically shows between two columns.
-
+- Tp prevent 2 floated containers from touching, use one or more of the [padding classes](#padding-classes).
 
 ```html_example
 <div class="callout clearfix">
@@ -2607,295 +2626,49 @@ When the form appears on a darker [background color](#colors), add the class `.o
 
 # Tabs
 
-<p class="lead">Tabs are elements that help you organize and navigate multiple panes of content in a single container.  Tab option include fixed-width horizontal tabs, unfixed width horizontal tabs, and vertical tabs.</p>
+<p class="lead">Tabs are elements that help you organize and navigate multiple panes of content in a single container.</p>
 
----
+## Guidelines
 
-## Basics
+1. Use tabs to alternate between views within the same context, **not** to navigate to different areas. Staying in place while alternating views is the primary reason for using tabs.
+2. Logically chunk the content behind the tabs so users can easily predict what they'll find when they select a given tab. 
+  - Card sorting is one option for researching this “mini-IA” problem. 
+  - If you don't find clearly distinct groupings, then tabs are likely the wrong interface control for managing your content.
+3. Use tabs only when users don't need to see content from multiple tabs simultaneously. 
+  - Switching back and forth between tabs puts an added burden on the user's short-term memory, increases cognitive load and interaction cost, and lowers usability.
+4. Design tab labels that are parallel in nature. 
 
-There are two pieces to a tabbed interface: the tabs themselves, and the content for each tab.
+### Design Options
 
-The tabs are grouped within an element with the classes `.tabs` and `.horizontal`, the attribute `data-tabs`, and a unique `id` attribute.
-- Each tab has the class `.tabs-title` and contains a link to a tab. The `href` of each link should match the ID of a tab.
-- To mark which tab is the default, add the class `.is-active` to the tab, and `aria-selected="true"` to the `<a>` element.
+There are numerous [design options](styleguide_tabs.html) for tabs beyond the example shown below. 
 
-```html
-<ul class="tabs horizontal" data-tabs id="example-tabs-sample">
-  <li class="tabs-title is-active"><a href="#panelsample1" aria-selected="true">Tab 1</a></li>
-  <li class="tabs-title"><a href="#panelsample2">Tab 2</a></li>
-</ul>
-```
+<a href="styleguide_tabs.html" class="button tertiary">Learn more about Tab Design Options</a>
 
-The tab content container has the class `.tabs-content` and a ` data-tabs-content` attribute that matches the ID of the coordinating tabs element, while each section has the class `.tabs-panel`.
-- Each content pane also has a unique ID, which is targeted by a link in the tabstrip.
-- To mark which pane is the default, add the class `.is-active` to that pane.
+### Example
 
-```html
-<div class="tabs-content" data-tabs-content="example-tabs-sample">
-  <div class="tabs-panel is-active" id="panelsample1">
-    <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-  </div>
-  <div class="tabs-panel" id="panelsample2">
-    <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-  </div>
-</div>
-```
-
----
-
-### Standard Horizontal Tabs
-
-For standard horizontal tabs, the tabs and the tab-content markup should be wrapped in a containing `<div>` with a class of `.tab-wrapper`.
-By default, tabs will wrap to a new line when there is insufficient width.  You can add a class to have horizontal tabs stack at a breakpoint -- for example, to stack the tabs at and below the medium breakpoint, add class `.stacked-for-medium` to the tabs element.
-
-```html
-<div class="tab-wrapper">
-  <ul class="tabs stacked-for-medium horizontal" data-tabs>
-  </ul>
-</div>
-```
-
-Once you put it all together, here's what you get for standard horizontal tabs!
+Horizontal set of 3 tabs, first tab active.
 
 ```html_example
 <div class="tab-wrapper">
-  <ul class="tabs stacked-for-medium horizontal" data-tabs id="example-tabs">
+  <ul class="tabs" data-tabs id="example-tabs">
     <li class="tabs-title is-active"><a href="#panelh1" aria-selected="true">Tab one</a></li>
-    <li class="tabs-title"><a href="#panelh2">Tab two longer name</a></li>
+    <li class="tabs-title"><a href="#panelh2">Tab two</a></li>
     <li class="tabs-title"><a href="#panelh3">Tab three</a></li>
-    <li class="tabs-title"><a href="#panelh4">Tab four</a></li>
   </ul>
-  <div class="tabs-content" data-tabs-content="example-tabs">
+  <div class="tabs-content gutter-top" data-tabs-content="example-tabs">
     <div class="tabs-panel is-active" id="panelh1">
-      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+      <p>Panel 1. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+      <ul>
+        <li>Vivamus hendrerit arcu sed erat molestie vehicula. </li>
+      </ul>
     </div>
     <div class="tabs-panel" id="panelh2">
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+      <p>Panel 2. Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
       <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
     </div>
     <div class="tabs-panel" id="panelh3">
+      <p>Panel 3. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
       <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-    </div>
-    <div class="tabs-panel" id="panelh4">
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-      <p><img src="files/kitten160.jpg" alt="kitty"></p>
-    </div>
-  </div>
-</div>
-```
-
----
-
-
-### Fixed-width Horizontal Tabs
-
-For fixed-sized horizontal tabs (where all tabs are the same width):
-1. Wrap the tabs in a `<div>` with a class of `.tab-wrapper`. 
-2. Add a class the the tabs element that defines the starting breakpoint and quantity of tabs. For example, `.small-up-3` represents 3 equal-width tabs, starting at the smallest breakpoint.  You can set more than one at a time -- for example, at small you could have 2 rows of 2 tabs and at medium have 1 row of 4 tabs by adding both `.small-up-2` and `.medium-up-4`.
-3. If you want to keep all tabs at equal heights, add an attribute of `data-equalizer`, and a `data-equalize-on` attribute to the `.tab-wrapper` container, set the value of `data-equalize-on` to the lowest breakpoint where the tabs should all match heights, and add the attribute `data-equalizer-watch` to each anchor tag to insure they remain the same height.  If you have mested items needing to be equalized, assign the same value to `data-equalizer` and each `data-equalizer-watch`.
-
-```html
-<div class="tab-wrapper" data-equalizer data-equalize-on="small">
-  <ul class="tabs horizontal small-up-3" data-tabs>
-    <li class="tabs-title is-active"><a data-equalizer-watch href="#panelsample1" aria-selected="true">Tab</a></li>
-    <li class="tabs-title"><a data-equalizer-watch href="#panelsample2">Tab</a></li>
-    <li class="tabs-title"><a data-equalizer-watch href="#panelsample3">Tab</a></li>
-  </ul>
-</div>
-```
-
-Once you put it all together, here's what you get for equal width tabs!
-
-
-```html_example
-<div class="tab-wrapper" data-equalizer data-equalize-on="small">
-  <ul class="tabs small-up-3 horizontal" data-tabs id="example-tabsB">
-    <li class="tabs-title is-active"><a data-equalizer-watch href="#panel1B" aria-selected="true">Tab one</a></li>
-    <li class="tabs-title"><a data-equalizer-watch href="#panel2B">Tab two Longer</a></li>
-    <li class="tabs-title"><a data-equalizer-watch href="#panel3B">Tab three</a></li>
-  </ul>
-  <div class="tabs-content" data-tabs-content="example-tabsB">
-    <div class="tabs-panel is-active" id="panel1B">
-      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-    </div>
-    <div class="tabs-panel" id="panel2B">
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-    </div>
-    <div class="tabs-panel" id="panel3B">
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-    </div>
-  </div>
-</div>
-```
-
----
-
-### Custom Tab Design
-
-<p class="lead">You can choose to override the default style of tabs within a single page by applying an additional class on tab-wrapper and defining css for tab compenents in that element.</p> 
-
-Step One, define the custom css for the elements you want to create.
-
-```css
-.tab-primary .tabs { 
-  background: #fff;
-  border-width: 0;  
-}
-.tab-primary .tabs-title {
-  border-bottom: 0px;
-  border-left: 2px solid #FFF;
-}
-.tab-primary .tabs-title > a {
-  background: #0096d2;
-  color: #FFF;
-  opacity: 0.7;
-  padding: 1.2em 1em 1em;
-  border-top: 6px solid #FFF;
-  border-bottom: 4px solid #0096d2;
-}
-.tab-primary .tabs-title > a:hover, 
-.tab-primary .tabs-title > a:focus {
-  opacity: 1;
-}
-.tab-primary .tabs-title > a[aria-selected='true'] {
-  opacity: 1;
-  border-bottom: 6px solid #ff6c00;
-  border-top: 6px solid #0096d2;
-  font-size: 115%;
-  padding-top: 0.7em;
-  font-weight: 400;
-} 
-.tab-primary .tabs-content {
-  background-color: #f4f9ff;
-  padding: 1rem 1rem 0;
-  border-bottom: 3px solid #0096d2;
-}
-```
-
-<style>
-.tab-primary .tabs { 
-  background: #fff;
-  border-width: 0;  
-}
-.tab-primary .tabs-title {
-  border-bottom: 0px;
-  border-left: 2px solid #FFF;
-}
-.tab-primary .tabs-title > a {
-  background: #0096d2;
-  color: #FFF;
-  opacity: 0.7;
-  padding: 1.2em 1em 1em;
-  border-top: 6px solid #FFF;
-  border-bottom: 4px solid #0096d2;
-}
-.tab-primary .tabs-title > a:hover, 
-.tab-primary .tabs-title > a:focus {
-  opacity: 1;
-}
-.tab-primary .tabs-title > a[aria-selected='true'] {
-  opacity: 1;
-  border-bottom: 6px solid #ff6c00;
-  border-top: 6px solid #0096d2;
-  font-size: 115%;
-  padding-top: 0.7em;
-  font-weight: 400;
-} 
-.tab-primary .tabs-content {
-  background-color: #f4f9ff;
-  padding: 1rem 1rem 0;
-  border-bottom: 3px solid #0096d2;
-}
-</style>
-
-Step Two, create your tab HTML and add in the custom class name to the `tab-wrapper`.
-
-```html_example
-<div class="tab-wrapper tab-primary" data-equalizer data-equalize-on="small">
-  <ul class="tabs small-up-3 horizontal" data-tabs id="custom-tabsB">
-    <li class="tabs-title is-active"><a data-equalizer-watch href="#customtab1" aria-selected="true">Tab one</a></li>
-    <li class="tabs-title"><a data-equalizer-watch href="#customtab2">Tab two Longer</a></li>
-    <li class="tabs-title"><a data-equalizer-watch href="#customtab3">Tab three</a></li>
-  </ul>
-  <div class="tabs-content" data-tabs-content="custom-tabsB">
-    <div class="tabs-panel is-active" id="customtab1">
-      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-    </div>
-    <div class="tabs-panel" id="customtab2">
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-    </div>
-    <div class="tabs-panel" id="customtab3">
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-
-      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-    </div>
-  </div>
-</div>
-```
-
----
-
-### Vertical Tabs
-
-For vertical tabs:
-1. Wrap the tabs and tab content elements in a `<div>` with a class of `.row`, `.collapse`, and `.tab-wrapper`. 
-2. Add the `.vertical` class to the tabs and tabs-content elements.
-3. Add attribute `data-equalizer-watch` to the tabs and tabs-content elements, and add `<div class="clearfix"></div>` to the end of the markup for each container to insure the tabs and the tab content area  remain the same height.
-4. Add `<div class="clearfix"></div>` to the end of the markup for each tab container to insure that the tab content area resizes to contain the content on each tab change.
-5. Place the tabstrip and the tab contents in grid columns to make them sit side-by-side.  In this example, tabs are 3-columns and tabbed content is 9 columns at the large breakpoint.
-6. To keep the tabs and content container at the same height, provide the wrapper with an attribute of `data-equalizer`, and a `data-equalize-on` attribute that defines the lowest breakpoint where the tabs should all match heights, and add attribute `data-equalizer-watch` to each tab link. If you have nested items needing to be equalized, assign the same value to `data-equalizer` and each `data-equalizer-watch`.
-
-Once you put it all together, here's what you get for vertical tabs!
-
-```html_example
-<div class="row collapse tab-wrapper" data-equalizer data-equalize-on="medium">
-  <div class="large-2 medium-3 column">
-    <ul class="tabs vertical" id="example-vert-tabsB" data-tabs data-equalizer-watch>
-      <li class="tabs-title is-active"><a href="#panel1vB" aria-selected="true">Tab one</a></li>
-      <li class="tabs-title"><a href="#panel2vB">Tab two</a></li>
-      <li class="tabs-title"><a href="#panel3vB">Tab three</a>
-      </li>
-    </ul>
-    <div class="clearfix"></div>
-  </div>
-  <div class="large-10 medium-9 column">
-    <div class="tabs-content vertical" data-tabs-content="example-vert-tabsB" data-equalizer-watch>
-      <div class="tabs-panel is-active" id="panel1vB">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <div class="clearfix"></div>
-      </div>
-      <div class="tabs-panel" id="panel2vB">
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <div class="clearfix"></div>
-      </div>
-      <div class="tabs-panel" id="panel3vB">
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
-        <img src= "files/kitten160.jpg" alt="cat">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <div class="clearfix"></div>
-      </div>
-      <div class="clearfix"></div>
     </div>
   </div>
 </div>

@@ -1,43 +1,47 @@
 ﻿{ "page": [
    {
-      "name":"Corporate Site",
-      "url":"styleguide_corp.html"
+      "name": "Corporate Site",
+      "url" : "styleguide_corp.html"
    },
    {
-      "name":"Corporate Scripts",
-      "url":"styleguide_scripts_corp.html"
+      "name": "Corporate Scripts",
+      "url" : "styleguide_scripts_corp.html"
    },
    {
-      "name":"Foundation Grid",
-      "url":"styleguide_grid.html"
+      "name": "Foundation Grid",
+      "url" : "styleguide_grid.html"
    },
    {
-       "name":"Foundation Orbit (Carousels)",
-       "url":"styleguide_orbit.html"
+      "name": "Foundation Orbit (Carousels)",
+      "url" : "styleguide_orbit.html"
    },
    {
-       "name":"Foundation Abide (Form Validation)",
-       "url":"styleguide_abide.html"
+      "name": "Foundation Abide (Form Validation)",
+      "url" : "styleguide_abide.html"
    },
    {
-       "name":"Foundation Embeds",
-       "url":"styleguide_embeds.html"
+      "name": "Foundation Tabs",
+      "url" : "styleguide_tabs.html"
    },
    {
-       "name":"Fluid Type",
-       "url":"styleguide_fluid.html"
+      "name": "Foundation Embeds",
+      "url" : "styleguide_embeds.html"
    },
    {
-      "name":"MF SBL",
-      "url":"styleguide_mfsbl.html"
+      "name": "Fluid Type",
+      "url" : "styleguide_fluid.html"
    },
    {
-      "name":"NHM",
-      "url":"styleguide_nhm.html"
+      "name": "MF SBL",
+      "url" : "styleguide_mfsbl.html"
    },
    {
-       "name":"My Home by Freddie Mac",
-       "url":"http://myhome.freddiemac.com/style_guide/"
+      "name": "NHM",
+      "url" : "styleguide_nhm.html"
+   },
+   {
+      "name": "My Home by Freddie Mac",
+      "url" : "http://myhome.freddiemac.com/style_guide/"
    }
   ]
 }

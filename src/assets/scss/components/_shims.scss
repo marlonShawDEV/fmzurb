@@ -1,3 +1,5 @@
+
+
 // content classes to add paddings, margins, gutters etc as needed.
 .gutter-top {
   padding-top: $gutter;
@@ -10,6 +12,49 @@
 }
 .gutter-right {
   padding-right: $gutter;
+}
+.gutter-all {
+  padding: $gutter;
+}
+
+// Allow gutters to be added only at or below a certain breakpoint.
+@each $size in $breakpoint-classes {  
+  @include breakpoint(#{$size} only) {
+    .gutter-top-#{$size}-only {
+      padding-top: $gutter;
+    }
+    .gutter-bottom-#{$size}-only {
+      padding-bottom: $gutter;
+    }
+    .gutter-left-#{$size}-only {
+      padding-left: $gutter;
+    }
+    .gutter-right-#{$size}-only {
+      padding-right: $gutter;
+    }
+    .gutter-all-#{$size}-only {
+      padding: $gutter;
+    }
+  }
+  @if $size != $-zf-zero-breakpoint {
+    @include breakpoint(#{$size}) {
+      .gutter-top-#{$size} {
+        padding-top: $gutter; 
+      }
+      .gutter-bottom-#{$size} {
+        padding-bottom: $gutter;
+      }
+      .gutter-left-#{$size} {
+        padding-left: $gutter;
+      }
+      .gutter-right-#{$size} {
+        padding-right: $gutter;
+      }
+      .gutter-all-#{$size} {
+        padding: $gutter;
+      }
+    }
+  }
 }
 
 

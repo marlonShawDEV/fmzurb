@@ -123,7 +123,7 @@ $(function(){
       FM.form.setTimer = setTimeout(FM.form.offsetReveal, 350);  
   }).on('resizeme.zf.trigger', function() { 
       FM.form.setTimer = setTimeout(FM.form.offsetReveal, 300);  
-  });
+  }).on('change.zf.tabs', function() { $(window).trigger('resize'); });
   // Site Catalyst trigger
   if (FM.form.useOmni()){
     s_somni.t(); 
