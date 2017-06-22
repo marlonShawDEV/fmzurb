@@ -87,8 +87,8 @@ $tab-content-padding: 1rem !default;
     width: auto;
   }
   .tabs-title {  
-    border-right-width: 2px; 
     border-bottom-width: 0px;
+    border-right-width: 2px; 
     &.is-active{
       border-bottom-width: 0px;
     }    
@@ -115,8 +115,8 @@ $tab-content-padding: 1rem !default;
   @include breakpoint(xxlarge) {
     font-size: $font-size;
   }
-  border-bottom-width: 2px;
   border-color: $tab-background;
+  border-bottom-width: 2px;
   &:hover,
   &:focus {
     border-color: $color;
@@ -195,7 +195,7 @@ $tab-content-padding: 1rem !default;
 ///
 @mixin tabs-edge-left {    
   border-left-width: 2px;
-  border-right-width: 0;
+  border-right-width: 0 !important;
 }
 
 // Sizes child elements so that `$n` number of items appear on each row.
@@ -211,7 +211,9 @@ $tab-content-padding: 1rem !default;
 .tabs {
   @include tabs-container;
 }
-
+.tabs.horizontal {
+  margin-bottom: $gutter;
+}
 .tabs.vertical {
   @include tabs-container-vertical;
 }
@@ -232,35 +234,6 @@ $tab-content-padding: 1rem !default;
   @include tabs-panel;
 }
 
-.tabs-title.edge-left {
-  @include tabs-edge-left;
-}
-.tabs-title.edge-left-medium {
-  @include breakpoint(medium) {
-    @include tabs-edge-left;
-  }
-}
-.tabs-title.edge-left-large {
-  @include breakpoint(large) {
-    @include tabs-edge-left;
-  }
-}
-// Custom options for block tabs
-@for $i from 1 through $tab-expand-max {
-  .tabs.small-up-#{$i} li {
-    @include block-tabs($i);
-  } 
-  .tabs.medium-up-#{$i} li {
-    @include breakpoint(medium) {
-      @include block-tabs($i);
-    }
-  }  
-  .tabs.large-up-#{$i} li {
-    @include breakpoint(large) {
-      @include block-tabs($i);
-    }
-  }      
-}
 // custom option to toggle between vertical and horizontal
 .tabs.vertical-for-small-only {
   @include breakpoint(small only) {
@@ -285,5 +258,43 @@ $tab-content-padding: 1rem !default;
 .tabs.vertical-for-large-up {
   @include breakpoint(large) {
     @include tabs-container-vertical;
+  }
+}
+
+// Custom options for block tabs
+@for $i from 1 through $tab-expand-max {
+  .tabs.small-up-#{$i} li {
+    @include block-tabs($i);
+  } 
+  .tabs.medium-up-#{$i} li {
+    @include breakpoint(medium) {
+      @include block-tabs($i);
+    }
+  }  
+  .tabs.large-up-#{$i} li {
+    @include breakpoint(large) {
+      @include block-tabs($i);
+    }
+  }
+}
+
+.tabs.medium-up-1 li,
+.tabs.large-up-1 li,
+.tabs.xlarge-up-1 li  {
+  width: 100%;
+  text-align: left;
+} 
+
+.tabs-title.edge-left {
+  @include tabs-edge-left;
+}
+.tabs-title.edge-left-medium {
+  @include breakpoint(medium) {
+    @include tabs-edge-left;
+  }
+}
+.tabs-title.edge-left-large {
+  @include breakpoint(large) {
+    @include tabs-edge-left;
   }
 }

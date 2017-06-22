@@ -13,9 +13,10 @@ The tab container is an element with the class `.tabs`, the attribute `data-tabs
 - Each tab within the container has the class `.tabs-title`. 
   - The `href` of each link should match the ID of a tab panel. Alternatively, the ID can be specified with the attribute `data-tabs-target`.
   - To mark which tab is the default, add the class `.is-active` to the tab, and `aria-selected="true"` to the `<a>` element.
+  - If the tabs will always be horizontal above the tab content, add class `.horizontal` to add a gutter between the tabs and the content.  (or you can add a gutter class to the tabs-panel)
 
 ```html
-<ul class="tabs" data-tabs id="example-tabs">
+<ul class="tabs horizontal" data-tabs id="example-tabs">
   <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Tab 1</a></li>
   <li class="tabs-title"><a data-tabs-target="#panel2" href="#/tabs/panel2">Tab 2</a></li>
 </ul>
@@ -66,7 +67,7 @@ Put it all together, and we get this:
 
 ```html_example
 <div class="tab-wrapper">
-  <ul class="tabs" data-tabs id="example-1">
+  <ul class="tabs horizontal" data-tabs id="example-1">
     <li class="tabs-title is-active"><a href="#tabpanel1" aria-selected="true">Tab 1</a></li>
     <li class="tabs-title"><a href="#tabpanel2">Tab 2</a></li>
     <li class="tabs-title"><a href="#tabpanel3">Tab 3</a></li>
@@ -74,7 +75,7 @@ Put it all together, and we get this:
     <li class="tabs-title"><a href="#tabpanel5">Tab 5</a></li>
     <li class="tabs-title"><a href="#tabpanel6">Tab 6</a></li>
   </ul>
-  <div class="tabs-content gutter-top" data-tabs-content="example-1">
+  <div class="tabs-content" data-tabs-content="example-1">
     <div class="tabs-panel is-active" id="tabpanel1">
       <p>one</p>
       <p>Check me out! I'm a super cool Tab panel with text content!</p>
@@ -116,29 +117,29 @@ By default, the width of each tab is flexible to accommodate the tab title text,
   <li><p>**Avoid** mixing extremely short and long tab tab titles in the same list.</p>
     <div class="gutter-all">
        <ul class="tabs" data-tabs id="what-not-to-do-1">
-        <li class="tabs-title is-active"><a aria-selected="true">One</a></li>
-        <li class="tabs-title"><a>Tab two has an extrememly long name</a></li>
-        <li class="tabs-title"><a>Three</a></li>
-        <li class="tabs-title"><a>4</a></li>
+        <li class="tabs-title is-active"><a href="#dummy" aria-selected="true">One</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab two has an extrememly long name</a></li>
+        <li class="tabs-title"><a href="#dummy">Three</a></li>
+        <li class="tabs-title"><a href="#dummy">4</a></li>
       </ul>
     </div>
   </li>
   <li><p>**Avoid** using an excessive number of tabs. Consider [using Accordions](styleguide_corp.html#accordions) instead.</p>
     <div class="gutter-all">
       <ul class="tabs" data-tabs id="what-not-to-do-2">
-        <li class="tabs-title is-active"><a aria-selected="true">Tab one</a></li>
-        <li class="tabs-title"><a>Tab two with long name</a></li>
-        <li class="tabs-title"><a>Tab three</a></li>
-        <li class="tabs-title"><a>Tab four with long name</a></li>
-        <li class="tabs-title"><a>Tab five</a></li>
-        <li class="tabs-title"><a>Tab six</a></li>
-        <li class="tabs-title"><a>Tab seven</a></li>
-        <li class="tabs-title"><a>Tab eight with an extra long name</a></li>
-        <li class="tabs-title"><a>Tab nine</a></li>
-        <li class="tabs-title"><a>Tab ten</a></li>
-        <li class="tabs-title"><a>Tab eleven</a></li>
-        <li class="tabs-title"><a>Tab twelve is not last</a></li>
-        <li class="tabs-title"><a>Tab thirteen is last</a></li>
+        <li class="tabs-title is-active"><a href="#dummy" aria-selected="true">Tab one</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab two with long name</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab three</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab four with long name</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab five</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab six</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab seven</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab eight with an extra long name</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab nine</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab ten</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab eleven</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab twelve is not last</a></li>
+        <li class="tabs-title"><a href="#dummy">Tab thirteen is last</a></li>
       </ul>
     </div>
   </li>
@@ -169,7 +170,7 @@ With fixed-width tabs, all tabs are the same width, with labels centered, and th
 
 ```html
 <div class="tab-wrapper">
-  <ul class="tabs small-up-3" data-tabs id="fixed-example" data-equalizer data-equalize-on="small">
+  <ul class="tabs small-up-3 horizontal" data-tabs id="fixed-example" data-equalizer data-equalize-on="small">
     <li class="tabs-title is-active"><a data-equalizer-watch href="#panelsample1" aria-selected="true">Tab One</a></li>
     <li class="tabs-title"><a data-equalizer-watch href="#panelsample2">Tab Two</a></li>
     <li class="tabs-title"><a data-equalizer-watch href="#panelsample3">Tab Three</a></li>
@@ -186,13 +187,13 @@ With fixed-width tabs, all tabs are the same width, with labels centered, and th
 
 
 ```html_example
-<div class="tab-wrapper">
-  <ul class="tabs small-up-3" data-tabs id="example-tabsB" data-equalizer data-equalize-on="small">
+<div class="tab-wrapper" data-equalizer data-equalize-on="small">
+  <ul class="tabs horizontal small-up-3" data-tabs id="example-tabsB">
     <li class="tabs-title is-active"><a data-equalizer-watch href="#panel1B" aria-selected="true">Tab one</a></li>
     <li class="tabs-title"><a data-equalizer-watch href="#panel2B">Tab two with long name</a></li>
     <li class="tabs-title"><a data-equalizer-watch href="#panel3B">Tab three</a></li>
   </ul>
-  <div class="tabs-content gutter-top" data-tabs-content="example-tabsB">
+  <div class="tabs-content" data-tabs-content="example-tabsB">
     <div class="tabs-panel is-active" id="panel1B">
       <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
     </div>
@@ -218,11 +219,11 @@ With fixed-width tabs, all tabs are the same width, with labels centered, and th
 
 To stack tabs vertically, add the `.vertical` class to the `.tabs` element. 
 
-```html_example
+```html
 <ul class="tabs vertical" id="example-vertical-tabs" data-tabs>
-  <li class="tabs-title is-active"><a aria-selected="true">Tab one</a></li>
-  <li class="tabs-title"><a>Tab two</a></li>
-  <li class="tabs-title"><a>Tab three</a>
+  <li class="tabs-title is-active"><a href="#dummy" aria-selected="true">Tab one</a></li>
+  <li class="tabs-title"><a href="#dummy">Tab two</a></li>
+  <li class="tabs-title"><a href="#dummy">Tab three</a>
   </li>
 </ul>
 ```
