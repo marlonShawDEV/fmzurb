@@ -289,33 +289,6 @@ h1 {
 }
 
 .no-border { border-width: 0 !important; }
-.orbit-container { padding: 0 2rem;}
-.orbit {
-  color: #464645;
-}
-.orbit-previous, 
-.orbit-next { 
-  width: 3rem; 
-  height: 3rem;
-  background: none;
-  top: 32%;
-  svg {
-    fill: #ccc;
-    stroke: none;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    svg {
-      fill: #aaa;
-    }
-  }
-}
-
-@include breakpoint(large){
-  .orbit-previous { left: -1rem; } 
-  .orbit-next { right: -1rem; }
-}
 
 .lender-block {
   padding-right: $gutter * 2.5;
@@ -459,17 +432,24 @@ hr.light-green {
 }
 
 .tips-landing-hero{
-    position: relative;
-    text-align: center;
-    color: white;
-    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/multifamily/images/sbl_hero_image.jpg);
-    background-repeat: no-repeat;
-    background-color: #502020;
-    background-position: top;
-    background-size: cover;
-    min-height: 300px;
+  position: relative;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/multifamily/images/sbl_hero_image.jpg);
+  background-repeat: no-repeat;
+  background-color: #502020;
+  background-position: top;
+  background-size: cover;
+  min-height: 300px;
 }
 .tips-landing-hero>div {
-    width: 90%;
-    max-width: 1000px;
+  width: 90%;
+  max-width: 1000px;
+}
+.orbit-controls-raised .orbit-controls {  
+  padding-bottom: $gutter;
+}
+.orbit-controls-raised .orbit-previous,
+.orbit-controls-raised .orbit-next { 
+  top: 26%; 
 }
