@@ -26,7 +26,7 @@ function getMediaRoomData() {
 
 function getInvestorData() {
   var fallback = '<li><h3 class="article-headline"><a href="http://freddiemac.mwnewsroom.com/">Press Releases</a></h3><p>Read the latest news and information about Freddie Mac\'s business.</p></li>',
-      mwReq = $.getJSON("//freddiemac.mwnewsroom.com/scripts/json/js?cat=investors&max=3", function(data) {
+      mwReq = $.getJSON("//freddiemac.mwnewsroom.com/scripts/json/js?cat=Investor%20Relations&max=3", function(data) {
       useInvestorData(data);         
   }).fail(function( jqxhr, textStatus, error ) {
     $('.investor-headlines-container:first').html(fallback);  
