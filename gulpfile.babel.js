@@ -27,7 +27,7 @@ function loadConfig() {
 // add in javascriptMFSBL, sassMfSbl, styleGuideMFSBL, sassMfInnovate, if building for SBL
 // add in javascriptNHM, sassNHM, styleGuideNHM, if building for NHM
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, javascript, javascriptMFSBL, javascriptNHM, sassNHM, sassMfInnovate, sassMfSbl, sass, sassHomepage, images, copy, copyStyleFiles), styleGuideMFSBL, styleGuideNHM, styleGuide));
+ gulp.series(clean, gulp.parallel(pages, javascript, javascriptMFSBL, javascriptNHM, sassMfGreen, sassNHM, sassMfInnovate, sassMfSbl, sass, sassHomepage, images, copy, copyStyleFiles), styleGuideMFSBL, styleGuideNHM, styleGuide));
 
 gulp.task('guide',
  gulp.series(clean, stylePages, copyStyleFiles, styleGuide));
@@ -225,6 +225,23 @@ function sassMfInnovate() {
     .pipe(browser.reload({ stream: true }));
 }
 // Compile Sass into CSS
+
+function sassMfGreen() {
+  return gulp.src('src/assets/scss/app_mf_green_advantage.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    .pipe($.if(PRODUCTION, $.cssnano({safe: true, minifyGradients: false, calc:false, zindex:false, colormin:false, reduceInitial:false})))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/multifamily/new_standard/green-advantage/'))
+    .pipe(browser.reload({ stream: true }));
+}
+// Compile Sass into CSS
 // In production, the CSS is compressed
 function sassHomepage() {
   return gulp.src('src/assets/scss/home*.scss')
@@ -367,7 +384,7 @@ function watch() {
   gulp.watch('src/styleguide/files/**/*').on('change', gulp.series(copyStyleFiles, browser.reload));
   gulp.watch('src/pages/**/*.html').on('change', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('change', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassMfSbl, sassMfInnovate, browser.reload));
+  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassMfGreen, sassNHM, sassMfSbl, sassMfInnovate, browser.reload));
   gulp.watch('src/assets/js/**/*.js').on('change', gulp.series(javascript, javascriptNHM, javascriptMFSBL, browser.reload));
   gulp.watch('src/assets/img/**/*').on('change', gulp.series(images, browser.reload));
   gulp.watch('src/styleguide/*').on('change', gulp.series(styleGuide, styleGuideNHM, styleGuideMFSBL, browser.reload));
