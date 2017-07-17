@@ -12,6 +12,7 @@ h1 {
   color: #4d4d4d;
   &.greenAd {
     color:$mf-greenadvantagedark;
+    padding-bottom: 10px;
   }
   &.white {color:$white;}
 }
@@ -149,6 +150,7 @@ figure.green-results{
     @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 180px)) {      // at 180px after medium breakpoint    
       background: transparent url('http://www.freddiemac.com/multifamily/images/greenAdvantage-hero.jpg') no-repeat center center;
       background-size: cover;
+      background-position: bottom right;
     }
     @media (min-width: -zf-bp-to-em(map-get($breakpoints, large) - 155px)) {       // at 155px before large breakpoint
       padding: rem-calc(70 0 60);
