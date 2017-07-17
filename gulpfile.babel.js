@@ -24,21 +24,36 @@ function loadConfig() {
 }
 
 // Build the "dist" folder by running all of the below tasks
-// add in javascriptMFSBL, sassMfSbl, styleGuideMFSBL, sassMfInnovate, if building for SBL
-// add in javascriptNHM, sassNHM, styleGuideNHM, if building for NHM
+gulp.task('buildSBL',
+  gulp.series(sassMfInnovate, sassMfSbl, javascriptMFSBL)
+);
+
+gulp.task('buildNHM',
+  gulp.series(sassNHM, javascriptNHM)
+);
+
+gulp.task('buildBHF',
+  gulp.series(sassBHF, javascriptBHF)
+);
+
+// Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, javascript, javascriptMFSBL, javascriptNHM, sassNHM, sassMfInnovate, sassMfSbl, sass, sassHomepage, images, copy, copyStyleFiles), styleGuideMFSBL, styleGuideNHM, styleGuide));
+  gulp.series(clean, gulp.parallel(pages, javascript, sass, sassHomepage, images, copy, copyImages, copyStyleFiles), styleGuide, 'buildSBL', 'buildNHM', 'buildBHF')
+);
 
 gulp.task('guide',
- gulp.series(clean, stylePages, copyStyleFiles, styleGuide));
+  gulp.series(clean, stylePages, copyStyleFiles, styleGuide)
+);
 
 // Build the site, run the server, and watch for file changes
 
 gulp.task('default',
-  gulp.series('build', server, watch));
+  gulp.series('build', server, watch)
+);
   
 gulp.task('clean', 
-  gulp.series(clean));
+  gulp.series(clean)
+);
 
 gulp.task('images', 
   gulp.series(gulp.parallel(images)));
@@ -53,6 +68,10 @@ function clean(done) {
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
   return gulp.src(PATHS.assets) 
+    .pipe(gulp.dest(PATHS.dist));  
+}
+function copyImages() {
+  return gulp.src(PATHS.images) 
     .pipe(gulp.dest(PATHS.dist));  
 }
 // Copy styleguide files
@@ -155,18 +174,6 @@ function styleGuideMF(done) {
     template: 'src/styleguide/template_mf.html'
   }, done);
 }
-function styleGuideMFSBL(done) {
-  sherpa('src/styleguide/index_mfsbl.md', {
-    output: PATHS.dist + '/styleguide/styleguide_mfsbl.html',
-    template: 'src/styleguide/template_mfsbl.html'
-  }, done);
-}
-function styleGuideNHM(done) {
-  sherpa('src/styleguide/index_mfsbl.md', {
-    output: PATHS.dist + '/styleguide/styleguide_nhm.html',
-    template: 'src/styleguide/template_nhm.html'
-  }, done);
-}
 function styleGuideCM(done) {
   sherpa('src/styleguide/index_cm.md', {
     output: PATHS.dist + '/styleguide/styleguide_cm.html',
@@ -244,6 +251,22 @@ function sassHomepage() {
 // Compile Sass into CSS for NHM
 function sassNHM() {
   return gulp.src('src/assets/scss/app_nhm.scss')
+//    .pipe($.sourcemaps.init())
+//    .pipe($.sass({
+//      includePaths: PATHS.sass
+//    })
+//    .on('error', $.sass.logError))
+//    .pipe($.autoprefixer({
+//      browsers: COMPATIBILITY
+//    }))
+//    .pipe($.if(PRODUCTION, $.cssnano({safe: true, minifyGradients: false, calc:false, zindex:false, colormin:false, reduceInitial:false})))
+//    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+//    .pipe(gulp.dest(PATHS.dist + '/ss'))
+    .pipe(browser.reload({ stream: true }));
+}
+// Compile Sass into CSS for Better Housing
+function sassBHF() {
+  return gulp.src('src/assets/scss/app_bhf.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
@@ -310,10 +333,22 @@ function javascriptMFSBL(done) {
   done();
 }
 function javascriptNHM(done) {
-  return gulp.src(PATHS.javascriptNhm)
+//  return gulp.src(PATHS.javascriptLanding)
+//    .pipe($.sourcemaps.init())
+//    .pipe($.babel({ignore: ['what-input.js']}))
+//    .pipe($.concat('app_nhm.js'))
+//    .pipe($.if(PRODUCTION, $.uglify()
+//      .on('error', e => { console.log(e); })
+//    ))
+//    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+//    .pipe(gulp.dest(PATHS.dist + '/js'));
+  done();
+}
+function javascriptBHF(done) {
+  return gulp.src(PATHS.javascriptLanding)
     .pipe($.sourcemaps.init())
     .pipe($.babel({ignore: ['what-input.js']}))
-    .pipe($.concat('app_nhm.js'))
+    .pipe($.concat('app_bhf.js'))
     .pipe($.if(PRODUCTION, $.uglify()
       .on('error', e => { console.log(e); })
     ))
@@ -360,15 +395,14 @@ function reload(done) {
 }
 
 // Watch for changes to static assets, pages, Sass, and JavaScript
-// If running for SBL, add in sassMfSbl, styleGuideMFSBL, javascriptMFSBL, sassMfInnovate into appropriate processes
-// If running for NHM, add in sassNHM, styleGuideNHM, javascriptNHM, into appropriate processes
 function watch() {
   gulp.watch(PATHS.assets, copy);
   gulp.watch('src/styleguide/files/**/*').on('change', gulp.series(copyStyleFiles, browser.reload));
+  gulp.watch('src/pages/**/images/*').on('change', gulp.series(copyImages, browser.reload));
   gulp.watch('src/pages/**/*.html').on('change', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('change', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassMfSbl, sassMfInnovate, browser.reload));
-  gulp.watch('src/assets/js/**/*.js').on('change', gulp.series(javascript, javascriptNHM, javascriptMFSBL, browser.reload));
+  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassBHF, sassMfSbl, sassMfInnovate, browser.reload));
+  gulp.watch('src/assets/js/**/*.js').on('change', gulp.series(javascript, javascriptNHM, javascriptBHF, javascriptMFSBL, browser.reload));
   gulp.watch('src/assets/img/**/*').on('change', gulp.series(images, browser.reload));
-  gulp.watch('src/styleguide/*').on('change', gulp.series(styleGuide, styleGuideNHM, styleGuideMFSBL, browser.reload));
+  gulp.watch('src/styleguide/*').on('change', gulp.series(styleGuide, browser.reload));
 }
