@@ -93,6 +93,12 @@ h1 {
 .resultsContainer{
   border: 3px solid $mf-greenadvantage;
 }
+figure.green-results{
+  margin: auto;
+  width: 77%;
+  text-align: left;
+  
+}
 .content-inner-band {
   position: relative;
   padding: $gutter*1.5 $gutter $gutter;    
@@ -126,6 +132,49 @@ h1 {
     width: 6.25rem;
 }
 
+.green-landing-hero {                                                                            // start at smallest breakpoint (0 and up)
+    color: $white;    
+    position: relative; 
+    background: $fm-gray url('/multifamily/images/greenAdvantage-hero-2.jpg') no-repeat bottom left; 
+    background-size: cover; 
+    background-position: bottom right;
+    min-height: 594px;
+    padding: rem-calc(20 0 15);
+    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) - 120px)) {      // at 120px before medium breakpoint
+      padding: rem-calc(30 0 25);
+    }    
+    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 120px)) {      // at 120px after medium breakpoint
+      padding: rem-calc(30 0 35);
+    }
+    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 180px)) {      // at 180px after medium breakpoint    
+      background: transparent url('http://www.freddiemac.com/multifamily/images/greenAdvantage-hero.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    @media (min-width: -zf-bp-to-em(map-get($breakpoints, large) - 155px)) {       // at 155px before large breakpoint
+      padding: rem-calc(70 0 60);
+    }
+    @include breakpoint(xxlarge) {                                                  // at the xxlarge breakpoint
+      padding: rem-calc(115 0 90);
+    }
+    @media (min-width: -zf-bp-to-em(map-get($breakpoints, xxlarge) + 180px)) {     // at 180px after xxlarge breakpoint 
+      padding: rem-calc(145 0 110);
+      background-position: top left;
+    }
+    .hero-text {
+      @include breakpoint(medium) {                                                 // at medium breakpoint
+        text-align: left;
+        padding-left: 34%;
+      } 
+      @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 330px)) {    // at 330px after medium breakpoint
+        span { display: block;}  
+      }
+      @include breakpoint(large) {                                                  // at large breakpoint
+        margin-bottom: 3rem;      
+      }
+    }
+  }
+
+/*
 .green-landing-hero {
   position: relative;
   text-align: center;
@@ -149,7 +198,7 @@ h1 {
     .header-button { padding: $gutter * 3 0 $gutter * 4; }  
   }
 }
-
+*/
 .hero-extend{
   background-color:$mf-greenadvantage;
 }
