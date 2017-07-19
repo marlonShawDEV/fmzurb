@@ -233,7 +233,7 @@ function sassMfInnovate() {
 }
 // Compile Sass into CSS
 function sassMfGreen() {
-  return gulp.src('src/assets/scss/app_mf_green_advantage.css')
+  return gulp.src('src/assets/scss/app_mf_green_advantage.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
