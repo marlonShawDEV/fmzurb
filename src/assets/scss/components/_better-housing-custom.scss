@@ -89,3 +89,88 @@ body {
   }
  
 }
+
+.background-evergreen {
+  color: #fff;
+  background-color: #87be3c;
+}
+
+.background-pear {
+  background: $pear;
+  color: $white;
+  a {
+    @include anchor-on-dark(none);
+  }
+}
+
+.background-light-blue {
+  color: #00a5e4;
+  background-color: #e5f3fc;
+}
+
+.background-sky-blue {
+  background-color: #bfe8f8;
+}
+
+
+
+.bhf-landing-hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url("/corporate/better-housing-finance/images/bhf-hero.jpg");
+  background-color: #939393;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  min-height: 594px; }
+  
+  .bhf-landing-hero > div {
+    width: 90%;
+    max-width: 1000px; }
+  .sbl-landing-hero .header-button {
+    padding: 25px 0; }
+  @media print, screen and (min-width: 34.375em) {
+    .sbl-landing-hero .header-button {
+      padding: 50px 0; } }
+  @media screen and (min-width: 50em) {
+    .sbl-landing-hero .header-button {
+      padding: 60px 0 80px; } }
+	
+	
+h1 {
+  font-weight: 500;
+}  
+	  
+
+.hero-blurb {
+  font-size: 1.375rem;
+  font-size: calc(22px +  14 * (100vw - 320px)/1180);
+  color: #fff;
+  font-weight: 500;
+  padding-top: 150px;
+  padding-bottom: 14px; }
+  @media screen and (min-width: 83.75em) {
+    .hero-blurb {
+      font-size: 2.25rem; } }
+
+
+.body-font-white {
+  font-size: 1rem;
+  font-size: calc(16px + 4 * (100vw - 320px)/1180);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.4; }
+  @media screen and (min-width: 87.5em) {
+    .nhm-rotator-quote {
+      font-size: 1.25rem; } }
+	  
+.text-dark-large {
+  font-size: 1.125rem;
+  font-size: calc(18px + 10 * (100vw - 320px)/1180);
+  font-weight: 400;
+  color: #33333f;
+  line-height: 1.4; }
+  @media screen and (min-width: 87.5em) {
+    .body-font-dark-large {
+      font-size: 1.75rem; } }
