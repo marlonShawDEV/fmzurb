@@ -399,6 +399,7 @@ function watch() {
   gulp.watch(PATHS.assets, copy);
   gulp.watch('src/styleguide/files/**/*').on('change', gulp.series(copyStyleFiles, browser.reload));
   gulp.watch('src/pages/**/images/*').on('change', gulp.series(copyImages, browser.reload));
+  gulp.watch('src/pages/**/**/images/*').on('change', gulp.series(copyImages, browser.reload));
   gulp.watch('src/pages/**/*.html').on('change', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('change', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassBHF, sassMfSbl, sassMfInnovate, browser.reload));
