@@ -1,14 +1,9 @@
-// text underline transition
-@mixin underline-transition($color: $white, $width: 1px) {
-  transition: border-bottom-color 0.2s ease 0s;
-  border-bottom: $width solid rgba($color, 0);
-  &:hover,
-  &:focus  {
-    border-bottom: $width solid rgba($color, 0.65);
-  }
-}
 /// Adds styles for an orbit slide caption. 
-@mixin orbit-caption-custom($edge: bottom, $background: $orbit-caption-background, $padding: $orbit-caption-padding) {  
+@mixin orbit-caption-custom(
+  $edge: bottom, 
+  $background: $orbit-caption-background, 
+  $padding: $orbit-caption-padding
+) {  
   position: absolute;
   @if($edge == bottom) {
     top: auto;
@@ -25,8 +20,13 @@
   color: color-pick-contrast($background);
 }
 
+
 // desktop hover states for parent of dropdowns
-@mixin nav-submenu-parent-hover($color: $fm-orange, $background: $white, $border-color: $white){
+@mixin nav-submenu-parent-hover(
+  $color: $fm-orange, 
+   $background: $white, 
+   $border-color: $white
+){
   color: $color;
   background: $background;
   border-bottom-color: $border-color;

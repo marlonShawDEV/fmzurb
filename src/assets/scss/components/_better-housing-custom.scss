@@ -1,0 +1,91 @@
+.content-band,
+.content-inner-band,
+.footer { 
+  clear: left;
+  width: 100%;
+  position: relative;
+  padding-left: rem-calc(20);
+  padding-right: rem-calc(20);
+  @include breakpoint(medium) {
+    padding-left: rem-calc(40);
+    padding-right: rem-calc(40);    
+  }
+  @include breakpoint(xlarge) {
+    padding-left: rem-calc(60);
+    padding-right: rem-calc(60);    
+  }
+  @include breakpoint(xxlarge) {  
+    padding-left: rem-calc(100);
+    padding-right: rem-calc(100);    
+  }  
+  > .row  {
+    max-width: rem-calc(1200);
+  }   
+}
+.content-band {
+  padding-top: $gutter * 2.5;
+  padding-bottom: $gutter * 2.5;
+  @include breakpoint(large) {
+    padding-top: $gutter * 3;
+    padding-bottom: $gutter * 3;   
+  }    
+  @include breakpoint(xlarge) {
+    padding-top: $gutter * 4;
+    padding-bottom: $gutter * 4;    
+  }
+  @include breakpoint(xxlarge) {
+    padding-top: $gutter * 4.5;
+    padding-bottom: $gutter * 4.5;   
+  }
+}
+.logo-mobile { 
+  padding: $gutter $gutter/2 0 $gutter * 1.5;
+  display: inline-block;
+  img {
+    width: rem-calc(116);
+    height: rem-calc(41);
+  }
+} 
+.logo-desktop {
+  padding: 1.3125rem 0 1rem;
+  display: inline-block;
+  img {
+    width: rem-calc(190);
+    height: rem-calc(67.13);
+  }
+}
+body {
+  min-width: rem-calc(350);
+}
+.stripes{
+  background-image: linear-gradient(to right top, transparent 46%, rgba(0, 0, 0, 0.07) 0px, rgba(0, 0, 0, 0.07) 54%, transparent 0px);
+  background-size: 10px 10px;
+}
+.triangle_out {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;  
+  height: 80px;
+  background: linear-gradient(to top right, #fff 50%, transparent 50%) no-repeat left bottom / 50% 100%,
+    linear-gradient(to top left, #fff 50%, transparent 50%) no-repeat right bottom / 50% 100%;
+  + .row {
+    padding-bottom: 60px;
+  }  
+}
+.triangle_in {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;  
+  height: 80px;
+  z-index:300;
+  background: linear-gradient(to top right, transparent 50%, #fff 50%) no-repeat left bottom / 50% 100%,
+    linear-gradient(to top left,transparent 50%, #fff 50%) no-repeat right bottom / 50% 100%;
+  + .row,
+  + .triangle_out + .row {
+    padding-top: 60px;
+    margin-bottom: -40px;
+  }
+ 
+}
