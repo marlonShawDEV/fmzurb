@@ -25,7 +25,7 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('buildSBL',
-  gulp.series(sassMfInnovate, sassMfSbl, javascriptMFSBL)
+  gulp.series(sassMfInnovate, sassMfSbl, sassMfGreen, javascriptMFSBL)
 );
 
 gulp.task('buildNHM',
@@ -232,6 +232,22 @@ function sassMfInnovate() {
     .pipe(browser.reload({ stream: true }));
 }
 // Compile Sass into CSS
+function sassMfGreen() {
+  return gulp.src('src/assets/scss/app_mf_green_advantage.css')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    .pipe($.if(PRODUCTION, $.cssnano({safe: true, minifyGradients: false, calc:false, zindex:false, colormin:false, reduceInitial:false})))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/multifamily/new_standard/green-advantage/'))
+    .pipe(browser.reload({ stream: true }));
+}
+// Compile Sass into CSS
 // In production, the CSS is compressed
 function sassHomepage() {
   return gulp.src('src/assets/scss/home*.scss')
@@ -401,7 +417,7 @@ function watch() {
   gulp.watch('src/pages/**/images/*').on('change', gulp.series(copyImages, browser.reload));
   gulp.watch('src/pages/**/*.html').on('change', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('change', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassBHF, sassMfSbl, sassMfInnovate, browser.reload));
+  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassBHF, sassMfSbl, sassMfInnovate, sassMfGreen, browser.reload));
   gulp.watch('src/assets/js/**/*.js').on('change', gulp.series(javascript, javascriptNHM, javascriptBHF, javascriptMFSBL, browser.reload));
   gulp.watch('src/assets/img/**/*').on('change', gulp.series(images, browser.reload));
   gulp.watch('src/styleguide/*').on('change', gulp.series(styleGuide, browser.reload));
