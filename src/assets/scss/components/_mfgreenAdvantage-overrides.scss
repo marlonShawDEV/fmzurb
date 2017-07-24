@@ -32,28 +32,28 @@ h1 {
   }
 }
 .hero-title {
-  font-size: rem-calc(36);
-  font-size: calc(48px +  16 * (100vw - 320px)/1180); 
+  font-size: rem-calc(48);
+  font-size: calc(48px + 36 * (100vw - 320px)/1180); 
   margin: 0;
   font-weight: $global-weight-bold;
   @include breakpoint(xxlarge) {
-    font-size: rem-calc(72);
+    font-size: rem-calc(84);
   }
 }
 .sub-h1 {
-  font-size: rem-calc(22);
-  font-size: calc(22px +  20 * (100vw - 320px)/1180); 
+  font-size: rem-calc(18);
+  font-size: calc(18px +  16 * (100vw - 320px)/1180); 
   font-weight: $global-weight-normal;
   margin: 0.25em 0;  
-  line-height: 1.3;
+  line-height: 1.0;
   @include breakpoint(xxlarge) {
-		font-size: rem-calc(42);
+		font-size: rem-calc(38);
 	}
   strong {font-weight: $global-weight-bold; }
 }  
 .page-subtitle {
   margin: 0;
-  padding: 1em 0 1.5em;
+  padding: 0 0 1.5em;
   font-weight: $global-weight-normal;
   color: inherit;
   line-height:1.75;
@@ -87,10 +87,10 @@ h1 {
   background-image: linear-gradient(to right top, transparent 46%, rgba(0, 0, 0, 0.07) 0px, rgba(0, 0, 0, 0.07) 54%, transparent 0px);
   background-size: 10px 10px;
 }
-.stripesGreen{
-  background-image: linear-gradient(to right top, transparent 46%, rgba(136, 189, 69, 0.9) 0px, rgba(136, 189, 69, 0.9) 54%, transparent 0px);
-  background-size: 10px 10px;
+.stripesGreen {
+    background-image: repeating-linear-gradient(45deg, rgba(136, 189, 69, 0.25), rgba(136, 189, 69, 0.25) 4px, rgba(136, 189, 69, 0) 4px, rgba(136, 189, 69, 0) 10px);
 }
+
 .resultsContainer{
   border: 3px solid $mf-greenadvantage;
 }
@@ -126,81 +126,40 @@ figure.green-results{
 }
 .avatar > div {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .avatar > div:first-child {
     padding-right: 20px;
     width: 6.25rem;
 }
 
-.green-landing-hero {                                                                            // start at smallest breakpoint (0 and up)
-    color: $white;    
-    position: relative; 
-    background: $fm-gray url('/multifamily/images/greenAdvantage-hero-2.jpg') no-repeat bottom left; 
-    background-size: cover; 
-    background-position: bottom right;
-    min-height: 594px;
-    padding: rem-calc(20 0 15);
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) - 120px)) {      // at 120px before medium breakpoint
-      padding: rem-calc(30 0 25);
-    }    
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 120px)) {      // at 120px after medium breakpoint
-      padding: rem-calc(30 0 35);
-    }
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 180px)) {      // at 180px after medium breakpoint    
-      background: transparent url('http://www.freddiemac.com/multifamily/images/greenAdvantage-hero.jpg') no-repeat center center;
-      background-size: cover;
-      background-position: bottom right;
-    }
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, large) - 155px)) {       // at 155px before large breakpoint
-      padding: rem-calc(70 0 60);
-    }
-    @include breakpoint(xxlarge) {                                                  // at the xxlarge breakpoint
-      padding: rem-calc(115 0 90);
-    }
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, xxlarge) + 180px)) {     // at 180px after xxlarge breakpoint 
-      padding: rem-calc(145 0 110);
-      background-position: top left;
-    }
-    .hero-text {
-      @include breakpoint(medium) {                                                 // at medium breakpoint
-        text-align: left;
-        padding-left: 34%;
-      } 
-      @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 330px)) {    // at 330px after medium breakpoint
-        span { display: block;}  
-      }
-      @include breakpoint(large) {                                                  // at large breakpoint
-        margin-bottom: 3rem;      
-      }
-    }
-  }
 
-/*
+
 .green-landing-hero {
   position: relative;
   text-align: center;
-  background-image:url("http://www.freddiemac.com/multifamily/images/greenAdvantage-hero.jpg");
-  background-repeat: no-repeat;
-  background-color:$mf-greenadvantage;
-  background-position: bottom right;
-  background-size: cover;
-  min-height: 594px;
+  background-image:url("http://www.freddiemac.com/multifamily/images/greenAdvantage_grass_strip_hero.png"), url("http://www.freddiemac.com/multifamily/images/greenAdvantage_coin_stack_hero.png");
+  background-repeat: repeat-x, no-repeat;
+  background-color:$white;
+  background-position: bottom, bottom left;
+  background-size: 30% contain, 30% contain;
+  min-height: 400px;
   > div {  
-    width: 90%; 
+    width: 100%; 
     max-width: 1000px; 
   }
-  .header-button {  
-    padding: $gutter * 1.25 0;
-  }
-  @include breakpoint(medium) {  
-    .header-button { padding: $gutter * 2.5 0; }  
-  }
-  @include breakpoint(large) {  
-    .header-button { padding: $gutter * 3 0 $gutter * 4; }  
+  @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 130px)) {     
+    background-position: bottom, 90% bottom;
+    background-size: 30% contain, contain;
+    min-height: 480px;
+  } 
+  @include breakpoint (xxlarge){
+    background-position: bottom, 70% center; //stop moving right 
+    background-size: 100%, 58%;
+    min-height: 594px;
   }
 }
-*/
+
 .hero-extend{
   background-color:$mf-greenadvantage;
 }
@@ -216,7 +175,7 @@ figure.green-results{
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://www.freddiemac.com/multifamily/images/greenAdvantag-we-keep-it-simple.jpg");
   background-repeat: no-repeat;    
-  background-position: top center;   
+  background-position: center, center;   
   border-bottom: none;
   background-size: cover;
   color: #fff;  
