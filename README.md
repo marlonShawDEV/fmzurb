@@ -14,7 +14,6 @@ This is based on the official ZURB Template for use with [Foundation for Sites](
 - For production builds:
   - CSS compression
   - JavaScript compression & concatenation
-  - Image compression
 
 ## Installation
 
@@ -58,7 +57,7 @@ Finally, run `npm start` to run Gulp. Your finished site will be created in a fo
 http://localhost:8000
 ```
 
-Your finished styleguide will be created in `dist/styleguide.html`, viewable at this URL:
+Your finished styleguide will be created in `dist/styleguide/`, viewable at this URL:
 
 ```
 http://localhost:8000/styleguide/

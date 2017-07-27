@@ -28,17 +28,13 @@ gulp.task('buildSBL',
   gulp.series(sassMfInnovate, sassMfSbl, sassMfGreen, javascriptMFSBL)
 );
 
-gulp.task('buildNHM',
-  gulp.series(sassNHM, javascriptNHM)
-);
-
 gulp.task('buildBHF',
   gulp.series(sassBHF, javascriptBHF)
 );
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(pages, javascript, sass, sassHomepage, images, copy, copyImages, copyStyleFiles), styleGuide, 'buildSBL', 'buildNHM', 'buildBHF')
+  gulp.series(clean, gulp.parallel(pages, javascript, sass, sassHomepage, images, copy, copyImages, copyStyleFiles), styleGuide, 'buildSBL', 'buildBHF')
 );
 
 gulp.task('guide',
@@ -264,22 +260,6 @@ function sassHomepage() {
     .pipe(gulp.dest(PATHS.dist + '/ss'))
     .pipe(browser.reload({ stream: true }));
 }
-// Compile Sass into CSS for NHM
-function sassNHM() {
-  return gulp.src('src/assets/scss/app_nhm.scss')
-//    .pipe($.sourcemaps.init())
-//    .pipe($.sass({
-//      includePaths: PATHS.sass
-//    })
-//    .on('error', $.sass.logError))
-//    .pipe($.autoprefixer({
-//      browsers: COMPATIBILITY
-//    }))
-//    .pipe($.if(PRODUCTION, $.cssnano({safe: true, minifyGradients: false, calc:false, zindex:false, colormin:false, reduceInitial:false})))
-//    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-//    .pipe(gulp.dest(PATHS.dist + '/ss'))
-    .pipe(browser.reload({ stream: true }));
-}
 // Compile Sass into CSS for Better Housing
 function sassBHF() {
   return gulp.src('src/assets/scss/app_bhf.scss')
@@ -348,18 +328,7 @@ function javascriptMFSBL(done) {
     .pipe(gulp.dest(PATHS.dist + '/multifamily/new_standard/sbl/'));
   done();
 }
-function javascriptNHM(done) {
-//  return gulp.src(PATHS.javascriptLanding)
-//    .pipe($.sourcemaps.init())
-//    .pipe($.babel({ignore: ['what-input.js']}))
-//    .pipe($.concat('app_nhm.js'))
-//    .pipe($.if(PRODUCTION, $.uglify()
-//      .on('error', e => { console.log(e); })
-//    ))
-//    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-//    .pipe(gulp.dest(PATHS.dist + '/js'));
-  done();
-}
+
 function javascriptBHF(done) {
   return gulp.src(PATHS.javascriptLanding)
     .pipe($.sourcemaps.init())
@@ -387,12 +356,8 @@ function javascriptCM(done) {
 
 
 // Copy images to the "dist" folder
-// In production, the images are compressed
 function images() {
   return gulp.src('src/assets/img/**/*')
-  //  .pipe($.if(PRODUCTION, $.imagemin({
-  //    progressive: true
-  //  })))
     .pipe(gulp.dest(PATHS.dist + '/images'));
 }
 
@@ -418,8 +383,8 @@ function watch() {
   gulp.watch('src/pages/**/**/images/*').on('change', gulp.series(copyImages, browser.reload));
   gulp.watch('src/pages/**/*.html').on('change', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('change', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassNHM, sassBHF, sassMfSbl, sassMfInnovate, sassMfGreen, browser.reload));
-  gulp.watch('src/assets/js/**/*.js').on('change', gulp.series(javascript, javascriptNHM, javascriptBHF, javascriptMFSBL, browser.reload));
+  gulp.watch('src/assets/scss/**/*.scss').on('change', gulp.series(sass, sassHomepage, sassBHF, sassMfSbl, sassMfInnovate, sassMfGreen, browser.reload));
+  gulp.watch('src/assets/js/**/*.js').on('change', gulp.series(javascript, javascriptBHF, javascriptMFSBL, browser.reload));
   gulp.watch('src/assets/img/**/*').on('change', gulp.series(images, browser.reload));
   gulp.watch('src/styleguide/*').on('change', gulp.series(styleGuide, browser.reload));
 }
