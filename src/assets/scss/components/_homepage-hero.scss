@@ -7,79 +7,57 @@
   text-align: center;
 }
 
-@media screen {
-  .hero {  // default hero style, family with arms held up to make house outline
-    position: relative;
-    padding: rem-calc(20 0 15);
-    background: $fm-gray url('/images/hero/homepage_hero2_mobile.jpg') no-repeat bottom left;
+.hero {  // default hero style, family with arms held up to make house outline
+  position: relative;
+  padding: rem-calc(20 0 15);
+  @media screen { 
+    background: $fm-gray url('/images/hero/homepage_hero2_mobile.jpg') no-repeat left bottom;  
     color: $white;    
-    background-size: cover;
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) - 120px)) {
-      padding: rem-calc(30 0 25);
-    }    
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 120px)) {
-      padding: rem-calc(30 0 35);
-    }
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 180px)) {
-      
-      background: transparent url('/images/hero/homepage_hero4.jpg') no-repeat center center;
-      background-size: cover;
-    }
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, large) - 155px)) {
-      padding: rem-calc(70 0 60);
-    }
-    @include breakpoint(xxlarge) {
-      padding: rem-calc(115 0 90);
-    }
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, xxlarge) + 180px)) {      
-      padding: rem-calc(145 0 110);
-      background-position: top left;
-    }
-    .hero-text {
-      @include breakpoint(medium) {
-        text-align: left;
-        padding-left: 34%;
-      } 
-      @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 330px)) {
-        span { display: block;}  
-      }
-      @include breakpoint(large) {
-        margin-bottom: 3rem;      
-      }
-    }
   }
-
-  .hero-homeownership-month { // custom header for NHM only
-    position: relative;   
-    color: $white;    
-    background-size: cover;    
-    background-color: $fm-gray;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero/homepage_hero_nhm_mobile.jpg");
-    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 180px)) {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero/homepage_hero_nhm.jpg");    
-    }
-    .hero-text {  
-      font-size: rem-calc(26);
-      padding: 6em 0 1.25em;
-      font-size: calc(26px +  26 * (100vw - 320px) / 1180);  
-      @include breakpoint(medium) {
-        max-width: 80%;  
-        margin: 0 auto;
-      }         
-      @include breakpoint(large) {
-        max-width: 98%;  
-        padding: 5em 0 1.25em;
-      }         
-      @include breakpoint(xxlarge) {
-        font-size: rem-calc(54);
-      }       
-      h1 { 
-        font-size: inherit;
-        margin-bottom: 0.5em;
-      }
+  background-size: cover;
+  @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) - 120px)) {
+    padding: rem-calc(30 0 25);
+  }    
+  @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 120px)) {
+    padding: rem-calc(30 0 35);
+  }
+  @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 180px)) {    
+    background: transparent url('/images/hero/homepage_hero4.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  @media (min-width: -zf-bp-to-em(map-get($breakpoints, large) - 155px)) {
+    padding: rem-calc(70 0 60);
+  }
+  @include breakpoint(xxlarge) {
+    padding: rem-calc(115 0 90);
+  }
+  @media (min-width: -zf-bp-to-em(map-get($breakpoints, xxlarge) + 180px)) {      
+    padding: rem-calc(145 0 110);
+    background-position: top left;
+  }
+  .hero-text {
+    @include breakpoint(medium) {
+      text-align: left;
+      padding-left: 34%;
+    } 
+    @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 330px)) {
       span { display: block;}  
     }
+    @include breakpoint(large) {
+      margin-bottom: 3rem;      
+    }
   }
+  
+  // overrides for better housing finance promotion
+  &.hero-better-housing {
+    @media screen {   
+      background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("/images/hero/homepage_hero_bhf.jpg");
+      background-position: center center;
+    }
+    @include breakpoint(xxlarge) {
+      background-position: center bottom;
+    }
+  }
+  
 }
+
