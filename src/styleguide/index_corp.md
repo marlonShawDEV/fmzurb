@@ -129,9 +129,7 @@ thumbnail
 # Colors
 
 <p class="lead">Below you can find the different values we created that support the color variables you can change at any time in <code>\_settings.scss</code></p>
-
----
-
+<hr>
 <h2>Backgrounds</h2>
 <div class="row up-1 medium-up-2 large-up-3 xlarge-up-4">
   <div class="column">
@@ -250,10 +248,8 @@ thumbnail
     </div>
   </div>
 </div>
-
 <h2>Mosaic Colors</h2>
 <p>The mosaic colors are not intended to stand alone. Instead they should be applied only when there is 3 or more items to shade.</p>
-
 <div class="row up-1 medium-up-2 large-up-3 xlarge-up-4">
   <div class="column">
     <div class="color-block">
@@ -402,7 +398,7 @@ There are several text and typography styles to choose from, although some style
       <p>Avoid skipping heading levels when structuring your document, as it confuses screen readers. Screen readers announce headings and identify the heading level. JAWS, for example, precedes &lt;h1&gt; headings with "heading level 1."</p>
       <hr>
       <div class="callout">
-        <p><span class="callout-txt">This is class callout-txt, use it for a brief, attention-catching phrase.</a></p>  
+        <p><span class="callout-txt">This is class callout-txt, use it for a brief, attention-catching phrase.</span></p>  
         <h3 class="call-to-action">This is class call-to-action  (currently not used)</h3>
         <h3 class="subtitle">This is class subtitle</h3>
         <h3 class="section-subtitle">This is class section-subtitle</h3> 
@@ -1060,20 +1056,21 @@ Callouts can be sized using the `.small`, `.large` and `.xlarge` classes. These 
 
 ---
 
-## Make Full Callout a Single Link
+## Make An Entire Callout Clickable
 
 To make the entire callout clickable, put an anchor tag around the `.callout` container.  
 
 ```html_example
 <div class="row">
   <div class="small-8 medium-6 end column">
-    <a href="#"><div class="callout background-blue">
-    <p>This entire blue callout is inside an anchor tag and becomes 1 big link.</p>
+    <a href="http://www.freddiemac.com/"><div class="callout background-blue">
+    <p class="enlarge">This entire blue callout is inside an anchor tag and becomes 1 big link.</p>
     </div></a>
   </div>
 </div>
 ```
 
+---
 
 ## Making Callouts Closable
 
