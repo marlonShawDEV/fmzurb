@@ -32,9 +32,13 @@ gulp.task('buildBHF',
   gulp.series(sassBHF, javascriptBHF)
 );
 
+gulp.task('buildBOF',
+  gulp.series(sassBOF, javascriptBOF)
+);
+
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(pages, javascript, sass, sassHomepage, images, copy, copyImages, copyStyleFiles), styleGuide, 'buildSBL', 'buildBHF')
+  gulp.series(clean, gulp.parallel(pages, javascript, sass, sassHomepage, images, copy, copyImages, copyStyleFiles), styleGuide, 'buildSBL', 'buildBHF', 'buildBOF')
 );
 
 gulp.task('guide',
@@ -260,6 +264,7 @@ function sassHomepage() {
     .pipe(gulp.dest(PATHS.dist + '/ss'))
     .pipe(browser.reload({ stream: true }));
 }
+
 // Compile Sass into CSS for Better Housing
 function sassBHF() {
   return gulp.src('src/assets/scss/app_bhf.scss')
@@ -276,6 +281,24 @@ function sassBHF() {
     .pipe(gulp.dest(PATHS.dist + '/ss'))
     .pipe(browser.reload({ stream: true }));
 }
+
+// Compile Sass into CSS for Borrower of the Future
+function sassBOF() {
+  return gulp.src('src/assets/scss/app_bof.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+    .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    .pipe($.if(PRODUCTION, $.cssnano({safe: true, minifyGradients: false, calc:false, zindex:false, colormin:false, reduceInitial:false})))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/ss'))
+    .pipe(browser.reload({ stream: true }));
+}
+
 // Combine JavaScript into one file
 // In production, the file is minified
 function javascript(done) {
@@ -341,6 +364,20 @@ function javascriptBHF(done) {
     .pipe(gulp.dest(PATHS.dist + '/js'));
   done();
 }
+
+function javascriptBOF(done) {
+  return gulp.src(PATHS.javascriptLanding)
+    .pipe($.sourcemaps.init())
+    .pipe($.babel({ignore: ['what-input.js']}))
+    .pipe($.concat('app_bhf.js'))
+    .pipe($.if(PRODUCTION, $.uglify()
+      .on('error', e => { console.log(e); })
+    ))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/js'));
+  done();
+}
+
 function javascriptCM(done) {
   return gulp.src(PATHS.javascriptcm)
     .pipe($.sourcemaps.init())
