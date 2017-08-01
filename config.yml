@@ -159,8 +159,8 @@ PATHS:
     # Paths to your own project code are here   
     - "src/assets/js/fmGlobals.js"
     - "src/assets/js/prepModals.js"
-    # "src/assets/js/prepRotators.js" 
-    # "src/assets/js/shareWidget.js"  
+    - "src/assets/js/prepRotators.js" 
+    - "src/assets/js/shareWidget.js"  
     # "src/assets/js/appNhm.js"
     - "src/assets/js/appBetterHousing.js"
     # Individual Foundation components

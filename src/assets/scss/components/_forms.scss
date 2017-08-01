@@ -96,7 +96,8 @@ fieldset {
     position: relative !important;
     height: auto;
     width: auto;
-  }  
+  }
+
   &[disabled] { 
     + label::before {  
         background: $fm-gray;

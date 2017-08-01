@@ -39,7 +39,8 @@
   }
 }
 .logo-mobile { 
-  padding: $gutter $gutter/2 0 $gutter * 1.5;
+  padding: $gutter $gutter/2 $gutter $gutter * 1.5;
+  
   display: inline-block;
   img {
     width: rem-calc(116);
@@ -97,7 +98,7 @@ body {
 
 .background-pear {
   background: $pear;
-  color: $white;
+  color: #33333f;
   a {
     @include anchor-on-dark(none);
   }
@@ -112,7 +113,23 @@ body {
   background-color: #bfe8f8;
 }
 
+.background-white {
+  color: #33333f;
+}
 
+.background-light-orange {
+  color: #fff;
+  background-color: #f5894e;
+}
+
+.background-light-teal {
+  color: #fff;
+  background-color: #33b7ae;
+}
+
+.text-green {
+  color: $fm-green;
+}
 
 .bhf-landing-hero {
   position: relative;
@@ -123,36 +140,249 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  min-height: 594px; }
+    @include breakpoint(large) {
+      min-height: rem-calc(600px); 
+	}
+    @include breakpoint(small) {
+      min-height: rem-calc(150px); 
+	}
+}
   
-  .bhf-landing-hero > div {
+.bhf-landing-hero > div {
     width: 90%;
-    max-width: 1000px; }
-  .sbl-landing-hero .header-button {
-    padding: 25px 0; }
-  @media print, screen and (min-width: 34.375em) {
-    .sbl-landing-hero .header-button {
-      padding: 50px 0; } }
-  @media screen and (min-width: 50em) {
-    .sbl-landing-hero .header-button {
-      padding: 60px 0 80px; } }
+    max-width: 1000px; 
+	@include breakpoint(large) {
+      padding-top: 150px;
+	}
+    @include breakpoint(small) {
+      padding-top: 50px; 
+	  padding-bottom: 75px;
+	}
+}
+
+
+
+.banner-better {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-image: url("/corporate/better-housing-finance/images/bhf-sound-housing.jpg");
+  background-color: #939393;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; 
+  	@include breakpoint(large) {
+      min-height: rem-calc(325px);
+	}
+    @include breakpoint(small) {
+      min-height: rem-calc(200px);
+	}
+}
+  
+.banner-better > div {
+    width: 90%;
+    max-width: 1000px; 
+}
+
+.banner-opportunities {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-image: url("/corporate/better-housing-finance/images/bhf_creating_opportunities.jpg");
+  background-color: #939393;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+    @include breakpoint(large) {
+      min-height: rem-calc(325px);
+	}
+    @include breakpoint(small) {
+      min-height: rem-calc(200px);
+	}
+}
+  
+.banner-opprtunities > div {
+    width: 90%;
+    max-width: 1000px; 
+}
+
+.banner-partners {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-image: url("/corporate/better-housing-finance/images/bhf-industry-partners.jpg");
+  background-color: #939393;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+    @include breakpoint(large) {
+      min-height: rem-calc(325px);
+	}
+    @include breakpoint(small) {
+      min-height: rem-calc(200px);
+	} 
+}
+  
+.banner-partners > div {
+    width: 90%;
+    max-width: 1000px; 
+}
+
 	
+.blurb-large {
+  font-size: 1.375rem;
+  font-size: calc(22px +  20 * (100vw - 320px)/1180);
+  font-weight: 300;
+  padding-bottom: 14px; 
+  @include breakpoint(xxlarge) {
+    font-size: 2.625rem;       
+  } 
+}
+
+
+.banner-overlay-header {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+}
+
+
+	  
+.box-orange {
+  position: relative; 
+}
+  
+.box-orange {
+  max-width: rem-calc(360px);
+  margin: auto;
+  padding: 40px 10px;
+  background: #f5894e;
+  color: #fff;
+  border: 5px solid #fff;
+  text-align: center;
+    @include breakpoint(large) {
+      height: rem-calc(290px);
+  } 
+    @include breakpoint(small) {
+      height: rem-calc(220px); 
+  }  
+}
+
+
+.box-teal {
+  position: relative; 
+}
+	
+.box-teal {
+  max-width: rem-calc(360px);
+  margin: auto;
+  padding: 40px 10px;
+  background: #33b7ae;
+  color: #fff;
+  border: 5px solid #fff;
+  text-align: center;
+    @include breakpoint(large) {
+      height: rem-calc(350px);
+  } 
+    @include breakpoint(small) {
+      height: rem-calc(250px); 
+  }  
+}
+
+
+
+	  
+.box-light-blue {
+  position: relative;
+}
+	
+.box-light-blue {
+  max-width: rem-calc(360px);
+  margin: auto;
+  padding: 40px 10px;
+  background: #f7fbfe;
+  color: #00a5e4;
+  border: 5px solid #00a5e4; 
+  text-align: center;
+    @include breakpoint(large) {
+      height: rem-calc(350px);
+  } 
+    @include breakpoint(small) {
+      height: rem-calc(250px); 
+  } 
+}
+
+
+
+	  
+.box-green {
+  position: relative; 
+}
+	
+.box-green {
+  max-width: rem-calc(360px);
+  margin: auto;
+  padding: 40px 10px;
+  background: #9ac53c;
+  color: #fff;
+  border: 5px solid #fff;
+  text-align: center;
+    @include breakpoint(large) {
+      height: rem-calc(260px); 
+  } 
+    @include breakpoint(small) {
+      height: rem-calc(200px);
+  } 
+}	  
 	
 h1 {
   font-weight: 500;
-}  
-	  
+}
 
-.hero-blurb {
-  font-size: 1.375rem;
-  font-size: calc(22px +  14 * (100vw - 320px)/1180);
-  color: #fff;
-  font-weight: 500;
-  padding-top: 150px;
-  padding-bottom: 14px; }
-  @media screen and (min-width: 83.75em) {
-    .hero-blurb {
-      font-size: 2.25rem; } }
+.image-circle {
+  max-height: rem-calc(290px);
+  width: 65%;
+}
+	  
+	  
+	  
+.notch-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.notch-top-v {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  min-height: 1rem;
+  + .notch-top-v {
+    bottom: -10px;
+  }
+  &::before, &::after {
+    background-color: inherit;
+    bottom: 97%;
+    content: "";
+    position: absolute;
+    width: 50%;
+    min-height: 2.5rem;
+  }
+
+  &::before {
+    right: 50%;
+    transform: skewX(65deg);
+    transform-origin: 100% 100%;
+  }
+
+  &::after {
+    left: 50%;
+    transform: skewX(-65deg);
+    transform-origin: 0 100%;
+  }
+}
 
 
 .body-font-white {
@@ -160,17 +390,143 @@ h1 {
   font-size: calc(16px + 4 * (100vw - 320px)/1180);
   font-weight: 400;
   color: #fff;
-  line-height: 1.4; }
-  @media screen and (min-width: 87.5em) {
-    .nhm-rotator-quote {
-      font-size: 1.25rem; } }
+  line-height: 1.4; 
+  @include breakpoint(xxlarge) {
+    font-size: 1.25rem; 
+  } 
+}
 	  
 .text-dark-large {
   font-size: 1.125rem;
   font-size: calc(18px + 10 * (100vw - 320px)/1180);
   font-weight: 400;
   color: #33333f;
-  line-height: 1.4; }
-  @media screen and (min-width: 87.5em) {
-    .body-font-dark-large {
-      font-size: 1.75rem; } }
+  line-height: 1.4; 
+  @include breakpoint(xxlarge) {
+    font-size: 1.75rem; 
+  } 
+}
+	  
+.blurb {
+  font-size: 1rem;
+  font-size: calc(16px + 8 * (100vw - 320px)/1180);
+  font-weight: 400;
+  line-height: 1.4;
+  @include breakpoint(xxlarge) {
+    font-size: 1.5rem; 
+  } 
+  @include breakpoint(large) {
+    padding-top: 30px; 
+	padding-left: 10px;
+    padding-right: 10px;
+	}
+  @include breakpoint(small) {
+    padding-top: 5px; 
+	}
+}
+
+.quote {
+  padding-bottom: 20px;
+  @include breakpoint(large) {
+    text-align: right; 
+	}
+  @include breakpoint(small) {
+    text-align: center; 
+	}
+}
+	  
+.blurb strong {
+  font-weight: 600;
+}
+	  
+.text-large {
+  font-size: 1.125rem;
+  font-size: calc(18px + 10 * (100vw - 320px)/1180);
+  font-weight: 300;
+  line-height: 1.4; 
+  @include breakpoint(xxlarge) {
+      font-size: 1.75rem;
+  } 
+}
+	  
+.header-large {
+  font-size: 2.25rem;
+  font-size: calc(36px + 24 * (100vw - 320px)/1180);
+  font-weight: 400;
+  line-height: 1;
+  @include breakpoint(xxlarge) {
+	  font-size: 3.75rem; 
+  } 
+}
+
+.header-large strong {
+  font-weight: 600;
+}
+	  
+.header-banner-large {
+  font-size: 2.25rem;
+  font-size: calc(36px + 24 * (100vw - 320px)/1180);
+  font-weight: 500;
+  line-height: 1;
+  @include breakpoint(xxlarge) {
+	  font-size: 3.75rem; 
+  } 
+    @include breakpoint(large) {
+      padding-top: 100px;
+	}
+    @include breakpoint(small) {
+      padding-top: 25px;
+	}
+}
+	  
+.emphasis {
+  font-size: 2.25rem;
+  font-size: calc(36px + 12 * (100vw - 320px)/1180);
+  font-weight: 600; 
+  @include breakpoint(xxlarge) {
+	  font-size: 3rem; 
+  } 
+}
+  
+.children-vertical-align-large {
+  @include breakpoint(large) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+.orbit-container-insert .orbit-previous svg,
+.orbit-container-insert .orbit-next svg,
+.orbit-controls-outside .orbit-previous svg,
+.orbit-controls-outside .orbit-next svg {
+  fill: #fff;
+  stroke-width: 1px; 
+  opacity: 0.7;
+  transform: scaleY(1.5);
+  stroke-linecap:round; 
+  stroke-linejoin:round;
+}
+
+.orbit-controls-outside .orbit-previous, 
+.orbit-controls-outside .orbit-next {
+ font-size: 3rem;
+}
+
+.slide-inner-container {
+   @include breakpoint (medium) {
+     min-height: rem-calc(550px);
+  }
+   @include breakpoint (large) {
+     min-height: rem-calc(550px);
+  }
+   @include breakpoint (xlarge) {
+     min-height: rem-calc(500px);
+  }
+   @include breakpoint (xxlarge) {
+     min-height: rem-calc(500px);
+  }
+}
+
+
