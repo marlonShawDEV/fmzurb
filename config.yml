@@ -163,7 +163,7 @@ PATHS:
     - "src/assets/js/shareWidget.js"  
     # "src/assets/js/appNhm.js"
     # "src/assets/js/appBetterHousing.js"
-	# "src/assets/js/appBof.js"
+    - "src/assets/js/appBof.js"
     # Individual Foundation components
   javascriptcm:
     # Libraries requried by Foundation
