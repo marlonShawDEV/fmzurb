@@ -23,15 +23,15 @@ margin:0;padding:0;position:relative;background-color:#fff;border-color:#000}
 
 <div class="background-black gutter-top gutter-bottom">  
 
-  <form class="form outline" action="#">
+  <form class="form outline" action="">
     <div class="row">
       <div class="large-8 medium-10 column medium-centered">
         <h1 class="show-for-sr">Style Guides and Tools</h1>
         <div class="input-group">
-          <label for="url" class="input-group-label">Enter URL of page to sample</label>
-          <input id="url" name="url" class="input-group-field" type="url" placeholder="http://www.freddiemac.com/">
+          <label for="url" class="input-group-label background-gray">Enter URL of page to sample</label>
+          <input id="url" name="url" class="input-group-field background-white" type="url" placeholder="http://www.freddiemac.com/" value="">
           <div class="input-group-button">
-            <button class="button tertiary" type="submit">Go!</button>
+            <button class="button secondary" type="submit">Go!</button>
           </div>
         </div> 
       </div>
@@ -39,19 +39,19 @@ margin:0;padding:0;position:relative;background-color:#fff;border-color:#000}
   </form>
   <section class="previewdisplay">
     <div class="mobile">
-      <iframe id="mobile" src="/corporate/index.html">
+      <iframe id="mobile" src="">
       </iframe>
     </div>
     <div class="tablet">
-      <iframe id="tablet" src="/corporate/index.html">
+      <iframe id="tablet" src="">
       </iframe>
     </div>
     <div class="laptop">
-      <iframe id="laptop" src="/corporate/index.html">
+      <iframe id="laptop" src="">
       </iframe>
     </div>
     <div class="desktop">
-      <iframe id="desktop" src="/corporate/index.html">
+      <iframe id="desktop" src="">
       </iframe>
     </div>
   </section>
@@ -66,20 +66,13 @@ function getUrlVars() {
 }
 
 function pageLoad() {
-  var first = getUrlVars()["url"];
-  var first = decodeURIComponent(first);
-  var first = first.replace(/\#$/, '');
-
-  if(first !== "undefined") {
-  //  take the url variable and update the iframes and input field
-    $("iframe").attr('src',(first.replace(/http:\/\/www\.freddiemac\.com/, '')));
-    $('#url').attr('value',(first));
-  }
-
-// Change iFrame on a Button Click Event
-    $(".button").on("click", function(event){
-        $("iframe").attr('src', $( '#url' ).val());
-    });
+  var first = getUrlVars()["url"] || 'http://www.freddiemac.com/index.html';
+  if(window.location.href.match(/extcstage/)){ first = first.replace(/www\.freddiemac\.com/i, 'extcstage.fhlmc.com:8090') }
+  var first = decodeURIComponent(first).replace(/\#$/,'');
+  $("#mobile").attr('src', first+"?mobile");
+  $("#tablet").attr('src', first+"?tablet");
+  $("#laptop").attr('src', first+"?laptop");
+  $("#desktop").attr('src', first+"?desktop");    
 }
 
 window.onload = pageLoad;
