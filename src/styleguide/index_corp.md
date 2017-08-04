@@ -2516,21 +2516,19 @@ Sometimes you want a form with labels to the left of your inputs. Piece of cake!
 If a form has only a single field, you can combine the label, field, and submit button into a single element using the `.input-group` class.
 
 ```html_example
-<div class="row">
-  <div class="column">
-    <form class="form" action="#">
-      <div class="medium-8 column">
-        <div class="input-group">
-          <label for="emailxx" class="input-group-label">Get Notified</label>
-          <input id="emailxx" class="input-group-field" type="email" placeholder="name@company.com">
-          <div class="input-group-button">
-            <button class="button tertiary" type="submit">Subscribe</button>
-          </div>
-        </div> 
-      </div>
-    </form>
+<form class="form" action="#">
+  <div class="row">
+    <div class="medium-8 column end">
+      <div class="input-group">
+        <label for="emailxx" class="input-group-label">Get Notified</label>
+        <input id="emailxx" class="input-group-field" type="email" placeholder="name@company.com">
+        <div class="input-group-button">
+          <button class="button tertiary" type="submit">Subscribe</button>
+        </div>
+      </div> 
+    </div>
   </div>
-</div>
+</form>
 ```
 
 ---
