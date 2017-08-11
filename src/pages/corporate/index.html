@@ -2,7 +2,7 @@
 title: Freddie Mac Homepage
 layout: homepage
 ---
-{{> homepage-hero-nhm}}
+{{> homepage-hero-bhf}}
 <div class="homepage-headlines content-band">
   <div class="row">
     <div class="large-5 xlarge-5 medium-offset-1 medium-11 column">
@@ -44,24 +44,3 @@ layout: homepage
 {{> homepage-careers}}
 {{> share-widget}} 
 {{>footer-promo-about-fm}}
-
-<script type="text/javascript"> 
-function triggerTestimonial(i) {       
-  $(".testimonials-thumbnail").find('.is-active').removeClass('is-active');
-  $(".testimonials-thumbnail").eq(i).find('a').addClass('is-active');
-  $('.testimonials-quote-container').not('.hide').addClass('hide');
-  $('.testimonials-quote-container').eq(i).removeClass('hide');
-  $('.testimonial-image-offset').not('.hide').addClass('hide');
-  $('.testimonial-image-offset').eq(i).removeClass('hide');
-}
-
-function findTestimonials() {
-  if($(".testimonials-thumbnails").length){
-    $(".testimonials-thumbnails").find(".testimonials-thumbnail").each(function(i){
-      $(this).find('a:first').on("click", function(e){e.preventDefault(); triggerTestimonial(i);});
-    }); 
-  }
-}
-
-window.onload = findTestimonials;
-</script>

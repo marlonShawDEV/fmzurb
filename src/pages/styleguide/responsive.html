@@ -1,0 +1,80 @@
+﻿---
+title: Responsive Sampler
+layout: default
+image: files/styleguide.jpg
+description: Responsive Sampler, handy for getting an image of a page at different breakpoints.
+---
+<style>
+.previewdisplay{position:relative;min-height:900px; width:1600px; margin: 0 auto;}
+.previewdisplay div{background-repeat:no-repeat;background-size:100%;overflow:hidden}
+.top-bar { display: none; }
+iframe{-webkit-transform:scale(0.329);-ms-transform:scale(0.329);transform:scale(0.329);
+-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left;
+margin:0;padding:0;position:relative;background-color:#fff;border-color:#000}
+.mobile{background-image:url("files/iphone-optimised.png");position:absolute;width:143px;height:294px;top:568px;left:330px;z-index:5}
+.mobile iframe{width:320px;height:480px;top:48px;left:17px;overflow-y:hidden}
+.tablet{background-image:url("files/ipad-optimised.png");width:369px;height:600px;z-index:3;position:absolute;left:0px;top:375px}
+.tablet iframe{width:768px;height:1024px;top:52px;left:57px;overflow-y:hidden}
+.laptop{background-image:url("files/laptop-screen-optimised.png");width:716px;height:461px;top:396px;left:860px;position:absolute;z-index:2}
+.laptop iframe{width:1280px;height:802px;top:39px;left:90px;-webkit-transform:scale(0.416);-ms-transform:scale(0.416);transform:scale(0.416);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left}
+.desktop{position:absolute;width:849px;height:807px;background-image:url("files/large-screen-optimised.png");top:0px;left:280px;z-index:1}
+.desktop iframe{left:42px;top:57px;width:1600px;height:992px;-webkit-transform:scale(0.4772);-ms-transform:scale(0.4772);transform:scale(0.4772);-webkit-transform-origin:top left;-ms-transform-origin:top left;transform-origin:top left}
+</style>
+
+<div class="background-black gutter-top gutter-bottom">  
+
+  <form class="form outline" action="">
+    <div class="row">
+      <div class="large-8 medium-10 column medium-centered">
+        <h1 class="show-for-sr">Style Guides and Tools</h1>
+        <div class="input-group">
+          <label for="url" class="input-group-label background-gray">Enter URL of page to sample</label>
+          <input id="url" name="url" class="input-group-field background-white" type="url" placeholder="http://www.freddiemac.com/" value="">
+          <div class="input-group-button">
+            <button class="button secondary" type="submit">Go!</button>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </form>
+  <section class="previewdisplay">
+    <div class="mobile">
+      <iframe id="mobile" src="">
+      </iframe>
+    </div>
+    <div class="tablet">
+      <iframe id="tablet" src="">
+      </iframe>
+    </div>
+    <div class="laptop">
+      <iframe id="laptop" src="">
+      </iframe>
+    </div>
+    <div class="desktop">
+      <iframe id="desktop" src="">
+      </iframe>
+    </div>
+  </section>
+</div>
+<script>
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+function pageLoad() {
+  var first = getUrlVars()["url"] || 'http://www.freddiemac.com/index.html';
+  if(window.location.href.match(/extcstage/)){ first = first.replace(/www\.freddiemac\.com/i, 'extcstage.fhlmc.com:8090') }
+  var first = decodeURIComponent(first).replace(/\#$/,'');
+  $("#mobile").attr('src', first+"?mobile");
+  $("#tablet").attr('src', first+"?tablet");
+  $("#laptop").attr('src', first+"?laptop");
+  $("#desktop").attr('src', first+"?desktop");    
+}
+
+window.onload = pageLoad;
+
+</script>

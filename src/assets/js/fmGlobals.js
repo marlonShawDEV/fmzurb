@@ -69,7 +69,7 @@ FM.form = {
       if(q.length){ locale='search|';trig='search';
         if($lk.closest('.keyMatchTable').length){desc=q+'|keymatch:';}
         else if($lk.closest('.main-results').length){desc=q+'|result:';}
-        else if($lk.closest('.dn-attr').length){desc=$(this).closest('#attr_1').size()>0?q+'|category:':q+'|filetype:';}
+        else if($lk.closest('.dn-attr').length){desc=$(this).closest('#attr_1').length?q+'|category:':q+'|filetype:';}
         else if ($lk.closest('.search-stat-bar').length){desc=q+'|stat-bar:';} 
       }
     }
