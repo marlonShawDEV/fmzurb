@@ -83,7 +83,7 @@ for (var x in FM.form.QueryPairs) {
   QueryParam[decodeURIComponent(FM.form.QueryPairs[x].split('=')[0] || "")] = decodeURIComponent(FM.form.QueryPairs[x].split('=')[1] || "");
 };
 
-$("input[type='text'],input[type='search']").on('change',function(){var v = $(this).val();$(this).val(FM.form.trimWhiteSpace(v));});
+$("input[type='text'],input[type='search'],input[type='email']").on('change',function(){var v = $(this).val();$(this).val(FM.form.trimWhiteSpace(v));});
 // process offsite
 $('[href]').filter('.offsite, [rel="external"]').each(function(){
   var x = $(this)[0].hasAttribute('rel') ? $(this).attr('rel') : '',  y = x!=='' ? 'noopener noreferrer '+x : 'noopener noreferrer';	

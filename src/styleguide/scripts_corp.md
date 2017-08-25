@@ -11,10 +11,10 @@ There are two globally-scoped variables that are set in fmGlobals.js and one glo
 
 | Name        | Type     | Value or Description |
 |-------------|----------|----------------------|
-| QueryParam  | variable | a JavaScript object consisting of all key=value pairs from the current page's query string |
+| QueryParam  | object   | a JavaScript object that associates all key=value pairs from the query string, where QueryParam['key'] returns 'value' |
 | getWidth()  | function | function that returns the current width of the viewport  |
-| Foundation  | variable | a JavaScript object used by the Foundation plugin and all of the Foundation scripts |
-| FM          | variable | a JavaScript object used to store all Freddie Mac custom variables and functions, named **FM** to avoid collisions with other plugins |
+| Foundation  | object   | a JavaScript object used by the Foundation plugin and all of the Foundation scripts |
+| FM          | object   | a JavaScript object used to store all Freddie Mac custom variables and functions, named **FM** to avoid collisions with other plugins |
 
 ## QueryParam Usage
 
@@ -81,7 +81,7 @@ For the corporate template, the plugin is initialized with these settings.
 | Foundation.Tabs.defaults.deepLinkSmudge     | tabs           | true  |
 | Foundation.Tabs.matchHeight                 | tabs           | true only if (getWidth() > 569) |
 | Foundation.Abide.defaults.patterns          | form validation| ['digits_dashes'] = /^[0-9-]*$/ |
-| Foundation.Abide.defaults.patterns          | form validation| ['tel'] = /^\(?\d{3}\)?[\s+|-]?\d{3}[\s+|-]?\d{4}/ |
+| Foundation.Abide.defaults.patterns          | form validation| ['tel'] = /^\(?\d{3}\)?[\s+&#x7c;-]?\d{3}[\s+&#x7c;-]?\d{4}/ |
 | Foundation.Abide.defaults                   | form validation| function to validatate form inputs with `checked_required` attribute |
 
 --
@@ -113,18 +113,18 @@ FM.form's properties store numerous variables and functions.
 | FM.form.protocol   | string          | returns location.protocol: https |
 | FM.form.hostname   | string          | returns location.hostname: extcstage.fhlmc.com (no port)|
 | FM.form.pathname   | string          | returns location.pathname of current page's URL: /path/file.html |
-| FM.form.hash       | string          | returns the location.hash, which is part of the URL after a hash: #part2  |
+| FM.form.hash       | string          | returns the location.hash, which is part of the URL after a hash: #part2 or returns empty string when no hash exists |
 | FM.form.href       | string          | returns location.href, which is the entire URL of the current page |
-| FM.form.querystr   | string          | returns location.search, which is the query string: ?f=try&g=it |
-| FM.form.referrer   | string          | returns document.referrer, if available |
-| FM.form.fmTimer    | string          | initialized with value of 0. Used when setting a timer via FM.form.setTimer. |
-| FM.form.pathElements | array         | returns array of path sections, such as 'singlefamily', 'factsheets', 'service' |
-| FM.form.QueryPairs | array           | array of all a=b pairs in the query string |
+| FM.form.querystr   | string          | returns location.search, which is the query string: ?f=try&g=it  or returns empty string when no hash exists |
+| FM.form.referrer   | string          | returns document.referrer, if available, or empty string |
+| FM.form.fmTimer    | string          | initialized with value of 0. Used when setting a timer via FM.form.setTimer(). |
+| FM.form.pathElements | array         | returns array of path sections, such as 'singlefamily', 'factsheets', 'service'; if no path, FM.form.pathElements[0] = "" |
+| FM.form.QueryPairs | array           | array of all a=b pairs in the query string to make them available to QueryParam(). |
 | FM.form.setCookie  | function        | sets a cookie. no return value |
 | FM.form.getCookie  | function        | returns value of requested cookie, or empty string |
 | FM.form.deleteCookie | function      | deletes a cookie. no return value |
-| FM.form.limitText  | function        | limits characters in a text field. no return value |
-| FM.form.trimWhiteSpace | function    | returns string trimmed of leading and trailing whitespace |
+| FM.form.limitText  | function        | limits characters in a text field, can show a countdown of characters left. For best results, run it on events "keydown keyup blur change". no return value |
+| FM.form.trimWhiteSpace | function    | returns string trimmed of leading and trailing whitespace and converts all interior double spaces to single spaces - automatically runs for input fields of type text, search, or email |
 | FM.form.forceGlobalLinks | function  | converts a local url to a prod url, returns modified url |
 | FM.form.useOmni    | function        | returns false if url omniture code not defined, or if page is loaded in TeamSite or localhost; otherwise returns true. |
 | FM.form.setTimer   | function        | clears timer and sets it to run a routine after a delay. no return value |
@@ -216,18 +216,15 @@ Syntax:
 | noticeId     | Optional. The `id` of the element that will display a countdown notice. |
 | max          | Required. Maximum number of characters allowed in the field.  |
 
-Example:
+Example: 
 
 ```javascript
-// limit field with id of Feedback to 250 characters
-FM.form.limitText('#Feedback','#null',250);
+// limit number of characters that can be typed into field with id="feedback" to 250, and display the remaining characters left in a field with id="fbcounter".
+$("#feedback").on("keydown keyup blur change",function(){FM.form.limitText('#feedback','#fbcounter',250);});
 
-// limit field with id of Feedback to 250 characters, display remaining characters in element with id of fbcounter
-FM.form.limitText('#Feedback','#fbcounter',250);
-
-// typical usage is tied to one or more change events on a form field
-// broadest usage includes keyup, keydown, blur, and change.
-$("#Feedback").on("keydown keyup blur change",function(){ FM.form.limitText('#Feedback','#fbcounter',250);}); 
+// Variation, if you do not wish to display remaining characters, pass through #null as second variable. 
+$("#feedback").on("keydown keyup blur change",function(){FM.form.limitText('#Feedback','#null',250);});
+ 
 ```
 
 ---
@@ -237,19 +234,15 @@ $("#Feedback").on("keydown keyup blur change",function(){ FM.form.limitText('#Fe
 Syntax:
 - FM.form.trimWhiteSpace(value)
 
-| Parameter    | Value                                       |
-|--------------|---------------------------------------------|
-| value        | Required. String that you want trimmed (leading and trailing spaces removed; multiple spaces reduced to single spaces. |
+| Parameter   | Value                                       |
+|-------------|---------------------------------------------|
+| value       | Required. String that you want trimmed. <br/>(Remember, this automatically runs for input fields of type text, search, or email ) |
 
-Example:
+Example: 
 
 ```javascript
-// assuming that x equals a string of text
-x = FM.form.trimWhiteSpace(x)
-
-// typical usage is tied to one or more change events on a form field
-// in this instance, trim white space on text entered in a search field
-$("input[type='search']").on('change', function(){var v = $(this).val(); $(this).val(FM.form.trimWhiteSpace(v));});
+// limit a password field on events change and mouseleave so that value is trimmed of whitespaces.
+$("input[type='password']").on("mouseleave change",function(){var v = $(this).val();$(this).val(FM.form.trimWhiteSpace(v));});
 ```
 
 ---
@@ -373,7 +366,7 @@ Syntax:
 Example:
 
 ```javascript
-// track click events if Omniture if FM.form.useOmni is true.  
+// track click events in Omniture if FM.form.useOmni is true.  
 if (FM.form.useOmni()){ 
   $(document).on("click",FM.form.omniNavLink); 
 }
