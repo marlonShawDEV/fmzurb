@@ -49,7 +49,7 @@ FM.form = {
     else if($lk.closest('.modal-content').length){desc='modal:';}
     if(locale==''&&desc==''){desc='content:';}    
     if(locale==''){locale=dir+'|';} 
-    if(hrf.match(/\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|do[ct]x?|xls[mx]?|pptx?|vsd|rtf|txt|xml|csv)/i)){ltype='d';}	 
+    if(hrf.match(/\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|do[ct]x?|xls[mx]?|pptx?|vsd|rtf|txt|xml|csv)(\?.*)?(#.*)?$/i)){ltype='d';}	 
     else if(hrf.match(/^https/i)&&!hrf.match(/slearnctr|loanlookup/i)){ltype='e';}
     else if(hrf.match(/^http/i)&&!hrf.match(/www\.freddiemac\.com/i)){ltype='e';}
     else{hrf=hrf.replace(/^https?:\/\/(www\.freddiemac\.com)?/i,'').replace(/^\//,'').replace(/index.html?/i,'');}
@@ -83,7 +83,7 @@ for (var x in FM.form.QueryPairs) {
   QueryParam[decodeURIComponent(FM.form.QueryPairs[x].split('=')[0] || "")] = decodeURIComponent(FM.form.QueryPairs[x].split('=')[1] || "");
 };
 
-$("input[type='text'],input[type='search']").on('change',function(){var v = $(this).val();$(this).val(FM.form.trimWhiteSpace(v));});
+$("input[type='text'],input[type='search'],input[type='email']").on('change',function(){var v = $(this).val();$(this).val(FM.form.trimWhiteSpace(v));});
 // process offsite
 $('[href]').filter('.offsite, [rel="external"]').each(function(){
   var x = $(this)[0].hasAttribute('rel') ? $(this).attr('rel') : '',  y = x!=='' ? 'noopener noreferrer '+x : 'noopener noreferrer';	
@@ -107,8 +107,8 @@ if (FM.form.useOmni()){
 }
 // process file markers
 if (FM.form.pathElements[0] !== "search") { 
-	$(".content-band, .two-column-layout").find("a[href]").not('.plain').not(":has(img)").not(":has(.callout)").not(":has(.card)").filter(function(){return (/.+\.(pdf|zip|mp3|mov|csv|docx?|xls[mx]?|pptx?)/i).test($(this).attr('href'));}).each(
-	   function(){ var h=$(this).attr('href').toLowerCase().replace(/.+\.(pdf|zip|mp3|mov|csv|docx?|xls[mx]?|pptx?).*/, "$1"); 
+	$(".content-band, .two-column-layout").find("a[href]").not('.plain').not(":has(img)").not(":has(.callout)").not(":has(.card)").filter(function(){return (/.+\.(pdf|zip|mp3|mov|csv|docx?|xls[mx]?|pptx?)(\?.*)?(#.*)?$/i).test($(this).attr('href'));}).each(
+	   function(){ var h=$(this).attr('href').toLowerCase().replace(/.+\.(pdf|zip|mp3|mov|csv|docx?|xls[mx]?|pptx?)(\?.*)?(#.*)?$/, "$1"); 
      if($(this).is('.button')) { $(this).append(" <span class='filemarker'>["+h+"]</span>") }
      else { $(this).after(" <span class='filemarker'>["+h+"]</span>"); }
 	});
