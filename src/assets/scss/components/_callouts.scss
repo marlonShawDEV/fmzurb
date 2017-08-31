@@ -23,6 +23,9 @@
       }
     }   
   }
+  &.no-margin {
+    margin: 0;
+  }
   > :first-child:not(.button) {
     margin-top: 0;
   }
@@ -54,6 +57,14 @@
     padding: $callout-padding * 0.5 $callout-padding;   
     margin: $callout-padding * 0.5 0;
     font-weight: $global-weight-medium;
+  }
+}
+
+.mosaic-edge-3 {
+  @for $i from 1 through 3 {
+    > div:nth-child(3n+#{$i}) > .callout {
+      border-bottom: 3px solid color-shift($fm-green, $pear, 3, $i);
+    }
   }
 }
 

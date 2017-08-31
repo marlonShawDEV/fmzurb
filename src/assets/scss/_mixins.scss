@@ -67,6 +67,7 @@
 }
 // anchors that aren't buttons, when used over dark backgrounds (modals, rotators, call outs, etc.)
 @mixin anchor-on-dark($decoration: underline){
+  &.block,
   &:not([class]) { 
     color: currentColor;
     position: relative;

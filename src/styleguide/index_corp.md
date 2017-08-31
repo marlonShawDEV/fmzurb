@@ -405,6 +405,7 @@ There are several text and typography styles to choose from, although some style
         <h2 class="page-subtitle">This is class page subtitle (also used for subtitles in <a href="#page-title">page titles</a>)</h2>
         <p class="flex-up">This is class flex-up</p>
         <p>This is class <span class="accent-orange">accent-orange</span>, which can be combined with other classes to change weight or size, such as <span class="enlarge accent-orange weight-medium">accent-orange</span> which combines the accent with <code>.enlarge</code> and <code>.weight-medium</code>.</p>
+        <p>This is class <span class="accent-gray">accent-gray</span>, which can also be combined with other classes, such as <span class="uppercase accent-gray weight-medium">accent-gray</span> which combines the accent with <code>.uppercase</code> and <code>.weight-medium</code>.</p>
       </div>
     </div>
   </li>
@@ -1122,6 +1123,25 @@ Pair the callout with the [close button](#close-button) component and `data-clos
 <li><a href="#" class="icon-chevron-right">link with css-based icon</a></li>
 <li><a href="#" class="icon">link with inline svg icon <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" style="vertical-align: baseline;"><path d="M86.4 480h339.2c12.3 0 22.4-9.9 22.4-22.1V246c0-12.2-10-22-22.4-22H404v-30.9c0-41.5-16.2-87.6-42.6-115.4-26.3-27.8-64-45.7-105.3-45.7h-.1-.1c-41.3 0-79 17.9-105.3 45.6C124.2 105.4 108 151.5 108 193v31H86.4C74 224 64 233.9 64 246v211.9c0 12.2 10 22.1 22.4 22.1zM161 193.1c0-27.3 9.9-61.1 28.1-80.3v-.3C206.7 93.9 231 83 255.9 83h.2c24.9 0 49.2 10.9 66.8 29.5v.2l-.1.1c18.3 19.2 28.1 53 28.1 80.3V224H161v-30.9z"/></svg></a></li>
 </ul>
+```
+
+---
+
+## Block Style Anchor Links
+
+Whenever you need for an anchor link to switch from inline to a block element, add class `.block`.  This can correct quirky hover states on hyperlinks that wrap across multiple lines.
+
+```html_example
+<div class="row">
+<div class="column medium-6 large-4 xlarge-3">
+<div class="callout background-primary">
+<ul>
+<li><a href="#">Example of a <i>multi-line</i> link with no class added. The hover affect doesn't reach to the full width of the link.</a></li>
+<li><a class="block" href="#">Example of a multiline link using the <code>.block</code> class, so it stretches the full width of the list item.</a></li>
+</ul>
+</div>
+</div>
+</div>
 ```
 
 ---
@@ -1901,6 +1921,59 @@ Make sure you wrap your content in a `.card-section` element in order to achieve
       <div class="card-section text-center">
         <p class="card-title"><strong>Dwight Robinson</strong></p>
         <p class="card-subtitle">Senior Vice President of Human Resources, Diversity &amp; Inclusion and Chief Diversity Officer</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Cards for Applications or Products
+
+Card headings can be either `h2` or `h3` elements.
+
+```html_example
+<div data-equalizer="outer">
+  <div class="row medium-up-2 large-up-4" data-equalizer="inner" data-equalize-on="medium">
+    <div class="column">
+      <div class="background-blue card-chevron text-center" data-equalizer-watch="outer">
+        <div class="divider-flex gutter-all background-primary" data-equalizer-watch="inner">
+          <h2>Originate &amp; Underwrite</h2>
+        </div>
+        <div class="callout">
+          <p class="flex-up">Complete loan origination with us, at the quote and underwriting stages.</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="background-blue card-chevron text-center" data-equalizer-watch="outer">
+        <div class="divider-flex gutter-all background-primary" data-equalizer-watch="inner">
+          <h2>Purchase &amp; Deliver</h2>
+        </div>
+        <div class="callout">
+          <p class="flex-up">Complete final delivery and sell us the loan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="background-blue card-chevron text-center" data-equalizer-watch="outer">
+        <div class="divider-flex gutter-all background-primary" data-equalizer-watch="inner">
+          <h2>Investor Reporting</h2>
+        </div>
+        <div class="callout">
+          <p class="flex-up">Report loan and bond data to us in the accounting, payoff, and wire request processes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="background-blue card-chevron text-center" data-equalizer-watch="outer">
+        <div class="divider-flex gutter-all background-primary" data-equalizer-watch="inner">
+          <h2>Asset  Management</h2>
+        </div>
+        <div class="callout">
+          <p class="flex-up">Monitor and report on loans to effectively manage asset performance.</p>
+        </div>
       </div>
     </div>
   </div>

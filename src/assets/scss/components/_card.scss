@@ -18,6 +18,50 @@
     }
   } 
 }
+
+.card-chevron {
+  position: relative;
+  margin-bottom: $gutter;
+  font-size: rem-calc(28);  
+  font-size: calc(28px +  19 * (100vw - 320px)/1180);
+  padding-bottom: 1.4em;
+  background-position: center bottom;
+  background-repeat: repeat-y;
+  background-size: cover;
+  @include breakpoint(xlarge) { 
+    font-size: rem-calc(47); 
+  }
+  > * { 
+    font-size: 1rem;
+    position: relative;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+  &::after {
+    content: ' ';  
+    background: transparent icon(chevron-dbl, "none", 24px, 24px, 0, 0, 24, 24, $white, 3) no-repeat center bottom /contain;    
+    width: 1em;
+    height: 1em;
+    display: block;
+    position: absolute;
+    bottom: 19px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0.4;
+  }
+}
+.divider-flex {
+  display: flex;
+  align-items: center;
+  h2,
+  h3  {
+    flex: 1 1 auto;
+    margin-bottom: 0;
+  }
+}
+
 .card-section { 
   &:not(.text-center) {
     padding-left: 0;
