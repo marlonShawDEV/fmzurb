@@ -193,7 +193,8 @@
 .icon-chevron-right-double {
   position: relative;
   color: $anchor-color !important;
-  padding-right: 1.6rem;
+  padding-right: 1.7em;
+  line-height: 1.1;
   &::after {
     content: ' ';  
     background: transparent icon(chevron-dbl, "none", 1em, 1em, 0, 0, 24, 24, $anchor-color, 2) no-repeat right center;    
@@ -202,8 +203,8 @@
     display: inline-block;
     position: relative;
     bottom: -0.125em;
-    margin-left: 0.4rem;
-    margin-right: -1.6rem;
+    margin-left: 0.2em;
+    margin-right: -1.6em;
   }
 }
 .icon-chevron-right {

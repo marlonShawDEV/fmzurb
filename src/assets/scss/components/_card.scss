@@ -53,10 +53,13 @@
   }
 }
 .divider-flex {
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
   h2,
   h3  {
+    -webkit-flex:  1 1 auto;
     flex: 1 1 auto;
     margin-bottom: 0;
   }
