@@ -22,8 +22,7 @@ ol.reversed {
   }
 }
 ul:not([class]) > li, 
-ol:not([class]) > li,
-.no-bullet > li {
+ol:not([class]) > li {
   margin-bottom: 0.4375em;
   margin-top: 0.4375em;
 }

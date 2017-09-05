@@ -4,7 +4,12 @@
   position: relative;
   padding: $callout-padding;
   &.large {
-    padding: $callout-padding * 1.5;
+    @include breakpoint(medium) {  
+      padding: $callout-padding * 1.25;
+    }
+    @include breakpoint(large) {  
+      padding: $callout-padding * 1.5;
+    }
   }
   &.small {
     padding: $callout-padding * 0.5 $callout-padding * 0.75;
@@ -22,9 +27,6 @@
         padding: 7rem;
       }
     }   
-  }
-  &.no-margin {
-    margin: 0;
   }
   > :first-child:not(.button) {
     margin-top: 0;
