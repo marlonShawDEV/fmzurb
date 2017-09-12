@@ -348,7 +348,7 @@ sup, sub {
 		font-size: rem-calc(14);
     font-weight: $global-weight-bold;
 	}
-  .sidebar & {
+  .sidebar:not(.events) & {
     margin-bottom: 0.65em;
   }
 }

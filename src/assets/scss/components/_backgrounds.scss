@@ -10,6 +10,9 @@
   .background-concrete {
     background-color: $light-gray;
     color: $body-font-color; // solves for when this is inside another background
+    .background-concrete {
+      background-color: darken($light-gray, 3.7%);
+    }    
   }
   .background-white {
     background: $white;
@@ -24,5 +27,9 @@
   }
   .background-celery {
     background: $celery;  
+  }
+  .background-stripes {
+    background-image: linear-gradient(to left top, transparent 47%, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 53%, transparent 0px);
+    background-size: 10px 10px;
   }
 }

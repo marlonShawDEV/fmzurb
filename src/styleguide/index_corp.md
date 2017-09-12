@@ -955,9 +955,10 @@ The default text alignment for most containers is left.
 
 <p class="lead">A callout is just a container with a `.callout` class applied. You can put any kind of content inside.</p>
 
-- To create a white callout with a border, add either class `.hollow` or `.hollow-thin` to the `.callout` container.
+- To create a callout with a border, add class `.hollow`, `.hollow-thin`, or `.border-white` to the `.callout` container.
 - To select a callout with a specific background color, include a [background color class](#colors) on the `.callout` container.
 - There are callouts for use within the content area.  Refer to [prefooter promo](#prefooter-promo-band) for full width promo containers. 
+- Avoid applying background colors to `.row` elements.  
 
 ```html_example
 <div class="row">
@@ -1002,12 +1003,39 @@ The default text alignment for most containers is left.
     </div>
   </div>
 </div>
+<p>When nesting callouts against other backgrounds, you may need to include <code>.background-white</code> for hyperlink and text colors to work.</p>
 <div class="row">
-  <div class="column">
+  <div class="column medium-6">
     <div class="callout background-gray">
       <p>This is a gray callout, with another callout nested inside it.</p>
       <div class="callout background-white">
         <p>This is a <a href="#">callout</a> with class of background-white.</p>
+      </div>
+    </div>
+  </div>
+  <div class="column medium-6">
+    <div class="callout background-gray">
+      <p>This is a gray callout, with another callout nested inside it.</p>
+      <div class="callout hollow background-white">
+        <p>This is a <a href="#">callout</a> with class of hollow and  background-white.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="column medium-6">
+    <div class="gutter-all background-concrete">
+      <p>This is a container with background-concrete. </p>
+      <div class="callout background-concrete border-white">
+        <p>This is a <a href="#">callout</a> with class of background-concrete and border-white, nested inside a container that has a background.</p>
+      </div>
+    </div>
+  </div>
+  <div class="column medium-6">
+    <div class="gutter-all background-yellow">
+      <p>This is a container with background-yellow. </p>
+      <div class="callout background-white hollow">
+        <p>This is a <a href="#">callout</a> with class of background-white and hollow, nested inside a container that has a background.</p>
       </div>
     </div>
   </div>

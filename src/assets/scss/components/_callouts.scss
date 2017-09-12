@@ -46,6 +46,12 @@
   &.hollow {
     border-width: 3px;
   }
+  &.border-white {
+    border: 3px solid $white;
+    @include breakpoint(large) {
+      border: 4px solid $white;
+    }
+  }
   &.callout-overlay {    
     background-size: cover;
     background-repeat: no-repeat;

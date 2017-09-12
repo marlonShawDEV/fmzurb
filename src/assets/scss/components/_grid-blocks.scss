@@ -1,3 +1,112 @@
+.notch-block {
+  position: relative;
+  margin-top: $gutter * 1.5;
+  .column {
+    position: relative;
+  }
+  .callout {
+    width: 100%; 
+    min-height:130px;
+    position: relative;
+    margin: 0;
+    line-height: 1.2;
+    @include breakpoint(medium) {
+      min-height:225px;
+    }
+  }
+  .medium-pull-4 {
+    .callout {
+      @include breakpoint(medium) { 
+        padding-right: $gutter * 1.5; 
+      }
+    }
+  }
+  .medium-8,
+  .medium-5 {
+    .callout {
+      display: table-cell;
+      vertical-align: middle;
+      @include breakpoint(small only) { 
+        padding-top: $gutter * 1.5; 
+      }
+    }
+    &:not(.medium-pull-4) {
+      .callout {
+        @include breakpoint(medium) { 
+          padding-left: $gutter * 1.5; 
+        }
+      }
+    }
+  }
+}
+
+.caret-upside::after,
+.caret-downside::after,
+.caret-leftside::after,
+.caret-rightside::after  {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px; 
+  position: absolute;
+  transform: rotate(45deg);
+  background-color: inherit;
+  z-index: 300;
+}
+
+.caret-downside,
+.caret-upside {
+  background-color: inherit;
+  left: 0;
+  right: 0;
+  text-align: center;
+  position: absolute;
+}
+
+.caret-upside {
+  top: 0;
+  &::after {
+    top: -10px;
+    right: 0;
+    left: 0;
+    z-index: 402;
+    margin: 0 auto;
+  }
+}
+.caret-downside {
+  bottom: 0;
+  &::after {
+    bottom: -10px;
+    right: 0;
+    left: 0;
+    z-index: 403;
+    margin: 0 auto;
+  }
+}
+.caret-rightside,
+.caret-leftside  {
+  background-color: inherit;
+  position: absolute;
+  vertical-align: middle;  
+  top: calc(50% - 10px);
+}
+.caret-leftside {
+  left: 0;
+  z-index: 404;
+  &::after {
+    left: -10px;
+    z-index: 400;
+  }
+}
+.caret-rightside {
+  right: 0;
+  z-index: 405;
+  &::after {
+    right: -10px;
+    z-index: 401;
+  }
+}
+
 .grid-block {
   margin-bottom: $gutter;
   + .grid-block {
@@ -36,40 +145,26 @@
       background-color: inherit;
       vertical-align: middle;
     }
-  }
+  } 
   .caret-rightside,
   .caret-leftside  {
-    background-color: inherit;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    vertical-align: middle;  
-  }
-  .caret-leftside {
-    left: 0;
-  }
-  .caret-rightside {
-    right: 0;
-  }
-  .caret-leftside::after,
-  .caret-rightside::after  {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px; 
-    position: absolute;
-    transform: rotate(45deg);
-    background-color: inherit;
-    z-index: 300;
-  }
-  .caret-rightside::after {
-    right: -10px;
-  }
-  .caret-leftside::after {
-    left: -10px;
   }
 }
 
+@media print {
+  .grid-block,
+  .mosaic-3 {
+    .row,
+    .column {
+      width: 100% !important;
+      height: auto !important;
+      min-height: auto !important;
+    }
+  }
+} 
 @media print {
   .grid-block,
   .mosaic-3 {

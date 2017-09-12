@@ -10,11 +10,20 @@ keywords: multifamily, affordable rental housing, rental housing, mortgage fundi
 ---
 
 <style>
-.product-4-grid .edge-bottom { border-bottom: 4px solid #f4f4f4; }
 .product-4-grid .table-cell { padding: 5px; }
-.product-4-grid .table-cell + .table-cell { padding-left: 0px; }
+.product-4-grid a { line-height: 1.1; }
+.table-cell + .table-cell { padding-left: 0px; padding-right: 12px; }
+.product-4-grid > div:not(:last-of-type) { padding-bottom: 5px; } 
+@media screen and (min-width: 35.625em) and (max-width: 79.375em) {
+    .product-4-grid > div:nth-child(2n+2) { padding-left: 5px !important; } 
+}
+.product-4-grid > div:nth-child(4n+1) .table { background-color: #a4c745; }
+.product-4-grid > div:nth-child(4n+2) .table { background-color: #b0cd42; }
+.product-4-grid > div:nth-child(4n+3) .table { background-color: #b7cf41; }
+.product-4-grid > div:nth-child(4n+4) .table { background-color: #bed240; }
+
 @media screen and (min-width: 35.625em) and (max-width: 61.23438em) { 
-  .row .edge-fix  { padding: 0 0.625rem; }
+  .row .edge-fix { padding-left: 0.625rem; }
 }
 </style>
 
@@ -29,10 +38,10 @@ keywords: multifamily, affordable rental housing, rental housing, mortgage fundi
 </div>
 <div class="hero-edge"> </div>
 <div class="background-concrete clearfix"> 
-  <div class="content-band">
+  <div class="content-band even">
     <div class="row" data-equalizer data-equalize-on="medium">
       <div class="column xlarge-9">
-        <h2 class="weight-medium">Get it Done</h2>
+        <h2 class="weight-medium gutter-bottom">Get it Done</h2>
         <div class="row mosaic-edge-3 medium-collapse large-uncollapse edge-fix gutter-bottom">
           <div class="column medium-4">
             <div class="callout background-white" data-equalizer-watch>
@@ -74,80 +83,229 @@ keywords: multifamily, affordable rental housing, rental housing, mortgage fundi
         </div>
       </div>
       <div class="column xlarge-3">
-        <h2 class="weight-medium">Products</h2>
-        <div class="row product-4-grid" data-equalizer-watch>
+        <h2 class="weight-medium gutter-bottom">Products</h2>
+        <div class="row collapse product-4-grid" data-equalizer-watch>
           <div class="column medium-6 xlarge-12">
-            <div class="background-white table block edge-bottom">
+            <div class="table block background-green">
               <div class="table-cell vertical-middle">
                 <svg width="44px" height="44px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.65 24.65"><defs><style>.cls-1{fill:#447bbd;stroke-width:0.65px;}.cls-1,.cls-2{stroke:#fff;stroke-linejoin:round;}.cls-2,.cls-3{fill:none;}.cls-2{stroke-linecap:round;stroke-width:0.65px;}</style></defs><circle class="cls-1" cx="12.32" cy="12.32" r="12"/><path class="cls-2" d="M6.18 5.46H18.46V20.63H6.18z"/><path class="cls-2" d="M11.24 17.74H13.41V20.63H11.24z"/><path class="cls-2" d="M11.24 14.13H13.41V16.3H11.24z"/><path class="cls-2" d="M14.85 14.13H17.02V16.3H14.85z"/><path class="cls-2" d="M7.63 14.13H9.8V16.3H7.63z"/><path class="cls-2" d="M11.24 10.52H13.41V12.69H11.24z"/><path class="cls-2" d="M14.85 10.52H17.02V12.69H14.85z"/><path class="cls-2" d="M7.63 10.52H9.8V12.69H7.63z"/><path class="cls-2" d="M11.24 6.91H13.41V9.08H11.24z"/><path class="cls-2" d="M14.85 6.91H17.02V9.08H14.85z"/><path class="cls-2" d="M7.63 6.91H9.8V9.08H7.63z"/><path class="cls-2" d="M17.02 4.02L7.63 4.02 6.18 5.46 18.46 5.46 17.02 4.02"/></svg>
               </div>
               <div class="table-cell block vertical-middle">
-                <a class="flex-up icon-chevron-right-double weight-normal" href="#">Conventional</a>
+                <a class="flex-up block weight-normal" href="#">Conventional
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-anchor-on-dark" viewBox="0 0 24 24" width="16px" height="16px"><path stroke-width="3" d="M 12 22 l 10 -10 L 12 2 M 2 22 l 10 -10 L 2 2" /></svg>
+                </a>
               </div>
             </div>
           </div>
           <div class="column medium-6 xlarge-12">
-            <div class="background-white table block edge-bottom">
+            <div class="table block background-green">
               <div class="table-cell vertical-middle">
                 <svg width="44px" height="44px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.65 24.65"><defs><style>.cls-1{fill:#447bbd;stroke-width:0.65px;}.cls-1,.cls-2{stroke:#fff;stroke-linejoin:round;}.cls-2,.cls-3{fill:none;}.cls-2{stroke-width:0.61px;}</style></defs><title>icon_conventional</title><g id="Outline_Icons" data-name="Outline Icons"><circle class="cls-1" cx="12.32" cy="12.32" r="12"/><polyline class="cls-2" points="13.85 19.34 5.31 19.34 5.31 5.31 19.34 5.31 19.34 15.68"/><path class="cls-2" d="M8.65,7.43a1.22,1.22,0,0,0-2.44,0v3H8.65Z" transform="translate(0.32 0.32)"/><path class="cls-2" d="M12.3,7.43a1.22,1.22,0,0,0-2.44,0v3H12.3Z" transform="translate(0.32 0.32)"/><path class="cls-2" d="M8.65,13.52a1.22,1.22,0,1,0-2.44,0v3H8.65Z" transform="translate(0.32 0.32)"/><path class="cls-2" d="M12.3,13.52a1.22,1.22,0,1,0-2.44,0v3H12.3Z" transform="translate(0.32 0.32)"/><path class="cls-2" d="M17.79,11.7a1.22,1.22,0,0,0-1.22-1.22H16a1.22,1.22,0,0,0-1.22,1.22v3.66h3Z" transform="translate(0.32 0.32)"/><circle class="cls-2" cx="16.59" cy="8.06" r="1.22"/><rect class="cls-2" x="13.85" y="15.68" width="5.49" height="3.66"/><line class="cls-2" x1="13.85" y1="16.9" x2="19.34" y2="16.9"/><line class="cls-2" x1="13.85" y1="18.12" x2="19.34" y2="18.12"/><line class="cls-2" x1="13.85" y1="5.31" x2="13.85" y2="15.68"/></g></svg>
               </div>
               <div class="table-cell block vertical-middle">
-                <a class="flex-up icon-chevron-right-double block weight-normal" href="#">Small Balance Loan</a>
+                <a class="flex-up block weight-normal" href="#">Small Balance Loan
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-anchor-on-dark" viewBox="0 0 24 24" width="16px" height="16px"><path stroke-width="3" d="M 12 22 l 10 -10 L 12 2 M 2 22 l 10 -10 L 2 2" /></svg>
+                </a>
               </div>               
             </div>
           </div>
           <div class="column medium-6 xlarge-12">
-            <div class="background-white table block edge-bottom">
+            <div class="table block background-green">
               <div class="table-cell vertical-middle">
                 <svg width="44px" height="44px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.65 24.65"><defs><style>.cls-1{fill:#447bbd;}.cls-1,.cls-2{stroke:#fff;stroke-linejoin:round;stroke-width:0.65px;}.cls-2,.cls-3{fill:none;}.cls-2{stroke-linecap:round;}</style></defs><g id="Outline_Icons" data-name="Outline Icons"><circle class="cls-1" cx="12.32" cy="12.32" r="12"/><path class="cls-2" d="M4.32 19.33L20.33 19.33"/><path class="cls-2" d="M7.11 6.11H17.55V19.330000000000002H7.11z"/><path class="cls-2" d="M18.24 5.41L12.32 3.32 6.41 5.41 6.41 6.11 18.24 6.11 18.24 5.41z"/><path class="cls-2" d="M11.28 15.85H13.37V19.33H11.28z"/><path class="cls-2" d="M8.5 7.5H9.89V8.89H8.5z"/><path class="cls-2" d="M11.28 7.5H13.37V8.89H11.28z"/><path class="cls-2" d="M14.76 7.5H16.15V8.89H14.76z"/><path class="cls-2" d="M8.5 10.28H9.89V11.67H8.5z"/><path class="cls-2" d="M11.28 10.28H13.37V11.67H11.28z"/><path class="cls-2" d="M14.76 10.28H16.15V11.67H14.76z"/><path class="cls-2" d="M8.5 13.06H9.89V14.450000000000001H8.5z"/><path class="cls-2" d="M11.28 13.06H13.37V14.450000000000001H11.28z"/><path class="cls-2" d="M14.76 13.06H16.15V14.450000000000001H14.76z"/><path class="cls-2" d="M8.5 15.85H9.89V17.24H8.5z"/><path class="cls-2" d="M14.76 15.85H16.15V17.24H14.76z"/></g></svg>
               </div>
               <div class="table-cell block vertical-middle">
-                <a class="flex-up icon-chevron-right-double block weight-normal" href="#">Targeted Affordable <span class="">Housing</span></a>
+                <a class="flex-up block weight-normal" href="#">Targeted Affordable <span class="inline-block">Housing 
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-anchor-on-dark" viewBox="0 0 24 24" width="16px" height="16px"><path stroke-width="3" d="M 12 22 l 10 -10 L 12 2 M 2 22 l 10 -10 L 2 2" /></svg>
+                </span></a>
               </div>                
             </div>              
           </div>
           <div class="column medium-6 xlarge-12">   
-            <div class="background-white table block">
+            <div class="table block background-green">
               <div class="table-cell vertical-middle">
                 <svg width="44px" height="44px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.65 24.65"><defs><style>.cls-1{fill:#447bbd;}.cls-1,.cls-2,.cls-3,.cls-4,.cls-5{stroke:#fff;}.cls-1,.cls-2,.cls-3,.cls-5{stroke-linejoin:round;}.cls-1,.cls-2,.cls-3,.cls-4{stroke-width:0.65px;}.cls-2,.cls-3,.cls-5,.cls-6{fill:none;}.cls-2,.cls-5{stroke-linecap:round;}.cls-4{stroke-miterlimit:10;}.cls-5{stroke-width:0.6px;}</style></defs><circle class="cls-1" cx="12.32" cy="12.32" r="12"/><g id="Outline_Icons-2" data-name="Outline Icons"><path class="cls-2" d="M18.9,20.15s-.31-2.38-1.53-3.3-3.91,0-3.91-2.07V13.25c.31.92,2.07,1.53,3.3,0-1.84,0,0-9-4.83-6-4.83-3-3,6-4.83,6,1.23,1.53,3,.92,3.3,0v1.53c0,2.07-2.68,1.23-3.91,2.07s-1.53,3.3-1.53,3.3Z" transform="translate(.32 .32)"/><path class="cls-3" d="M16.16 16.64L13.55 20.47"/><path class="cls-3" d="M8.49 16.64L11.1 20.47"/><path class="cls-4" d="M10.77,16.24a.31.31,0,1,0,.31.31.28.28,0,0,0-.31-.31Z" transform="translate(.32 .32)"/><path class="cls-4" d="M12,16.55a.31.31,0,1,0,.31.31.33.33,0,0,0-.31-.31Z" transform="translate(.32 .32)"/><path class="cls-4" d="M13.23,16.24a.31.31,0,1,0,.31.31.33.33,0,0,0-.31-.31Z" transform="translate(.32 .32)"/><path class="cls-2" d="M10.47,13.25s-.92-.31-.61-2.45" transform="translate(.32 .32)"/><path class="cls-2" d="M10.16,9.88c0,.31-.31,1.23-.92,1.23" transform="translate(.32 .32)"/><path class="cls-2" d="M13.53,13.25s.92-.31.61-2.45" transform="translate(.32 .32)"/><path class="cls-2" d="M13.84,9.88c0,.31.31,1.23.92,1.23" transform="translate(.32 .32)"/></g><path class="cls-2" d="M3.13 9.74L12.32 3.77 21.52 9.74"/><path class="cls-5" d="M16.23 6.29L16.23 4.68 18.3 4.68 18.3 7.67 16.23 6.29"/><g><path class="cls-6" d="M2.79 2.79H21.869999999999997V21.869999999999997H2.79z"/></g></svg>
               </div>
               <div class="table-cell block vertical-middle">
-                <a class="flex-up icon-chevron-right-double weight-normal" href="#">Seniors Housing</a>
+                <a class="flex-up weight-normal block" href="#">Seniors Housing
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-anchor-on-dark" viewBox="0 0 24 24" width="16px" height="16px"><path stroke-width="3" d="M 12 22 l 10 -10 L 12 2 M 2 22 l 10 -10 L 2 2" /></svg>
+                </a>
               </div>                
             </div>              
           </div>
         </div>
+        <p class="grid-block-text-small uppercase gutter-bottom gutter-top"><a class="icon-chevron-right block" href="#">All Products</a></p>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="background-primary background-stripes clearfix">
+  <div class="content-band even">
+    <div class="row gutter-top gutter-bottom">
+      <div class="column">
+        <div class="callout no-margin large background-primary">
+            tabbed promo section
+        </div>
       </div>
     </div>
   </div>
-</div> 
-<div class="content-band">
-  <div class="row column">
+</div>  
+<div class="background-concrete gutter-bottom-large clearfix">
+  <div class="content-band even" data-equalizer="col" data-equalize-on="large">
+    <div class="row column gutter-bottom"  data-equalizer="row1"  data-equalize-on="medium">
+      <h2 class="gutter-bottom">Multifamily News</h3>
+      <div class="row gutter-bottom"  data-equalizer="row2"data-equalize-on="medium">
+        <div class="column medium-6 large-4" data-equalizer-watch="col">
+          <div class="callout background-white"  data-equalizer-watch="row1">
+            <h3 class="weight-normal">Viewpoints</h3>
+            <ul class="flex-up no-bullet list-divided-white">
+              <li><a class="weight-medium" href="#">Preserving a Pocket of Hope</a><br>
+              March 1, 2017 – by Lauren Garren</li>
+              <li><a class="weight-medium" href="#">Meeting the Seniors Housing Market Needs</a><br>
+              February 8, 2017 – by Steve Schmidt</li>
+              <li><a class="weight-medium" href="#">Will 2017 Be Another Growth Year?</a><br>
+              January 31, 2017 – by Steve Guggenmos</li>
+              <li><a class="uppercase icon-chevron-right block" href="#">Our Viewpoints </a></li>          
+            </ul>
+          </div>            
+          <div class="callout background-white no-margin-bottom"  data-equalizer-watch="row2">
+            <h3 class="weight-normal">News Releases</h3>
+            <ul class="flex-up no-bullet list-divided-white recent-headline-home">                
+              <li><a class="uppercase icon-chevron-right block" href="#">Multifamily News Releases</a></li>          
+            </ul>
+          </div>
+        </div>
+        <div class="column medium-6 large-4"  data-equalizer-watch="col">
+          <div class="gutter-bottom hide-for-medium"></div>
+          <div class="callout background-white" data-equalizer-watch="row1">
+            <h3 class="weight-normal">Research</h3>
+            <ul class="flex-up no-bullet list-divided-white">
+              <li><a class="weight-medium" href="#">Profile of Today’s Renter</a><br>
+              April 10, 2017</li>
+              <li><a class="weight-medium" href="#">Multifamily Volume and Pricing Outlook</a><br>
+              April 6, 2017</li>
+              <li><a class="weight-medium" href="#">2017 Multifamily Housing Outlook</a><br>
+              January 31, 2017</li>
+              <li><a class="uppercase icon-chevron-right block" href="#">Research and analysis</a></li>          
+            </ul>
+          </div>
+
+          <div class="callout background-white no-margin-bottom"  data-equalizer-watch="row2">
+            <h3 class="weight-normal">Customer News</h3>
+            <ul class="flex-up no-bullet list-divided-white">
+              <li><a class="weight-medium" href="#">Going Green Is a No Brainer</a><br>
+              April 14, 2017</li>
+              <li><a class="weight-medium" href="#">Brickman and Cannon Named in 50 Most Important Figures List</a><br>
+              April 12, 2017</li>
+              <li><a class="uppercase icon-chevron-right block" href="#">Customer News</a></li>          
+            </ul>            
+          </div>
+        </div>
+        <div class="column large-4">
+          <div class="gutter-bottom hide-for-large"></div>
+          <div class="background-white callout no-margin-bottom" data-equalizer-watch="col">
+              <h3 class="weight-normal">Events &amp; Education</h3> 
+              <ul class="flex-up list-divided no-bullet">
+                <li class="media-object">
+                  <div class="media-object-section">  
+                    <svg height="70" width="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path fill="#457bbe" d="M892 990H108c-54.1 0-98-43.9-98-98V441.2h60.5c-.4 170.4-1.7 392-1.7 392 0 54.1 63.5 98 117.6 98h627.2c54.1 0 117.6-43.9 117.6-98 0 0-1.3-226.7-1.7-392H990V892c0 54.1-43.9 98-98 98zM10 186.4c0-54.1 43.9-98 98-98h39.2v196c0 43.3 35.1 78.4 78.4 78.4 43.3 0 78.4-35.1 78.4-78.4v-196h392v196c0 43.3 35.1 78.4 78.4 78.4 43.3 0 78.4-35.1 78.4-78.4v-196H892c54.1 0 98 43.8 98 98V402H10V186.4zm764.4 137.2c-32.5 0-58.8-26.3-58.8-58.8v-196c0-32.5 26.3-58.8 58.8-58.8s58.8 26.3 58.8 58.8v196c0 32.5-26.3 58.8-58.8 58.8zm-548.8 0c-32.5 0-58.8-26.3-58.8-58.8v-196c0-32.5 26.3-58.8 58.8-58.8s58.8 26.3 58.8 58.8v196c0 32.5-26.3 58.8-58.8 58.8z"/></svg>
+                  </div>
+                  <div class="media-object-section">
+                    <div class="article-category">Industry Event</div>
+                    <h3 class="sidebar-headline"><a href="#">NMHC Student Housing Conference & Expo</a></h3>
+                    <p class="">September 25<br>Tampa, FL</p>
+                  </div>
+                </li>
+                <li class="media-object">
+                  <div class="media-object-section">  
+                    <svg height="70" width="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path fill="#457bbe" d="M892 990H108c-54.1 0-98-43.9-98-98V441.2h60.5c-.4 170.4-1.7 392-1.7 392 0 54.1 63.5 98 117.6 98h627.2c54.1 0 117.6-43.9 117.6-98 0 0-1.3-226.7-1.7-392H990V892c0 54.1-43.9 98-98 98zM10 186.4c0-54.1 43.9-98 98-98h39.2v196c0 43.3 35.1 78.4 78.4 78.4 43.3 0 78.4-35.1 78.4-78.4v-196h392v196c0 43.3 35.1 78.4 78.4 78.4 43.3 0 78.4-35.1 78.4-78.4v-196H892c54.1 0 98 43.8 98 98V402H10V186.4zm764.4 137.2c-32.5 0-58.8-26.3-58.8-58.8v-196c0-32.5 26.3-58.8 58.8-58.8s58.8 26.3 58.8 58.8v196c0 32.5-26.3 58.8-58.8 58.8zm-548.8 0c-32.5 0-58.8-26.3-58.8-58.8v-196c0-32.5 26.3-58.8 58.8-58.8s58.8 26.3 58.8 58.8v196c0 32.5-26.3 58.8-58.8 58.8z"/></svg>
+                  </div>
+                  <div class="media-object-section">
+                    <div class="article-category">Conference</div>
+                    <h3 class="sidebar-headline"><a href="#">2017 Customer Conference </a></h3>
+                    <p class="">October 16-18<br>Phoenix, AZ</p>
+                  </div>
+                </li>
+                <li class="media-object">
+                  <div class="media-object-section">  
+                    <svg height="70" width="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path fill="#457bbe" d="M892 990H108c-54.1 0-98-43.9-98-98V441.2h60.5c-.4 170.4-1.7 392-1.7 392 0 54.1 63.5 98 117.6 98h627.2c54.1 0 117.6-43.9 117.6-98 0 0-1.3-226.7-1.7-392H990V892c0 54.1-43.9 98-98 98zM10 186.4c0-54.1 43.9-98 98-98h39.2v196c0 43.3 35.1 78.4 78.4 78.4 43.3 0 78.4-35.1 78.4-78.4v-196h392v196c0 43.3 35.1 78.4 78.4 78.4 43.3 0 78.4-35.1 78.4-78.4v-196H892c54.1 0 98 43.8 98 98V402H10V186.4zm764.4 137.2c-32.5 0-58.8-26.3-58.8-58.8v-196c0-32.5 26.3-58.8 58.8-58.8s58.8 26.3 58.8 58.8v196c0 32.5-26.3 58.8-58.8 58.8zm-548.8 0c-32.5 0-58.8-26.3-58.8-58.8v-196c0-32.5 26.3-58.8 58.8-58.8s58.8 26.3 58.8 58.8v196c0 32.5-26.3 58.8-58.8 58.8z"/></svg>
+                  </div>
+                  <div class="media-object-section">
+                    <div class="article-category">Industry Event</div>
+                    <h3 class="sidebar-headline"><a href="#">NCSHA Annual Conference</a></h3>
+                    <p class="">October 14<br>Denver, CO </p>
+                  </div>
+                </li>
+                <li><a href="#" class="uppercase block icon-chevron-right">All Events and Education</a>
+                </li>
+            </ul>               
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row gutter-top gutter-bottom" data-equalizer>
+      <div class="column large-6">
+        <div class="callout large border-white background-concrete text-center" data-equalizer-watch>
+          <div class="gutter-left-xlarge gutter-right-xlarge">
+            <h4 class="uppercase accent-gray">Get Notified. Subscribe Now!</h4>
+            <p class="flex-up">Get Multifamily news updates delivered to your inbox. <br class="show-for-medium">Don’t worry, we won’t spam you. </p>
+            <form class="form" action="#" style="max-width: 540px; margin: 0 auto;">
+              <div class="row">
+                <div class="column medium-8 large-7 xlarge-8 gutter-bottom">
+                  <input aria-label="Email Address" id="emailxx" class="no-margin" type="email" placeholder="name@company.com">
+                </div>
+                <div class="column medium-4 large-5 xlarge-4 gutter-bottom">
+                  <button class="button tertiary no-margin block show-for-medium" type="submit">Subscribe</button>
+                  <button class="button tertiary no-margin hide-for-medium" type="submit">Subscribe</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column large-6">
+        <div class="callout large border-white background-concrete text-center" data-equalizer-watch>
+          <div class="gutter-left-xlarge gutter-right-xlarge">
+            <h4 class="uppercase accent-gray">Multifamily Podcast</h4>
+            <p class="flex-up">Freddie Mac leadership discussing the latest trends <br class="show-for-medium">in Multifamily Lending.</p>
+            <div class="text-center">
+              <a class="button tertiary" type="submit">Listen Now</a>
+              <span class="gutter-left"><a class="button" type="submit">Download</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+</div>
+
+<div class="content-band even">
+    <div class="row column gutter-top gutter-bottom">
     <div class="row" data-equalizer data-equalize-on="small" data-equalize-on-stack="true">
       <div class="column xlarge-5 large-5">
-        <h2 class="weight-medium">Green Advantage</h2>
+        <h2 class="weight-medium gutter-bottom">Green Advantage</h2>
         <div class="background-concrete gutter-right-large" data-equalizer-watch>
-          image
+          image needed
         </div>
         <h5 class="gutter-top">Better Pricing. Larger Proceeds. Energy Savings.</h5>
         <p class="flex-up gutter-right-large">Our Green Advantage initiative rewards borrowers who improve their properties to save energy or water.</p>
         <p><a class="button tertiary" href="#">Go Green!</a></p>
       </div>
       <div class="column xlarge-6 xlarge-offset-1 large-7">
-        <h2 class="weight-medium">New Business Activity</h2>
+        <h2 class="weight-medium gutter-bottom">New Business Activity</h2>
         <div class="row">
           <div class="column medium-4">
-            <div class="callout background-teal text-center divider-flex" data-equalizer-watch>
+            <div class="callout no-margin background-teal text-center divider-flex" data-equalizer-watch>
               <h3 class="gutter-top gutter-bottom article-headline"><span class="stat-med">739,000</span><br>residential units&nbsp;</h3>
             </div>
           </div>
           <div class="column medium-4">
-            <div class="callout background-blue text-center divider-flex" data-equalizer-watch>
+            <div class="callout no-margin background-blue text-center divider-flex" data-equalizer-watch>
               <h3 class="gutter-top gutter-bottom article-headline"><span class="stat-med">$47.3</span><br>billion K-Deal securities</h3>
             </div>
           </div>
           <div class="column medium-4">
-            <div class="callout background-purple text-center divider-flex" data-equalizer-watch>
+            <div class="callout no-margin background-purple text-center divider-flex" data-equalizer-watch>
               <h3 class="gutter-top gutter-bottom article-headline"><span class="stat-med">87%</span><br>affordable housing</h3>
             </div>
           </div>
@@ -159,3 +317,6 @@ keywords: multifamily, affordable rental housing, rental housing, mortgage fundi
     </div>
   </div>
 </div>
+
+{{> share-widget}}
+  

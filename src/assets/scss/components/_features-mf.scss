@@ -5,32 +5,48 @@
 .mf-bg5,
 .mf-bg6,
 .mf-feature,
-.featured-news { 
+.news-featured,
+.release-featured,
+.research-featured { 
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 } 
 
+.news-featured,
+.release-featured,
+.research-featured {
+  margin-bottom: 2rem;
+  p + p {
+    margin-top: $global-margin * 1.5;
+  } 
+}
 .mf-bg1 {
-  background-image: linear-gradient(rgba(68, 123, 189, 0.8), rgba(68, 123, 189, 0.8)), url('/images/multifamily/mf-bg1.jpg');
+  background-image: linear-gradient(rgba($fm-blue, 0.8), rgba($fm-blue, 0.8)), url('/images/multifamily/mf-bg1.jpg');
 }  
 .mf-bg2 {
-  background-image: linear-gradient(rgba(68, 123, 189, 0.8), rgba(68, 123, 189, 0.8)), url('/images/multifamily/mf-bg2.jpg');
+  background-image: linear-gradient(rgba($fm-blue, 0.8), rgba($fm-blue, 0.8)), url('/images/multifamily/mf-bg2.jpg');
 }  
 .mf-bg3 {
-  background-image: linear-gradient(rgba(68, 123, 189, 0.8), rgba(68, 123, 189, 0.8)), url('/images/multifamily/mf-bg3.jpg');
+  background-image: linear-gradient(rgba($fm-blue, 0.8), rgba($fm-blue, 0.8)), url('/images/multifamily/mf-bg3.jpg');
 }  
 .mf-bg4 {
-  background-image: linear-gradient(rgba(68, 123, 189, 0.8), rgba(68, 123, 189, 0.8)), url('/images/multifamily/mf-bg4.jpg');
+  background-image: linear-gradient(rgba($fm-blue, 0.8), rgba($fm-blue, 0.8)), url('/images/multifamily/mf-bg4.jpg');
 }  
 .mf-bg5 {
-  background-image: linear-gradient(rgba(68, 123, 189, 0.8), rgba(68, 123, 189, 0.8)), url('/images/multifamily/mf-bg5.jpg');
+  background-image: linear-gradient(rgba($fm-blue, 0.8), rgba($fm-blue, 0.8)), url('/images/multifamily/mf-bg5.jpg');
 }  
 .mf-bg6 {
-  background-image: linear-gradient(rgba(68, 123, 189, 0.8), rgba(68, 123, 189, 0.8)), url('/images/multifamily/mf-bg6.jpg');
+  background-image: linear-gradient(rgba($fm-blue, 0.8), rgba($fm-blue, 0.8)), url('/images/multifamily/mf-bg6.jpg');
 }  
 
-.featured-news { 
-  background-image: linear-gradient(rgba($fm-green, 0.8), rgba($fm-green, 0.8)), url('/images/multifamily/mf-bg2.jpg');
+.news-featured { 
+  background-image: linear-gradient(rgba($fm-green, 0.85), rgba($fm-green, 0.85)), url('/images/multifamily/mf-bg1.jpg');
+}
+.release-featured { 
+  background-image: linear-gradient(rgba($primary-color, 0.8), rgba($primary-color, 0.8)), url('/images/multifamily/mf-bg2.jpg');
+}
+.research-featured { 
+  background-image: linear-gradient(rgba($fm-purple, 0.85), rgba($fm-purple, 0.85)), url('/images/multifamily/mf-bg6.jpg');
 }

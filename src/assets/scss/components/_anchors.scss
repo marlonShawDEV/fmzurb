@@ -2,34 +2,21 @@ h2, h3, h4 {
  > a { display: inline-block; }
 }
 
-.background-green a,
-.background-orange a,
-.background-yellow a,
-.background-red a,
-.background-purple a,
-.background-blue a,
-.background-teal a,
-.background-gray a,
-.background-primary a,
+@each $name, $color in $orbit-palette {    
+  .background-#{$name} a {  
+    @include anchor-on-dark(none);
+  } 
+  a:hover .background-#{$name} {
+    opacity: 0.8;
+  }
+} 
 thead a {
   @include anchor-on-dark(none);
 }
-a:hover {
-  .background-green,
-  .background-orange,
-  .background-yellow,
-  .background-red,
-  .background-purple,
-  .background-blue,
-  .background-teal,
-  .background-gray,
-  .background-primary {
-   opacity: 0.8;
-  }
-}
+
 .card:not(:hover),
 .sidebar.background-concrete {
-  a:not(:hover):not(:focus):not(.button) {
+  a:not(:hover):not(:focus):not(.button):not(.icon-chevron-right) {
     color: inherit;
   }
 }
@@ -90,6 +77,15 @@ a:hover {
     display: inline-block; 
     background: $primary-color;  
     color: $white;
+    &.mask::after {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      left: 0;
+      content: "";
+      background-color: rgba($black, 0.04);      
+    }
     img {
       opacity: 1;
       transition: opacity 0.25s ease;
@@ -102,7 +98,11 @@ a:hover {
       img {
         opacity: 0.22; 
       }
+      &.mask::after {
+        background-color: transparent;
+      }
     }
+    
   }
 
   .modal-launch {

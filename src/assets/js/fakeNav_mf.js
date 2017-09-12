@@ -26,7 +26,7 @@ function fakeNav(){
   else if (p.match(/borrowers|lenders/)) {
     $('#nav-borrowers').children('a').addClass('active');
     $('#subnav-borrowers').addClass('on').find('.no-bullet').removeClass('hide');
-    if (p.match(/find/)) {$('#subnav-borrowers-conventional').addClass('active');}   
+    if (p.match(/conventional/)) {$('#subnav-borrowers-conventional').addClass('active');}   
     else if (p.match(/tah/)) {$('#subnav-borrowers-tah').addClass('active');}   
     else if (p.match(/seniors/)) {$('#subnav-borrowers-seniors').addClass('active');}   
     else if (p.match(/sbl/)) {$('#subnav-borrowers-sbl').addClass('active');} 
@@ -41,20 +41,20 @@ function fakeNav(){
     else if (p.match(/lock/)) {$('#subnav-products-lock').addClass('active');}   
     else if (p.match(/green/)) {$('#subnav-products-green').addClass('active');}   
   }
-  else if (p.match(/news|aimi|events|blog/)) {
+  else if (p.match(/news|research|aimi|events|viewpoints/)) {
     $('#nav-news').children('a').addClass('active');
     $('#subnav-news').addClass('on').find('.no-bullet').removeClass('hide');
-    if(p.match(/blog/)) {$('#subnav-news-blog').addClass('active');}  
+    if(p.match(/viewpoints/)) {$('#subnav-news-viewpoints').addClass('active');}  
     else if(p.match(/events/)) {$('#subnav-news-events').addClass('active');}  
     else if(p.match(/aimi/)) {$('#subnav-news-aimi').addClass('active');}  
-    else if(p.match(/research\.html/)) {$('#subnav-news-research').addClass('active');}  
-    else if(p.match(/\/news\//))  {$('#subnav-news-customer').addClass('active');}  
+    else if(p.match(/research/)) {$('#subnav-news-research').addClass('active');}  
+    else if(p.match(/release/)) {$('#subnav-news-releases').addClass('active');}  
+    else if(p.match(/customer-news/))  {$('#subnav-news-customer').addClass('active');}  
   }
   else if (p.match(/about/)) {
     $('#nav-about').children('a').addClass('active');
     $('#subnav-about').addClass('on').find('.no-bullet').removeClass('hide');
     if (p.match(/who/)) {$('#subnav-about-who').addClass('active');}
-    if (p.match(/what/)) {$('#subnav-about-what').addClass('active');}
     if (p.match(/results/)) {$('#subnav-about-results').addClass('active');}
   }
 }
