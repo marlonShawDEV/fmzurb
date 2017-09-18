@@ -41,7 +41,7 @@
     color: $titlebar-color;
     padding: $titlebar-padding;
     position: relative;
-    z-index: 400;
+    z-index: 401;
     span {
       display: none;
       font-size: 1.375rem;
@@ -71,7 +71,7 @@
 @include breakpoint(large down) {      
   .primary-nav {  
     position: relative;
-    z-index: 200;
+    z-index: 400;
     font-size: rem-calc(18);
     .top-bar-right {
       text-transform: uppercase;

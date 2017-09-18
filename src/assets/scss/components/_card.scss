@@ -20,7 +20,9 @@
 }
 
 .chevron-base {
+  position: relative;
   padding-bottom: calc(40px +  26 * (100vw - 320px)/1180);    
+  z-index: 205;
   @include breakpoint(xlarge) { 
     padding-bottom: rem-calc(66); 
   }
@@ -30,14 +32,14 @@
     left: 0;
     right: 0;
     height: 1em;
-    font-size: rem-calc(28);  
-    font-size: calc(28px +  19 * (100vw - 320px)/1180);
+    font-size: rem-calc(30);  
+    font-size: calc(30px +  15 * (100vw - 320px)/1180);
     @include breakpoint(xlarge) { 
-      font-size: rem-calc(47); 
+      font-size: rem-calc(45); 
     }
     &::after {
       content: ' ';  
-      background: transparent icon(chevron-dbl, "none", 24px, 24px, 0, 0, 24, 24, $white, 3) no-repeat center bottom /contain;    
+      background: transparent icon(chevron-dbl-bg, "none", 26px, 26px, -1, -1, 27.5, 27.5, $white, 3) no-repeat center bottom /contain;    
       width: 1em;
       height: 1em;
       display: block;

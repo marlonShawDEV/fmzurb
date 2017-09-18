@@ -412,8 +412,8 @@ Orbit controls use the class `.orbit-previous` and `.orbit-next`.
 
 ```html
 <div class="orbit-controls">
-  <button class="orbit-previous"><span class="show-for-sr">previous slide</span><svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M27.3 34.7L17.6 25l9.7-9.7 1.4 1.4-8.3 8.3 8.3 8.3z"/></svg></button>
-  <button class="orbit-next"><span class="show-for-sr">next slide</span><svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M22.7 34.7l-1.4-1.4 8.3-8.3-8.3-8.3 1.4-1.4 9.7 9.7z"/></svg></button>
+  <button class="orbit-previous"><span class="show-for-sr">previous slide</span><svg aria-hidden="true" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M27.3 34.7L17.6 25l9.7-9.7 1.4 1.4-8.3 8.3 8.3 8.3z"/></svg></button>
+  <button class="orbit-next"><span class="show-for-sr">next slide</span><svg aria-hidden="true" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M22.7 34.7l-1.4-1.4 8.3-8.3-8.3-8.3 1.4-1.4 9.7 9.7z"/></svg></button>
 </div>
 ```
 
@@ -433,13 +433,13 @@ The combination controls and bullets option used for carousels with `.bullets-ov
 
 ```html
 <div class="orbit-controls">
-  <button class="orbit-previous"><span class="show-for-sr">previous slide</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22" width="1em" height="1em"><path d="M 27.3 34.7 L 17.6 25 l 9.7 -9.7 l 1.4 1.4 l -8.3 8.3 l 8.3 8.3 Z" /></svg></button>
+  <button class="orbit-previous"><span class="show-for-sr">previous slide</span><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22" width="1em" height="1em"><path d="M 27.3 34.7 L 17.6 25 l 9.7 -9.7 l 1.4 1.4 l -8.3 8.3 l 8.3 8.3 Z" /></svg></button>
   <nav class="orbit-bullets">
     <button data-slide="0"><span class="show-for-sr">slide 1</span></button>
     <button data-slide="1"><span class="show-for-sr">slide 2</span></button>
     <button data-slide="2"><span class="show-for-sr">slide 3</span></button>
   </nav>
-  <button class="orbit-next"><span class="show-for-sr">next slide</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22" width="1em" height="1em"><path d="M 22.7 34.7 l -1.4 -1.4 l 8.3 -8.3 l -8.3 -8.3 l 1.4 -1.4 l 9.7 9.7 Z" /></svg></button>
+  <button class="orbit-next"><span class="show-for-sr">next slide</span><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22" width="1em" height="1em"><path d="M 22.7 34.7 l -1.4 -1.4 l 8.3 -8.3 l -8.3 -8.3 l 1.4 -1.4 l 9.7 9.7 Z" /></svg></button>
 </div>
 ```
 

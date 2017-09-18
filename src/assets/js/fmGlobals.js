@@ -96,12 +96,7 @@ if(FM.form.protocol === 'https:') {
 	  $(this).attr('href', FM.form.forceGlobalLinks($(this).attr('href')));
   });		
 };
-// fix marketwire crap tables
-if(FM.form.hostname.match(/newsroom/)) {
-  $("table").not("[class]").each(function(){
-    $(this).wrap('<div class="table-scroll"></div>');
-  });  
-}
+
 if (FM.form.useOmni()){ 
   $(document).on("click",FM.form.omniNavLink); 
 }

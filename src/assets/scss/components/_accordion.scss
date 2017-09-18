@@ -14,7 +14,7 @@
   }  
   &::before {
     content: ' ';  
-    background: transparent icon(chevron-right, $color, 14, 14) no-repeat right center;    
+    background: transparent icon(chevron-right, "none", 14px, 14px, 0, 0, 30, 30, $color, 3) no-repeat right center / cover;    
     width: 1rem;
     height: 1rem;
     margin-left: -0.15rem;

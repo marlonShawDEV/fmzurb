@@ -9,6 +9,12 @@
   .small-to-default {
     padding: $callout-padding * 0.5;
     @include breakpoint(medium) {  
+<<<<<<< HEAD
+      padding: $callout-padding * 0.75;
+    }  
+    @include breakpoint(large) {  
+=======
+>>>>>>> master
       padding: $callout-padding;
     }  
   }

@@ -2,8 +2,9 @@
 .block {
   width: 100%;
   display: block;
+  position: relative;
   > img {
-    width: 100% !important;
+    width: 100%;
   }
 }
 .inline {

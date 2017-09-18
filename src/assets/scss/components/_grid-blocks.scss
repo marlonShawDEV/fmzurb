@@ -51,7 +51,11 @@
   position: absolute;
   transform: rotate(45deg);
   background-color: inherit;
+<<<<<<< HEAD
+  z-index: 200;
+=======
   z-index: 300;
+>>>>>>> master
 }
 
 .caret-downside,
@@ -69,7 +73,10 @@
     top: -10px;
     right: 0;
     left: 0;
+<<<<<<< HEAD
+=======
     z-index: 402;
+>>>>>>> master
     margin: 0 auto;
   }
 }
@@ -79,7 +86,10 @@
     bottom: -10px;
     right: 0;
     left: 0;
+<<<<<<< HEAD
+=======
     z-index: 403;
+>>>>>>> master
     margin: 0 auto;
   }
 }
@@ -92,18 +102,28 @@
 }
 .caret-leftside {
   left: 0;
+<<<<<<< HEAD
+  &::after {
+    left: -10px;
+=======
   z-index: 404;
   &::after {
     left: -10px;
     z-index: 400;
+>>>>>>> master
   }
 }
 .caret-rightside {
   right: 0;
+<<<<<<< HEAD
+  &::after {
+    right: -10px;
+=======
   z-index: 405;
   &::after {
     right: -10px;
     z-index: 401;
+>>>>>>> master
   }
 }
 

@@ -667,6 +667,11 @@ sup, sub {
 .uppercase { 
   text-transform: uppercase;
 }
+.small-no-transform { 
+  @include breakpoint(small only) {
+    text-transform: none;
+  }
+}
 .smallcaps {
   font-variant: small-caps;
 }

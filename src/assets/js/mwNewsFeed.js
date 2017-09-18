@@ -86,16 +86,6 @@ function useHomePageData(data) {
 }
 
 
-function dtText(dt) {
-  var  monthNames = ["", "January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"],
-    dtParts = dt.split("/"),      
-    mm = Number(dtParts[0]), 
-    dd = dtParts[1].replace(/^0/, ''),
-    str = monthNames[mm] + " " + dd +", 20" + dtParts[2];
-  return str;
-}
-  
-
 if ($('.investor-headlines-container').length)  {  
   getInvestorData();
 }

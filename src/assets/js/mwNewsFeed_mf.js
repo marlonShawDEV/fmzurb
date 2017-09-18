@@ -42,6 +42,8 @@ function getSidebarData() {
       var err = textStatus + ", " + error;
       console.log(err);
     });
+<<<<<<< HEAD
+=======
 }
 
 
@@ -52,8 +54,17 @@ function getHomePageData() {
     var err = textStatus + ", " + error;
     console.log(err);
   }); 
+>>>>>>> master
 }
 
+function getShortList(x, c) {
+  var mwReq = $.getJSON("//freddiemac.mwnewsroom.com/scripts/json/js?max="+x+"&cat=Multifamily", function(data) {
+      useListData(data, c);      
+    }).fail(function( jqxhr, textStatus, error ) {
+      var err = textStatus + ", " + error;
+      console.log(err);
+    });  
+}
 
 function useReleasePageData(data) {
   var $html = '', $feature = '', $curr = '', $blurb;
@@ -79,6 +90,23 @@ function useCardData(data) {
     $blurb = tidyBlurb($curr.intro); 
     $html = '<div class="card-divider"><p class="article-date">' + convertDate($curr.date) + '</p><h3 class="card-title"><a href="' + $curr.url + '">' + $curr.title + '</a></h3><p class="card-blurb">'+ $blurb + '</p></div>';
     if($('#headline-card-'+i).length){$('#headline-card-'+i).html($html);}    
+<<<<<<< HEAD
+  }
+  $('.headline-card-container').addClass('card').addClass('gutter-bottom');
+  Foundation.reInit($('.recent-headline-cards:first'));
+}
+
+function useSidebarData(data) {
+  var $html = '', $feature = '', $curr = '';
+  for (var i = 0,len = data.releases.length; i < len; i++) {
+    $curr = data.releases[i];
+    $html += '<li><span class="article-date">' + convertDate($curr.date) + '</span><br><a class="weight-medium" href="' + $curr.url + '">' + $curr.title + '</a></li>';    
+  }
+  $('.recent-headlines-sidebar:first').html($html);   
+}
+
+function useListData(data, container) {
+=======
   }
   $('.headline-card-container').addClass('card').addClass('gutter-bottom');
   Foundation.reInit($('.recent-headline-cards:first'));
@@ -93,26 +121,25 @@ function useSidebarData(data) {
   $('.recent-headlines-sidebar:first').html($html);   
 }
 function useHomePageData(data) {
+>>>>>>> master
   var $html = '', $curr = '', $blurb;
   for (var i = 0,len = data.releases.length; i < len; i++) {
     $curr = data.releases[i];     
     $blurb = tidyBlurb($curr.intro); 
+<<<<<<< HEAD
+    $html += '<li><a class="weight-medium" href="' + $curr.url + '">' + $curr.title + '</a><br><div class="article-date-lg weight-light">' + convertDate($curr.date) + '</div></li>';               
+  }
+  if ($html !== '') {
+    $(container).prepend($html);   
+=======
     $html += '<li><a class="weight-medium" href="' + $curr.url + '">' + $curr.title + '</a><br>' + convertDate($curr.date) + '</li>';               
   }
   if ($html !== '') {
     $('.recent-headline-home:first').prepend($html);   
+>>>>>>> master
   }
 }
 
-
-function dtText(dt) {
-  var  monthNames = ["", "January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"],
-    dtParts = dt.split("/"),      
-    mm = Number(dtParts[0]), 
-    dd = dtParts[1].replace(/^0/, ''),
-    str = monthNames[mm] + " " + dd +", 20" + dtParts[2];
-  return str;
-}
   
 if ($('.recent-headlines-container').length)  {  
   getReleasePageData();
@@ -120,9 +147,22 @@ if ($('.recent-headlines-container').length)  {
 if ($('.recent-headlines-sidebar').length)  {  
   getSidebarData();
 }
+if($('.recent-headline-cards').length){  
+  getCardData();
+}
+
 if ($('.recent-headline-home').length)  {  
+<<<<<<< HEAD
+  getShortList(2, '.recent-headline-home');
+}
+if($('.recent-headline-shortlist').length){  
+  getShortList(3, '.recent-headline-shortlist');
+}
+  
+=======
   getHomePageData();
 }
 if($('.recent-headline-cards').length){  
   getCardData();
 }
+>>>>>>> master
