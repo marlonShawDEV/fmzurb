@@ -35,9 +35,9 @@ When you are creating a page using the TeamSite template, the following markup i
 
 ## Framework 
 
-<p class="lead">The framework behind our codebase is Foundation.</p>
+<p class="lead">The framework behind our codebase is Foundation 6.3.0.</p>
 
-The Foundation grid uses two key elements: rows and columns. When you need to create additional columns inside the initial ones added by the template, start by adding an element with a class of `.row`. This will create a horizontal block to contain vertical columns. Then add elements with a `.column` class within that row. Specify the widths of each column with the `.small-#`, `.medium-#`, and `.large-#` classes.
+The Foundation 6.3 grid uses two key elements: rows and columns. When you need to create additional columns inside the initial ones added by the template, start by adding an element with a class of `.row`. This will create a horizontal block to contain vertical columns. Then add elements with a `.column` class within that row. Specify the widths of each column with the `.small-#`, `.medium-#`, and `.large-#` classes.
 
 <p><a class="button tertiary large" href="styleguide_grid.html">Learn more about rows and columns</a></p>
 
@@ -103,8 +103,6 @@ drilldown	<br>
 drilldown-menu	<br>
 dropdown	<br>
 dropdown-menu	<br>
-flex-classes	<br>
-flex-grid	<br>
 flex-video<br>
 interchange	<br>
 label	<br>
@@ -3461,11 +3459,22 @@ Embedded videos **won't** maintain their aspect ratio as the width of the screen
 
 # Media Objects
 
-A media object is a container with the class `.media-object`, and two sections with the class `.media-object-section`.  To control the width of the image in the media object, there are additional classes of `.image1-leads-blurb3`, `.image1-leads-blurb2`, and `blurb3-leads-image2`.
+<p class="intro">Media objects are super useful components for displaying an item, usually an image, alongside some content, usually text. You could put lists, grids, or even other media objects inside.</p>
 
-There is an additional class `stacked-for-small` that overrides the ratio between the columns.
+A media object is a container with the class `.media-object`, and two or three sections with the class `.media-object-section`.  
+
+Media objects are one of hte few items we use in flexbox mode, so the class .main-section must be added to the section that should stretch in width to fill the available space.
+
+Each section aligns to the top by default, but individual sections can also be middle- or bottom-aligned by adding `.align-*` classes on the container to align every child section at once, or individual child sections can be aligned with `.align-self-*` classes.
+
+To override the width of the images in the media object, there are additional classes of `.image1-leads-blurb3`, `.image1-leads-blurb2`, and `blurb3-leads-image2`.
+
+By adding the `.stack-for-small` class, you can make your media object sections stack at small screen.
+
 
 ## Image leading Blurb 1:3 ratio
+
+Images inside media object with class `.image1-leads-blurb3` are limited to width of 210px. 
 
 In the example, the first is not stacked for small sizes, but the second version is. (You can view the difference by resizing your browser to it is less than 580px wide). These are often used inside a list container, where each media object is an `<li>` in a longer list.
 
@@ -3498,6 +3507,8 @@ In the example, the first is not stacked for small sizes, but the second version
 
 ##  Blurb leading Image 3:2 ratio; Stacked for Small
 
+Images inside media object with class `.blurb3-leads-image2` are 325px wide at medium and shift down to 290px at xlarge.
+
 These are often used inside a list container, where each media object is an `<li>` in a longer list.
 
 ```html_example
@@ -3517,7 +3528,8 @@ These are often used inside a list container, where each media object is an `<li
 
 ## Image leading Blurb 1:2 ratio
 
-These are often used inside a sidebar list to contain its width, where each media object is an `<li>` in a longer list.   
+Images inside media object with class `image1-leads-blurb2` have a maximum width of 130px, and are intended for use inside a sidebar, without stacking for small screens.
+
 
 ```html
 <div class="media-object image1-leads-blurb2">

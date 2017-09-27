@@ -18,9 +18,6 @@
         width: $mediaobject-image-width-stacked;
       }
     }
-  }   
-  &:first-child { 
-    padding-top: 0;
   }
   .media-object-section {
     display: block;
@@ -28,6 +25,14 @@
     &.main-section {
       flex: 1 1 0px; // sass-lint:disable-line zero-unit
     }
+  }
+  &.collapse .media-object-section {
+    &:first-child {
+      padding-#{$global-right}: 0;
+    }
+    &:last-child:not(:nth-child(2)) {
+      padding-#{$global-left}: 0;
+    }    
   }
   &.blurb3-leads-image2 {   // such as insights, research pages
     img {

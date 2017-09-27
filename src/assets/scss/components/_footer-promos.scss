@@ -42,14 +42,12 @@
 }
 
 .footer-form {      // may not be needed?
-  display: table;
-  width: 100%;
-  > :not(:last-child) {
-    max-width: 18rem;
-    margin-right: 1rem;
+  width: 100%; 
+  @include breakpoint(medium only) {
+    margin: 0 auto;
+    max-width: rem-calc(400);    
   }
   > * {
-    display: table-cell;
     vertical-align: middle;
     margin: 0.25rem 0;
   }

@@ -21,7 +21,7 @@ function fakeNav(){
     else if (p.match(/presentations/)) {$('#subnav-investors-presentations').addClass('active');}
     else if (p.match(/data/)) {$('#subnav-investors-performance').addClass('active');}
     else if (p.match(/lookup/)) {$('#subnav-investors-lookup').addClass('active');}
-    else if (p.match(/investments/)) {$('#subnav-investors-investments').addClass('active');}
+    else if (p.match(/investments|certs/)) {$('#subnav-investors-investments').addClass('active');}
   }
   else if (p.match(/borrowers|lenders/)) {
     $('#nav-borrowers').children('a').addClass('active');

@@ -49,14 +49,14 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-
-// @include foundation-flex-classes;
+@include foundation-flex-classes;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
 @import 'mixins';
 @import 'components/icons';
+@import 'components/icons-mf';
 @import 'components/globals';
 @import 'components/page-layout';
 @import 'components/shims';

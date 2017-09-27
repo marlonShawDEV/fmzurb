@@ -11,6 +11,7 @@ keywords:
     <h1>Steve and Aaron Explore Rental Housing Affordability</h1>
     <p class="page-subtitle">August 24, 2017</p>
   </div>
+  {{> share-widget}}
 </div>
 
 
@@ -28,12 +29,16 @@ keywords:
       define and discuss rental housing affordability. They also explain the use and importance of Low-income Housing Tax Credits (LIHTC).</p>
       </div>
       <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/246703480&amp;color=88bd45&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-      <p>Listen to <a href="#">other episodes in the series</a>.</p>
+      <p class="gutter-bottom gutter-top">Listen to <a href="#">other episodes in the series</a>.</p>
+      
+      
+      {{>mfnews-feedback-form}}
     </main>
     <!-- END MAIN PAGE CONTENT -->
     <!-- START RIGHT SIDEBAR -->
     <aside class="column">     
-        {{> sidebar-mf-featured}} 
+      {{> sidebar-mf-featured}} 
+      {{> sidebar-mf-linkedin}} 
      
      </aside>
     <!-- END RIGHT SIDEBAR -->
@@ -42,3 +47,4 @@ keywords:
 <!-- END TWO COLUMN LAYOUT  -->
 
 {{> share-widget}}
+{{> footer-promo-mf-signup }}

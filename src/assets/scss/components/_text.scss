@@ -168,9 +168,10 @@ sup, sub {
 }
 .grid-block-text-medium {  
   font-size: rem-calc(17);
-  font-size: calc(17px +  11 * (100vw - 320px)/1180); 
+  line-height: 1.28;
+  font-size: calc(17px +  9 * (100vw - 320px)/1180); 
   @include breakpoint(xxlarge) {
-		font-size: rem-calc(28);
+		font-size: rem-calc(26);
 	}
 }
 .grid-block-text {  
@@ -334,6 +335,9 @@ sup, sub {
 	strong {
 		font-weight: $global-weight-bold;
 	}
+  .article-date-lg + & {
+    margin-top: 0;
+  }
 }
 
 .article-category {
@@ -370,7 +374,7 @@ sup, sub {
   opacity: 0.75;
   font-weight: inherit;
   line-height: 1.1;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.75em;
 	@include breakpoint(medium) {
 		font-size: rem-calc(16);
 	}

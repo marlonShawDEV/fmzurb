@@ -54,7 +54,7 @@
     + li {
       padding-top: $padding-base;
     }
-    :last-child {
+    > :last-child {
       margin-bottom: 0;
     }
     @if ($last-border == false) {

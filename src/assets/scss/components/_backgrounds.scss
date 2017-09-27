@@ -3,8 +3,15 @@
     .background-#{$name} {  
       color: $white;    
       background-color: $color; 
-      .accent-orange { color: $white; } 
-      hr { border-color: $white; }
+      .accent-orange { 
+        color: $white; 
+      } 
+      hr { 
+        border-color: $white; 
+      }
+      .caret-in { 
+        background-color: $color;       
+      }
     }    
   } 
   .background-blue .background-primary {
@@ -16,6 +23,9 @@
     .background-concrete {
       background-color: darken($light-gray, 3.7%);
     }    
+  }
+  .background-blue-sheer {
+    background: rgba($fm-blue, 0.1);
   }
   .background-white {
     background: $white;

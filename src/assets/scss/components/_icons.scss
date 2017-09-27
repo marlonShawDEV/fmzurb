@@ -301,61 +301,10 @@
     @include absolute-center; 
   } 
 }
-
-.icon-deal-link {
-  margin: 5px 10px 5px 0; 
-  display: block;
-  svg {
-    fill: none;
-    stroke: $fm-gray;
-    stroke-width: 2;
-  }
-}
-.icon-deal {  
-  display: table;
-  vertical-align: middle;
-  width: 100%;
-  padding: rem-calc(5px 4px 4px 10px);
-  background-color: $white; 
-  font-weight: $global-weight-normal;
-  color: $fm-gray;
-  min-height: 2.1em;
-  font-size: 1.125rem;
-  line-height: 1;
-  font-size: calc(18px +  6 * (100vw - 320px)/1180);
-  @include breakpoint(xlarge){    
-    font-size: 1.5rem;
-  }
-  .icon-deal-link:hover &,
-  .icon-deal-link:active & {
-    opacity: 0.9;
-    color: darken($fm-gray, 20%);
-  }
-  > * {
-  display: table-cell;
-  vertical-align: middle;
-  }
-  .marker {
-    position: relative;
-    font-size: 1rem;
-    display: inline-block;
-    text-align: center;
-    line-height: 1;
-    font-size: calc(16px +  4 * (100vw - 320px)/1180);
-    border-radius: 999px;
-    font-weight: $global-weight-black;
-    height: 2.05em;
-    width: 2.05em;
-    padding: 0.5em 0;
-    @include breakpoint(xlarge){    
-      font-size: 1.25rem;
-    }
-  }
-}
-
 .icon-calendar {
   width: rem-calc(72);
   height: rem-calc(72);
+  fill: $fm-blue;
   &.legend {
     width: rem-calc(28);
     height: rem-calc(28);
