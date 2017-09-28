@@ -12,7 +12,6 @@
   padding: rem-calc(20 0 15);
   @media screen { 
     background: $fm-gray url('/images/hero/homepage_hero2_mobile.jpg') no-repeat left bottom;  
-    color: $white;    
   }
   background-size: cover;
   @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) - 120px)) {

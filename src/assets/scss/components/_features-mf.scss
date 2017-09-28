@@ -1,19 +1,12 @@
-.mf-bg1,
-.mf-bg2,
-.mf-bg3,
-.mf-bg4,
-.mf-bg5,
-.mf-bg6,
-.mf-feature,
 .news-featured,
 .release-featured,
-.research-featured { 
+.research-featured,
+.people-featured { 
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 } 
-
 .news-featured,
 .release-featured,
 .research-featured {
@@ -22,26 +15,7 @@
     margin-top: $global-margin * 1.5;
   } 
 }
-
-.mf-bg1 {
-  background-image: url('/images/multifamily/mf-bg1.jpg');
-}  
-.mf-bg2 {
-  background-image: url('/images/multifamily/mf-bg2.jpg');
-}  
-.mf-bg3 {
-  background-image: url('/images/multifamily/mf-bg3.jpg');
-}  
-.mf-bg4 {
-  background-image: url('/images/multifamily/mf-bg4.jpg');
-}  
-.mf-bg5 {
-  background-image: url('/images/multifamily/mf-bg5.jpg');
-}  
-.mf-bg6 {
-  background-image: url('/images/multifamily/mf-bg6.jpg');
-}  
-
+ 
 .news-featured { 
   background-image: linear-gradient(rgba($fm-green, 0.85), rgba($fm-green, 0.85)), url('/images/multifamily/mf-bg1.jpg');
 }
@@ -51,3 +25,42 @@
 .research-featured { 
   background-image: linear-gradient(rgba($fm-purple, 0.85), rgba($fm-purple, 0.85)), url('/images/multifamily/mf-bg6.jpg');
 }
+.people-featured { 
+  background-image: linear-gradient(rgba($fm-gray, 0.45), rgba($fm-gray, 0.45)), url('/images/about/diversitybanner.jpg');
+  background-position: center bottom;
+}
+
+.mf-bg1,
+.mf-bg2,
+.mf-bg3,
+.mf-bg4,
+.mf-bg5,
+.mf-bg6,
+.mf-bg7 { 
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+} 
+
+.mf-bg1 {
+  background-image: url('/images/multifamily/card_bg_01.jpg');
+}  
+.mf-bg2 {
+  background-image: url('/images/multifamily/card_bg_02.jpg');
+}  
+.mf-bg3 {
+  background-image: url('/images/multifamily/card_bg_03.jpg');
+}  
+.mf-bg4 {
+  background-image: url('/images/multifamily/card_bg_04.jpg');
+}  
+.mf-bg5 {
+  background-image: url('/images/multifamily/card_bg_05.jpg');
+}  
+.mf-bg6 {
+  background-image: url('/images/multifamily/card_bg_06.jpg');
+}  
+.mf-bg7 {
+  background-image: url('/images/multifamily/card_bg_07.jpg');
+} 

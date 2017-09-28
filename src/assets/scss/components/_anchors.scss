@@ -1,33 +1,23 @@
 h2, h3, h4 {
  > a { display: inline-block; }
 }
-
 .background-sheer {
-  background-position: bottom right;
-  .background-blue { 
-  background-color: rgba($fm-blue, .9);
-    .background-primary { 
-    background-color: rgba($primary-color, .6);
-    }
-  }
-  &:hover,
-  &:focus  {
-    opacity: 0.85;
-    .background-blue,  
-    .background-primary { 
-      opacity: 1;
-    }  
-  }
+  transition: opacity 0.25s ease-in;
 }
-
+.background-sheer:hover,
+.background-sheer:focus {
+  opacity: .95;  
+  transition: opacity 0.25s ease-out;
+}
   
 @each $name, $color in $orbit-palette {    
   .background-#{$name} a {  
     @include anchor-on-dark(none);
   } 
-  a:hover .background-#{$name},
-  a:focus .background-#{$name} {
+  a:not(.background-sheer):hover .background-#{$name},
+  a:not(.background-sheer):focus .background-#{$name} {
     opacity: 0.85;
+    transition: opacity 0.25s ease-out;
   }
 } 
 
@@ -35,6 +25,7 @@ h2, h3, h4 {
 a:hover .background-concrete,
 a:focus .background-concrete {
   opacity: 0.8;
+  transition: opacity 0.25s ease-out;
 }
 thead a {
   @include anchor-on-dark(none);
@@ -47,7 +38,8 @@ thead a {
   }
 }
 .card:hover a:not(.button) {
-  color: $anchor-color-hover;
+  color: $anchor-color-hover;  
+  transition: color 0.25s ease-out;
 }
 .background-white {
   a:not(.button) {
@@ -55,6 +47,7 @@ thead a {
     &:hover,
     &:focus {
       color: $anchor-color-hover;
+      transition: color 0.25s ease-out;
     }
   }
 }
@@ -107,6 +100,7 @@ thead a {
   &:active {
     color: $fm-gray;
     background-color: rgba($white, 0.8); 
+    transition: background-color 0.25s ease-out;
   }  
   .icon-deal-marker {
     margin-bottom: 0;
