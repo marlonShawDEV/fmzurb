@@ -269,7 +269,9 @@ h1 {
     linear-gradient(to top left, #fff 50%, transparent 50%) no-repeat right bottom / 50% 100%;
   + .row {
     padding-bottom: 60px;
-  }  
+  } 
+  .offWhite{background: linear-gradient(to top right, #f0f0f0 50%, transparent 50%) no-repeat left bottom / 50% 100%,
+    linear-gradient(to top left, #f0f0f0 50%, transparent 50%) no-repeat right bottom / 50% 100%;} 
 }
 .triangle_in {
   position: absolute;
