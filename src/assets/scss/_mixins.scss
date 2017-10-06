@@ -49,6 +49,7 @@
 }
 @mixin list-divided($color: darken($light-gray, 5%), $padding-base: $global-padding, $last-border: false){      
   > li { 
+    margin: 0;
     padding-bottom: $padding-base;
     border-bottom: 1px solid $color;     
     + li {
@@ -131,7 +132,7 @@
     );
 }
 
-// staggered mosiac pattern 12 steps:
+// staggered mosiac pattern 12 steps:  currently not used
 @mixin mosaic-fill12(
   $a: $mosaic-first, 
   $b: $mosaic-last, 

@@ -70,7 +70,7 @@ $button-hollow-hover-lightness: -50% !default;
 
 /// transitions for buttons.
 /// @type List
-$button-transition: background-color 0.25s ease-out, color 0.25s ease-out !default;
+$button-transition: background 0.25s ease-out, color 0.25s ease-out !default;
 
 /// Adds disabled styles to a button by fading the element, reseting the cursor, and disabling pointer events.
 @mixin button-disabled {
@@ -105,6 +105,10 @@ $button-transition: background-color 0.25s ease-out, color 0.25s ease-out !defau
   @include breakpoint (small only) {
     margin-bottom: 0.25em;
   }
+  &::after,
+  &::before {
+    transition: $button-transition;
+  }
   // Sizes
   @each $size, $value in map-remove($button-sizes, default) {  
     &.#{$size} {
@@ -121,6 +125,16 @@ $button-transition: background-color 0.25s ease-out, color 0.25s ease-out !defau
       }
     }
   } 
+  &.small {        
+    main .medium-up-2 & {
+      @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, medium))) and (max-width: -zf-bp-to-em(map-get($breakpoints, medium) + 80px)) {
+        padding: 0.75em 1em;  
+      }
+      @include breakpoint(large only) {
+        padding: 0.75em 1em;  
+      }
+    }
+  }
   .svg-stroke {
     stroke: $white;
   } 

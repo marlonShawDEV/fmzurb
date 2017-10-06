@@ -5,7 +5,7 @@
       <div class="row">
         <div class="column">
           <p>Have a comment or question about this post? Email us to let us know what's on your mind.</p>
-          <form novalidate class="form" data-abide action="#" name="feedback-form" id="feedback-form">
+          <form novalidate class="form" data-abide action="#" name="mf-feedback-form" id="mf-feedback-form">
             <label for="FullName">Name</label>
             <input id="FullName" name="FullName" type="text" maxlength="50" value="">
             <label for="Email">E-mail Address</label>
@@ -34,7 +34,7 @@
 </ul>
 <script type="text/javascript"> 
 function feedbackSetup() {
-$('#feedback-form')
+$('#mf-feedback-form')
   .on('forminvalid.zf.abide', function (ev,frm) {
     var invalid_fields = $(this).find('[data-invalid]');
   })

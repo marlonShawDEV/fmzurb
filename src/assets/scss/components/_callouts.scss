@@ -3,6 +3,9 @@
   background-color: $callout-background;
   position: relative;
   padding: $callout-padding;
+  &.center-vertically {
+    position: absolute;
+  }
   &.large {
     @include breakpoint(medium) {  
       padding: $callout-padding * 1.25;
@@ -67,15 +70,6 @@
     font-weight: $global-weight-medium;
   }
 }
-
-.mosaic-edge-3 {
-  @for $i from 1 through 3 {
-    > div:nth-child(3n+#{$i}) > .callout {
-      border-bottom: 3px solid color-shift($fm-green, $pear, 3, $i);
-    }
-  }
-}
-
 .rounded {
   border-radius: 0.35rem;
   &.large {

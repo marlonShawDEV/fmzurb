@@ -52,6 +52,11 @@ fieldset {
     .input-group-field {
       height: 2.6125rem;      
     }
+    .input-group-button {
+      .button {
+        padding: 0 1em;
+      }
+    }
   } 
 }
  // Styles for input/label siblings
@@ -178,4 +183,10 @@ fieldset {
 label.is-invalid-label,
 .is-invalid-input + .help-text {
   color: $form-label-color-invalid;
+}
+// hide the X inserted by IE
+.filterField {
+  &::-ms-clear {
+     display: none;
+  }
 }

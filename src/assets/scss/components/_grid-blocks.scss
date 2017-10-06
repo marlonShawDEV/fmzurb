@@ -178,16 +178,18 @@
     margin-top: -$gutter;
   }
   .callout {
+    position: relative;
     margin: 0;
     width: 100%; 
-    min-height:170px;
-    position: relative;
-    @include breakpoint(medium) {
-      min-height:300px;
-    } 
-    @include breakpoint(xlarge) {
-      padding: $global-padding * 2;
-      min-height:325px;
+    &:not(.large) {
+      min-height:170px;
+      @include breakpoint(medium) {
+        min-height:300px;
+      } 
+      @include breakpoint(xlarge) {
+        min-height:325px;
+        padding: $global-padding * 2;
+      } 
     }
   }
   p:not([class]) { 

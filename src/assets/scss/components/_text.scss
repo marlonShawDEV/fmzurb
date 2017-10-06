@@ -144,6 +144,17 @@ sup, sub {
     margin: 0.75rem 0 0; 
   }
 }
+.grid-block-title-condensed {
+  font-size: rem-calc(26);
+  font-size: calc(26px +  14 * (100vw - 320px)/1180); 
+  font-weight: $global-weight-bold;
+  padding: 0.7em 0 0.4em;
+  margin: 0;  
+  line-height: 1;
+  @include breakpoint(xxlarge) {
+		font-size: rem-calc(40);
+	}
+}
 .grid-block-title-medium {
   font-size: rem-calc(16);
   font-size: calc(16px +  8 * (100vw - 320px)/1180); 
@@ -218,10 +229,12 @@ sup, sub {
   font-size: calc(18px +  14 * (100vw - 320px)/1180); 
   font-weight: $global-weight-bold;
   margin: 0.25em 0 0.375em;  
-  @include breakpoint(xlarge) {
-		font-size: rem-calc(26);
-    font-size: calc(26px +  6 * (100vw - 1180px)/220); 
-	}
+  main & {
+    @include breakpoint(xlarge only) {
+      font-size: rem-calc(26);
+      font-size: calc(26px +  6 * (100vw - 1180px)/220); 
+    }
+  }
   @include breakpoint(xxlarge) {
 		font-size: rem-calc(32);
 	}
@@ -233,10 +246,12 @@ sup, sub {
   @include breakpoint(medium) {		
   font-size: calc(20px +  26 * (100vw - 320px)/1180); 
 	}
-  @include breakpoint(xlarge) {
-		font-size: rem-calc(26);
-    font-size: calc(26px +  4 * (100vw - 1270px)/230); 
-	}
+  main & {
+    @include breakpoint(xlarge only) {
+      font-size: rem-calc(26);
+      font-size: calc(26px +  4 * (100vw - 1270px)/230); 
+    }
+  }
   @include breakpoint(xxlarge) {
 		font-size: rem-calc(30);
 	}
@@ -281,11 +296,10 @@ sup, sub {
   @include breakpoint(medium) {
 		font-size: rem-calc(18);
 	}
-  @include breakpoint(large) {
-		font-size: rem-calc(16);
-	}
-  @include breakpoint(xlarge) {
-		font-size: rem-calc(18);
+  main & {
+    @include breakpoint(large only) {
+      font-size: rem-calc(16);
+    }
 	}
 }
 
@@ -296,7 +310,7 @@ sup, sub {
   margin-bottom: 0;
   @include breakpoint(large) {
 		margin-bottom: 0.5em;
-  font-weight: $global-weight-bold;
+    font-weight: $global-weight-bold;
 	}
   @include breakpoint(xxlarge) {
 		font-size: rem-calc(16);
@@ -448,14 +462,16 @@ sup, sub {
     font-size: rem-calc(17);
     line-height: 1.4;
   }
-  @include breakpoint(large) {
-    font-size: rem-calc(16);
-    font-size: calc(16px +  4 * (100vw - 320px)/1180);
-  }
-  @include breakpoint(xlarge) {
-    font-size: rem-calc(14);
-    font-size: calc(14px +  4 * (100vw - 320px)/1180);
-    line-height: 1.3; 
+  main & {
+    @include breakpoint(large only) {
+      font-size: rem-calc(16);
+      font-size: calc(16px +  4 * (100vw - 320px)/1180);
+    }
+    @include breakpoint(xlarge only) {
+      font-size: rem-calc(14);
+      font-size: calc(14px +  4 * (100vw - 320px)/1180);
+      line-height: 1.3; 
+    }
   }
   @include breakpoint(xxlarge) {
     font-size: rem-calc(18);
@@ -720,4 +736,9 @@ sup, sub {
 }
 .accent-gray {
   color: $fm-gray;
+}
+.file-flag {
+  color: $fm-red;
+  font-variant: small-caps;
+  padding-left: 0.25em;
 }

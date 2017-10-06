@@ -31,7 +31,7 @@ thead a {
   @include anchor-on-dark(none);
 }
 
-.card:not(:hover),
+.card:not(:hover):not(.primary),
 .sidebar.background-concrete {
   a:not(:hover):not(:focus):not(.button):not(.icon-chevron-right) {
     color: inherit;
@@ -50,9 +50,6 @@ thead a {
       transition: color 0.25s ease-out;
     }
   }
-}
-.primary-color {
-  color: $primary-color;  // may not be needed?
 }
 .video-modal {
   position: relative;

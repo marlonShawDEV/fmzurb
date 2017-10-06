@@ -21,8 +21,7 @@ ol.reversed {
   transform: rotate(-180deg);
   }
 }
-ul:not([class]) > li, 
-ol:not([class]) > li {
+li {
   margin-bottom: 0.4375em;
   margin-top: 0.4375em;
 }

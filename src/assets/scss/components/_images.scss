@@ -1,8 +1,14 @@
 
-a img,
-img {
+img:not([src$=svg]):not(.no-border) {
   border: 1px solid darken($light-gray, 5%);
   &.full {
     width: 100%;
+  }
+}
+
+svg {
+  text {
+    text-anchor: middle;
+    font-family: $body-font-family;
   }
 }
