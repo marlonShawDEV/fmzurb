@@ -3,6 +3,20 @@
   margin-bottom: 0;
   display: flex;
   flex-wrap: nowrap;
+  &.large {
+    .media-object-section { 
+      &:first-child {
+        @include breakpoint(medium){
+          padding-right: $gutter * 1.5;
+        }
+      }
+      &:last-child:not(:nth-child(2)) {
+        @include breakpoint(medium){
+          padding-left: $gutter * 1.5;
+        }
+      }
+    }
+  }
   &.stack-for-#{$-zf-zero-breakpoint} {
     @include breakpoint($-zf-zero-breakpoint only) {
       flex-wrap: wrap;
@@ -12,6 +26,7 @@
     @include breakpoint($-zf-zero-breakpoint only) {
       padding: 0;
       padding-bottom: $mediaobject-section-padding;
+      -ms-flex-basis: 100%;
       flex-basis: 100%;
       max-width: 100%;  
       img {
@@ -23,7 +38,9 @@
     display: block;
     flex: 0 1 auto;
     &.main-section {
-      flex: 1 1 0px; // sass-lint:disable-line zero-unit
+      @include breakpoint(medium){
+        flex: 1 1 0px; // sass-lint:disable-line zero-unit
+      }
     }
   }
   &.collapse .media-object-section {

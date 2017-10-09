@@ -96,11 +96,6 @@ if(FM.form.protocol === 'https:') {
 	  $(this).attr('href', FM.form.forceGlobalLinks($(this).attr('href')));
   });		
 };
-if($('.data-filterable').length) {  
-  if($('.data-filterable').find('.accordion-pointer').length == $('.data-filterable').find('.filterform').length) { 
-    $.getScript("/js/vendor/prepFilters.js", function(){$('.data-filterable').filterAccContent();});
-  }
-}
 if (FM.form.useOmni()){ 
   $(document).on("click",FM.form.omniNavLink); 
 }

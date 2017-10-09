@@ -69,16 +69,22 @@
     $acc.find(params.dataE).each(function(){	
       var $this = $(this);
       $this.find('.accordion-title').on("click", function(){ 
-        $acc.find('.hide').removeClass('hide');
+        $acc.find(params.dataC).filter('.hide').removeClass('hide');
         if($frm.find('.filterField').length){ 
           $frm.find('.filterField').val("");
         }
         if($frm.find('[name="filterTopic"]').length){          
-          $('[name="filterTopic"]').not('#AllToggle').prop('checked', false);
-          $('#AllToggle').prop('checked', true);
+          $('[name="filterTopic"]').prop('checked', false);
         }
       });				  
     });    
     return this;            
   };   
 })(jQuery);  
+
+
+if($('.data-filterable').length) {  
+  if($('.data-filterable').find('.accordion-pointer').length == $('.data-filterable').find('.filterform').length) { 
+    $('.data-filterable').filterAccContent();
+  }
+}

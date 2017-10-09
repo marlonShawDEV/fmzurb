@@ -339,6 +339,14 @@
     @include absolute-center; 
   } 
 }
+.mailto { 
+  position: relative;          
+  background-image: icon(email, $primary-color, 18, 18, 0, 3, 24, 24);
+  background-repeat: no-repeat;
+  padding-left: 1.5rem;
+  background-position: 0% 12%;
+}
+
 .icon-calendar {
   width: rem-calc(72);
   height: rem-calc(72);
