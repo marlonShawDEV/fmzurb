@@ -80,6 +80,33 @@ h1 {
   background-image: linear-gradient(to right top, transparent 46%, rgba(0, 0, 0, 0.07) 0px, rgba(0, 0, 0, 0.07) 54%, transparent 0px);
   background-size: 10px 10px;
 }
+.overlay.overlay-gradient .overlay-contents {
+    padding: 8% 0 20% 0;
+    @include breakpoint(medium){
+      padding-top:22%;
+      }
+    }
+  
+  .subtitle{
+    font-size: calc(18px + 14 * (100vw - 320px) / 1180);
+    font-weight: 700;
+    margin: 0.25em 0 0.375em;
+    @include breakpoint(small){
+      
+        font-size: rem-calc(24);
+    }   
+  }
+  .article-byline {
+    color: inherit;
+    font-size: 0.9375rem;
+    font-weight: inherit;
+    line-height: 1.2;
+    margin-top: 0.6em;
+    @include breakpoint(small){
+      font-size: rem-calc(18);
+    }
+  }
+
 .content-inner-band {
   position: relative;
   padding: $gutter*1.5 $gutter $gutter;    
@@ -270,9 +297,17 @@ h1 {
   + .row {
     padding-bottom: 60px;
   } 
-  .offWhite{background: linear-gradient(to top right, #f0f0f0 50%, transparent 50%) no-repeat left bottom / 50% 100%,
-    linear-gradient(to top left, #f0f0f0 50%, transparent 50%) no-repeat right bottom / 50% 100%;} 
+  
 }
+.triangle_out-offWhite
+{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;  
+  height: 80px;
+  background: linear-gradient(to top right, #f0f0f0 50%, transparent 50%) no-repeat left bottom / 50% 100%,
+    linear-gradient(to top left, #f0f0f0 50%, transparent 50%) no-repeat right bottom / 50% 100%;} 
 .triangle_in {
   position: absolute;
   width: 100%;
