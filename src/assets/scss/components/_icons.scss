@@ -5,6 +5,7 @@
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-miterlimit: 10;
+  transition: stroke 0.25s ease-out;
   &.baseline {
     vertical-align: baseline;
   }
@@ -28,6 +29,7 @@
   fill: $anchor-color;
   stroke: none;
   vertical-align: middle; 
+  transition: fill 0.25s ease-out;
   &.baseline {
     vertical-align: baseline;
   }
@@ -172,6 +174,7 @@
     background: transparent icon(padlock, $anchor-color, 32px, 32px) no-repeat center center / contain;
     width: 1em;
     height: 1em; 
+    transition: background 0.25s ease-out;
   }
   &:hover,
   &:focus {
@@ -248,6 +251,7 @@
   position: relative;
   display: block;
   line-height: 1.1;
+  transition: background 0.25s ease-out;
   &::after {
     content: ' ';  
     background: transparent icon(chevron-right, "none", 16px, 16px, 0, 0, 30, 30, $anchor-color, 3) no-repeat right top / cover;    
@@ -308,6 +312,7 @@
 .icon {
   &.secondary { 
     color: $fm-orange;  
+    transition: color 0.25s ease-out;
     &:hover,
     &:focus {
       color: scale-color($fm-orange, $lightness: -10%);   
@@ -320,6 +325,7 @@
     fill: currentColor;
     height: 1em;
     width: 1em;
+    transition: fill 0.25s ease-out;
   }
 }
 
@@ -340,11 +346,22 @@
   } 
 }
 .mailto { 
-  position: relative;          
-  background-image: icon(email, $primary-color, 18, 18, 0, 3, 24, 24);
-  background-repeat: no-repeat;
-  padding-left: 1.5rem;
-  background-position: 0% 12%;
+  position: relative;
+  display: inline-block;
+  &::before {
+    content: '';
+    display: inline-block; 
+    position: relative;
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: 0.5em;
+    background: transparent icon(email, $primary-color, 18px, 18px, 0, 0, 24, 24) no-repeat left center /cover;
+  }
+  .accent-yellow & {
+    &::before {
+      background: transparent icon(email, $fm-yellow, 18px, 18px, 0, 0, 24, 24) no-repeat left center /cover;
+    }
+  }
 }
 
 .icon-calendar {

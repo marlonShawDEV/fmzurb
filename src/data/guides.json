@@ -1,10 +1,18 @@
 ﻿{ "page": [
    {
+      "name": "Freddie Mac Global",
+      "url" : "styleguide_fm.html"
+   },
+   {
       "name": "Corporate Site",
       "url" : "styleguide_corp.html"
    },
    {
-      "name": "Corporate Scripts",
+      "name": "Multifamily Site",
+      "url" : "styleguide_mf.html"
+   },
+   {
+      "name": "Freddie Mac Global Scripts",
       "url" : "styleguide_scripts_corp.html"
    },
    {

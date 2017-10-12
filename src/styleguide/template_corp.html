@@ -10,9 +10,9 @@
     <meta name="twitter:site" content="@FreddieMac" />
     <meta property="og:title" content="Style Guide: Freddie Mac Corporate" />
     <meta name="twitter:title" content="Style Guide: Freddie Mac Corporate"/>
-    <meta name="Description" content="The styleguide is based on the Foundation framework." />
-    <meta property="og:description" content="The styleguide is based on the Foundation framework." />
-    <meta name="twitter:description" content="The styleguide is based on the Foundation framework." />
+    <meta name="Description" content="The corporate styleguide is based on the Foundation framework." />
+    <meta property="og:description" content="The corporate styleguide is based on the Foundation framework." />
+    <meta name="twitter:description" content="The corporate styleguide is based on the Foundation framework." />
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website" />
     <meta property="og:image" content="files/styleguide.jpg" />
@@ -53,8 +53,14 @@
     
     .two-column-layout > .two-column-row {
       padding-left: 0;
-      padding-right: 0;      
+      padding-right: 0;  
+      margin-bottom: 1rem;      
     }
+
+    .two-column-row > main,
+    .two-column-row > aside    {
+      padding-top: 10px; 
+    } 
 
     /* This styles the color blocks used in the color documentation. */
     .color-block {
@@ -150,6 +156,7 @@
           </div>
           {{/each}}
        
+        <p class="text-center"><a class="button small" href="index.html">Back to Style Guides</a></p>
       </div>
     </div> 
     

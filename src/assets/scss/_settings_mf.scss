@@ -418,12 +418,10 @@ $form-button-radius: $button-radius;
 // 20. Label
 // ---------
 
-$label-background: $fm-gray;
-$label-color: $white;
-$label-color-alt: $black;
-$label-palette: (
-  default: $fm-blue,
-);
+$label-background: transparent;  // not used
+$label-color: inherit;  // not used
+$label-color-alt: inherit;  // not used
+$label-palette: none;  // not used
 $label-font-size: rem-calc(14);
 $label-padding: 0.4em 1.5em;
 $label-radius: 0;
