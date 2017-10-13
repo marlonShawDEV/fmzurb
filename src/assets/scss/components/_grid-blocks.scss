@@ -16,9 +16,12 @@
   align-items: stretch;
   -ms-flex-pack: center;
   justify-content: center; 
-  min-height: rem-calc(250);
+  min-height: rem-calc(150);
   @include breakpoint(large) {
-    min-height: rem-calc(330);
+    min-height: rem-calc(320);
+  }
+  @include breakpoint(xlarge) {
+    min-height: rem-calc(300);
   }
   .caret-in {
     position: absolute;  
@@ -42,7 +45,8 @@
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center;
-    &:first-child {
+    &:nth-of-type(odd) {
+      padding: 0 $gutter/2 0 0;
       background: rgba($black, 0.1);      
       .caret-in {
         right: 0;
@@ -51,7 +55,7 @@
         }
       }  
     }
-    &:last-child {
+    &:nth-of-type(even) {
       padding: 0 0 0 $gutter/2;
       .caret-in {
         left: 0;
@@ -66,12 +70,13 @@
   }  
   &.medium-reverse-order {
     .twin-block {      
-      &:first-child {
+      &:nth-of-type(odd) {
         @include breakpoint(medium) {
+          padding: 0 0 0 $gutter/2;
           order: 2; 
         }        
       }
-      &:last-child {
+      &:nth-of-type(even) {
         @include breakpoint(medium) {
           padding: 0 $gutter/2 0 0;
           order: 1; 
@@ -92,10 +97,10 @@
     }
     .twin-block { 
       @include breakpoint(small only) {      
-        &:first-child {
-          padding: 0 0 $gutter/2;
+        &:nth-of-type(odd) {
+          padding: 0 0 $gutter/4;
         }
-        &:last-child {
+        &:nth-of-type(even) {
           padding: 0;
         }
         .caret-in { 

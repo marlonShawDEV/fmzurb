@@ -636,7 +636,7 @@ sup, sub {
   color: inherit;
   font-weight: $global-weight-normal;
   margin-bottom: 0.45rem;
-  line-height: 1.2;
+  line-height: 1.25;
   @include breakpoint(xxlarge) {
 		font-size: rem-calc(22);
 	}
