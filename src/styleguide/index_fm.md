@@ -6,7 +6,7 @@ The site has 2 primary templates in Teamsite: Page and Article.  The page articl
 When you are creating a page using the TeamSite template, the following markup is **automatically inserted for you** by the TeamSite template.
 
 <div class="row">
-<div class="column medium-6">
+<div class="column large-6">
   **One Column Content**
   <pre>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"content-band"</span>&gt;</span>
@@ -15,7 +15,7 @@ When you are creating a page using the TeamSite template, the following markup i
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
 </div>
-<div class="column medium-6">
+<div class="column large-6">
   **Two Column Content**
   <pre>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"two-column-layout"</span>&gt;</span>
@@ -43,7 +43,7 @@ The Foundation 6.3 grid uses two key elements: rows and columns. When you need t
 
 ---
 
-### Framework Breakpoints
+## Framework Breakpoints
 
 There are 5 primary breakpoints for the corporate design.  If you need to write custom css for a page using this design, you will likely need to know these.
 
@@ -53,12 +53,13 @@ There are 5 primary breakpoints for the corporate design.  If you need to write 
 | medium     | 570px  | 35.625em | breakpoint where small cards first stack/unstack, and tabs and data tables typically stack/unstack |
 | large      | 980px  | 61.25em  | breakpoint where the 2-column layout stacks/unstacks, and large feature cards stack/unstack |
 | xlarge     | 1270px | 79.375em | breakpoint where the primary nav, ribbon and search bar collapse/uncollapse |
-| xxlarge    | 1500px | 93.75em  | max width for content area (1360px + 60px padding on each side) and max width for most responsive fonts |
+| xxlarge    | 1500px | 93.75em  | content area width is 1360px with 70px padding on each side; also max width for most responsive fonts |
 
+---
 
-### Framework Components
+## Framework Components
 
-The site is broken down into 4 main designs: corporate, Multifamily, Single-Family, and capital markets.  Each of these designs has some Foundation elements enabled and some disabled.  Refer to each individual template for details.
+The site is broken down into 4 main designs: Corporate, Multifamily, Single-Family, and Capital Markets.  Each of these designs has some Foundation elements enabled and some disabled.  Refer to each individual template for details.
 <ul>
   <li class="item-name"><a href="styleguide_corp.html#framework">Corporate Site</a></li> 
   <li class="item-name"><a href="styleguide_mf.html#framework">Multifamily Site</a></li> 
@@ -77,29 +78,25 @@ The site is broken down into 4 main designs: corporate, Multifamily, Single-Fami
   <div class="column">
     <div class="color-block">
       <span class="background-orange"> `.background-orange` </span>
-      $fm-orange<br>
-      $secondary-color
+      $fm-orange
     </div>
   </div>
   <div class="column">
     <div class="color-block">
       <span class="background-green"> `.background-green` </span>
-      $fm-green<br>
-      $success-color
+      $fm-green
     </div>
   </div>
   <div class="column">
     <div class="color-block">
       <span class="background-yellow"> `.background-yellow` </span>
-      $fm-yellow<br>
-      $warning-color
+      $fm-yellow
     </div>
   </div>
   <div class="column">
     <div class="color-block">
       <span class="background-red"> `.background-red` </span>
-      $fm-red<br>
-      $alert-color
+      $fm-red
     </div>
   </div>
   <div class="column">
@@ -157,29 +154,15 @@ The site is broken down into 4 main designs: corporate, Multifamily, Single-Fami
     </div>
   </div>
 </div>
-<br>
+<hr>
 <h2>Text Colors</h2>
 <div class="row up-1 medium-up-2 large-up-3 xlarge-up-4"  data-equalizer data-equalize-by-row="true">
-  <div class="column">
-    <div class="color-block" data-equalizer-watch>
-      <span style="background: #333333"></span>
-      $dark-gray<br>
-      <div style="text-transform: none;">default text color for accordions & class `.subheader`</div>
-    </div>
-  </div>
   <div class="column">
     <div class="color-block" data-equalizer-watch>
       <span style="background: #464645"></span>
       $medium-gray<br>
       $body-font-color<br>
       <div style="text-transform: none;">default text color on light backgrounds</div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="color-block" data-equalizer-watch>
-      <span class="background-gray"></span>
-      $fm-gray<br>
-      <div style="text-transform: none;">Used by class `.accent-gray`, also default text color in some callouts, card avatars, navigation, titles, and subtitles</div>
     </div>
   </div>
   <div class="column">
@@ -191,19 +174,36 @@ The site is broken down into 4 main designs: corporate, Multifamily, Single-Fami
   </div>
   <div class="column">
     <div class="color-block" data-equalizer-watch>
-      <span class="background-orange"></span>
-      Accent color via class `.accent-orange, used mostly in blog posts
+      <span style="background: #333333"> `.subheader` </span>
+      $dark-gray<br>
+      <div style="text-transform: none;">also default text color for accordions</div>
     </div>
   </div>
   <div class="column">
     <div class="color-block" data-equalizer-watch>
-      <span class="background-yellow"></span>
-      Accent color via class `.accent-yellow, used mostly in modals with dark backgrounds
+      <span class="background-gray"> `.accent-gray` </span>
+      $fm-gray<br>
+      <div style="text-transform: none;">also default text color in some callouts, card avatars, and titles</div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block" data-equalizer-watch>
+      <span class="background-orange"> `.accent-orange` </span>
+      $fm-orange
+      <div style="text-transform: none;">used sparingly, mostly in blogs</div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block" data-equalizer-watch>
+      <span class="background-yellow"> `.accent-yellow` </span>
+      $fm-yellow
+      <div style="text-transform: none;">used sparingly, mostly in modals with dark backgrounds</div>
     </div>
   </div>
 </div>
+<hr>
 <h2>Mosaic Colors</h2>
-<p>The mosaic colors are not intended to stand alone. Instead they should be applied only when there is 3 or more items to shade.</p>
+<p>The mosaic colors are <strong>not</strong> intended to stand alone. Instead they should be applied only when there is 3 or more items to shade.</p>
 <div class="row up-1 medium-up-2 large-up-3 xlarge-up-4">
   <div class="column">
     <div class="color-block">
@@ -213,24 +213,24 @@ The site is broken down into 4 main designs: corporate, Multifamily, Single-Fami
   </div>
   <div class="column">
     <div class="color-block">
-      <span class="background-celery"></span>
+      <span style="background: #E4F118"></span>
+      $mosaic-end
+    </div>
+  </div>
+  <div class="column">
+    <div class="color-block">
+      <span class="background-celery"> `.background-celery` </span>
       $celery
     </div>
   </div>
   <div class="column">
     <div class="color-block">
-      <span class="background-pear"></span>
+      <span class="background-pear"> `.background-pear` </span>
       $pear
     </div>
   </div>
-  <div class="column">
-    <div class="color-block">
-      <span style="background: #E4F118"></span>
-      $mosaic-end
-    </div>
-  </div>
 </div>
-
+<hr>
 
 <h4 class="gutter-top">Example of a mosaic edge design</h4>
 
@@ -312,10 +312,20 @@ The site is broken down into 4 main designs: corporate, Multifamily, Single-Fami
 
 # Dividers
 
-Use `<hr>` dividers to define thematic breaks between content chunks. 
+Use `<hr>` dividers to define thematic breaks between content chunks.  The line color will automatically become white on dark backgrounds.
 
 ```html_example
-<hr>
+<div class="gutter-all background-offwhite">
+  sample content
+  <hr>
+  sample content
+</div>
+
+<div class="gutter-all background-blue">
+  sample content
+  <hr>
+  sample content
+</div>
 ```
 
 
@@ -375,136 +385,13 @@ There are several text and typography styles to choose from, although some style
         <p>This is a regular paragraph for comparison.</p>
       </div>
   </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#typography4" id="typography-heading4" aria-controls="typography4" role="tab">Sidebar (aside) classes</a>
-    <div class="accordion-content" data-tab-content id="typography4" aria-labelledby="typography-heading4" role="tabpanel">
-      <p>In addition to these styles, sidebars can also use any of the basic content styles.</p>
-      <hr>
-      <div class="callout">
-        <h3 class="sidebar-title">This is a sidebar-title</h3>
-        <h3 class="sidebar-subtitle">This is a sidebar-subtitle (use in research landing)</h3>
-        <h3 class="sidebar-headline">This is a sidebar-headline</h3>
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#typography5" id="typography-heading5" aria-controls="typography5" role="tab">Article Promo classes</a>
-    <div class="accordion-content" data-tab-content id="typography5" aria-labelledby="typography-heading5" role="tabpanel">
-      <p>These styles are for article promotions via article lists and cards. These are not for use in actual article content.</p>
-      <hr>
-      <div class="callout">
-      <h5>Article Data for Lists and Cards</h5>
-        <h3 class="article-headline">This is class article-headline (use in news, blog)</h3>
-        <h3 class="card-title-large">This is class card-title-large (variation of above, used for EP cards only)</h3>
-        <div class="article-category">This is class article-category</div>
-        <div class="article-date">This is class article-date (used in blog, perspectives)</div>
-        <div class="article-date-lg">This is class article-date-lg <span class="uppercase"><strong>Partial Uppercase/Strong</strong></span> (used in media, research)</div>
-        <div class="article-date-feature">This is class article-date-feature <span class="uppercase">Partial Uppercase</span> (used in featured blog/EP)</div>
-        <div class="article-byline">This is class article-byline <span class="uppercase">Partial Uppercase</span> <span class="reduce">Partial Reduced</span> (used in featured EP)</div> 
-      </div>
-      <hr>
-      <div class="callout">
-      <h5>Promo Blurbs</h5>
-      <p>These styles are limited just to promo blurbs -- all of these styles <strong>hide</strong> at smallest screen sizes, to allow more room for their accompanying headline.</p> 
-        <div class="article-blurb">This is class article-blurb (used in news, EP).</div>
-        <div class="article-blurb-blog">This is class article-blurb-blog (used only in blog).</div>
-        <div class="article-blurb-lg">This is class article-blurb-lg (used only in featured EP).</div> 
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#typography6" id="typography6-heading" aria-controls="typography6" role="tab">Capitalization</a>
-    <div class="accordion-content" data-tab-content id="typography6" aria-labelledby="typography6-heading" role="tabpanel">
-      <p>Use these styles when the choice to display some text is merely a stylistic choice. When using these styles, keep your markup in standard case, and use this class to visually change the displayed case.</p>
-      <p>For words that should <strong>always</strong> be uppercased (such as our stock symbol, or acronyms like REO), use uppercased letters in your markup.</p>
-      <hr>
-      <div class="callout">
-        <p><span class="uppercase">This is class uppercase</span>, which makes every letter appear capitalized.</p>
-        <p><span class="smallcaps">This is Class smallcaps</span>, which makes every lowercased letter appear as small capital letters.</p>
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#typography7" id="typography-heading7" aria-controls="typography7" role="tab">Footer Promo classes</a>
-    <div class="accordion-content" data-tab-content id="typography7" aria-labelledby="typography-heading7" role="tabpanel">
-      <p>This style should only be used inside a Footer Promo.</p>
-      <hr>
-      <div class="callout">
-        <div class="callout background-primary footer-promo">
-          <h3 class="callout-footer-title">This is callout-footer-title</h3>
-        </div>  
-      </div>      
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#typography8" id="typography-heading8" aria-controls="typography8" role="tab">Hero classes</a>
-    <div class="accordion-content" data-tab-content id="typography8" aria-labelledby="typography-heading8" role="tabpanel">
-      <p>These should only be used inside HERO elements.</p>
-      <hr>
-      <div class="callout">
-        <div class="callout background-primary">
-          <div class="hero-date">This is hero-date</div>
-          <h1 class="hero-title">This is hero-title</h1>
-          <div class="hero-subtitle">This is hero-subtitle (homepage only)</div>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#typography9" id="typography-heading9" aria-controls="typography9" role="tab">Grid-block classes</a>
-    <div class="accordion-content" data-tab-content id="typography9" aria-labelledby="typography-heading9" role="tabpanel">
-      <p>These are intended for use in the colorful grid layouts like the About page and media resources.  Be careful using them elsewhere, as they have a more dramatic size variation from small screen to large screen than most other text styles.</p>
-      <hr>
-      <div class="callout">
-        <div class="callout background-teal">
-          <p class="grid-block-label">This is grid-block-label</p>
-          <p class="grid-block-title-large">This is grid-block-title-large</p>
-          <p class="grid-block-title">This is grid-block-title</p>
-          <p class="grid-block-title-medium">This is grid-block-title-medium</p>
-          <p class="grid-block-text">This is grid-block-text.</p>
-          <p class="grid-block-text-small">This is grid-block-text-small</p>
-          <p class="stat-lg">This is stat-lg</p>
-          <p class="stat">This is stat</p>
-          <p class="stat-med">This is stat-med</p>
-          <p class="stat-sm">This is stat-sm</p>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#typography10" id="typography-heading10" aria-controls="typography10" role="tab">Homepage classes</a>
-    <div class="accordion-content" data-tab-content id="typography10" aria-labelledby="typography-heading10" role="tabpanel">
-      <p>These styles should only be used on the corporate homepage.</p>
-      <hr>
-      <div class="callout">
-        <h2 class="homepage-headline">This is homepage-headline</h2>
-        <h3 class="finance-category">This is finance-category</h3>
-        <h3 class="finance-research-title">This is finance-research-title</h3>
-        <p class="finance-research-category">This is finance-research-category</p>
-        <p class="stat-med">This is stat-med</p>
-        <p class="stat-sm">This is stat-sm</p>
-        <p class="stat-points">This is stat-points</p>
-        <p class="title-testimonial">This is title-testimonial</p>  
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#typography11" id="typography-heading11" aria-controls="typography11" role="tab">Blockquotes</a>
-    <div class="accordion-content" data-tab-content id="typography11" aria-labelledby="typography-heading11" role="tabpanel">
-      <p>Blockquotes should only be used when a person or source is being quoted.</p>
-      <ul>
-        <li>Include the source for the quote in a <code>footer</code> and include the author, title or work in a <code>cite</code>.</li>
-        <li>Do <strong>not</strong> use a blockquote simply to decorate text that isn't a quotation.</li>
-      </ul>
-      <hr>
-      <div class="callout">
-        <blockquote>
-          <p>Cowards die many times before their deaths; the <strong>valiant</strong> never taste of death but once.</p>
-          <footer><cite>William Shakespeare</cite> in <cite>King Henry the Fifth</cite></footer>
-        </blockquote>
-      </div>
-    </div>
-  </li>
+</ul>
+```
+
+---
+
+```html_example
+<ul class="accordion-pointer" data-accordion>  
   <li class="accordion-item" data-accordion-item>
     <a class="accordion-title" href="#typography12" id="typography-heading12" aria-controls="typography12" role="tab">Abbreviations, Code, Keystrokes</a>
     <div class="accordion-content" data-tab-content id="typography12" aria-labelledby="typography-heading12" role="tabpanel">
@@ -558,6 +445,150 @@ There are several text and typography styles to choose from, although some style
         <p>This is <span class="stat-lg">class stat-lg</span> it calls out a single data point to highlight it.</p>         
       </div>
     </div>
+  </li>  
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#typography6" id="typography6-heading" aria-controls="typography6" role="tab">Capitalization</a>
+    <div class="accordion-content" data-tab-content id="typography6" aria-labelledby="typography6-heading" role="tabpanel">
+      <p>Use these styles when the choice to display some text is merely a stylistic choice. When using these styles, keep your markup in standard case, and use this class to visually change the displayed case.</p>
+      <p>For words that should <strong>always</strong> be uppercased (such as our stock symbol, or acronyms like REO), use uppercased letters in your markup.</p>
+      <hr>
+      <div class="callout">
+        <p><span class="uppercase">This is class uppercase</span>, which makes every letter appear capitalized.</p>
+        <p><span class="smallcaps">This is Class smallcaps</span>, which makes every lowercased letter appear as small capital letters.</p>
+      </div>
+    </div>
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#typography11" id="typography-heading11" aria-controls="typography11" role="tab">Blockquotes</a>
+    <div class="accordion-content" data-tab-content id="typography11" aria-labelledby="typography-heading11" role="tabpanel">
+      <p>Blockquotes should only be used when a person or source is being quoted.</p>
+      <ul>
+        <li>Include the source for the quote in a <code>footer</code> and include the author, title or work in a <code>cite</code>.</li>
+        <li>Do <strong>not</strong> use a blockquote simply to decorate text that isn't a quotation.</li>
+      </ul>
+      <hr>
+      <div class="callout">
+        <blockquote>
+          <p>Cowards die many times before their deaths; the <strong>valiant</strong> never taste of death but once.</p>
+          <footer><cite>William Shakespeare</cite> in <cite>King Henry the Fifth</cite></footer>
+        </blockquote>
+      </div>
+    </div>
+  </li>
+</ul>
+```
+
+---
+
+```html_example
+<ul class="accordion-pointer" data-accordion>  
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#typography4" id="typography-heading4" aria-controls="typography4" role="tab">Sidebar (aside) classes</a>
+    <div class="accordion-content" data-tab-content id="typography4" aria-labelledby="typography-heading4" role="tabpanel">
+      <p>In addition to these styles, sidebars can also use any of the basic content styles.</p>
+      <hr>
+      <div class="callout">
+        <h3 class="sidebar-title">This is a sidebar-title</h3>
+        <h3 class="sidebar-subtitle">This is a sidebar-subtitle (use in research landing)</h3>
+        <h3 class="sidebar-headline">This is a sidebar-headline</h3>
+      </div>
+    </div>
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#typography5" id="typography-heading5" aria-controls="typography5" role="tab">Article Promo classes</a>
+    <div class="accordion-content" data-tab-content id="typography5" aria-labelledby="typography-heading5" role="tabpanel">
+      <p>These styles are for article promotions via article lists and cards. These are not for use in actual article content.</p>
+      <hr>
+      <div class="callout">
+      <h5>Article Data for Lists and Cards</h5>
+        <h3 class="article-headline">This is class article-headline (use in news, blog)</h3>
+        <h3 class="card-title-large">This is class card-title-large (variation of above, used for EP cards only)</h3>
+        <div class="article-category">This is class article-category</div>
+        <div class="article-date">This is class article-date (used in blog, perspectives)</div>
+        <div class="article-date-lg">This is class article-date-lg <span class="uppercase"><strong>Partial Uppercase/Strong</strong></span> (used in media, research)</div>
+        <div class="article-date-feature">This is class article-date-feature <span class="uppercase">Partial Uppercase</span> (used in featured blog/EP)</div>
+        <div class="article-byline">This is class article-byline <span class="uppercase">Partial Uppercase</span> <span class="reduce">Partial Reduced</span> (used in featured EP)</div> 
+      </div>
+      <hr>
+      <div class="callout">
+      <h5>Promo Blurbs</h5>
+      <p>These styles are limited just to promo blurbs -- all of these styles <strong>hide</strong> at smallest screen sizes, to allow more room for their accompanying headline.</p> 
+        <div class="article-blurb">This is class article-blurb (used in news, EP).</div>
+        <div class="article-blurb-blog">This is class article-blurb-blog (used only in blog).</div>
+        <div class="article-blurb-lg">This is class article-blurb-lg (used only in featured EP).</div> 
+      </div>
+    </div>
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#typography9" id="typography-heading9" aria-controls="typography9" role="tab">Grid-block classes</a>
+    <div class="accordion-content" data-tab-content id="typography9" aria-labelledby="typography-heading9" role="tabpanel">
+      <p>These are intended for use in the colorful grid layouts like the About page and media resources.  Be careful using them elsewhere, as they have a more dramatic size variation from small screen to large screen than most other text styles.</p>
+      <hr>
+      <div class="callout">
+        <div class="callout background-teal">
+          <p class="grid-block-label">This is grid-block-label</p>
+          <p class="grid-block-title-large">This is grid-block-title-large</p>
+          <p class="grid-block-title">This is grid-block-title</p>
+          <p class="grid-block-title-medium">This is grid-block-title-medium</p>
+          <p class="grid-block-text">This is grid-block-text.</p>
+          <p class="grid-block-text-small">This is grid-block-text-small</p>
+          <p class="stat-lg">This is stat-lg</p>
+          <p class="stat">This is stat</p>
+          <p class="stat-med">This is stat-med</p>
+          <p class="stat-sm">This is stat-sm</p>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+```
+
+---
+
+```html_example
+<ul class="accordion-pointer" data-accordion>  
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#typography7" id="typography-heading7" aria-controls="typography7" role="tab">Footer Promo classes</a>
+    <div class="accordion-content" data-tab-content id="typography7" aria-labelledby="typography-heading7" role="tabpanel">
+      <p>This style should only be used inside a Footer Promo.</p>
+      <hr>
+      <div class="callout">
+        <div class="callout background-primary footer-promo">
+          <h3 class="callout-footer-title">This is callout-footer-title</h3>
+        </div>  
+      </div>      
+    </div>
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#typography8" id="typography-heading8" aria-controls="typography8" role="tab">Hero classes</a>
+    <div class="accordion-content" data-tab-content id="typography8" aria-labelledby="typography-heading8" role="tabpanel">
+      <p>These should only be used inside HERO elements.</p>
+      <hr>
+      <div class="callout">
+        <div class="callout background-primary">
+          <div class="hero-date">This is hero-date</div>
+          <h1 class="hero-title">This is hero-title</h1>
+          <div class="hero-subtitle">This is hero-subtitle (homepage only)</div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#typography10" id="typography-heading10" aria-controls="typography10" role="tab">Homepage classes</a>
+    <div class="accordion-content" data-tab-content id="typography10" aria-labelledby="typography-heading10" role="tabpanel">
+      <p>These styles should only be used on the corporate homepage.</p>
+      <hr>
+      <div class="callout">
+        <h2 class="homepage-headline">This is homepage-headline</h2>
+        <h3 class="finance-category">This is finance-category</h3>
+        <h3 class="finance-research-title">This is finance-research-title</h3>
+        <p class="finance-research-category">This is finance-research-category</p>
+        <p class="stat-med">This is stat-med</p>
+        <p class="stat-sm">This is stat-sm</p>
+        <p class="stat-points">This is stat-points</p>
+        <p class="title-testimonial">This is title-testimonial</p>  
+      </div>
+    </div>
   </li>
 </ul>
 ```
@@ -589,320 +620,396 @@ The default text alignment for most containers is left.
 
 
 
-# Lists
+# Ordered Lists
+
+Use an ordered list when creating a list where the order of the items is important. Ordered lists support additional attributes and classes if you need to specify a starting number other than 0, apply a non-integer counting method, or reverse to decending order.
+
+---
+
+## Standard Nested List
+
+This is the ordered list style you will most often use.
 
 ```html_example
-<ul class="accordion-pointer" data-accordion>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#lists3" id="list-heading3" aria-controls="lists3" role="tab">Ordered Lists</a>
-    <div class="accordion-content" data-tab-content id="lists3" aria-labelledby="list-heading3" role="tabpanel">      
-      <p>Use an ordered list when creating a list where the order of the items is important. Ordered lists support additional attributes and classes if you need to specify a starting number other than 0, apply a non-integer counting method, or reverse to decending order.</p>
-      <hr>
-      <div class="callout">
-        <h5>Standard Nested List</h5>
-        <p>This is the ordered list style you will most often use.</p>
-        <ol>
-          <li>Cheese</li>
-          <li>Pepperoni</li>
-          <li>Bacon
-            <ol>
-              <li>Normal bacon</li>
-              <li>Canadian bacon</li>
-            </ol>
-          </li>
-          <li>Sausage</li>
-          <li>Onions</li>
-          <li>Mushrooms</li>
-          <li>Peppers</li>
-          <li>Pineapple</li>
-          <li>Black Olives</li>
-          <li>Green Olives</li>
-        </ol>
-      </div>
-      <hr>
-      <div class="callout">
-        <h5>Reversed Display Order</h5>
-        <p>Use <code>.reversed</code> to visually reverse the display (for something like a "top 10 list" where you want the items to appear to count down to one. <strong>Note:</strong> this only reverses the visual display. The items are still marked up in their standard order.</p>
-        <ol class="reversed">
-          <li>Cheese</li>
-          <li>Pepperoni</li>
-          <li>Bacon</li>
-          <li>Sausage</li>
-          <li>Onions</li>
-          <li>Mushrooms</li>
-          <li>Peppers</li>
-          <li>Pineapple</li>
-          <li>Black Olives</li>
-          <li>Green Olives</li>
-        </ol>
-      </div>
-      <hr>
-      <div class="callout">
-        <h5>Alphabetical lists</h5>
-        <p>Use <code>.upper-alpha</code> for uppercase or <code>.lower-alpha</code> for lowercase. If you go beyond 26, the count will shift from A-Z to AA-ZZ to AAA-ZZZ, etc. Nested lists are numeric unless you specify a different type.</p>
-        <ol class="upper-alpha">
-          <li>Coffee</li>
-          <li>Milk
-            <ol class="lower-alpha">
-              <li>Whole</li>
-              <li>Reduced fat</li>
-              <li>Skim</li>
-            </ol>
-          </li>
-          <li>Tea
-            <ol>
-              <li>Black</li>
-              <li>Herbal</li>
-              <li>Green</li>
-            </ol>
-          </li>
-          <li>Soda</li>
-        </ol>
-      </div>
-      <hr>
-      <div class="callout">
-        <h5>Roman Numerals lists</h5>
-        <p>Use <code>.upper-roman</code> for uppercase or <code>.lower-roman</code> for lowercase. Nested lists are numeric unless you specify a different type.</p>
-        <ol class="upper-roman">
-          <li>Coffee</li>
-          <li>Milk
-            <ol class="lower-roman">
-              <li>Whole</li>
-              <li>Reduced fat</li>
-              <li>Skim</li>
-            </ol>
-          </li>
-          <li>Tea
-            <ol>
-              <li>Black</li>
-              <li>Herbal</li>
-              <li>Green</li>
-            </ol>
-          </li>
-          <li>Soda</li>
-        </ol>
-      </div>
-      <hr>
-      <div class="callout">
-        <h5>Leading Zero list</h5>
-        <p>Use <code>.leading-zero</code> to include leading zeros on the numbers 1-9. Nested lists are numeric unless you specify a different type.</p>
-        <ol class="leading-zero">
-          <li>Cheese</li>
-          <li>Pepperoni</li>
-          <li>Bacon</li>
-          <li>Sausage</li>
-          <li>Onions</li>
-          <li>Mushrooms</li>
-          <li>Peppers</li>
-          <li>Pineapple</li>
-          <li>Black Olives</li>
-          <li>Green Olives</li>
-        </ol>
-      </div>
-      <hr>
-      <div class="callout">
-        <h5>Descending list</h5>
-        <ol reversed>
-          <li>Coffee</li>
-          <li>Milk</li>
-          <li>Tea</li>
-          <li>Soda</li>
-        </ol>
-      </div>
-      <hr>
-      <div class="callout">
-        <h5>Start any list at a number other than One</h5>
-        <p>Provide a numeric value to the <code>start</code> attribute (even if the list is alpabetical). <strong>Note:</strong> you will need to add custom padding to a list where the item count is 3 digits or more -- our default level of indention displays best for 1-2 digit numbers.</p>
-        <ol start="98">
-          <li>Coffee</li>
-          <li>Milk
-            <ol class="lower-alpha" start="8">
-              <li>Whole</li>
-              <li>Reduced fat</li>
-              <li>Skim</li>
-            </ol>
-          </li>
-          <li>Tea</li>
-          <li>Soda</li>
-        </ol>      
-      </div>     
+<div class="callout hollow">
+  <ol>
+    <li>Cheese</li>
+    <li>Pepperoni</li>
+    <li>Bacon
+      <ol>
+        <li>Normal bacon</li>
+        <li>Canadian bacon</li>
+      </ol>
+    </li>
+    <li>Sausage</li>
+    <li>Onions</li>
+    <li>Mushrooms</li>
+    <li>Peppers</li>
+    <li>Pineapple</li>
+    <li>Black Olives</li>
+    <li>Green Olives</li>
+  </ol>
+</div>
+```
+
+---
+
+## Descending list
+
+Add attribute `reversed` to the `<ol>` tag.
+
+```html_example
+<div class="callout hollow">
+  <ol reversed="reversed">
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Tea</li>
+    <li>Soda</li>
+  </ol>
+</div>
+```
+
+## Reversed Display Order
+
+Use class `.reversed` to visually reverse the display (for something like a "top 10 list" where you want the items to appear to count down to one. 
+
+<strong>Note:</strong> this only reverses the visual display. The items are still marked up in their standard order.  There is also a reversed attribute, but IE does not support it.
+
+  
+```html_example
+<div class="callout hollow">
+  <ol class="reversed">
+    <li>Cheese</li>
+    <li>Pepperoni</li>
+    <li>Bacon</li>
+    <li>Sausage</li>
+    <li>Onions</li>
+    <li>Mushrooms</li>
+    <li>Peppers</li>
+    <li>Pineapple</li>
+    <li>Black Olives</li>
+    <li>Green Olives</li>
+  </ol>
+</div>
+```
+
+---
+
+## Alphabetical lists
+
+Use `.upper-alpha` for uppercase or `.lower-alpha` for lowercase. If you go beyond 26, the count will shift from A-Z to AA-ZZ to AAA-ZZZ, etc. Nested lists are numeric unless you specify a different type.
+
+```html_example
+<div class="callout hollow">
+  <ol class="upper-alpha">
+    <li>Coffee</li>
+    <li>Milk
+      <ol class="lower-alpha">
+        <li>Whole</li>
+        <li>Reduced fat</li>
+        <li>Skim</li>
+      </ol>
+    </li>
+    <li>Tea
+      <ol>
+        <li>Black</li>
+        <li>Herbal</li>
+        <li>Green</li>
+      </ol>
+    </li>
+    <li>Soda</li>
+  </ol>
+</div>
+```
+
+---
+
+## Roman Numerals lists
+
+Use `.upper-roman` for uppercase or `.lower-roman` for lowercase. Nested lists are numeric unless you specify a different type.
+
+```html_example
+<div class="callout hollow">
+  <ol class="upper-roman">
+    <li>Coffee</li>
+    <li>Milk
+      <ol class="lower-roman">
+        <li>Whole</li>
+        <li>Reduced fat</li>
+        <li>Skim</li>
+      </ol>
+    </li>
+    <li>Tea
+      <ol>
+        <li>Black</li>
+        <li>Herbal</li>
+        <li>Green</li>
+      </ol>
+    </li>
+    <li>Soda</li>
+  </ol>
+</div>
+```
+
+---
+
+## Leading Zero list
+
+Use `.leading-zero` to include leading zeros on the numbers 1-9. Nested lists are numeric unless you specify a different type.
+
+```html_example
+<div class="callout hollow">
+  <ol class="leading-zero">
+    <li>Cheese</li>
+    <li>Pepperoni</li>
+    <li>Bacon</li>
+    <li>Sausage</li>
+    <li>Onions</li>
+    <li>Mushrooms</li>
+    <li>Peppers</li>
+    <li>Pineapple</li>
+    <li>Black Olives</li>
+    <li>Green Olives</li>
+  </ol>
+</div>
+```
+
+---
+
+## Start an ordered list at a number other than One
+
+Provide a numeric value to the <code>start</code> attribute (even if the list is alpabetical). <strong>Note:</strong> you will need to add custom padding to a list where the item count is 3 digits or more -- our default level of indention displays best for 1-2 digit numbers.
+
+```html_example
+<div class="callout hollow">
+  <ol class="gutter-left" start="98">
+    <li>Coffee</li>
+    <li>Milk
+      <ol class="lower-alpha" start="8">
+        <li>Whole</li>
+        <li>Reduced fat</li>
+        <li>Skim</li>
+      </ol>
+    </li>
+    <li>Tea</li>
+    <li>Soda</li>
+  </ol>      
+</div>
+```
+
+
+
+# Unordered Lists
+
+Use an unordered list to... *list things*, if the order of the items doesn't matter.  Add class `.no-margin` to override the default margins.
+
+```html_example
+<div class="callout hollow">
+  <ul>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item
+      <ul>
+        <li>Nested list item      
+          <ul>
+            <li>Nested in a nested list item   
+              <ol>
+                <li>Numbered list</li>
+                <li>Deeply nested</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+        <li>Nested list item. This is a list item with a much longer content.  Sometimes a list item is long enough that it will span multiple lines.  This is an example of such an item, to show the line height, padding, and margin that are applied to this list element when it is long enough to wrap to a new line.</li>
+        <li>Nested list item</li>
+      </ul>
+    </li>
+    <li>List item</li>
+    <li>List item. This is a list item with a much longer content.  Sometimes a list item is long enough that it will span multiple lines.  This is an example of such an item, to show the line height, padding, and margin that are applied to this list element when it is long enough to wrap to a new line.</li>
+    <li>List item</li>
+  </ul>
+</div>
+```
+
+---
+
+## Un-bulleted Unordered Lists
+
+Add class `.no-bullet` to remove the bullets from that list.  Nested lists will retain their formatting unless also modified.
+
+```html_example
+<div class="callout hollow">
+  <ul class="no-bullet">
+    <li>List item with a much longer description or more content.</li>
+    <li>List item</li>
+    <li>List item
+      <ul>
+        <li>Nested list item</li>
+        <li>Nested list item</li>
+        <li>Nested list item</li>
+      </ul>
+    </li>
+    <li>List item</li>
+    <li>List item. This is a list item with a much longer content.  Sometimes a list item is long enough that it will span multiple lines.  This is an example of such an item, to show the line height, padding, and margin that are applied to this list element when it is long enough to wrap to a new line.</li>
+    <li>List item</li>
+  </ul>
+</div>
+```
+
+---
+
+## Expanded Unordered Lists
+
+When you require additional space between very long, complex list items -- such as those where multiple paragraphs are in a single list item, use `p` tags.
+
+```html_example
+<div class="callout hollow">
+  <ul>
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet nec erat ac condimentum. Nulla vel rutrum ligula. Sed hendrerit interdum orci a posuere. Vivamus ut velit aliquet, mollis purus eget, iaculis nisl. Proin posuere malesuada ante. Proin auctor <a href="#">orci eros, ac molestie lorem</a> dictum nec. Vestibulum sit amet erat est. Morbi luctus sed elit ac luctus. Proin blandit, enim vitae egestas posuere, neque elit ultricies dui, vel mattis nibh enim ac lorem. Maecenas molestie nisl sit amet velit dictum lobortis. Aliquam erat volutpat.</p></li>
+    <li><p>Proin diam quam, elementum in eleifend id, elementum et metus. Cras in justo consequat justo semper ultrices. Sed dignissim lectus a ante mollis, nec vulputate ante molestie. Proin in porta nunc. Etiam pulvinar turpis sed velit porttitor, vel adipiscing velit fringilla. Cras ac tellus vitae purus pharetra tincidunt. Sed cursus aliquet aliquet. <strong>Cras eleifend commodo malesuada.</strong> In turpis turpis, ullamcorper ut tincidunt a, ullamcorper a nunc. Etiam luctus tellus ac dapibus gravida. Ut nec lacus laoreet neque ullamcorper volutpat.</p>
+      <p>Nunc et leo erat. Aenean mattis ultrices lorem, eget adipiscing dolor ultricies eu. In hac habitasse platea dictumst. Vivamus cursus feugiat sapien quis aliquam. Mauris quam libero, porta vel volutpat ut, blandit a purus. Vivamus vestibulum <a href="#">dui vel tortor molestie</a>, sit amet feugiat sem commodo. Nulla facilisi. Sed molestie arcu eget tellus vestibulum tristique.</p>
+    </li>
+    <li><p>Nullam ut tincidunt nunc. Pellentesque metus lacus, commodo eget justo ut, rutrum varius nunc. <strong>Sed non rhoncus risus.</strong> Morbi sodales gravida pulvinar. Duis malesuada, odio volutpat elementum vulputate, massa magna scelerisque ante, et accumsan tellus nunc in sem. Donec mattis arcu et velit aliquet, non sagittis justo vestibulum. Suspendisse volutpat felis lectus, <a href="#">nec consequat ipsum mattis id</a>. Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu.</p>
+      <p><em>Suspendisse potenti.</em> Donec ante velit, ornare at augue quis, <a href="#">tristique laoreet sem</a>. Etiam in ipsum elit. Nullam cursus dolor sit amet nulla feugiat tristique. Phasellus ac tellus tincidunt, imperdiet purus eget, ullamcorper ipsum. Cras eu tincidunt sem. Nullam sed dapibus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id venenatis tortor. In consectetur sollicitudin pharetra. Etiam convallis nisi nunc, et aliquam turpis viverra sit amet. Maecenas faucibus sodales tortor.</p>
+      <p>Suspendisse lobortis mi eu leo viverra volutpat. Pellentesque velit ante, vehicula sodales congue ut, elementum a urna. Cras tempor, ipsum eget luctus rhoncus, arcu ligula fermentum urna, vulputate pharetra enim enim non libero.</p>
+    </li>
+  </ul>
+</div>
+```
+
+---
+
+## Divided Lists
+
+To add dividers between items in a list, add the class `.list-divided` (for light backgrounds) or `.list-divided-white` (for dark backgrounds) to the `ul` or tag.  
+
+```html_example
+<div class="callout">
+  <div class="row">
+    <div class="column medium-6">
+      <div class="callout hollow"> 
+        <ul class="list-divided no-bullet">
+          <li>List item</li>
+          <li>List item</li>
+          <li>List item</li>
+          <li>List item</li>
+        </ul>
+      </div> 
     </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#lists4" id="list-heading4" aria-controls="lists4" role="tab">Unordered Lists</a>
-    <div class="accordion-content" data-tab-content id="lists4" aria-labelledby="list-heading4" role="tabpanel">      
-      <p>Use an unordered list to... *list things*, if the order of the items doesn't matter.</p>
-      <div class="callout background-concrete">
-      Generic list items (those in <code>ul</code> or <code>ol</code> containers with no css class applied) have default margins to separate each item to provide better scanability. Adding any class to the <code>ul</code> or <code>ol</code> container will override the default margins on the <code>li</code> elements.
-      </div>
-      <hr>
-      <div class="callout">
-        <ul>
+    <div class="column medium-6">    
+      <div class="callout background-gray"> 
+        <ul class="list-divided-white no-bullet">
           <li>List item</li>
           <li>List item</li>
-          <li>List item
-            <ul>
-              <li>Nested list item      
-                <ul>
-                  <li>Nested in a nested list item   
-                    <ol>
-                      <li>Numbered list</li>
-                      <li>Deeply nested</li>
-                    </ol>
-                  </li>
-                </ul>
-              </li>
-              <li>Nested list item. This is a list item with a much longer content.  Sometimes a list item is long enough that it will span multiple lines.  This is an example of such an item, to show the line height, padding, and margin that are applied to this list element when it is long enough to wrap to a new line.</li>
-              <li>Nested list item</li>
-            </ul>
-          </li>
           <li>List item</li>
-          <li>List item. This is a list item with a much longer content.  Sometimes a list item is long enough that it will span multiple lines.  This is an example of such an item, to show the line height, padding, and margin that are applied to this list element when it is long enough to wrap to a new line.</li>
+          <li>List item</li>
           <li>List item</li>
         </ul>
       </div>
-      <hr>
-      <div class="callout">
-        <h4>Un-bulleted Unordered Lists</h4>
-        <p>The <code>ul</code> is a bulleted list by default, but you can add the class <code>.no-bullet</code> to remove the bullets from that list.  Nested lists will retain their formatting unless also modified.</p>
-        <ul class="no-bullet">
-          <li>List item with a much longer description or more content.</li>
-          <li>List item</li>
-          <li>List item
-            <ul>
-              <li>Nested list item</li>
-              <li>Nested list item</li>
-              <li>Nested list item</li>
-            </ul>
-          </li>
-          <li>List item</li>
-          <li>List item. This is a list item with a much longer content.  Sometimes a list item is long enough that it will span multiple lines.  This is an example of such an item, to show the line height, padding, and margin that are applied to this list element when it is long enough to wrap to a new line.</li>
-          <li>List item</li>
-        </ul>
-      </div>
-      <hr>
-      <div class="callout">
-        <h4>Expanded Unordered Lists</h4>
-        <p>When you require additional space between very long, complex list items -- such as those where multiple paragraphs are in a single list item, use <code>p</code> tags.</p>
-        <ul>
-          <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet nec erat ac condimentum. Nulla vel rutrum ligula. Sed hendrerit interdum orci a posuere. Vivamus ut velit aliquet, mollis purus eget, iaculis nisl. Proin posuere malesuada ante. Proin auctor <a href="#">orci eros, ac molestie lorem</a> dictum nec. Vestibulum sit amet erat est. Morbi luctus sed elit ac luctus. Proin blandit, enim vitae egestas posuere, neque elit ultricies dui, vel mattis nibh enim ac lorem. Maecenas molestie nisl sit amet velit dictum lobortis. Aliquam erat volutpat.</p></li>
-          <li><p>Proin diam quam, elementum in eleifend id, elementum et metus. Cras in justo consequat justo semper ultrices. Sed dignissim lectus a ante mollis, nec vulputate ante molestie. Proin in porta nunc. Etiam pulvinar turpis sed velit porttitor, vel adipiscing velit fringilla. Cras ac tellus vitae purus pharetra tincidunt. Sed cursus aliquet aliquet. <strong>Cras eleifend commodo malesuada.</strong> In turpis turpis, ullamcorper ut tincidunt a, ullamcorper a nunc. Etiam luctus tellus ac dapibus gravida. Ut nec lacus laoreet neque ullamcorper volutpat.</p>
-          <p>Nunc et leo erat. Aenean mattis ultrices lorem, eget adipiscing dolor ultricies eu. In hac habitasse platea dictumst. Vivamus cursus feugiat sapien quis aliquam. Mauris quam libero, porta vel volutpat ut, blandit a purus. Vivamus vestibulum <a href="#">dui vel tortor molestie</a>, sit amet feugiat sem commodo. Nulla facilisi. Sed molestie arcu eget tellus vestibulum tristique.</p>
-          </li>
-          <li><p>Nullam ut tincidunt nunc. Pellentesque metus lacus, commodo eget justo ut, rutrum varius nunc. <strong>Sed non rhoncus risus.</strong> Morbi sodales gravida pulvinar. Duis malesuada, odio volutpat elementum vulputate, massa magna scelerisque ante, et accumsan tellus nunc in sem. Donec mattis arcu et velit aliquet, non sagittis justo vestibulum. Suspendisse volutpat felis lectus, <a href="#">nec consequat ipsum mattis id</a>. Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu.</p>
-          <p><em>Suspendisse potenti.</em> Donec ante velit, ornare at augue quis, <a href="#">tristique laoreet sem</a>. Etiam in ipsum elit. Nullam cursus dolor sit amet nulla feugiat tristique. Phasellus ac tellus tincidunt, imperdiet purus eget, ullamcorper ipsum. Cras eu tincidunt sem. Nullam sed dapibus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id venenatis tortor. In consectetur sollicitudin pharetra. Etiam convallis nisi nunc, et aliquam turpis viverra sit amet. Maecenas faucibus sodales tortor.</p>
-          <p>Suspendisse lobortis mi eu leo viverra volutpat. Pellentesque velit ante, vehicula sodales congue ut, elementum a urna. Cras tempor, ipsum eget luctus rhoncus, arcu ligula fermentum urna, vulputate pharetra enim enim non libero.</p></li>
-        </ul>
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#list5" id="list-heading5" aria-controls="list5" role="tab">Definition Lists</a>
-    <div class="accordion-content" data-tab-content id="list5" aria-labelledby="list-heading5" role="tabpanel">
-      <p>A definition list (<code>dl</code>) is used to display name-value pairs, like metadata or a dictionary definition. Each term (<code>dt</code>) is paired with one or more definitions (<code>dd</code>).  Add class <code>.glossary</code> to the <code>dl</code> to indent the definitions.</p>
-      <hr>
-      <div class="callout">
-        <h4>Plain style</h4>
-        <dl>
-          <dt>Time</dt>
-          <dd>The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.</dd>
-          <dt>Space</dt>
-          <dd>A continuous area or expanse that is free, available, or unoccupied.</dd>
-          <dd>The dimensions of height, depth, and width within which all things exist and move.</dd>
-        </dl>
-      </div>
-      <hr>
-      <div class="callout">
-        <h4>Glossary style</h4>
-        <dl class="glossary">
-          <dt>Amortization</dt>
-          <dd>Paying off a loan over the period of time and at the interest rate specified in a loan document. The amortization of a loan includes the payment of interest and a part of the amount borrowed in each mortgage payment.</dd>
-          <dt>Amortization Schedule</dt>
-          <dd>Provided by mortgage lenders, the schedule shows how over the term of your mortgage the principal portion of the mortgage payment increases and the interest portion of the mortgage payment decreases.</dd>
-          <dt>Annual Percentage Rate (APR)</dt>
-          <dd>How much a loan costs annually. The APR includes the interest rate, points, broker fees and certain other credit charges a borrower is required to pay.</dd>
-          <dt>Application Fee</dt>
-          <dd>The fee that a mortgage lender charges to apply for a mortgage to cover processing costs.</dd>
-        </dl>   
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#list6" id="list-heading6" aria-controls="list6" role="tab">Divided Lists</a>
-    <div class="accordion-content" data-tab-content id="list6" aria-labelledby="list-heading6" role="tabpanel">      
-      <p>To add dividers between items in a list, add the class <code>.list-divided</code> (for light backgrounds) or <code>.list-divided-white</code> (for dark backgrounds) to the <code>ul</code> or <code>ol</code> tag.</p>
-      <p>The spacing is looser for `.list-divided` than it is for `.list-divided-white`.</p>
-      <p>On unordered lists, the dividers are typically used along with the <code>.no-bullet</code> class.</p>
-      <div class="row">
-        <div class="column medium-6">
-        <h5>Unordered Divided Lists</h5>
-          <div class="callout"> 
-            <ul class="list-divided no-bullet">
-              <li>List item</li>
-              <li>List item</li>
-              <li>List item</li>
-              <li>List item</li>
-            </ul>
-          </div> 
-          <div class="callout background-gray"> 
-            <ul class="list-divided-white no-bullet">
-              <li>List item</li>
-              <li>List item</li>
-              <li>List item</li>
-              <li>List item</li>
-            </ul>
-          </div>
-        </div>
-        <div class="column medium-6">
-        <h5>Ordered Divided Lists</h5>
-          <div class="callout">   
-            <ol class="list-divided">
-              <li>List item</li>
-              <li>List item</li>
-              <li>List item</li>
-              <li>List item</li>
-            </ol>
-          </div>
-          <div class="callout background-gray">   
-            <ol class="list-divided-white">
-              <li>List item</li>
-              <li>List item</li>
-              <li>List item</li>
-              <li>List item</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li class="accordion-item" data-accordion-item>
-    <a class="accordion-title" href="#list7" id="list-heading7" aria-controls="list7" role="tab">News Clipping Lists</a>
-    <div class="accordion-content" data-tab-content id="list7" aria-labelledby="list-heading7" role="tabpanel">      
-      <p>Similar to the Divided List, but more spread out to give more room to the additional data that blog headlines include.</p>
-      <p>Variations of this design also exist for <a href="#sidebar-modules">sidebar modules</a>.</p>
-      <div class="callout">       
-        <ul class="no-bullet clipping-block gutter-bottom">
-          <li><div class="article-date-lg">January 18, 2017</div>
-            <h3 class="article-headline"><a href="#">Freddie Mac Forgoes Issuing a Reference Notes Security on its January 18, 2017 Announcement Date</a></h3>
-            <p>Freddie Mac announced today that it will forgo issuing a Reference Notes security on its Jan. 18, 2017 announcement... <a href="#">More</a></p>
-          </li>
-          <li><div class="article-date-lg">January 18, 2017</div>
-            <h3 class="article-headline"><a href="#">Freddie Mac to Delist from Luxembourg Stock Exchange </a></h3>
-            <p>Freddie Mac  announced that its request to delist its debt and mortgage securities from the Luxembourg Stock Exchange was granted... <a href="#">More</a></p>
-          </li>
-          <li><div class="article-date-lg">January 18, 2017</div>
-            <h3 class="article-headline"><a href="#">Mortgage Rates Lower for Third Consecutive Week </a></h3>
-            <p>Freddie Mac  today released the results of its Primary Mortgage Market Survey&reg; (PMMS&reg;), showing average mortgage rates moving... <a href="#">More</a></p>
-          </li>
-          <li><div class="article-date-lg">January 17, 2017</div>
-            <h3 class="article-headline"><a href="#">Freddie Mac Announces Pricing of $198.5 Million Multifamily Small Balance Loan Securitization </a></h3>
-            <p>Freddie Mac  announces the pricing of the SB26 offering, a multifamily mortgage-backed securitization backed by small balance... <a href="#">More</a></p>
-          </li>
-        </ul>
-      </div>  
-    </div>
-  </li>
-</ul>
+    </div>  
+  </div> 
+</div>
+```
+
+---
+
+### News List
+
+For more space between items, add class `.clipping-block` instead of `.list-divided`.
+
+```html_example
+<div class="callout hollow">       
+  <ul class="no-bullet clipping-block">
+    <li><div class="article-date-lg">January 18, 2017</div>
+      <h3 class="article-headline"><a href="#">Freddie Mac Forgoes Issuing a Reference Notes Security on its January 18, 2017 Announcement Date</a></h3>
+      <p>Freddie Mac announced today that it will forgo issuing a Reference Notes security on its Jan. 18, 2017 announcement... <a href="#">More</a></p>
+    </li>
+    <li><div class="article-date-lg">January 18, 2017</div>
+      <h3 class="article-headline"><a href="#">Freddie Mac to Delist from Luxembourg Stock Exchange </a></h3>
+      <p>Freddie Mac  announced that its request to delist its debt and mortgage securities from the Luxembourg Stock Exchange was granted... <a href="#">More</a></p>
+    </li>
+    <li><div class="article-date-lg">January 18, 2017</div>
+      <h3 class="article-headline"><a href="#">Mortgage Rates Lower for Third Consecutive Week </a></h3>
+      <p>Freddie Mac  today released the results of its Primary Mortgage Market Survey&reg; (PMMS&reg;), showing average mortgage rates moving... <a href="#">More</a></p>
+    </li>
+    <li><div class="article-date-lg">January 17, 2017</div>
+      <h3 class="article-headline"><a href="#">Freddie Mac Announces Pricing of $198.5 Million Multifamily Small Balance Loan Securitization </a></h3>
+      <p>Freddie Mac  announces the pricing of the SB26 offering, a multifamily mortgage-backed securitization backed by small balance... <a href="#">More</a></p>
+    </li>
+  </ul>
+</div> 
+```
+
+---
+
+## RSS Lists
+
+Add class `list-rss` to the `ul` tag to include an rss icon for each list item.
+
+```html_example
+<div class="callout background-gray">
+  <h2>RSS Feeds</h2>
+  <ul class="list-divided-white flex-up no-bullet">
+    <li>
+      <ul class="no-bullet list-rss">
+        <li><a href="#">Housing and Economic Research</a></li>
+        <li><a href="#">Perspectives</a></li>
+      </ul>
+    </li>
+    <li><span class="uppercase weight-bold">Freddie Mac Blog</span>
+      <ul class="no-bullet list-rss">
+        <li><a href="#">All Posts</a></li>
+        <li><a href="#">Homeownership</a></li>
+        <li><a href="#">Rental Housing</a></li>
+        <li><a href="#">Research &amp; Analysis</a></li>
+        <li><a href="#">Notable</a></li>
+      </ul>            
+    </li>
+  </ul>
+</div> 
+```
+
+
+
+# Definition & Glossary Lists
+
+A definition list (`dl`) is used to display name-value pairs, like metadata or a dictionary definition. Each term (`dt`) is paired with one or more definitions (`dd`). 
+
+---
+
+##  Definition List
+
+```html_example
+<div class="callout hollow">
+  <dl>
+    <dt>Time</dt>
+    <dd>The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.</dd>
+    <dt>Space</dt>
+    <dd>A continuous area or expanse that is free, available, or unoccupied.</dd>
+    <dd>The dimensions of height, depth, and width within which all things exist and move.</dd>
+  </dl>
+</div>
+```
+
+---
+
+## Glossary List
+
+ Add class `.glossary` to the `dl` to indent the definitions.
+ 
+```html_example 
+<div class="callout hollow">
+  <dl class="glossary">
+    <dt>Amortization</dt>
+    <dd>Paying off a loan over the period of time and at the interest rate specified in a loan document. The amortization of a loan includes the payment of interest and a part of the amount borrowed in each mortgage payment.</dd>
+    <dt>Amortization Schedule</dt>
+    <dd>Provided by mortgage lenders, the schedule shows how over the term of your mortgage the principal portion of the mortgage payment increases and the interest portion of the mortgage payment decreases.</dd>
+    <dt>Annual Percentage Rate (APR)</dt>
+    <dd>How much a loan costs annually. The APR includes the interest rate, points, broker fees and certain other credit charges a borrower is required to pay.</dd>
+    <dt>Application Fee</dt>
+    <dd>The fee that a mortgage lender charges to apply for a mortgage to cover processing costs.</dd>
+  </dl>   
+</div>
 ```
 
 
@@ -983,7 +1090,7 @@ The default text alignment for most containers is left.
     <div class="gutter-all background-concrete">
       <p>This is a container with background-concrete. </p>
       <div class="callout background-concrete border-white">
-        <p>This is a <a href="#">callout</a> with class of background-concrete and border-white, nested inside a container that has a background.</p>
+        <p>This is a <a href="#">callout</a> with class of background-concrete and border-white, nested inside a container that has background-concrete.</p>
       </div>
     </div>
   </div>
@@ -1016,25 +1123,23 @@ The default text alignment for most containers is left.
 
 Callouts can be sized using the `.small`, `.large` and `.xlarge` classes. These will affect the padding around content to be smaller and larger respectively.  You can limit the width of a callout by putting it inside less than 12 columns at larger widths.
 
-
 ```html_example
-<div class="row">
-  <div class="medium-4 column">
+<div class="row">  
+  <div class="medium-8 column medium-centered">
     <div class="callout background-purple small">
       <p>This is a callout with class of small. It has less padding between the contents and the edge of the container.</p>
     </div>
-  </div>
-  <div class="medium-8 column">
     <div class="callout background-purple large">
       <p>This is a callout with class of large. It has more padding between the contents and the edge of the container.</p>
     </div>
-  </div>  
-</div>
-
-<div class="callout background-purple xlarge">
-    <p class="enlarge">This is a callout with class of xlarge. It has waaaay more padding between the contents and the edge of the container.</p>
-  <div class="callout background-white xlarge">
-    <p>This is also a callout with class of xlarge. Combined it with <code>.background-white</code>, to create a white frame inside an element with a darker background, such as a modal.</p>
+    <div class="callout background-purple xlarge">
+      <p>This is a callout with class of xlarge. It has lots of padding between the contents and the edge of the container.</p>
+    </div>
+    <div class="callout background-purple xlarge">
+      <div class="callout background-white xlarge">
+        <p>This is a nested callout with class of xlarge. Combined it with <code>.background-white</code>, to create a white frame inside an element with a darker background, such as a modal.</p>
+      </div>
+    </div>
   </div>
 </div>
 ```
@@ -1048,9 +1153,11 @@ To make the entire callout clickable, put an anchor tag around the `.callout` co
 ```html_example
 <div class="row">
   <div class="small-8 medium-6 end column">
-    <a href="http://www.freddiemac.com/"><div class="callout background-blue">
-    <p class="enlarge">This entire blue callout is inside an anchor tag and becomes 1 big link.</p>
-    </div></a>
+    <a href="http://www.freddiemac.com/">
+      <div class="callout background-blue">
+        <p class="enlarge">This entire blue callout is inside an anchor tag and becomes 1 big link.</p>
+      </div>
+    </a>
   </div>
 </div>
 ```
@@ -1094,19 +1201,22 @@ Pair the callout with the [close button](#close-button) component and `data-clos
 
 # Anchor Links
 
-<p>Links are very standard, and the color is preset to the Foundation primary color. In addition, there are some custom link styles, such as  `.icon` (when you want to include an svg icon and have it inherit its size and color states from the link) and `.secondary` when you want the link to be secondary color isntead of primary. </p>
-<p>Links inside <a href="#sidebar-modules">sidebar modules</a> and links inside <a href="#cards">Cards</a> inherit the existing text color to blend in better.</p>
-<p>Refer to <a href="#modals">Modals</a> if you are looking for information on how to make a link launch a video, image, or content block inside a modal.</p>
+<p>Links are very standard, and the color is preset to $primary-color. </p>
+<p>Links inside <a href="#sidebar-modules">sidebar modules</a> and links inside <a href="#cards">Cards</a> inherit the existing text color to blend in better.  Use class `.primary` on the card eletement to override this default.</p>
+<p>Refer to <a href="styleguide_reveal.html">Modals</a> if you are looking for information on how to make a link launch a video, image, or content block inside a modal.</p>
 <div class="callout background-concrete">
   <p>To make links screen reader-friendly, avoid using vague words like "here" or "read more" within link text. The text of the link itself should adequately describe where the link goes.</p>
 </div>
 
 ```html_example
-<ul class="no-bullet">
-<li><a href="#">standard link</a></li>
-<li><a href="#" class="icon-chevron-right">link with css-based icon</a></li>
-<li><a href="#" class="icon">link with inline svg icon <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" style="vertical-align: baseline;"><path d="M86.4 480h339.2c12.3 0 22.4-9.9 22.4-22.1V246c0-12.2-10-22-22.4-22H404v-30.9c0-41.5-16.2-87.6-42.6-115.4-26.3-27.8-64-45.7-105.3-45.7h-.1-.1c-41.3 0-79 17.9-105.3 45.6C124.2 105.4 108 151.5 108 193v31H86.4C74 224 64 233.9 64 246v211.9c0 12.2 10 22.1 22.4 22.1zM161 193.1c0-27.3 9.9-61.1 28.1-80.3v-.3C206.7 93.9 231 83 255.9 83h.2c24.9 0 49.2 10.9 66.8 29.5v.2l-.1.1c18.3 19.2 28.1 53 28.1 80.3V224H161v-30.9z"/></svg></a></li>
-</ul>
+<div class="callout">
+  <div class="callout hollow">
+  <p>This sentence contains <a href="#">linked text</a>.</p>
+  </div>
+  <div class="callout background-gray">
+    <p>This sentence contains <a href="#">linked text</a> on a dark background.</p>
+  </div>
+</div>
 ```
 
 ---
@@ -1117,15 +1227,95 @@ Whenever you need for an anchor link to switch from inline to a block element, a
 
 ```html_example
 <div class="row">
-<div class="column medium-6 large-4 xlarge-3">
-<div class="callout background-primary">
-<ul>
-<li><a href="#">Example of a <i>multi-line</i> link with no class added. The hover affect doesn't reach to the full width of the link.</a></li>
-<li><a class="block" href="#">Example of a multiline link using the <code>.block</code> class, so it stretches the full width of the list item.</a></li>
-</ul>
+  <div class="column medium-6 large-4 xlarge-3">
+    <div class="callout background-primary">
+      <ul>
+        <li><a href="#">Example of a <i>multi-line</i> link with no class added. The hover affect doesn't reach to the full width of the link.</a></li>
+        <li><a class="block" href="#">Example of a multiline link using the <code>.block</code> class, so it stretches the full width of the list item.</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
+```
+
+---
+
+## Decorated Links
+
+There are some common classes that can be added to links to decorate them.
+ 
+```html_example
+<div class="callout hollow">
+<p><a href="#" class="icon-chevron-right">link with single right chevron</a></p>
+<p><a href="#" class="icon-chevron-right-double">link with double right chevron</a></p>
+<p><a href="#" class="icon-download">link with download icon</a></p>
+<p class="weight-medium"><a href="#" class="mailto">link with envelope icon</a></p>
 </div>
+<div class="callout background-gray">
+  <p><a href="#">link with white <span class="icon-chevron-right-white">right chevron</span></a></p>
+  <p class="accent-yellow weight-medium"><a href="#" class="mailto">link with envelope icon</a></p>
 </div>
+```
+
+---
+
+### Secured Links
+
+Add class `.secured` to a link to include a solid padlock icon.  If the link already includes a filemarker, you can alternately include an icon image.
+
+```html_example
+<div class="callout hollow">
+  <p><a href="#" class="secured">link with padlock decoration</a></p>
+  <p><a href="files/webform-tracking.docx">link with filemarker</a> <img src="/images/icon-locked-orange.svg" alt="login required"></p>
+  <p><a href="#" class="secured button">link with padlock decoration</a></p>
+  <p><a href="#" class="secured button primary">link with padlock decoration</a></p>
+  <p><a href="#" class="secured button secondary">link with padlock decoration</a></p>
+  <p><a href="#" class="secured button tertiary">link with padlock decoration</a></p>
+</div>
+```
+
+---
+
+### Links With SVG Icons
+
+
+Use class `.icon` when you want to include an svg icon and have it inherit its size from the existing text and class `.secondary` when you want the link to be secondary color. 
+
+Use class `.fill-anchor` on an svg to have fill color match link color and class `.stroke-anchor` on an svg to have stroke color match link color.
+
+```html_example
+<div class="callout hollow">
+  <ul>
+    <li><a class="icon" href="#">text link with svg
+      <svg class="fill-anchor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 350 350">
+      <polygon points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+      </svg>
+      </a>
+    </li>
+    <li><a class="icon" href="#">text link with svg
+      <svg class="stroke-anchor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 350 350">
+      <polygon fill="none" stroke-width="25" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+      </svg>
+      </a>
+    </li>
+  </ul> 
+  <div class="gutter-left">link that is svg only on a round blue background
+    <div class="gutter-top" style="max-width: 300px;">
+      <a class="svglink-round-blue" href="#" aria-hidden="true">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <style>.st0{fill:none;stroke:#fff;stroke-width:0.6752;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;} .st1{fill:none;stroke:#fff;stroke-width:0.6752;stroke-linejoin:round;stroke-miterlimit:10;}</style>
+          <path class="st0" d="M16.8 21.3l-3.1.9.9-3.1 6.7-6.8 2.3 2.3z"/>
+          <path class="st1" d="M19.5 14.1l2.3 2.3"/><path class="st0" d="M14.6 19.1l2.2 2.2"/>
+          <path class="st0" d="M12.1 22.2H3.6V3.3h1.8"/><path class="st0" d="M18 3.3h1.8v8.1"/>
+          <path class="st0" d="M13.5 3.3c0-1-.8-1.8-1.8-1.8s-1.8.8-1.8 1.8H7.2V6h9V3.3h-2.7z"/>
+          <path class="st0" d="M18 12.3V5.1h-1.8"/><path class="st0" d="M7.2 5.1H5.4v15.3h7.2"/>
+          <path class="st0" d="M8.1 9.6h7.2"/><path class="st0" d="M8.1 11.4h7.2"/>
+          <path class="st0" d="M8.1 13.2h7.2"/><path class="st0" d="M8.1 15h4"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div> 
 ```
 
 ---
@@ -1133,7 +1323,7 @@ Whenever you need for an anchor link to switch from inline to a block element, a
 ## Linked Image Overlays
 
 Apply the `.overlay` class to the `<a>` that wraps an image to style the image with a blue overlay on hover and focus. 
-Refer to <a href="#modals">modals</a> for additional options if you are launching a modal from the link.
+Refer to <a href="styleguide_reveal.html">modals</a> for additional options if you are launching a modal from the link.
 
 If you need to force an overlay to always be full width, add class `.block` to the `<a>` and class `.full` to the image.
 
@@ -1162,19 +1352,21 @@ Visibility classes let you show or hide elements based on screen size or device 
 There are `.show-for-xxx` and `.hide-for-xxx` visibility classes to control the visiblity of an element based on the device on which users view a page. If their browser meets the class's conditions, the element will be shown. If not, it will be hidden.
 
 ```html_example
-<p>You are on a small screen or larger.</p>
-<p class="show-for-medium">You are on a medium screen or larger.</p>
-<p class="show-for-large">You are on a large screen or larger.</p>
-<p class="show-for-small-only">You are <em>definitely</em> on a small screen.</p>
-<p class="show-for-medium-only">You are <em>definitely</em> on a medium screen.</p>
-<p class="show-for-large-only">You are <em>definitely</em> on a large screen.</p>
-<p class="hide-for-medium">You are <em>not</em> on a medium screen or larger.</p>
-<p class="hide-for-large">You are <em>not</em> on a large screen or larger.</p>
-<p class="hide-for-small-only">You are <em>definitely not</em> on a small screen.</p>
-<p class="hide-for-medium-only">You are <em>definitely not</em> on a medium screen.</p>
-<p class="hide-for-large-only">You are <em>definitely not</em> on a large screen.</p>
-<p class="show-for-landscape">You are in landscape orientation.</p>
-<p class="show-for-portrait">You are in portrait orientation.</p>
+<div class="callout hollow">
+  <p>You are on a small screen or larger.</p>
+  <p class="show-for-medium">You are on a medium screen or larger.</p>
+  <p class="show-for-large">You are on a large screen or larger.</p>
+  <p class="show-for-small-only">You are <em>definitely</em> on a small screen.</p>
+  <p class="show-for-medium-only">You are <em>definitely</em> on a medium screen.</p>
+  <p class="show-for-large-only">You are <em>definitely</em> on a large screen.</p>
+  <p class="hide-for-medium">You are <em>not</em> on a medium screen or larger.</p>
+  <p class="hide-for-large">You are <em>not</em> on a large screen or larger.</p>
+  <p class="hide-for-small-only">You are <em>definitely not</em> on a small screen.</p>
+  <p class="hide-for-medium-only">You are <em>definitely not</em> on a medium screen.</p>
+  <p class="hide-for-large-only">You are <em>definitely not</em> on a large screen.</p>
+  <p class="show-for-landscape">You are in landscape orientation.</p>
+  <p class="show-for-portrait">You are in portrait orientation.</p>
+</div>
 ```
 
 ---
@@ -1188,16 +1380,18 @@ To visually hide content, while still allowing assistive technology to read it, 
 Use the class `.show-on-focus` to hide an element, except when it has focus. Adding tabindex="0" to the target element makes if focusable.
 
 ```html_example
-<p class="hide">Hidden for all users.</p>
-<p class="invisible">Not visible for all users, but still occupies space on screen.</p>
-<p class="show-for-sr">This text can only be read by a screen reader.</p>
-<p>There's a line of text above this one, you just can't see it because it is only shown to screen readers.</p>
-<p aria-hidden="true">This text can be seen, but won't be read by a screen reader.</p>
+<div class="callout hollow">
+  <p class="hide">Hidden for all users.</p>
+  <p class="invisible">Not visible for all users, but still occupies space on screen.</p>
+  <p class="show-for-sr">This text can only be read by a screen reader.</p>
+  <p>There's a line of text above this one, you just can't see it because it is only shown to screen readers.</p>
+  <p aria-hidden="true">This text can be seen, but won't be read by a screen reader.</p>
 
-<p>Click on this sentence and then hit tab to see the skip link appear while it has focus.</p>
-<p><a name="skiplink" class="show-on-focus" href="#sampleContent">Skip to Content</a></p>
+  <p>Click on this sentence and then hit tab to see the skip link appear while it has focus.</p>
+  <p><a name="skiplink" class="show-on-focus" href="#sampleContent">Skip to Content</a></p>
 
-<div id="sampleContent" role="main" tabindex="0" style="min-height: 1rem;">
+  <div id="sampleContent" role="main" tabindex="0" style="min-height: 1rem;">
+  </div>
 </div>
 ```
 
@@ -1214,7 +1408,7 @@ You can add padding to an element by adding `.gutter-top`, `.gutter-right`, `.gu
 
 ```html_example
 <div class="callout hollow">
-<p>Examples have been given a blue background to make the padding variations easier to see.</p>
+  <p>Examples have been given a blue background to make the padding variations easier to see.</p>
   <p class="background-blue gutter-top">I have a top gutter at all breakpoints</p>
   <p class="background-blue gutter-bottom-medium-only">I have a bottom gutter at medium breakpoint only</p>
   <p class="background-blue gutter-bottom-medium">I have a bottom gutter at medium breakpoint and higher</p>
@@ -1236,7 +1430,7 @@ You can change the float behavior of an element by adding the `.float-left` or `
 - Tp prevent 2 floated containers from touching, use one or more of the [padding classes](#padding-classes).
 
 ```html_example
-<div class="callout clearfix">
+<div class="callout hollow clearfix">
   <a class="button secondary float-left">Left</a>
   <a class="button secondary float-right">Right</a>
 </div>
@@ -1249,11 +1443,13 @@ You can change the float behavior of an element by adding the `.float-left` or `
 Okay, it's not *really* a float, but you can add the `.float-center` class to an element to engage the automatic margin centering trick. Note that this will only work on elements with an absolute width or a maximum width that is less than their containing element.  If you just want to center text, use class `.text-center`.
 
 ```html_example
-<div class="gutter-bottom">
-  <img src="files/fm_blog_usda_returns.jpg" alt="Harp - act now!"  class="float-center">
-</div>
-<div class="float-center background-green" style="width: 50%; padding: 1rem;">
-<p class="text-center">My container is always half of the available width.</p>
+<div class="callout hollow">
+  <div class="gutter-bottom">
+    <img src="files/fm_blog_usda_returns.jpg" alt="Harp - act now!"  class="float-center">
+  </div>
+  <div class="float-center background-green" style="width: 50%; padding: 1rem;">
+  <p class="text-center">My container is always half of the available width.</p>
+  </div>
 </div>
 ```
 
@@ -1263,11 +1459,13 @@ Okay, it's not *really* a float, but you can add the `.float-center` class to an
 
 There are four options for creating floated content columns within a content area: left and right variations that are proportionate or fixed.  All will only float at medium breakpoint and above -- the content will stack at small screen sizes.  Only use floated containers when ther eis sufficient content to wrap around them -- if there isn't sufficient content use a row that splits content into columns at specific breakpoints to create a similar concept.
 
+---
+
 ### Left Float, Proportionate Width
 
 Use class `.box-left-40` to float content to the left at 40% of the content area's width (content will stack below medium breakpoint).  The floated content can contain a callout, figure, or other design elements.
 
-```html_example
+```html
 <p class="lead">Example showing floated element inserted, with floated container set to percentage-based width at medium breakpoint and higher.</p>
 <div class="box-left-40">
   <div class="callout background-teal">
@@ -1281,11 +1479,32 @@ Use class `.box-left-40` to float content to the left at 40% of the content area
 <p>This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 ```
 
+
+<div class="row">
+  <div class="column large-10 large-centered">
+    <div class="callout hollow">
+      <p class="lead">Example showing floated element inserted, with floated container set to percentage-based width at medium breakpoint and higher.</p>
+      <div class="box-left-40">
+        <div class="callout background-teal">
+          <h3>Related Items</h3>
+          <ul>
+            <li><a href="#">Link to some supporting material</a></li>
+            <li><a href="#">Link to some other supporting material</a></li>
+          </ul>
+        </div>
+      </div>
+      <p>This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div>
+</div>
+
+---
+
 ### Left Float, Fixed Width 
 
 Use class `.box-left-fixed300` to float content to the left at a fixed width of 300px (content will stack below medium breakpoint).  The floated content can contain a callout, figure, or other design elements.
 
-```html_example
+```html
 <p class="lead">Example showing floated element inserted, with floated container set to a fixed-size width at medium breakpoint and higher.</p>
 <div class="box-left-fixed300">
   <figure>
@@ -1295,11 +1514,27 @@ Use class `.box-left-fixed300` to float content to the left at a fixed width of 
 <p>This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 ```
 
+<div class="row">
+  <div class="column large-10 large-centered">
+    <div class="callout hollow">
+      <p class="lead">Example showing floated element inserted, with floated container set to a fixed-size width at medium breakpoint and higher.</p>
+      <div class="box-left-fixed300">
+        <figure>
+          <img src="files/bigkitty.jpg" alt="kitty">
+        </figure>
+      </div>
+      <p>This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+
+---
+
 ### Right Float, Proportionate Width 
 
 Use class `.box-right-40` to float content to the right at 40% of the content area's width (content will stack below medium breakpoint).  The floated content can contain a callout, figure, or other design elements.
 
-```html_example
+```html
 <p class="lead">Example showing floated element inserted, with floated container set to percentage-based width at medium breakpoint and higher.</p>
 <div class="box-right-40">
   <div class="callout background-yellow">
@@ -1314,11 +1549,32 @@ Use class `.box-right-40` to float content to the right at 40% of the content ar
 <p>This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 ```
 
+<div class="row">
+  <div class="column large-10 large-centered">
+    <div class="callout hollow">
+      <p class="lead">Example showing floated element inserted, with floated container set to percentage-based width at medium breakpoint and higher.</p>
+      <div class="box-right-40">
+        <div class="callout background-yellow">
+          <h3>Related Items</h3>
+          <ul class="list-divided no-bullet">
+            <li><a href="#">Link to some supporting material</a></li>
+            <li><a href="#">Link to some other supporting material</a></li>
+            <li><a href="#">Link to some other supporting material</a></li>
+          </ul>
+        </div>
+      </div>
+      <p>This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+
+---
+
 ### Right Float, Fixed Width 
 
 Use class `.box-right-fixed300` to float content to the right at a fixed width of 300px (content will stack below medium breakpoint).  The floated content can contain a callout, figure, or other design elements.
 
-```html_example
+```html
 <p class="lead">Example showing floated element inserted, with floated container set to a fixed-size width at medium breakpoint and higher.</p>
 <div class="box-right-fixed300">
   <figure>
@@ -1327,6 +1583,20 @@ Use class `.box-right-fixed300` to float content to the right at a fixed width o
 </div>
 <p>This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 ```
+
+<div class="row">
+  <div class="column large-10 large-centered">
+    <div class="callout hollow">
+      <p class="lead">Example showing floated element inserted, with floated container set to a fixed-size width at medium breakpoint and higher.</p>
+      <div class="box-right-fixed300">
+        <figure>
+          <img src="files/bigkitty.jpg" alt="kitty">
+        </figure>
+      </div>
+      <p>This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. This content comes after a floated container, and thus can wrap around it if needed.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
 
 
 
@@ -1443,7 +1713,7 @@ If you use a one-color svg icon without a fill color, css will allow it to inher
 
 A close button is a `<button>` element with the class `.close-button`.  The button is also labeled with `aria-label` to clarify what the button's purpose is.
 - For simple close buttons, we use the multiplication symbol (`&times;`) as the X icon. This icon is wrapped in a `<span>` with the attribute `aria-hidden="true"`, so screen readers don't read the X icon.
-- Some elements, such as [modals](#modals), have predefined close button styles.
+- Some elements, such as [modals](styleguide_reveal.html), have predefined close button styles.
 
 ```html_example
 <div class="callout background-yellow">
@@ -2743,12 +3013,23 @@ By default, table rows are striped. There's an `.unstriped` class to remove the 
 
 # Tooltip
 
-By default, a tooltip appears below the defined term on hover or focus, and clicking on a tooltip will leave it open until you click somewhere else. Tooltips should be short, and cannot contain HTML markup.  You can use “curly quotes” if needed.
+<p class="intro">Tooltips are nifty for displaying extended information for a term, link, or action on a page.</p>
+
+By default, a tooltip appears below the defined term on hover or focus, and clicking on a tooltip will leave it open until you click somewhere else. 
+
+You can position the tooltips to the top, right or left by adding the classes `.top`, `.right` or `.left` to the `<span>` element.
+
+Tooltips should be short text, and <strong>cannot</strong> contain HTML markup.  You can use “curly quotes” if needed, but if the tooltip requires complex markup, images, links, etc, you should use a modal instead.
+
 
 ```html_example
-<p>The <span data-tooltip aria-haspopup="true" class="has-tip" tabindex="0" title="A “scarabaeus” is an outdated
-term for an object in the form of a scarab beetle. The scarab was a popular form of amulet in Ancient
-Egypt.">scarabaeus</span> hung clear of any branches, and, if allowed to fall, would have fallen at our feet. </p>
+<h4>Tool tip on a word or phrase</h4>
+<p>The <span data-tooltip aria-haspopup="true" class="has-tip" tabindex="0" title="A “scarabaeus” is an outdated term for an object in the form of a scarab beetle. 
+The scarab was a popular form of amulet in Ancient Egypt.">scarabaeus</span> hung clear of any branches, and, if allowed to fall, would have fallen at our feet. </p>
+
+<h4>Tool tip on an icon</h4>
+<p>The <a href="https://en.wikipedia.org/wiki/Scarabaeus">scarabaeus</a> <span data-tooltip aria-haspopup="true" class="has-tip no-border" tabindex="0" 
+title="Fancy word for a beetle."><img src="/images/icon-tooltip.svg" alt="tool tip icon"></span> hung clear of any branches, and would have fallen at our feet.</p>
 ```
 
 
@@ -2761,308 +3042,11 @@ Egypt.">scarabaeus</span> hung clear of any branches, and, if allowed to fall, w
 
 
 
-
 # Modals
 
-A standard modal dialog is just an empty container, so you can put any kind of content inside it, from text to forms to images to an entire grid.  To create a modal,
+<p class="lead">There are numerous options for modals -- so many that they have their own page.</p>
 
-- Add the attributes `data-open` and `aria-controls` to to the link that opens the modal. The value of both should be the ID of the modal.
-- To the modal container, add the class `.reveal`, the attribute `data-reveal`, and a unique ID (which is used by any link that launches the modal).
-- The contents of a modal should be wrapped in a `.modal-content` container.
-
-```html
-<p><a data-open="modalID" aria-controls="modalID">View a modal window</a>.</p>
-<div class="reveal" id="modalID" data-reveal>
-  <div class="modal-content">
-  </div>
-</div>
-```
-
----
-
-## Standard Content Modals
-
-- All standard content modals should include 3 extra classes on the `.reveal` element: `.full` to enforce that the modal should always cover the full screen, and a dark [background color class](#colors).
-- The close button is automatically attached to the `.modal-header`, so for this style of modal, it is required.
-- Modals by default are accessible through the use of various ARIA attributes.  To make a modal even more accessible, designate a label to the modal by adding an `id` attribute on the elment you want to designate as the label (such as a heading inside the modal) and then adding the same value into an `aria-labelledby` attribute on the modal container.
-
-```html_example
-<p class="gutter-bottom">View a modal <a data-open="fullModal1" aria-controls="fullModal1">on green</a>.</p>
-
-<div class="reveal full background-green" id="fullModal1" data-reveal aria-labelledby="Modal1-label">
-  <div class="modal-content">
-    <div class="row">
-      <div class="column xlarge-offset-1 xlarge-10 end">
-        <div class="modal-header">
-          <h2 id="Modal1-label">Modal Label</h2>
-        </div>
-          <p>I can contain a callout with a white background to great a framed area.</p>
-          <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-          <img src="files/kitten160.jpg" alt="kitty">
-      </div>
-    </div>
-  </div>
-</div>
-```
-  
-```html_example
-<p class="gutter-bottom">View a modal <a data-open="fullModal2" aria-controls="fullModal2">on orange</a>.</p>
-
-<div class="reveal full background-orange" id="fullModal2" data-reveal aria-labelledby="Modal2-label">
-  <div class="modal-content">
-    <div class="row">
-      <div class="column xlarge-offset-1 xlarge-10 end">
-        <div class="modal-header">
-          <h2 id="Modal4-label">Modal Label</h2>
-        </div>
-        <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-        <img src="files/kitten160.jpg" alt="kitty">
-      </div>
-    </div>
-  </div>
-</div>
-```
-  
-```html_example
-<p class="gutter-bottom">View a modal <a data-open="fullModal3">in a white frame on blue</a> with additional header.<p>
-
-<div class="reveal full background-blue" id="fullModal3" data-reveal>
-  <div class="modal-content">
-    <div class="row">
-      <div class="column xlarge-offset-1 xlarge-10 end">
-        <div class="modal-header">
-          <h2 id="Modal3-label">Modal Label</h2>
-        </div>
-        <div class="modal-page-header">
-          <h1>Modal Header</h1>
-          <p class="page-subtitle">I can even have a header above the callout</p>
-        </div>
-        <div class="callout xlarge background-white">
-          <p>I can contain a callout with a white background to great a framed area.</p>
-          <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-          <img src="files/kitten160.jpg" alt="kitty">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-  
-```html_example
-<p class="gutter-bottom">View a modal <a data-open="fullModal4">in a white frame on teal</a>.</p>
-
-<div class="reveal full background-teal" id="fullModal4" data-reveal>
-  <div class="modal-content">
-    <div class="row">
-      <div class="column xlarge-offset-1 xlarge-10 end">
-        <div class="modal-header">
-          <h2 id="Modal2-label">Modal Label</h2>
-        </div>
-        <div class="callout xlarge background-white">
-          <p>I can contain a callout with a white background to great a framed area.</p>
-          <p>I can contain any normal markup, from <a href="#">links</a> and images, to a responsive grid of items. </p>
-          <img src="files/kitten160.jpg" alt="kitty">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
----
-
-## Nested Modal
-
-It's possible for modals to open other modals. Create a second modal with a unique ID, and then add a click trigger with `data-open` inside the first modal.
-
-```html_example
-<ul>
-  <li><a data-open="exampleModalA" aria-controls="exampleModalA">View a modal</a> that launches a second modal</li>
-</ul>
-
-<!-- This is the first modal -->
-<div class="reveal full background-purple" id="exampleModalA" data-reveal>
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 id="exampleModalB-label">Modal Label</h2>
-    </div>
-    <h2>Awesome!</h2>
-    <p class="lead">I have another modal inside of me!</p>
-    <p><a class="button secondary" data-open="exampleModalB" aria-controls="exampleModalB">View another modal!</a></p>    
-    <div class="row">
-      <p class="text-center">One section 12 columns wide.</p>
-      <div class="small-12 column">
-        <div class="callout background-white">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <p class="text-center">Three sections each 4 columns wide.</p>
-      <div class="small-4 column">
-        <div class="callout background-white">
-        </div>
-      </div>
-      <div class="small-4 column">
-        <div class="callout background-white">
-        </div>
-      </div>
-      <div class="small-4 column">
-        <div class="callout background-white">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <p class="text-center">Two sections, each 6 columns wide.</p>
-      <div class="small-6 column">
-        <div class="callout background-white">
-        </div>
-      </div>
-      <div class="small-6 column">
-        <div class="callout background-white">
-        </div>
-      </div>
-    </div> 
-  </div>
-</div>
-
-<!-- This is the nested modal -->
-<div class="reveal full background-orange" id="exampleModalB" data-reveal>
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 id="exampleModalB-label">Modal Label</h2>
-    </div>
-    <h2>ANOTHER MODAL!!!</h2>
-    <p>I took the place of the first modal.</p>
-  </div>
-</div>
-```
-
----
-
-## Image Modal
-
-Image modals are intended to contain ONLY an image and a optional caption -- if you require anything more, you should use a standard content modal. If the images contain content like charts or graphs that <strong>must</strong> be viewed with the content, consider using a carousel instead of a modal.  Below are examples of an image modal being launched from a text link and from a link with an image.
-
-- To create an image modal, add class `.overlay-image` to the .`reveal` container. Then inside the `.modal-content` container, include a `figure` element that contains an `img` and optional `figcaption`.
-- If the modal is being launched from a link on an image, add the class `.modal-launch` to the anchor tag to add the image-expand icon and blue hover-overlay to the image.
-- If the image is <strong>not</strong> a thumbnail, and should <strong>always</strong> stretch to fill the width of its container, add class <code>.block</code> to the anchor tag. 
-- For image modals, the close button is automatically attached to first image.
-- Images will only launch in modals if the user's screenwidth is over 470px.  You <strong>must</strong> include the url of the image in the `href` attribute, so that small-screen users can still get to the image. Including the url also preserves all right-click mouse options for the link (such as opening the link in a new window/tab on desktop, bookmarking the link, copying the link).
-
-
-```html_example
-<ul>
-  <li><a data-open="exampleModalE" href="files/bigkitty.jpg" aria-controls="exampleModalE">View an image modal</a>.</li>
-</ul>
-
-<div class="reveal overlay-image" id="exampleModalE" data-reveal>
-  <div class="modal-content">
-    <figure>
-      <img class="no-border" src="files/bigkitty.jpg" alt="kitty">
-      <figcaption>What a pretty kitty!</figcaption>
-    </figure>
-  </div>
-</div>
-
-<ul>
-  <li>View an image modal by clicking the following image.<br><a data-open="exampleModalF" class="modal-launch"
-  href="files/kitty1600.jpg" aria-controls="exampleModalF"><img src="files/kitten160.jpg" alt="kitty"></a></li>
-</ul>
-
-<div class="reveal overlay-image" id="exampleModalF" data-reveal>
-  <div class="modal-content">
-    <figure>
-      <img class="no-border" src="files/kitty1600.jpg" alt="kitty">
-      <figcaption>Who Doesn't Love Kitties?</figcaption>
-    </figure>
-  </div>
-</div>
-```
-
----
-
-## Image Gallery Modal <span id="igallery"></span>
-
-Combine the concept of the nested modal with the image modal to achieve an image gallery where the user can navigate through several images one at a time.  Follow the guidelines for image modals and nested modals.
-
-- Similar to image modals, the close button is automatically attached to first image in each `reveal`.
-- The prev/next navigation for is automated to cycle through all `.reveal` elements that share the same `rel` attribute, so that attribute is required for galleries.
-- Images will only launch in modals if the user's screenwidth is over 470px.  You <strong>must</strong> include the url of the first image in the `href` attribute, so that small-screen users can still get to that image (small screen users will <strong>not</strong> be able to navigate to the rest of the gallery -- if the content is essential, consider putting it in a rotator isntead of a gallery).  Including the url also preserves all right-click mouse options for the link (such as opening the link in a new window/tab on desktop, bookmarking the link, copying the link).
-
-
-```html_example
-<ul>
-  <li><a data-open="galleryModalA" aria-controls="galleryModalA" href="files/plant1.jpg">View a modal</a> that launches an image gallery</li>
-</ul>
-<ul>
-  <li>View the same gallery, launched from an image instead<br>
-  <a class="modal-launch" data-open="galleryModalA" aria-controls="galleryModalA" href="files/plant1.jpg"><img src="files/plant1-thumb.jpg" alt="flowers"></a></li>
-</ul>
-
-
-<!-- This is the first modal -->
-<div class="reveal overlay-gallery" rel="gallery1" id="galleryModalA" data-reveal>
-  <div class="modal-content">
-    <figure>
-      <img class="no-border" src="files/plant1.jpg" alt="plant 1">
-      <figcaption>Default - center aligned caption.</figcaption>
-    </figure>
-  </div>
-</div>
-
-<!-- This is the second modal -->
-<div class="reveal overlay-gallery" rel="gallery1" id="galleryModalB" data-reveal>
-  <div class="modal-content">
-    <figure>
-      <img class="no-border" src="files/plant2.jpg" alt="plant 2">
-      <figcaption><p class="text-left">Left-aligned caption.</p><p class="text-left">With more than one paragraph.</p></figcaption>
-    </figure>
-  </div>
-</div>
-
-<!-- This is the third modal -->
-<div class="reveal overlay-gallery" rel="gallery1" id="galleryModalC" data-reveal>
-  <div class="modal-content">
-    <figure>
-      <img class="no-border" src="files/plant3.jpg" alt="plant 3">
-      <figcaption>
-        <p class="text-left show-for-medium">The lights burn blue. It is now dead midnight.</p>
-      </figcaption>
-    </figure>
-  </div>
-</div>
-
-<!-- This is the fourth modal -->
-<div class="reveal overlay-gallery" rel="gallery1" id="galleryModalD" data-reveal>
-  <div class="modal-content">
-    <figure>
-      <img class="no-border" src="files/plant4.jpg" alt="plant 4">
-      <figcaption>This caption is longer than the others to show how things look when the caption is very long, and it contains a <a href="#">hyperlink</a> and formatting such as  <em>emphasis</em> and <strong>strong</strong>, so we can see how they look in a caption.
-      </figcaption>
-    </figure>
-  </div>
-</div>
-```
-
----
-
-## Video Modal
-
-Embedded videos **won't** maintain their aspect ratio as the width of the screen changes, unless you specify the ratio used for the video. 
-
-- Add a `.data-src` attribute to define the video url to embed in the modal, omit the http/https protocol from the embed url and include `wmode=transparent` in the embed query string.  This value should be different than the video page url -- we typically pull videos in via www.youtube-nocookie.com because they are less likely to be blocked. Do not include `autoplay=1` in the query string for the video.  It will be added on modal launch, and removed on modal close.
-- Videos will only launch in modals if the user's screenwidth is over 470px.  You <strong>must</strong> include the url of the regular video page in the <code>href</code> attribute, so that small-screen users can still get to the video.  Including the url also preserves all right-click mouse options for the link (such as opening the link in a new window/tab on desktop, bookmarking the link, copying the link).
-- Video modals are completely automated and will autoplay when the modal is opened.
-- Video modals will only remain responsive if you specify their aspect ratio:  The default ratio is 4:3. Add the <code>.widescreen</code> class to the link to specify if a video is 16:9 instead.
-
-
-```html_example
-<ul>
-  <li><a class="video-modal" href="https://www.youtube.com/watch?v=26OUQIjRRbc" data-src="//www.youtube-nocookie.com/embed/26OUQIjRRbc?rel=0&amp;wmode=transparent">View a modal with a (4:3 ratio) video</a>.</li>
-
-  <li><a class="video-modal widescreen-video" href="https://www.youtube.com/watch?v=tCg9285bJnY"  data-src="//www.youtube-nocookie.com/embed/tCg9285bJnY?rel=0&amp;wmode=transparent">View a modal with a widescreen (16:9 ratio) video</a>.</li>
-</ul>
-```
+<a class="button tertiary large" href="styleguide_reveal.html">Learn More About Modals</a>
 
 
 
@@ -3080,6 +3064,7 @@ To override the width of the images in the media object, there are additional cl
 
 By adding the `.stack-for-small` class, you can make your media object sections stack at small screen.
 
+---
 
 ## Image leading Blurb 1:3 ratio
 
@@ -3138,7 +3123,6 @@ These are often used inside a list container, where each media object is an `<li
 ## Image leading Blurb 1:2 ratio
 
 Images inside media object with class `image1-leads-blurb2` have a maximum width of 130px, and are intended for use inside a sidebar, without stacking for small screens.
-
 
 ```html
 <div class="media-object image1-leads-blurb2">

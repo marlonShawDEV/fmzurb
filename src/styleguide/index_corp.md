@@ -3,65 +3,71 @@
 
 <p class="lead">The corporate site utilizes the same framework as the <a href="styleguide_fm.html#framework">FM Global template</a>. The corporate template currently has these Foundation components enabled, disabled, and customized. You should familiarize yourself with the enabled and customized components.</p>
 
-<div class="row">
-<div class="column large-6">
-<h5>Enabled</h5> 
-<a href="http://foundation.zurb.com/sites/docs/accordion-menu.html">accordionMenu</a><br>
-buttons	(styles are different, see <a href="styleguide_fm.html#buttons">buttons</a>)<br>
-<a href="http://foundation.zurb.com/sites/docs/button-group.html">button-group</a><br>
-<a href="http://foundation.zurb.com/sites/docs/card.html">card</a><br>
-<a href="http://foundation.zurb.com/sites/docs/close-button.html">close-button</a><br>
-<a href="http://foundation.zurb.com/sites/docs/equalizer.html">equalizer</a><br>
-<a href="http://foundation.zurb.com/sites/docs/float-classes.html">float-classes</a><br>
-<a href="http://foundation.zurb.com/sites/docs/forms.html">forms</a> and <a href="http://foundation.zurb.com/sites/docs/abide.html">abide</a><br>
-<a href="http://foundation.zurb.com/sites/docs/menu.html">menu</a><br>
-<a href="http://foundation.zurb.com/sites/docs/motion-ui.html">motion-ui</a><br>
-<a href="http://foundation.zurb.com/sites/docs/responsive-embed.html">responsive-embed</a><br>
-<a href="http://foundation.zurb.com/sites/docs/responsive-navigation.html#responsive-toggle">responsive title-bar</a><br>
-<a href="http://foundation.zurb.com/sites/docs/toggler.html">toggler</a><br>
-<a href="http://foundation.zurb.com/sites/docs/tooltip.html">tooltip</a><br>
-<a href="http://foundation.zurb.com/sites/docs/top-bar.html">top-bar</a><br>
-<a href="http://foundation.zurb.com/sites/docs/typography-helpers.html">typography helpers</a><br>
-<a href="http://foundation.zurb.com/sites/docs/visibility.html">visibility classes</a><br>
-<br>
-<h5>Customized</h5>
-abide (custom routines and patterns, see <a href="styleguide_abide.html">abide</a>)<br>
-accordion	(styles are different, see <a href="styleguide_fm.html#accordions">accordions</a> and <a href="#faqs">FAQs</a>)<br>
-callout	(styles are different, see <a href="styleguide_fm.html#callouts">callouts</a>)<br>
-grid (the outermost row/column is inserted by <a href="styleguide_fm.html#the-templates">the template</a>)	<br>
-media-object	(styles are different, see <a href="styleguide_fm.html#media-objects">media objects</a>)<br>
-orbit	(buttons and slide nav is automated for you, see <a href="styleguide_orbit.html">carousels</a>) <br>
-reveal (buttons are automated for you, see <a href="styleguide_fm.html#modals">modals</a>)<br>
-tabs (styles are different, see <a href="styleguide_fm.html#tabs">tabs</a>)<br>
-table	(styles are different, see <a href="styleguide_fm.html#data-tables">data tables</a>)
-</div>
-<div class="column large-6">
-<h5>Disabled</h5>
-  <div class="callout background-concrete small">
-  <div>If you need to have a currently disabled component enabled, contact Sherry and Jon so that it can be added to the script bundle and properly styled.</div>
-  </div>  
-drilldown	<br>
-drilldown-menu	<br>
-dropdown	<br>
-dropdown-menu	<br>
-flex-video<br>
-interchange	<br>
-label	<br>
-magellan	<br>
-offcanvas	<br>
-pagination	<br>
-progress-bar	<br>
-progress-element 	<br>
-range-input	<br>
-responsiveMenu	<br>
-responsiveToggle	<br>
-slider	<br>
-sticky	<br>
-switch	<br>
-thumbnail	
-
-</div>
-</div>
+<ul class="accordion-pointer" data-accordion role="tablist">
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#panel1" id="panel1-heading" aria-controls="panel1" role="tab">Enabled Components</a>
+    <div class="accordion-content" data-tab-content id="panel1" aria-labelledby="panel1-heading" role="tabpanel">
+      <a href="http://foundation.zurb.com/sites/docs/accordion-menu.html">accordionMenu</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/button-group.html">button-group</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/card.html">card</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/close-button.html">close-button</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/equalizer.html">equalizer</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/float-classes.html">float-classes</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/forms.html">forms</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/menu.html">menu</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/motion-ui.html">motion-ui</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/responsive-embed.html">responsive-embed</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/responsive-navigation.html#responsive-toggle">responsive title-bar</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/toggler.html">toggler</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/tooltip.html">tooltip</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/top-bar.html">top-bar</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/typography-helpers.html">typography helpers</a><br>
+      <a href="http://foundation.zurb.com/sites/docs/visibility.html">visibility classes</a><br>
+    </div>
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#panel2" id="panel2-heading" aria-controls="panel2" role="tab">Customized Components</a>
+    <div class="accordion-content" data-tab-content id="panel2" aria-labelledby="panel2-heading" role="tabpanel">
+      abide (custom routines and patterns, see <a href="styleguide_abide.html">abide</a>)<br>
+      accordion	(styles are different, see <a href="styleguide_fm.html#accordions">accordions</a> and <a href="styleguide_fm.html#faqs">FAQs</a>)<br>
+      buttons	(styles are different, see <a href="styleguide_fm.html#buttons">buttons</a>)<br>
+      callout	(styles are different, see <a href="styleguide_fm.html#callouts">callouts</a>)<br>
+      grid (the outermost row/column is inserted by <a href="styleguide_fm.html#the-templates">the template</a>)<br>
+      media-object	(styles are different, see <a href="styleguide_fm.html#media-objects">media objects</a>)<br>
+      orbit	(buttons and slide nav is automated for you, see <a href="styleguide_orbit.html">carousels</a>) <br>
+      reveal (buttons are automated for you, see <a href="styleguide_reveal.html">modals</a>)<br>
+      tabs (styles are different, see <a href="styleguide_fm.html#tabs">tabs</a>)<br>
+      table	(styles are different, see <a href="#data-tables">data tables</a>)
+    </div>
+  </li>
+  <li class="accordion-item" data-accordion-item>
+    <a class="accordion-title" href="#panel3" id="panel3-heading" aria-controls="panel3" role="tab">Disabled Components</a>
+    <div class="accordion-content" data-tab-content id="panel3" aria-labelledby="panel3-heading" role="tabpanel">
+      <div class="callout background-concrete small">
+        <p>If you need to have a currently disabled component enabled, contact Sherry and Jon so that it can be added to the script bundle and properly styled.</p>
+      </div>  
+      drilldown	<br>
+      drilldown-menu	<br>
+      dropdown	<br>
+      dropdown-menu	<br>
+      flex-video<br>
+      interchange	<br>
+      label	<br>
+      magellan	<br>
+      offcanvas	<br>
+      pagination	<br>
+      progress-bar	<br>
+      progress-element 	<br>
+      range-input	<br>
+      responsiveMenu	<br>
+      responsiveToggle	<br>
+      slider	<br>
+      sticky	<br>
+      switch	<br>
+      thumbnail	
+    </div>
+  </li>
+</ul>
 
 
 

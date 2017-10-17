@@ -24,6 +24,10 @@
       "url" : "styleguide_orbit.html"
    },
    {
+      "name": "Foundation Reveal (Modals)",
+      "url" : "styleguide_reveal.html"
+   },
+   {
       "name": "Foundation Abide (Form Validation)",
       "url" : "styleguide_abide.html"
    },

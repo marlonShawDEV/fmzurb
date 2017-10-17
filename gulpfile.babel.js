@@ -144,6 +144,12 @@ function styleGuideTabs(done) {
   return sherpa('src/styleguide/tabs.md', {
     output: PATHS.dist + '/styleguide/styleguide_tabs.html',
     template: 'src/styleguide/template_foundation.html'
+  }, styleGuideReveal(done)); 
+}
+function styleGuideReveal(done) {
+  return sherpa('src/styleguide/reveal.md', {
+    output: PATHS.dist + '/styleguide/styleguide_reveal.html',
+    template: 'src/styleguide/template_foundation.html'
   }, styleGuideMF(done)); 
 }
 function styleGuideMF(done) {
