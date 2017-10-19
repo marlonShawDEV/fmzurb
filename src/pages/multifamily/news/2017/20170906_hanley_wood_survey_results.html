@@ -43,6 +43,7 @@ keywords:
     <!-- END MAIN PAGE CONTENT -->
     <!-- START RIGHT SIDEBAR -->
     <aside class="column">     
+      {{> sidebar-mf-featured}} 
       <section class="sidebar background-concrete">
         <div class="row">
           <div class="column">
@@ -51,29 +52,22 @@ keywords:
               <li>
                 <div class="article-date">Aug 17, 2017</div>
                 <div class="sidebar-headline"><a href="#">How Cash Sales Affect Mortgage Originations</a></div>
-                </li>	
+              </li>	
               <li>
                 <div class="article-date">Jul 27, 2017</div>
                 <div class="sidebar-headline"><a href="#">What is Causing the Lean Inventory of Houses?</a></div>
-                </li>	
+              </li>	
               <li>
                 <div class="article-date">Jul 26, 2017</div>
                 <div class="sidebar-headline"><a href="#">Multifamily 2017 Mid-year Outlook</a></div>
-                </li>	
-              <li>
-                <div class="article-date">Jun 23, 2017</div>
-                <div class="sidebar-headline"><a href="#">Housing Remains a Bright Spot for Economy</a></div>
-                </li>	
-              <li>
-                <div class="article-date">May 24, 2017</div>
-                <div class="sidebar-headline"><a href="#">Housing Gets Off to a Good Start</a></div>
               </li>	
             </ul>
           </div>
         </div>
-			</section> 
-
-      {{> sidebar-mf-subscribe}}       
+      </section> 
+      {{> sidebar-posts-viewpoints-short}}
+      {{> sidebar-mf-subscribe}}   
+       
      </aside>
     <!-- END RIGHT SIDEBAR -->
   </div>
@@ -81,6 +75,4 @@ keywords:
 <!-- END TWO COLUMN LAYOUT  -->
 
 {{> share-widget}}
-
-
 {{> footer-promo-mf-linkedin }}

@@ -6,9 +6,3 @@ img:not([src$=svg]):not(.no-border) {
   }
 }
 
-svg {
-  text {
-    text-anchor: middle;
-    font-family: $body-font-family;
-  }
-}

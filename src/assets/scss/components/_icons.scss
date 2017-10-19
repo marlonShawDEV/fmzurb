@@ -385,6 +385,8 @@
   }
   text {
     text-transform: uppercase;
+    text-anchor: middle;
+    font-family: $body-font-family;
   }
  .text1 { 
    fill: $fm-gray; 
