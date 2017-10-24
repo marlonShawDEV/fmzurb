@@ -48,14 +48,11 @@
   }
 }
 @mixin list-divided($color: darken($light-gray, 5%), $padding-base: $global-padding, $last-border: false){      
-  > li,
-  > dd { 
+  > li { 
     margin: 0;
     padding-bottom: $padding-base;
     border-bottom: 1px solid $color;     
-    + li,
-    + dt,
-    + dt {
+    + li {
       padding-top: $padding-base;
     }
     > :last-child {
@@ -67,10 +64,7 @@
         border-bottom-width: 0;
       }
     }  
-  }
-  > dt { 
-    margin-top: 0;
-  }  
+  } 
 }
 // anchors that aren't buttons, when used over dark backgrounds (modals, rotators, call outs, etc.)
 @mixin anchor-on-dark($decoration: underline){

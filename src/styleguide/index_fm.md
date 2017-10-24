@@ -971,13 +971,15 @@ Add class `list-rss` to the `ul` tag to include an rss icon for each list item.
 
 
 
-# Definition & Glossary Lists
+# Description & Glossary Lists
 
-A definition list (`dl`) is used to display name-value pairs, like metadata or a dictionary definition. Each term (`dt`) is paired with one or more definitions (`dd`). 
+A description list `<dl>` is used to pair a list of `<dt>` elements (the term or name to be described)  with one or more `<dd>` elements (the description of each term or name). 
 
 ---
 
-##  Definition List
+##  Description List
+
+A basic description list. 
 
 ```html_example
 <div class="callout hollow">
@@ -995,7 +997,7 @@ A definition list (`dl`) is used to display name-value pairs, like metadata or a
 
 ## Glossary List
 
- Add class `.glossary` to the `dl` to indent the definitions.
+To indent the descriptions, add class `.glossary` to the `<dl>`.
  
 ```html_example 
 <div class="callout hollow">
@@ -1010,6 +1012,61 @@ A definition list (`dl`) is used to display name-value pairs, like metadata or a
     <dd>The fee that a mortgage lender charges to apply for a mortgage to cover processing costs.</dd>
   </dl>   
 </div>
+```
+
+---
+
+## Divided Description List
+
+To add dividers between the entries, add class `.description-block` to the `<dl>`.
+
+```html_example 
+<dl class="description-block">
+  <dt>ABC Banking</dt>
+  <dd>
+    <strong>Contact:</strong><br>
+    John Doe<br>
+    <a class="mailto" href="#">john_doe@bankname.com</a><br>
+    Chief Operating Officer<br>
+    Arlington, VA<br>
+    (555) 555-1234<br>
+    <a class="offsite" href="#">http://www.bankname.com</a>
+    <div class="areas">
+      <strong>Approved Area(s):</strong><br>
+      Connecticut, New Jersey, Virginia 
+    </div>
+  </dd> 
+
+  <dt>My Bank, LLC</dt>
+  <dd>
+    <strong>Contact:</strong><br>
+    Jane Doe<br>
+    <a class="mailto" href="#">jane_doe@mybank.com</a><br>
+    Senior Vice President -- Product Manager<br>
+    Bethesda, MD<br>
+    (555) 123-4567<br>
+    <a class="offsite" href="#">http://www.mybank.com</a>
+    <div class="areas">
+      <strong>Approved Area(s):</strong><br>
+      California, Maryland, North Carolina, Ohio, Pennsylvania <em>(Western)</em>, South Carolina 
+    </div>
+  </dd> 
+   
+  <dt>The Other Bank</dt>
+  <dd>
+    <strong>Contact:</strong><br>
+    Jim Doe<br>
+    <a class="mailto" href="#">jim_doe@theotherbank.com</a><br>
+    Executive Vice President<br>
+    Charlotte, NC<br>
+    (555) 987-6543<br>
+    <a class="offsite" href="#">http://www.theotherbank.com/</a>
+    <div class="areas">
+      <strong>Approved Area(s):</strong><br>
+      New York <em>(Counties of New York, Bronx, Kings, Queens, Richmond)</em>, North Carolina 
+    </div>
+  </dd> 
+</dl>
 ```
 
 
