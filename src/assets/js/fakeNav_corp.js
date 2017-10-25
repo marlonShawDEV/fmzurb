@@ -4,7 +4,7 @@
 function fakeNav(){
   // this will be automated on the backend, faking it for now to show different highlighting/subnavs
   var p = location.pathname;
-  if (p.match(/blog/)) { 
+  if (p.match(/blog/) && !p.match(/hr/)) { 
     $('#nav-blog').children('a').addClass('active');
     $('#subnav-blog').addClass('on').find('.no-bullet').removeClass('hide');
     if (p.match(/detail|homeownership/)) {$('#subnav-blog-homeownership').addClass('active');}
@@ -13,15 +13,16 @@ function fakeNav(){
     else if (p.match(/notable/)) {$('#subnav-blog-notable').addClass('active');}
     else if (p.match(/archive|harp/)) {$('#subnav-blog-archive').addClass('active');}
   }
-  else if (p.match(/about/)) {
+  else if (p.match(/about/) || p.match(/hr-blog/)) {
     $('#nav-about').children('a').addClass('active');
     $('#subnav-about').addClass('on').find('.no-bullet').removeClass('hide');
     if (p.match(/leaders/)) {$('#subnav-about-leaders').addClass('active');}
-    if (p.match(/business/)) {$('#subnav-about-business').addClass('active');}
-    if (p.match(/people|employee|supplier/)) {$('#subnav-about-people').addClass('active');}
-    if (p.match(/communities/)) {$('#subnav-about-communities').addClass('active');}
+    else if (p.match(/business/)) {$('#subnav-about-business').addClass('active');}
+    else if (p.match(/people|employee|supplier/)) {$('#subnav-about-people').addClass('active');}
+    else if (p.match(/communities/)) {$('#subnav-about-communities').addClass('active');}
     else if (p.match(/governance|annual|agenda|board/)) {$('#subnav-about-governance').addClass('active');}
     else if (p.match(/investor/)) {$('#subnav-about-investors').addClass('active');}
+    else if (p.match(/hr-blog/)) {$('#subnav-about-careers').addClass('active');}
   }
   else if (p.match(/media-/)) {
     $('#nav-mediaroom').children('a').addClass('active');
