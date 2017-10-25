@@ -1,7 +1,6 @@
 .subnav-edge { display: none; }
 @media screen {
   .homepage-business-lines {
-    background: $light-gray;  
     padding: $global-padding 0;
     @include breakpoint(large) {
       padding: $global-padding * 2.375 0;
@@ -56,7 +55,6 @@
   }
 }
 .business-line-icon {
-  color: $primary-color;
   line-height: 1;
   text-transform: uppercase;
   font-weight: $global-weight-medium;
@@ -70,9 +68,6 @@
     font-size: rem-calc(22px);
     padding: $global-padding * .5 0;
     margin: initial;
-  }
-  a {
-    color: inherit;
   }
   svg { 
     padding: 0 $global-padding * .5 $global-padding * .5;

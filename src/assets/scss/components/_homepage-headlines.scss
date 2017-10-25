@@ -3,7 +3,7 @@
   border-bottom: 1px solid darken($light-gray, 9.8039);
   margin-bottom: 0;
   padding-bottom: $global-padding *2.5;
-  a {
+  a:not(:hover):not(:focus) {
     color: inherit;
   }
   @include breakpoint(small only) {
