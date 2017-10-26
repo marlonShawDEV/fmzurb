@@ -18,11 +18,10 @@ function fakeNav(){
     $('#subnav-about').addClass('on').find('.no-bullet').removeClass('hide');
     if (p.match(/leaders/)) {$('#subnav-about-leaders').addClass('active');}
     else if (p.match(/business/)) {$('#subnav-about-business').addClass('active');}
-    else if (p.match(/people|employee|supplier/)) {$('#subnav-about-people').addClass('active');}
+    else if (p.match(/people|employee|supplier|hr-blog/)) {$('#subnav-about-people').addClass('active');}
     else if (p.match(/communities/)) {$('#subnav-about-communities').addClass('active');}
     else if (p.match(/governance|annual|agenda|board/)) {$('#subnav-about-governance').addClass('active');}
     else if (p.match(/investor/)) {$('#subnav-about-investors').addClass('active');}
-    else if (p.match(/hr-blog/)) {$('#subnav-about-careers').addClass('active');}
   }
   else if (p.match(/media-/)) {
     $('#nav-mediaroom').children('a').addClass('active');
