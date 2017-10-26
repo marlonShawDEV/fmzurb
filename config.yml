@@ -3,9 +3,12 @@ PORT: 8000
 
 # Autoprefixer will make sure your CSS works with these browsers
 COMPATIBILITY:
+  - "> 1% in US"
   - "last 4 versions"
+  - "Android >= 4"
   - "ie >= 9"
   - "and_chr >= 2.3"
+  - "ff >= 5"
 
 # UnCSS will use these settings
 UNCSS_OPTIONS:
