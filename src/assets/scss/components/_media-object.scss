@@ -43,13 +43,29 @@
       }
     }
   }
-  &.collapse .media-object-section {
-    &:first-child {
-      padding-#{$global-right}: 0;
+  &.collapse {
+    .media-object-section {
+      &:first-child {
+        padding-#{$global-right}: 0;
+      }
+      &:last-child:not(:nth-child(2)) {
+        padding-#{$global-left}: 0;
+      }  
     }
-    &:last-child:not(:nth-child(2)) {
-      padding-#{$global-left}: 0;
-    }    
+  }
+  &.medium-uncollapse {
+    .media-object-section {  
+      &:first-child {
+        @include breakpoint(medium) {
+          padding-#{$global-right}: $gutter;
+        }
+      }
+      &:last-child:not(:nth-child(2)) {
+        @include breakpoint(medium) {
+          padding-#{$global-left}: $gutter;
+        }
+      }  
+    }
   }
   &.blurb3-leads-image2 {   // such as insights, research pages
     img {
