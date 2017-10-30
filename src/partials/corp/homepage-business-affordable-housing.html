@@ -36,11 +36,17 @@
   line-height: 1.1;
   color: #f4f4f4;
 }
+.aff-divider { 
+  border-color: rgba(255, 255, 255, .8); 
+  border-width: 0px; 
+  border-style: solid; 
+  border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 3%, rgba(255, 255, 255, 0.8) 3.1%, rgba(255, 255, 255, 0.8) 95.9%, rgba(255, 255, 255, 0) 96%) 1 100%;
+}
 @media screen and (min-width:46.25em){
   .homepage-business-highlight{padding:4.5rem 0;}
 }
 @media print,screen and (min-width:61.25em){
-  .aff-divider {border-right:1px solid rgba(255, 255, 255, .8); }
+  .aff-divider { border-right-width:1px; }
   .homepage-business-highlight{padding:6rem 0;}
   .affordable-subtitle { margin-top: 0; }
 }
