@@ -1,18 +1,18 @@
 ﻿<!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Style Guide: Multifamily</title>
+    <title>Multifamily Style Guide</title>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@FreddieMac" />
-    <meta property="og:title" content="Style Guide: Freddie Mac Multifamily" />
-    <meta name="twitter:title" content="Style Guide: Freddie Mac Multifamily"/>
-    <meta name="Description" content="The styleguide is based on the Foundation framework." />
-    <meta property="og:description" content="The styleguide is based on the Foundation framework." />
-    <meta name="twitter:description" content="The styleguide is based on the Foundation framework." />
+    <meta property="og:title" content="Style Guide: Multifamily" />
+    <meta name="twitter:title" content="Style Guide: Multifamily"/>
+    <meta name="Description" content="The Multifamily styleguide is based on the Foundation framework." />
+    <meta property="og:description" content="The Multifamily styleguide is based on the Foundation framework." />
+    <meta name="twitter:description" content="The Multifamily styleguide is based on the Foundation framework." />
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website" />
     <meta property="og:image" content="files/styleguide.jpg" />
@@ -20,38 +20,147 @@
     <meta name="theme-color" content="#88BD45">
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/ss/app_mf.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+    <!-- Style guide-specific CSS goes here. -->
+    <style>
+    #top {
+      width:100%;
+      position:fixed;
+      top: 0;   
+      padding: 0.5rem 0 0; 
+      z-index: 1001;      
+    }
+    form.form {
+      margin-bottom: 0;
+    }
+    /* This styles individual sections of the style guide */
+    .ss-section:not(:last-child) {
+      padding-bottom: 3rem;
+      clear: both;
+    }
+    .ss-section + .ss-section  {
+      padding-top: 4rem;    
+    }
+    .markup-wrapper > h1 {
+      padding: 1.5rem;
+      color: #ff6c00;
+      background: rgba(255,108,0,0.15);
+    }
+    #code-content {
+      padding-top: 1rem;
+    }
+    
+    .two-column-layout > .two-column-row {
+      padding-left: 0;
+      padding-right: 0; 
+      margin-bottom: 1rem;      
+    }
+
+    .two-column-row > main,
+    .two-column-row > aside    {
+      padding-top: 10px; 
+    } 
+    
+    /* This styles the color blocks used in the color documentation. */
+    .color-block {
+      border-radius: 2px;
+      display: block;
+      padding: 8px 8px 6px;
+      color: #333;
+      text-transform: uppercase;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+      .color-block code {
+        text-transform: none;
+      }
+      .color-block span {
+        display: block;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 0.42857rem;
+        padding: 1rem;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+    
+    /* This styles code blocks used for examples. */
+    .ss-code {
+        margin-bottom: 1rem; 
+      }
+      .ss-code code {
+        max-height: 900px;
+        overflow: scroll;
+        display: block;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        opacity: 1;
+      }
+    
+    .ss-code-live::before,
+    .ss-code-live::after {
+      content: ' ';
+      display: table;
+    }
+    .ss-code-live::after {
+      clear: both;
+    }  
+    .docs-code-toggle {
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-weight: bold; 
+        color: #2199e8;
+    }
+    code { 
+      font-size: 0.875rem;
+      opacity: 0.6;
+    }
+    
+    @media screen and (max-width: 35em) {
+      #top h1 { float: left; font-size: 20px; }
+      #top select { font-size: 14px; }
+    }
+
+     /* from href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css" */
+    .hljs{display:block;overflow-x:auto;padding:0.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.hljs-comment,.diff .hljs-header{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#008080}.hljs-string,.hljs-tag .hljs-value,.hljs-doctag,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.scss .hljs-preprocessor{color:#900;font-weight:bold}.hljs-list .hljs-keyword,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rule .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body,.hljs-name{color:#008080}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.clojure .hljs-keyword,.scheme .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>    
   </head>
   <body>
-    <div class="column row">
-    
-    </div>
 
-    <div class="column row">
-      <div class="row collapse">
-        <div class="large-3 medium-4 column" data-sticky-container>
-          <ul class="vertical menu">
+    <div id="top" class="page-title">
+      <div class="row column">
+        <form class="form float-right">
+          <select id="ssnav">
+            <option value="">Select Component</option>
             {{#each pages}}
-              <li><a href="#{{ anchor }}">{{ title }}</a></li>
+              <option value="#{{ anchor }}">{{ title }}</option>
             {{/each}}
-          </ul>
-        </div>
-
-        <div class="large-9 medium-8 column" id="code-content">
-          {{#each pages}}
-            <div class="ss-section" id="{{ anchor }}">
-              {{ body }}
-            </div>
-          {{/each}}
-        </div>
-
+          </select>
+        </form>
+        <h1 class="subtitle">Corporate Style Guide</h1>
       </div>
     </div>
     
+    <div class="content-band">
+      <div class="row column" id="code-content">
+      <p></p>
+          {{#each pages}}
+          <div class="ss-section" id="{{ anchor }}">
+            <div class="row">
+              <div class="column markup-wrapper">
+              {{ body }}
+              </div>
+            </div>
+          </div>
+          {{/each}}
+       
+        <p class="text-center"><a class="button small" href="index.html">Back to Style Guides</a></p>
+      </div>
+    </div> 
+    
     <script src="/js/vendor/jquery-3.2.1.min.js"> </script>
-    <script src="/multifamily/app_mf_sbl.js"></script>
+    <script src="/js/app_mf.js"></script>
     <script>
     // suppress the code view blocks by default and hide them under a toggle.
     var $ks = $('#code-content');
@@ -68,11 +177,16 @@
       });
     }
     $("#ssnav").change(function() { 
-      var x = $(this).val(); 
+      var x = $(this).val() || ''; 
+      if(x!==''){
       location.hash = '';
       location.hash = x;
+      }
+      $("#ssnav")[0].selectedIndex = 0;
     }); 
     </script>
     
+    
+
   </body>
 </html>

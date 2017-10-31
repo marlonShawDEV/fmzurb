@@ -76,25 +76,49 @@ h1 {
 }
 .card-title{font-weight: 700;color:#333;font-size: 2rem;}
 .card-blurb-large { color: #333;} 
+
 .stripes{
   background-image: linear-gradient(to right top, transparent 46%, rgba(0, 0, 0, 0.07) 0px, rgba(0, 0, 0, 0.07) 54%, transparent 0px);
   background-size: 10px 10px;
 }
+
+.overlay.overlay-gradient::after{
+background: rgba(0, 0, 0, 0) linear-gradient(to bottom right, #777874 0%, rgba(119, 120, 116, 0.7) 50%, rgba(119, 120, 116, 0.3) 100%) repeat scroll 0 0;
+
+}
+
 .overlay.overlay-gradient .overlay-contents {
     padding: 8% 0 20% 0;
-    @include breakpoint(medium){
-      padding-top:22%;
-      }
+    @include breakpoint(small){
+      padding-top: 22%;
     }
+    @include breakpoint(medium){
+      padding-top:15%;
+      }
+    
+    @include breakpoint(xlarge){
+      padding-top: 22%;
+    }
+}
+
   
   .subtitle{
-    font-size: calc(18px + 14 * (100vw - 320px) / 1180);
-    font-weight: 700;
+    font-size: calc(16px + 14 * (100vw - 320px) / 1500);
+    /*font-weight: 700;*/
     margin: 0.25em 0 0.375em;
     @include breakpoint(small){
-      
-        font-size: rem-calc(24);
-    }   
+      font-size: rem-calc(36);
+    }
+    @include breakpoint(medium){
+      font-size: rem-calc(26);
+    }
+    @include breakpoint(large){      
+        font-size: rem-calc(22);
+    }
+     
+  }
+  @media screen and (min-width:93.75em){
+    .subtitle{font-size:2rem;}
   }
   .article-byline {
     color: inherit;
@@ -285,6 +309,7 @@ h1 {
 .card-section + .card-section {
   padding-top: 0;
 }
+.tips{background:$light-gray; }
 
 .triangle_out {
   position: absolute;

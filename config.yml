@@ -3,9 +3,12 @@ PORT: 8000
 
 # Autoprefixer will make sure your CSS works with these browsers
 COMPATIBILITY:
+  - "> 1% in US"
   - "last 4 versions"
+  - "Android >= 4"
   - "ie >= 9"
   - "and_chr >= 2.3"
+  - "ff >= 5"
 
 # UnCSS will use these settings
 UNCSS_OPTIONS:
@@ -73,7 +76,7 @@ PATHS:
     - "src/assets/js/prepModals.js"
     - "src/assets/js/prepRotators.js" 
     # comment for prod code. this is just for local site
-    # "src/assets/js/fakeNav_corp.js"  
+    - "src/assets/js/fakeNav_corp.js"  
     - "src/assets/js/mwNewsFeed.js"
     - "src/assets/js/tertiaryNav_corp.js"   
     - "src/assets/js/appCorp.js"
@@ -121,6 +124,7 @@ PATHS:
     - "src/assets/js/adjustSidebar.js"
     - "src/assets/js/prepModals.js"
     - "src/assets/js/prepRotators.js" 
+    - "src/assets/js/prepAccFilters.js" 
     # comment for prod code. this is just for local site
     - "src/assets/js/fakeNav_mf.js"  
     - "src/assets/js/mwNewsFeed_mf.js"
@@ -182,10 +186,10 @@ PATHS:
     # "bower_components/foundation-sites/js/foundation.interchange.js"
     # "bower_components/foundation-sites/js/foundation.magellan.js"
     # "bower_components/foundation-sites/js/foundation.offcanvas.js"
-    # "bower_components/foundation-sites/js/foundation.orbit.js"
+    - "bower_components/foundation-sites/js/foundation.orbit.js"
     # "bower_components/foundation-sites/js/foundation.responsiveMenu.js"
     # "bower_components/foundation-sites/js/foundation.responsiveToggle.js"
-    # "bower_components/foundation-sites/js/foundation.reveal.js"
+    - "bower_components/foundation-sites/js/foundation.reveal.js"
     # "bower_components/foundation-sites/js/foundation.slider.js"
     # "bower_components/foundation-sites/js/foundation.sticky.js"
     - "bower_components/foundation-sites/js/foundation.tabs.js"

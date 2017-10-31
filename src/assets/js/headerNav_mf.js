@@ -22,7 +22,7 @@ function navHoverOff(){
 }
 
 // comment out this section for 2nd testbed
-$('#nav-perspectives, #nav-research, #nav-blog, #nav-mediaroom, #nav-about, #subnav-perspectives, #subnav-research, #subnav-blog, #subnav-mediaroom, #subnav-about').each(function(){  
+$('#nav-seller-servicers, #nav-investors, #nav-borrowers, #nav-products, #nav-news, #nav-about, #subnav-seller-servicers, #subnav-investors, #subnav-borrowers, #subnav-products, #subnav-news, #subnav-about').each(function(){  
   $(this).mouseenter(function(){
     if (Foundation.MediaQuery.atLeast('xlarge')) {
       var id = $(this).attr('id'), i = id.match(/^sub/) ? id.replace(/^subnav/,"nav") : id; navHoverOn(i);
@@ -34,10 +34,6 @@ $(".ribbon-rbo-section").on("mouseleave", function(){
     var $t = $(".ribbon-rbo-toggle"); 
     if($t.attr('aria-expanded') === "true"){$t.find('a').blur().triggerHandler('click');}
  });  
-$(".nav-bus-section").on("mouseleave", function(){ 
-    var $t = $(".nav-bus-toggle"); 
-    if($t.attr('aria-expanded') === "true"){$t.find('a').blur().triggerHandler('click');}
- }); 
  
 //$("#primary-nav").on("on.zf.toggler", function(e) {
 //});

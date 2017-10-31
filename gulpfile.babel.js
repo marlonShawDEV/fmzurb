@@ -93,6 +93,12 @@ function resetPages(done) {
 // Generate a style guide from the Markdown content and HTML template in styleguide/
 
 function styleGuide(done) {
+  sherpa('src/styleguide/index_fm.md', {
+    output: PATHS.dist + '/styleguide/styleguide_fm.html',
+    template: 'src/styleguide/template_foundation.html'
+  }, styleGuideCorp(done) ); 
+}
+function styleGuideCorp(done) {
   sherpa('src/styleguide/index_corp.md', {
     output: PATHS.dist + '/styleguide/styleguide_corp.html',
     template: 'src/styleguide/template_corp.html'
@@ -138,18 +144,24 @@ function styleGuideTabs(done) {
   return sherpa('src/styleguide/tabs.md', {
     output: PATHS.dist + '/styleguide/styleguide_tabs.html',
     template: 'src/styleguide/template_foundation.html'
-  }, done); 
+  }, styleGuideReveal(done)); 
 }
-function styleGuideSF(done) {
-  sherpa('src/styleguide/index_sf.md', {
-    output: PATHS.dist + '/styleguide/styleguide_sf.html',
-    template: 'src/styleguide/template_sf.html'
-  }, done);
+function styleGuideReveal(done) {
+  return sherpa('src/styleguide/reveal.md', {
+    output: PATHS.dist + '/styleguide/styleguide_reveal.html',
+    template: 'src/styleguide/template_foundation.html'
+  }, styleGuideMF(done)); 
 }
 function styleGuideMF(done) {
   sherpa('src/styleguide/index_mf.md', {
     output: PATHS.dist + '/styleguide/styleguide_mf.html',
     template: 'src/styleguide/template_mf.html'
+  }, done);
+}
+function styleGuideSF(done) {
+  sherpa('src/styleguide/index_sf.md', {
+    output: PATHS.dist + '/styleguide/styleguide_sf.html',
+    template: 'src/styleguide/template_sf.html'
   }, done);
 }
 function styleGuideCM(done) {
@@ -170,7 +182,7 @@ function sass() {
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
-    .pipe($.if(PRODUCTION, $.cssnano({safe: true, minifyGradients: false, calc:false, zindex:false, colormin:false, reduceInitial:false})))
+    .pipe($.if(PRODUCTION, $.cssnano({safe: true, minifyGradients: false, calc:false, zindex:false, colormin:false, reduceInitial:false,autoprefixer: false})))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/ss'))
     .pipe(browser.reload({ stream: true }));

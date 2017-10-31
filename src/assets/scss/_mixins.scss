@@ -49,12 +49,13 @@
 }
 @mixin list-divided($color: darken($light-gray, 5%), $padding-base: $global-padding, $last-border: false){      
   > li { 
+    margin: 0;
     padding-bottom: $padding-base;
     border-bottom: 1px solid $color;     
     + li {
       padding-top: $padding-base;
     }
-    :last-child {
+    > :last-child {
       margin-bottom: 0;
     }
     @if ($last-border == false) {
@@ -67,6 +68,8 @@
 }
 // anchors that aren't buttons, when used over dark backgrounds (modals, rotators, call outs, etc.)
 @mixin anchor-on-dark($decoration: underline){
+  &.block,
+  &.mailto,
   &:not([class]) { 
     color: currentColor;
     position: relative;
@@ -130,7 +133,7 @@
     );
 }
 
-// staggered mosiac pattern 12 steps:
+// staggered mosiac pattern 12 steps:  currently not used
 @mixin mosaic-fill12(
   $a: $mosaic-first, 
   $b: $mosaic-last, 

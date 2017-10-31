@@ -124,7 +124,7 @@ By default, the width of each tab is flexible to accommodate the tab title text,
       </ul>
     </div>
   </li>
-  <li><p>**Avoid** using an excessive number of tabs. Consider [using Accordions](styleguide_corp.html#accordions) instead.</p>
+  <li><p>**Avoid** using an excessive number of tabs. Consider [using Accordions](styleguide_fm.html#accordions) instead.</p>
     <div class="gutter-all">
       <ul class="tabs" data-tabs id="what-not-to-do-2">
         <li class="tabs-title is-active"><a href="#dummy" aria-selected="true">Tab one</a></li>

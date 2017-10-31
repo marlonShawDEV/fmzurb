@@ -2,6 +2,9 @@
 #subnav-secondary-nav  {
     position: relative;
 }
+header li {
+  margin: 0;
+}
 .secondary-nav {
   font-weight: $global-weight-medium;
   position: relative;
@@ -14,6 +17,9 @@
     position: relative;
   }
   .no-bullet {
+    margin: 0;
+  }
+  li {
     margin: 0;
   }
   a {

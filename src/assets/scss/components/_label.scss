@@ -1,0 +1,28 @@
+/// Default font size for labels.
+/// @type Number
+$label-font-size: 0.875rem !default;
+
+/// Default padding inside labels.
+/// @type Number
+$label-padding: 0.4em 1.5em !default;
+
+/// Default radius of labels.
+/// @type Number
+$label-radius: $global-radius !default;
+
+/// Generates base styles for a label.
+@mixin label {
+  display: inline-block;
+  padding: $label-padding;
+  border-radius: $label-radius;
+  font-size: $label-font-size;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default;
+}
+
+
+.label {
+  @include label;
+}
+
