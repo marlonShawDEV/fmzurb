@@ -1,28 +1,5 @@
 .banner {
-  &.diversity {
-    @media screen {
-      background: $light-gray url('/images/about/diversitybanner.jpg') no-repeat top center / cover;
-      background-size: cover;  
-      min-height: 150px;    
-      padding: rem-calc($gutter $gutter * 1.5);
-      margin-bottom: $gutter * 2;
-    }
-    @media screen and #{breakpoint(medium)} {
-      min-height: 240px;
-      padding: rem-calc($gutter * 1.5);
-    }
-    // from 200px before large
-    @media screen and (min-width: -zf-bp-to-em(map-get($breakpoints, large) - 200px)) {
-      min-height: 280px;
-      padding: rem-calc($gutter * 2.5);
-    }
-    @media screen and #{breakpoint(large)} {
-      padding: rem-calc($gutter * 2.5 $gutter * 1.5);
-    }
-    // start at large + 200
-    @media screen and #{breakpoint(xlarge)} {
-      min-height: 300px;
-      padding: rem-calc($gutter * 2.5);
-    }
-  }
+//  &.diversity {
+//    removed on 10/24, replaced by inline image 
+//  }
 }

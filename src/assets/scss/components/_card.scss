@@ -1,7 +1,7 @@
 /// card
 .card {
-  border-bottom-width: 3px;
-  text-align: left;
+  position: relative;
+  border-bottom-width: 3px;  
 	.overlay,
   .modal-launch,
   .video-modal {
@@ -18,6 +18,54 @@
     }
   } 
 }
+
+.chevron-base,
+.grid-block .callout.chevron-base {
+  position: relative;
+  padding-bottom: calc(40px +  26 * (100vw - 320px)/1180);    
+  z-index: 205;
+  @include breakpoint(xlarge) { 
+    padding-bottom: rem-calc(66); 
+  }
+}
+.chevron {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1em;
+  font-size: rem-calc(30);  
+  font-size: calc(30px +  15 * (100vw - 320px)/1180);
+  @include breakpoint(xlarge) { 
+    font-size: rem-calc(45); 
+  }
+  &::after {
+    content: ' ';  
+    background: transparent icon(chevron-dbl-bg, "none", 26px, 26px, -1, -1, 27.5, 27.5, $white, 3, "stroke-linejoin: round; stroke-linecap: round;") no-repeat center bottom /contain;    
+    width: 1em;
+    height: 1em;
+    display: block;
+    position: absolute;
+    bottom: 19px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0.4;
+  }
+}
+.divider-flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  h2,
+  h3  {
+    -webkit-flex:  1 1 auto;
+    flex: 1 1 auto;
+    margin-bottom: 0;
+  }
+}
+
 .card-section { 
   &:not(.text-center) {
     padding-left: 0;

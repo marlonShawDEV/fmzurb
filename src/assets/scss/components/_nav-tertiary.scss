@@ -42,6 +42,9 @@ $tertiary-border-color: scale-color($light-gray, $lightness: -5%);
         font-weight: $global-weight-bold;
       }     
     }
+    li {
+      margin: 0;
+    }
     li + li::before {     
         content: ""; 
         display: block;    

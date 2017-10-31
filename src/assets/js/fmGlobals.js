@@ -77,7 +77,7 @@ FM.form = {
       somniTL(event,ltype,hrf,trig,locale+desc+txt,persona);
       // console.log('nav link type:'+ltype+', link name:'+ locale+desc+txt+'.'); 
     }
-  }
+  } 
 };
 for (var x in FM.form.QueryPairs) {
   QueryParam[decodeURIComponent(FM.form.QueryPairs[x].split('=')[0] || "")] = decodeURIComponent(FM.form.QueryPairs[x].split('=')[1] || "");
@@ -96,22 +96,20 @@ if(FM.form.protocol === 'https:') {
 	  $(this).attr('href', FM.form.forceGlobalLinks($(this).attr('href')));
   });		
 };
-// fix marketwire crap tables
-if(FM.form.hostname.match(/newsroom/)) {
-  $("table").not("[class]").each(function(){
-    $(this).wrap('<div class="table-scroll"></div>');
-  });  
-}
 if (FM.form.useOmni()){ 
   $(document).on("click",FM.form.omniNavLink); 
 }
 // process file markers
 if (FM.form.pathElements[0] !== "search") { 
-	$(".content-band, .two-column-layout").find("a[href]").not('.plain').not(":has(img)").not(":has(.callout)").not(":has(.card)").filter(function(){return (/.+\.(pdf|zip|mp3|mov|csv|docx?|xls[mx]?|pptx?)(\?.*)?(#.*)?$/i).test($(this).attr('href'));}).each(
-	   function(){ var h=$(this).attr('href').toLowerCase().replace(/.+\.(pdf|zip|mp3|mov|csv|docx?|xls[mx]?|pptx?)(\?.*)?(#.*)?$/, "$1"); 
-     if($(this).is('.button')) { $(this).append(" <span class='filemarker'>["+h+"]</span>") }
-     else { $(this).after(" <span class='filemarker'>["+h+"]</span>"); }
-	});
+	$(".content-band, .two-column-layout").find("a[href]").not('.plain').not(":has(img)").not(":has(.callout)").not(":has(.card)").not(function(){
+    return (/.+\.(html?|#|javascript)(\?.*)?(#.*)?$/i).test($(this).attr('href'));
+  }).filter(function(){
+    return (/.+\.(pdf|zip|csv|doc|xls|ppt)[mx]?(\?.*)?(#.*)?$/i).test($(this).attr('href'));
+  }).each(function(){ 
+    var h=$(this).attr('href').toLowerCase().replace(/.+\.(pdf|zip|csv|doc|xls|ppt)[mx]?(\?.*)?(#.*)?$/, "$1"); 
+    if ($(this).is('.button')&& h.length) { $(this).append(" <span class='icon-file'>"+h+"</span>") }     
+    else if($(this).closest('.data-filterable').length==0) { $(this).append(" <span class='icon-file'>"+h+"</span>"); }
+  });
 } 
 
 $(function(){  

@@ -46,6 +46,16 @@
        margin-top: rem-calc(55);
       margin-bottom: rem-calc(100); 
     }
+    &.even {
+      margin: $gutter 0;    
+      @include breakpoint(large) {
+        margin: $gutter*2 0;  
+      }
+      @include breakpoint(xlarge) {
+        margin: $gutter*3 0;
+      } 
+      
+    }
   }
   .two-column-layout{
     > .two-column-row {

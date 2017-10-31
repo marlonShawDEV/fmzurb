@@ -49,8 +49,7 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-
-// @include foundation-flex-classes;
+@include foundation-flex-classes;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
@@ -65,6 +64,7 @@
 @import 'components/buttons';
 @import 'components/callouts';
 @import 'components/articles';
+@import 'components/features-corp';
 @import 'components/hero-corp';
 @import 'components/call-to-action';
 @import 'components/accordion';
@@ -96,3 +96,5 @@
 @import 'components/media-object';
 @import 'components/banners';
 @import 'components/testimonial-block';
+@import 'components/display';
+@import 'components/overrides';

@@ -9,21 +9,15 @@
 
 .hero {  // default hero style, family with arms held up to make house outline
   position: relative;
-  padding: rem-calc(20 0 15);
+  padding: rem-calc(30 0 30);
   @media screen { 
-    background: $fm-gray url('/images/hero/homepage_hero2_mobile.jpg') no-repeat left bottom;  
-    color: $white;    
+    background: $fm-gray url('/images/hero/homepage_hero2_mobile.jpg') no-repeat left bottom / cover;  
   }
-  background-size: cover;
   @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) - 120px)) {
-    padding: rem-calc(30 0 25);
+    padding: rem-calc(35 0 30);
   }    
-  @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 120px)) {
-    padding: rem-calc(30 0 35);
-  }
-  @media (min-width: -zf-bp-to-em(map-get($breakpoints, medium) + 180px)) {    
-    background: transparent url('/images/hero/homepage_hero4.jpg') no-repeat center center;
-    background-size: cover;
+  @include breakpoint(medium) {
+    background: transparent url('/images/hero/homepage_hero4.jpg') no-repeat center center / cover;
   }
   @media (min-width: -zf-bp-to-em(map-get($breakpoints, large) - 155px)) {
     padding: rem-calc(70 0 60);
@@ -57,7 +51,19 @@
     @include breakpoint(xxlarge) {
       background-position: center bottom;
     }
-  }
+  } 
   
+  // overrides for Q3 financials promotion
+  &.hero-financials {
+      background-image: url("/images/hero/homepage_hero5.jpg");
+      background-position: 50% center;
+    @include breakpoint(xxlarge) {
+      background-position: center bottom;
+    } 
+    .hero-title {
+      @include breakpoint(xxlarge) {
+        font-weight: 700;
+      }
+    }
+  } 
 }
-

@@ -30,7 +30,7 @@
 // @include foundation-dropdown-menu;
 // @include foundation-flex-video;  replaced by responsive embed
 @include foundation-responsive-embed;
-// @include foundation-label;
+//@include foundation-label;
 @include foundation-media-object;
 // @include foundation-off-canvas;
 @include foundation-orbit;
@@ -49,14 +49,14 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-
-// @include foundation-flex-classes;
+@include foundation-flex-classes;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
 @import 'mixins';
 @import 'components/icons';
+@import 'components/icons-mf';
 @import 'components/globals';
 @import 'components/page-layout';
 @import 'components/shims';
@@ -65,12 +65,14 @@
 @import 'components/buttons';
 @import 'components/callouts';
 @import 'components/articles';
+@import 'components/features-mf';
 @import 'components/hero-mf';
 @import 'components/mfhomepage-hero';
 @import 'components/call-to-action';
 @import 'components/accordion';
 @import 'components/forms';
 @import 'components/lists';
+@import 'components/label';
 @import 'components/avatar';
 @import 'components/images';
 @import 'components/page-title';
@@ -91,9 +93,12 @@
 @import 'components/orbit';
 @import 'components/close-button';
 @import 'components/tooltips';
+@import 'components/flex';
 @import 'components/floated-boxes';
 @import 'components/mosaic';
 @import 'components/backgrounds';
 @import 'components/media-object';
 @import 'components/banners';
 @import 'components/testimonial-block';
+@import 'components/display';
+@import 'components/overrides';

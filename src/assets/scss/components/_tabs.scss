@@ -110,6 +110,7 @@ $tab-content-padding: 1rem !default;
   float: #{$global-left};
   border-style: solid;
   border-width: 0;
+  margin: 0;
   font-size: rem-calc(13);
   font-size: calc(13px +  3 * (100vw - 320px) / 1180); 
   @include breakpoint(xxlarge) {
