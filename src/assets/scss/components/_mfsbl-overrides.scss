@@ -82,6 +82,32 @@ h1 {
   background-size: 10px 10px;
 }
 
+
+.overlay  {  
+  &.overlay-gradient {
+    @include breakpoint(small only) {    
+      &::after {
+        content: " ";
+        display: block;      
+        position: absolute;
+        bottom: 0;
+        left:0;
+        right:0; 
+        top: 0;
+        background: linear-gradient(to right, rgba($fm-gray,1) 0%,rgba($fm-gray,0.7) 50%,rgba($fm-gray,0.3) 100%);
+        transition: background-image 0.3s ease 0s;       
+      }
+      &:hover,
+      &:focus {
+        &::after {
+          background: linear-gradient(to right, rgba(mix($fm-gray, $primary-color, 40%),0.8) 0%,rgba(mix($fm-gray, $primary-color, 30%),0.4) 50%,rgba(mix($fm-gray, $primary-color, 20%),0.1) 100%); 
+        }
+      }
+    } 
+  }
+}
+
+
 .overlay.overlay-gradient::after{
 background: rgba(0, 0, 0, 0) linear-gradient(to bottom right, #777874 0%, rgba(119, 120, 116, 0.7) 50%, rgba(119, 120, 116, 0.3) 100%) repeat scroll 0 0;
 
