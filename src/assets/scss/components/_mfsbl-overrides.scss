@@ -82,32 +82,6 @@ h1 {
   background-size: 10px 10px;
 }
 
-
-.overlay  {  
-  &.overlay-gradient {
-    @include breakpoint(small only) {    
-      &::after {
-        content: " ";
-        display: block;      
-        position: absolute;
-        bottom: 0;
-        left:0;
-        right:0; 
-        top: 0;
-        background: linear-gradient(to right, rgba($fm-gray,1) 0%,rgba($fm-gray,0.7) 50%,rgba($fm-gray,0.3) 100%);
-        transition: background-image 0.3s ease 0s;       
-      }
-      &:hover,
-      &:focus {
-        &::after {
-          background: linear-gradient(to right, rgba(mix($fm-gray, $primary-color, 40%),0.8) 0%,rgba(mix($fm-gray, $primary-color, 30%),0.4) 50%,rgba(mix($fm-gray, $primary-color, 20%),0.1) 100%); 
-        }
-      }
-    } 
-  }
-}
-
-
 .overlay.overlay-gradient::after{
 background: rgba(0, 0, 0, 0) linear-gradient(to bottom right, #777874 0%, rgba(119, 120, 116, 0.7) 50%, rgba(119, 120, 116, 0.3) 100%) repeat scroll 0 0;
 
@@ -115,17 +89,55 @@ background: rgba(0, 0, 0, 0) linear-gradient(to bottom right, #777874 0%, rgba(1
 
 .overlay.overlay-gradient .overlay-contents {
     padding: 8% 0 20% 0;
-    @include breakpoint(small){
-      padding-top: 22%;
+    @include breakpoint(small only){      
+      padding-top: 18%; 
+
     }
-    @include breakpoint(medium){
-      padding-top:15%;
+    @include breakpoint(medium only){
+      padding-top:12%;
       }
     
     @include breakpoint(xlarge){
-      padding-top: 22%;
+      padding-top: 20%;
     }
 }
+.overlay{
+  &.overlay-gradient{
+  @include breakpoint(small only){
+    &::after {
+        content:"";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right:0;
+        bottom: 0;   
+        background: rgba(0, 0, 0, 0) linear-gradient(to bottom right, #777874 0%, rgba(119, 120, 116, 0.7) 50%, rgba(119, 120, 116, 0.3) 100%) repeat scroll 0 0;
+      }
+      &:hover,
+      &:focus {
+        &::after {
+          background: linear-gradient(to right, rgba(mix($fm-gray, $primary-color, 40%),0.8) 0%,rgba(mix($fm-gray, $primary-color, 30%),0.4) 50%,rgba(mix($fm-gray, $primary-color, 20%),0.1) 100%); 
+        }
+      }
+
+    }
+  }
+}
+.overlay-contents{
+  @include breakpoint(small only){
+  z-index: 500;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(119, 120, 116, 0.1) repeat scroll 0 0;
+  }
+}
+
 
   
   .subtitle{
@@ -136,16 +148,17 @@ background: rgba(0, 0, 0, 0) linear-gradient(to bottom right, #777874 0%, rgba(1
       font-size: rem-calc(36);
     }
     @include breakpoint(medium){
-      font-size: rem-calc(26);
+      font-size: rem-calc(32);
     }
     @include breakpoint(large){      
-        font-size: rem-calc(22);
-    }
-     
+        font-size: rem-calc(36);
+    }     
   }
-  @media screen and (min-width:93.75em){
-    .subtitle{font-size:2rem;}
+  
+  @media screen and (min-width: 93.75em) {
+    .subtitle {font-size:2.2rem;}
   }
+  
   .article-byline {
     color: inherit;
     font-size: 0.9375rem;
