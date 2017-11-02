@@ -96,9 +96,10 @@ background: rgba(0, 0, 0, 0) linear-gradient(to bottom right, #777874 0%, rgba(1
     @include breakpoint(medium only){
       padding-top:12%;
       }
+    @include breakpoint(large){padding-top:16%;}
     
     @include breakpoint(xlarge){
-      padding-top: 20%;
+      padding-top: 18%;
     }
 }
 .overlay{
@@ -141,18 +142,27 @@ background: rgba(0, 0, 0, 0) linear-gradient(to bottom right, #777874 0%, rgba(1
 
   
   .subtitle{
-    font-size: calc(16px + 14 * (100vw - 320px) / 1500);
-    /*font-weight: 700;*/
+    font-size: calc(16px + 14 * (100vw - 320px) / 1180);
+    font-weight: 400;
     margin: 0.25em 0 0.375em;
+    
     @include breakpoint(small){
       font-size: rem-calc(36);
+      padding-top:0;
     }
     @include breakpoint(medium){
       font-size: rem-calc(32);
+      padding-bottom:.1rem;
+      &.article-byline{
+        font-size: rem-calc(16);
+        margin-top:0.4em;
+      }
     }
     @include breakpoint(large){      
-        font-size: rem-calc(36);
-    }     
+        font-size: rem-calc(28);
+        padding-bottom:0;
+    } 
+    @include breakpoint(xlarge){font-size: rem-calc(36);}   
   }
   
   @media screen and (min-width: 93.75em) {
