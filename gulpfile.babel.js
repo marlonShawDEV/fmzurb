@@ -107,7 +107,7 @@ function styleGuideCorp(done) {
 function styleGuideScripts(done) {
   return sherpa('src/styleguide/scripts_corp.md', {
     output: PATHS.dist + '/styleguide/styleguide_scripts_corp.html',
-    template: 'src/styleguide/template_corp.html'
+    template: 'src/styleguide/template_foundation.html'
   }, styleGuideGrid(done)); 
 }
 function styleGuideGrid(done) {
