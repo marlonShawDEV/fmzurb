@@ -1,18 +1,18 @@
 ﻿<!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Style Guide: Multifamily</title>
+    <title>Multifamily Style Guide</title>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@FreddieMac" />
-    <meta property="og:title" content="Style Guide: Freddie Mac Multifamily" />
-    <meta name="twitter:title" content="Style Guide: Freddie Mac Multifamily"/>
-    <meta name="Description" content="The styleguide is based on the Foundation framework." />
-    <meta property="og:description" content="The styleguide is based on the Foundation framework." />
-    <meta name="twitter:description" content="The styleguide is based on the Foundation framework." />
+    <meta property="og:title" content="Style Guide: Multifamily" />
+    <meta name="twitter:title" content="Style Guide: Multifamily"/>
+    <meta name="Description" content="The Multifamily styleguide is based on the Foundation framework." />
+    <meta property="og:description" content="The Multifamily styleguide is based on the Foundation framework." />
+    <meta name="twitter:description" content="The Multifamily styleguide is based on the Foundation framework." />
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website" />
     <meta property="og:image" content="files/styleguide.jpg" />
@@ -20,38 +20,46 @@
     <meta name="theme-color" content="#88BD45">
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/ss/app_mf.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+    <link rel="stylesheet" href="files/styleguide.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>    
   </head>
   <body>
-    <div class="column row">
-    
-    </div>
 
-    <div class="column row">
-      <div class="row collapse">
-        <div class="large-3 medium-4 column" data-sticky-container>
-          <ul class="vertical menu">
+    <div id="top" class="page-title">
+      <div class="row column">
+        <form class="form float-right">
+          <select id="ssnav">
+            <option value="">Select Component</option>
             {{#each pages}}
-              <li><a href="#{{ anchor }}">{{ title }}</a></li>
+              <option value="#{{ anchor }}">{{ title }}</option>
             {{/each}}
-          </ul>
-        </div>
-
-        <div class="large-9 medium-8 column" id="code-content">
-          {{#each pages}}
-            <div class="ss-section" id="{{ anchor }}">
-              {{ body }}
-            </div>
-          {{/each}}
-        </div>
-
+          </select>
+        </form>
+        <h1 class="subtitle">Corporate Style Guide</h1>
       </div>
     </div>
     
-    <script src="/js/vendor/jquery-2.1.4.min.js"> </script>
-    <script src="/multifamily/app_mf_sbl.js"></script>
+    <div class="content-band">
+      <div class="row column" id="code-content">
+      <p></p>
+          {{#each pages}}
+          <div class="ss-section" id="{{ anchor }}">
+            <div class="row">
+              <div class="column markup-wrapper">
+              {{ body }}
+              </div>
+            </div>
+          </div>
+          {{/each}}
+       
+        <p class="text-center"><a class="button small" href="index.html">Back to Style Guides</a></p>
+      </div>
+    </div> 
+    
+    <script src="/js/vendor/jquery-3.2.1.min.js"> </script>    
+    <script src="/js/vendor/somni_code.js"></script>
+    <script src="/js/app_mf.js"></script>
     <script>
     // suppress the code view blocks by default and hide them under a toggle.
     var $ks = $('#code-content');
@@ -68,11 +76,16 @@
       });
     }
     $("#ssnav").change(function() { 
-      var x = $(this).val(); 
+      var x = $(this).val() || ''; 
+      if(x!==''){
       location.hash = '';
       location.hash = x;
+      }
+      $("#ssnav")[0].selectedIndex = 0;
     }); 
     </script>
     
+    
+
   </body>
 </html>

@@ -160,4 +160,25 @@ $hero-blend-color: $primary-color;
       height: rem-calc(468);
     }
   }
+  &.hr-blog-landing-hero {
+    @include breakpoint(small only) {
+      background-image: linear-gradient(rgba($hero-blend-color, $hero-opacity), rgba($hero-blend-color, $hero-opacity)), url(none);
+      height: rem-calc(219);
+    }
+    @include breakpoint(medium) {
+      background-image: linear-gradient(rgba($hero-blend-color, $hero-opacity), rgba($hero-blend-color, $hero-opacity)), url(none);
+      height: rem-calc(345);
+      text-align: center;
+    }
+  }
+  &.hr-blog-detail-hero {
+    @include breakpoint(small only) {
+      background-image: linear-gradient(rgba($hero-blend-color, $hero-opacity), rgba($hero-blend-color, $hero-opacity)), url(none);
+      height: rem-calc(389);
+    }
+    @include breakpoint(medium) {
+      background-image: linear-gradient(rgba($hero-blend-color, $hero-opacity), rgba($hero-blend-color, $hero-opacity)), url(none);
+      height: rem-calc(468);
+    }
+  }
 }

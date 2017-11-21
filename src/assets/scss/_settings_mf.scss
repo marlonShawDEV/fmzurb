@@ -48,8 +48,8 @@
 
 $global-font-size: 16px;
 $global-width: rem-calc(1500); 
-$global-lineheight: 1.5;
-$light-gray: #f4f4f4;
+$global-lineheight: 1.4;
+$light-gray: #f4f4f4;  // note: darken($light-gray, 10%) = #dbdbdb;
 $medium-gray: #464645;
 $dark-gray: #333333;
 $black: #000000;
@@ -65,7 +65,7 @@ $fm-purple: #725090;
 $fm-gray: #777874;
 $pear: #c7d939; 
 $celery: #a4c745;   
-$offwhite: #f9f9f9;
+$offwhite: #f9f9f9; // lighten($light-gray, 2%);
 $mosaic-first: #88BD45;
 $mosaic-last: #E4F118;
 $foundation-palette: (
@@ -86,6 +86,7 @@ $orbit-palette: (
   teal: $fm-teal,
   gray: $fm-gray,
   primary: $primary-color,
+  black: $black, 
 );
 
 $body-background: $white;
@@ -116,7 +117,7 @@ $breakpoints: (
   xlarge: 1270px,  // position where we swap between mobile and desktop nav
   xxlarge: 1500px,
 );
-$print-breakpoint: large;
+$print-breakpoint: medium;
 $breakpoint-classes: (small medium large xlarge);
 
 // 3. The Grid
@@ -129,7 +130,7 @@ $grid-column-gutter: (
 );
 $gutter: 20px;
 $grid-column-align-edge: true;
-$block-grid-max: 4;
+$block-grid-max: 6;
 
 // 4. Base Typography
 // ------------------
@@ -150,14 +151,6 @@ $header-styles: (
     'h5': ('font-size': 16),
     'h6': ('font-size': 15),
   ),
-  medium: (
-    'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
-  ),
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
@@ -177,7 +170,7 @@ $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
 $hr-border: 1px solid darken($light-gray, 15%);
-$hr-margin: rem-calc(30) auto;
+$hr-margin: rem-calc(18) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
@@ -220,8 +213,8 @@ $abide-labels: true;
 $input-background-invalid: $fm-red;
 $form-label-color-invalid: $fm-red;
 $input-error-color: $fm-red;
-$input-error-font-size: rem-calc(13);
-$input-error-font-weight: $global-weight-bold;
+$input-error-font-size: rem-calc(14);
+$input-error-font-weight: $global-weight-normal;
 
 // 7. Accordion
 // ------------
@@ -286,8 +279,7 @@ $button-sizes: (
 $button-palette: (  
   primary: $fm-orange,
   secondary: $primary-color,
-  tertiary: $fm-green,
-  default: $medium-gray
+  tertiary: $fm-green
 );
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
@@ -341,12 +333,12 @@ $closebutton-offset-vertical: (
   medium: 0.5rem,
 );
 $closebutton-size: (
-  small: 1.5em,
-  medium: 2em,
+  small: rem-calc(20),
+  medium: rem-calc(28),
 );
 $closebutton-lineheight: 1;
-$closebutton-color: $body-font-color;
-$closebutton-color-hover: $black;
+$closebutton-color: inherit;
+$closebutton-color-hover: inherit;
 
 // 16. Drilldown
 // -------------
@@ -389,7 +381,7 @@ $fieldset-border: 1px solid rgba($fm-gray, 0.5);
 $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(8 0 18 0);
 $legend-padding: rem-calc(0 3);
-$form-spacing: rem-calc(18);
+$form-spacing: rem-calc(17);
 $helptext-color: inherit;
 $helptext-font-size: rem-calc(14);
 $helptext-font-style: italic;
@@ -409,8 +401,8 @@ $input-placeholder-color: rgba($body-font-color, 0.7);
 $input-font-family: inherit;
 $input-font-size: rem-calc(16);
 $input-font-weight: $global-weight-normal;
-$input-background: rgba($white, 0.7);
-$input-background-focus: inherit;
+$input-background: rgba($white, 0.75);
+$input-background-focus: rgba($white, 0.9);
 $input-background-disabled: $light-gray;
 $input-border: 1px solid rgba($fm-gray, 0.5);
 $input-border-focus: 1px solid rgba($fm-gray, 0.9);
@@ -426,15 +418,14 @@ $form-button-radius: $button-radius;
 // 20. Label
 // ---------
 
-$label-background: $primary-color;
-$label-color: foreground($label-background);
-$label-color-alt: $black;
-$label-palette: (
-  default: $fm-blue,
-);
-$label-font-size: 0.8rem;
-$label-padding: 0.33333rem 0.5rem;
-$label-radius: $global-radius;
+$label-background: transparent;  // not used
+$label-color: inherit;  // not used
+$label-color-alt: inherit;  // not used
+$label-palette: none;  // not used
+$label-font-size: rem-calc(14);
+$label-padding: 0.4em 1.5em;
+$label-radius: 0;
+
 
 // 21. Media Object
 // ----------------
@@ -486,14 +477,14 @@ $maincontent-class: 'off-canvas-content';
 
 $orbit-bullet-background-active: rgba($dark-gray, 0.8);
 $orbit-bullet-background: rgba($dark-gray, 0.5);
-$orbit-bullet-diameter: 1em;
-$orbit-bullet-margin: 0 0.2rem;
-$orbit-bullet-margin-top: 1rem;
-$orbit-bullet-margin-bottom: 1rem;
+$orbit-bullet-diameter: rem-calc(18);
+$orbit-bullet-margin: 0 0.25rem;
+$orbit-bullet-margin-top: rem-calc(8);
+$orbit-bullet-margin-bottom: rem-calc(8);
 $orbit-caption-background: rgba($black, 0.5);
 $orbit-caption-padding: 1rem;
 $orbit-control-background-hover: rgba($black, 0.75);
-$orbit-control-padding: 1rem;
+$orbit-control-padding: 0.5rem 0.25rem;
 $orbit-control-zindex: 10;
 
 // 26. Pagination
@@ -527,9 +518,12 @@ $progress-radius: $global-radius;
 // --------------------
 
 $responsive-embed-margin-bottom: rem-calc(16);
-$responsive-embed-ratios: (
+$responsive-embed-ratios: (  
   default: 4 by 3,
   widescreen: 16 by 9,
+  square: 1 by 1,
+  portrait:1 by 2,
+  tall: 1 by 3
 );
 
 // 29. Reveal
@@ -538,7 +532,7 @@ $responsive-embed-ratios: (
 $reveal-background: none;
 $reveal-width: 100%;
 $reveal-max-width: 100%;
-$reveal-padding: 0;   // not used.
+$reveal-padding: 0;   
 $reveal-border: 0px solid $medium-gray;
 $reveal-radius: 0;
 $reveal-zindex: 1005;
@@ -577,44 +571,41 @@ $switch-paddle-transition: all 0.25s ease-out;
 // 32. Table
 // ---------
 
-$table-background: scale-color($fm-blue, $lightness: 99%);
+$table-background: scale-color($fm-blue, $lightness: 90%);
 $table-color-scale: 4%;
-$table-border: 1px solid smart-scale($table-background, $table-color-scale);
+$table-border: 0px solid $table-background;  //stripes below thead, tfoot and tbody
 $table-padding: rem-calc(8 10 10);
-$table-hover-scale: 2%;
-$table-row-hover: darken($table-background, $table-hover-scale);
-$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
-$table-is-striped: true;
-$table-striped-background: smart-scale($table-background, $table-color-scale);
+$table-striped-background: scale-color($fm-blue, $lightness: 95%);
+$table-hover-scale: 3%;
 $table-stripe: even;
+$table-row-hover: saturate(darken($table-background, $table-hover-scale), 15%);
+$table-row-stripe-hover: saturate(darken($table-striped-background, $table-hover-scale), 15%);
+$table-is-striped: true;
 $table-head-background: $fm-blue;
-$table-head-row-hover: darken($table-head-background, $table-hover-scale);
-$table-foot-background: smart-scale($table-background, $table-color-scale * 2);
-$table-foot-row-hover: darken($table-foot-background, $table-hover-scale);
+$table-head-row-hover: darken($fm-blue, 4%);
+$table-foot-background: scale-color($fm-blue, $lightness: 85%);
+$table-foot-row-hover: saturate(scale-color($fm-blue, $lightness: 80%), 15%);
 $table-head-font-color: $white;
 $table-foot-font-color: $body-font-color;
-$show-header-for-stacked: true;
+$show-header-for-stacked: false;
 
 // 33. Tabs
 // --------
 
 $tab-margin: 0;
-$tab-background: $light-gray;
-$tab-color: $primary-color;
+$tab-background: $light-gray; 
+$tab-color: $medium-gray;   // hover or focus text color
 $tab-background-active: $light-gray;
-$tab-active-color: $primary-color;
-$tab-item-font-size: rem-calc(16);
-$tab-item-background-hover: $white;
-$tab-item-padding: 1.25em 1.5em;
+$tab-active-color: $primary-color;  // color of active tab text
+$tab-item-font-size: rem-calc(16);  // font-size at xxlarge
+$tab-item-background-hover: scale-color($tab-background, $lightness: -5%);
+$tab-item-padding: 1.25em;
 $tab-expand-max: 6;
-$tab-content-background: $white;
-$tab-content-border: $light-gray;
-$tab-content-color: foreground($tab-background, $primary-color);
-$tab-content-padding: $gutter 0;
-// these are my custom variables //
-$tab-item-color: scale-color($medium-gray, $lightness: 26%);
-$tab-item-hover-color: $medium-gray;
-$tab-item-active-color: $primary-color;
+$tab-content-background: none;  // set to none if no background used
+$tab-content-border: none; // set to none if no border used
+$tab-content-color: inherit;
+$tab-content-padding: none;  // set to none if no padding used
+
 
 // 34. Thumbnail
 // -------------
@@ -629,13 +620,13 @@ $thumbnail-radius: $global-radius;
 // 34. Title Bar
 // -------------
 
-$titlebar-background: inherit;
+$titlebar-background: $white;
 $titlebar-color: $white;
 $titlebar-padding: 0;
 $titlebar-text-font-weight: inherit;
 $titlebar-icon-color: $primary-color;
 $titlebar-icon-color-hover: $primary-color;
-$titlebar-icon-spacing: $gutter $gutter * 1.5;
+$titlebar-icon-spacing: $gutter;
 
 // 35. Tooltip
 // -----------
@@ -657,5 +648,5 @@ $topbar-padding: 0;
 $topbar-background: $white;
 $topbar-submenu-background: $white;
 $topbar-title-spacing: 0;
-$topbar-input-width: 200px;
+$topbar-input-width: 900px;
 $topbar-unstack-breakpoint: xlarge;

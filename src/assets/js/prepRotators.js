@@ -50,11 +50,11 @@ function preOrbit() {
     automateNav = orb.attr('data-automate-nav') || "true",
     btnPrev = $("<button />",{
       "class": prevBtnClass,
-      "html": '<span class="show-for-sr">previous slide</span><svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M27.3 34.7L17.6 25l9.7-9.7 1.4 1.4-8.3 8.3 8.3 8.3z"/></svg>'
+      "html": '<span class="show-for-sr">previous slide</span><svg aria-hidden="true" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M27.3 34.7L17.6 25l9.7-9.7 1.4 1.4-8.3 8.3 8.3 8.3z"/></svg>'
     }),
     btnNext = $("<button />",{
       "class": nextBtnClass,
-      "html": '<span class="show-for-sr">next slide</span><svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M22.7 34.7l-1.4-1.4 8.3-8.3-8.3-8.3 1.4-1.4 9.7 9.7z"/></svg>'
+      "html": '<span class="show-for-sr">next slide</span><svg aria-hidden="true" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="14 14 22 22"><path d="M22.7 34.7l-1.4-1.4 8.3-8.3-8.3-8.3 1.4-1.4 9.7 9.7z"/></svg>'
     }),
     orbControls = $("<div />", { "class": "orbit-controls" }),    
     orbBulletContainer = $("<nav />", {

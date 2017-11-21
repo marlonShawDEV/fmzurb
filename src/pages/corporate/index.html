@@ -2,66 +2,47 @@
 title: Freddie Mac Homepage
 layout: homepage
 ---
-{{> homepage-hero-nhm}}
-<div class="homepage-headlines content-band">
-  <div class="row">
-    <div class="large-5 xlarge-5 medium-offset-1 medium-11 column">
-      <div class="homepage-headlines-dominant">
-        <div class="article-category">Perspectives</div>
-        {{> homepage-headline-perspective}}
-      </div>
-    </div>
-    <div class="large-5 xlarge-4 medium-offset-1 medium-11 end column">
-       <div class="homepage-headlines-subdominant">
-        <div class="homepage-pressrelease">
-          <div class="article-category">News</div>
-          <div class="recent-headline-home"><div class="placeholder"><img class="no-border" src="/images/icon-loading.gif"></div></div>
-          <div class="article-category">Blog</div> 
-            {{> homepage-headline-blog}}
+<div class="background-concrete">
+  {{> homepage-hero}}
+  <div class="homepage-headlines content-band">
+    <div class="row">
+      <div class="large-5 xlarge-5 medium-offset-1 medium-11 column">
+        <div class="homepage-headlines-dominant">
+          <div class="article-category">Perspectives</div>
+          {{> homepage-headline-perspective}}
         </div>
       </div>
-    </div>  
-  </div>
-</div>
-{{> homepage-business-lines}}
-
-{{> homepage-multifamily-viewpoint}}
-
-<div class="finance-offset">
-  <div class="finance-research">
-    <div class="row">
-      {{> homepage-finance-recent}}
-    </div> 
-  </div>  
-  <div class="finance-pmms">
-    <div class="row" data-equalizer data-equalize-on="medium">
-        {{> homepage-finance-pmms}}
+      <div class="large-5 xlarge-4 medium-offset-1 medium-11 end column">
+         <div class="homepage-headlines-subdominant">
+          <div class="homepage-pressrelease">
+            <div class="article-category">News</div>
+            <div class="recent-headline-home"><div class="placeholder"><img class="no-border" src="/images/icon-loading.gif"></div></div>
+            <div class="article-category">Blog</div> 
+              {{> homepage-headline-blog}}
+          </div>
+        </div>
+      </div>  
     </div>
   </div>
+  {{> homepage-business-lines}}
+
+  {{> homepage-multifamily-viewpoint}}
+
+  <div class="finance-offset">
+    <div class="finance-research">
+      <div class="row">
+        {{> homepage-finance-recent}}
+      </div> 
+    </div>  
+    <div class="finance-pmms">
+      <div class="row" data-equalizer data-equalize-on="medium">
+          {{> homepage-finance-pmms}}
+      </div>
+    </div>
+  </div>
+
+
+  {{> homepage-careers}}
 </div>
-
-
-{{> homepage-careers}}
 {{> share-widget}} 
 {{>footer-promo-about-fm}}
-
-<script type="text/javascript"> 
-function triggerTestimonial(i) {       
-  $(".testimonials-thumbnail").find('.is-active').removeClass('is-active');
-  $(".testimonials-thumbnail").eq(i).find('a').addClass('is-active');
-  $('.testimonials-quote-container').not('.hide').addClass('hide');
-  $('.testimonials-quote-container').eq(i).removeClass('hide');
-  $('.testimonial-image-offset').not('.hide').addClass('hide');
-  $('.testimonial-image-offset').eq(i).removeClass('hide');
-}
-
-function findTestimonials() {
-  if($(".testimonials-thumbnails").length){
-    $(".testimonials-thumbnails").find(".testimonials-thumbnail").each(function(i){
-      $(this).find('a:first').on("click", function(e){e.preventDefault(); triggerTestimonial(i);});
-    }); 
-  }
-}
-
-window.onload = findTestimonials;
-</script>

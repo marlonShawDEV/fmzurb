@@ -1,7 +1,6 @@
 .subnav-edge { display: none; }
 @media screen {
   .homepage-business-lines {
-    background: $light-gray;  
     padding: $global-padding 0;
     @include breakpoint(large) {
       padding: $global-padding * 2.375 0;
@@ -45,14 +44,17 @@
   display: block;
   text-align: center;
   @media (min-width: 800px) {
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
+    -webkit-align-items: center;
     align-items: center;
   }
 }
 .business-line-icon {
-  color: $primary-color;
   line-height: 1;
   text-transform: uppercase;
   font-weight: $global-weight-medium;
@@ -66,9 +68,6 @@
     font-size: rem-calc(22px);
     padding: $global-padding * .5 0;
     margin: initial;
-  }
-  a {
-    color: inherit;
   }
   svg { 
     padding: 0 $global-padding * .5 $global-padding * .5;

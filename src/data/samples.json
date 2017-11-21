@@ -16,12 +16,16 @@
        "url":"/multifamily/new_standard/sbl/"
    },
    {  
-       "name":"NHM",
-       "url":"/corporate/national-homeownership-month/"
+      "name":"Multifamily",
+      "url":"/multifamily/index.html"
    },
    {  
        "name":"Better Housing Finance",
        "url":"/corporate/better-housing-finance/"
+   },
+   {  
+       "name":"Borrower of the Future",
+       "url":"/singlefamily/borrower/"
    },
    {  
        "name":"Style Guides",

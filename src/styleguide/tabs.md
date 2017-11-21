@@ -1,3 +1,4 @@
+<title>Styleguide: Tabs</title>
 
 # Tab Elements
 
@@ -124,7 +125,7 @@ By default, the width of each tab is flexible to accommodate the tab title text,
       </ul>
     </div>
   </li>
-  <li><p>**Avoid** using an excessive number of tabs. Consider [using Accordions](styleguide_corp.html#accordions) instead.</p>
+  <li><p>**Avoid** using an excessive number of tabs. Consider [using Accordions](styleguide_fm.html#accordions) instead.</p>
     <div class="gutter-all">
       <ul class="tabs" data-tabs id="what-not-to-do-2">
         <li class="tabs-title is-active"><a href="#dummy" aria-selected="true">Tab one</a></li>
@@ -479,6 +480,7 @@ Step One, define the custom css for each custom class you create. If you need to
   float: left;
   width: 33.3333%;
   text-align: center;
+  margin: 0;
 }
 .tabs-title-primary > a {
   display: block;
@@ -532,6 +534,7 @@ Step One, define the custom css for each custom class you create. If you need to
   float: left;
   width: 33.3333%;
   text-align: center;
+  margin: 0;
 }
 .tabs-title-primary > a {
   display: block;

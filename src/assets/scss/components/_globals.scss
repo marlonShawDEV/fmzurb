@@ -30,8 +30,8 @@ blockquote {
     margin-bottom: 0;
   }
 }
-@include breakpoint (medium) {
-  hr {
+hr {
+  @include breakpoint (medium) {
     margin: rem-calc(30) auto;
-  }  
+  } 
 }

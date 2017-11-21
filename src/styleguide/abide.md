@@ -1,3 +1,4 @@
+<title>Styleguide: Abide Form Validation</title>
 
 # Form Validation Basics
 
@@ -374,5 +375,11 @@ $("#bar").on("formvalid.zf.abide", function(ev,frm) {
   // do something perhaps
 });
 ```
+
+---
+
+## Learn More
+
+<p class="intro">For even more information, refer to the <a href="http://foundation.zurb.com/sites/docs/abide.html">Abide documentation</a> on Foundation's site.</p>
 
 ---
