@@ -96,9 +96,19 @@ h1 {
 }
 figure.green-results{
   margin: auto;
-  width: 77%;
+  width: 85%;
   text-align: left;
   
+}
+figure img{width:60%;}
+.bg-cover{
+  background-image: url("http://www.freddiemac.com/multifamily/images/greenAdvantage-a-big-return.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: auto;
+  width: 100%;
 }
 .content-inner-band {
   position: relative;
@@ -328,6 +338,11 @@ figure.green-results{
  
 }
 
+ul.green-article-item{
+  list-style-type: none;
+  margin-left:0;
+}
+.accordion-title{color:#fff;}
 .lender-block {
   padding-right: $gutter * 2.5;
   @include clearfix;
