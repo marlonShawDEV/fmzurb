@@ -103,11 +103,12 @@ figure.green-results{
 figure img{width:60%;}
 .bg-cover{
   background-image: url("http://www.freddiemac.com/multifamily/images/greenAdvantage-a-big-return.jpg");
+  
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
-  height: auto;
+  //min-height: 415px;;
   width: 100%;
 }
 .content-inner-band {
